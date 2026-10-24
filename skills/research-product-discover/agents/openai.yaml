@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Product Discovery"
+  short_description: "Define useful products, user evidence and bounded MVPs"
+  default_prompt: "Use $research-product-discover to turn these research assets or this product idea into a reviewable MVP brief."

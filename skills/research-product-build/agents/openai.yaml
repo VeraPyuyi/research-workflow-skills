@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Product Build"
+  short_description: "Build useful products and verify research regressions"
+  default_prompt: "Use $research-product-build to implement the approved MVP and verify usability and relevant research behavior."

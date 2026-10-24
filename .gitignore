@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.build/
+config/*.local.json
+auth.json
+*-private.json
+*-private.jsonl
+*-private.txt
+.env
+.env.*
+!.env.example
+.pytest_cache/
+*.log

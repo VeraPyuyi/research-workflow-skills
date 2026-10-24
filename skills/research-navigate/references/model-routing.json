@@ -1,0 +1,287 @@
+{
+  "version": 1,
+  "runtime_profile": "codex-native",
+  "policy": {
+    "max_active_workers": 6,
+    "max_concurrency_per_confirmed_pool": 2,
+    "max_concurrency_unknown_pool": 1,
+    "explicit_requested_actual_model": true,
+    "admission_check": "scripts/check_dispatch.py; snapshot only, no reservation",
+    "unknown_completion_retains_capacity": true,
+    "paper_milestones": [
+      "M1",
+      "M2",
+      "M3",
+      "M4",
+      "M5"
+    ],
+    "venue_review_rounds": 2,
+    "venue_review_fork_context": false,
+    "optimizer_budget_fraction_max": 0.2,
+    "optimizer_candidates_per_milestone": 3,
+    "optimizer_revisions_per_candidate": 1,
+    "optimizer_publications_per_milestone": 1
+  },
+  "native_tools": {
+    "spawn_agent": {
+      "name": "multi_agent_v1.spawn_agent",
+      "arguments": [
+        "model",
+        "reasoning_effort",
+        "message",
+        "fork_context"
+      ]
+    },
+    "wait_agent": {
+      "name": "multi_agent_v1.wait_agent",
+      "arguments": [
+        "targets",
+        "timeout_ms"
+      ]
+    },
+    "send_input": {
+      "name": "multi_agent_v1.send_input",
+      "arguments": [
+        "target",
+        "message",
+        "interrupt"
+      ]
+    }
+  },
+  "models": [
+    {
+      "id": "gpt-6.1-sol",
+      "model_family": "gpt-6.1-sol",
+      "kind": "generative",
+      "quota_pool": "codex",
+      "role": "Default integration, engineering, experiment control and writing",
+      "preferred_reasoning_effort": "high",
+      "access": "Require current native host tool/model/effort capability record",
+      "limitations": [
+        "Requested identity is not actual served identity",
+        "All native models share the same Codex quota pool"
+      ]
+    },
+    {
+      "id": "gpt-6-astra",
+      "model_family": "gpt-6-astra",
+      "kind": "generative",
+      "quota_pool": "codex",
+      "role": "Hard mathematics, causality, scientific and contribution review",
+      "preferred_reasoning_effort": "high",
+      "access": "Require current native host tool/model/effort capability record",
+      "limitations": [
+        "Requested identity is not actual served identity",
+        "All native models share the same Codex quota pool"
+      ]
+    },
+    {
+      "id": "gpt-6-luna",
+      "model_family": "gpt-6-luna",
+      "kind": "generative",
+      "quota_pool": "codex",
+      "role": "Bounded extraction; no principal scientific decisions",
+      "preferred_reasoning_effort": "medium",
+      "access": "Require current native host tool/model/effort capability record",
+      "limitations": [
+        "Requested identity is not actual served identity",
+        "All native models share the same Codex quota pool"
+      ]
+    }
+  ],
+  "task_roles": {
+    "integration": "gpt-6.1-sol",
+    "engineering": "gpt-6.1-sol",
+    "experiment_control": "gpt-6.1-sol",
+    "writing": "gpt-6.1-sol",
+    "hard_math": "gpt-6-astra",
+    "causality": "gpt-6-astra",
+    "scientific_review": "gpt-6-astra",
+    "contribution_review": "gpt-6-astra",
+    "bounded_extraction": "gpt-6-luna"
+  },
+  "stages": {
+    "research-navigate": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-scope": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-survey": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-ideate": {
+      "default_executor": "gpt-6-astra",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6.1-sol"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-design": {
+      "default_executor": "gpt-6-astra",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6.1-sol"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-baseline": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-implement": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-experiment": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-analyze": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-write": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-review": {
+      "default_executor": "gpt-6-astra",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6.1-sol"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-submit": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-product-discover": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-product-build": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-product-release": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-product-maintain": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    },
+    "research-optimize": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true
+    }
+  },
+  "decision_services": {
+    "jev": {
+      "kind": "structured_decision",
+      "optional": true,
+      "adapter": "scripts/jev_decide.py",
+      "default_model": "jev-latest",
+      "runtime_models": [
+        "jev-latest"
+      ],
+      "credential_env": "TYPESAFE_API_KEY",
+      "explicit_config_fields": [
+        "api_key_env",
+        "models"
+      ],
+      "endpoint": "https://api.typesafe.ai/v1/systemone",
+      "quota_pool": "jev",
+      "max_concurrency": 1,
+      "pool_state": "unknown",
+      "credit_coverage": "unverified",
+      "generative_worker": false,
+      "review_eligible": false,
+      "primitive_types": [
+        "choice",
+        "score",
+        "noul"
+      ],
+      "fallback": "native-evidence-comparison"
+    }
+  }
+}

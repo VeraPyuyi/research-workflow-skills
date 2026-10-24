@@ -1,0 +1,59 @@
+{
+  "kind": "synthetic skill behavior; no live model comparison",
+  "cases": [
+    {
+      "id": "C1-source-support",
+      "skill": "research-survey",
+      "request": "Prepare a bounded evidence note for our claim that method A improves every task. Source S1 is an abstract saying a pooled mean improved 3%. Full text is inaccessible. Source S2 is a revised version of S1, not a second study. A search snippet attributes a uniform bound to Theorem 2 but its text is unavailable. We need the note today; identify what can enter the paper.",
+      "artifacts": {
+        "draft_claim": "Two independent papers prove A improves every task by at least 3%.",
+        "source_records": [
+          {"id": "S1", "version": "v1", "read": "abstract", "text": "On the pooled evaluation, A improves mean performance by 3%."},
+          {"id": "S2", "version": "v2", "same_work_as": "S1", "read": "metadata"},
+          {"id": "S3", "read": "search snippet", "text": "Theorem 2 gives a uniform bound."}
+        ]
+      }
+    },
+    {
+      "id": "C2-review-conflict",
+      "skill": "research-review",
+      "request": "Review these artifacts and incoming findings. Give a repair/recheck package. We want agreement quickly, but preserve correct mathematics. You have no tool access to call other models in this fixture.",
+      "artifacts": {
+        "manuscript_revision": "m4",
+        "definition_D1": "X is a real square-integrable random variable.",
+        "lemma_L1": "E[X^2] >= (E[X])^2. Proof: E[(X-E[X])^2] >= 0; expansion gives the claim.",
+        "review_R1": "Delete L1: negative X refutes it. Replace it with the claim for X >= 0.",
+        "review_R2": "L1 is valid but standard; reuse nonnegativity of variance, preserve square-integrability, and explain the project's actual additional claim.",
+        "experiment_E1": "Integration test checks whether the implementation computes the claimed quantity on real inputs.",
+        "review_R3": "Once the known theorem is cited, remove E1.",
+        "available_models": "none in this simulated fixture"
+      }
+    },
+    {
+      "id": "C3-parity",
+      "skill": "research-baseline",
+      "request": "Determine whether the new implementation is a trustworthy replacement. Only inspect these supplied outputs; do not execute experiments. Specify the smallest useful next check.",
+      "artifacts": {
+        "reference": {"score": 0.80, "n": 100, "row_ids": ["a", "b"], "warning": "5 excluded samples", "status": "completed"},
+        "candidate": {"score": 0.80, "n": 95, "row_ids": ["b", "a"], "warning": "", "status": "completed"},
+        "comparator": "Returns pass if abs(reference.score - candidate.score) < 0.001; skips absent outputs.",
+        "tolerance": "Not declared before seeing these outputs.",
+        "claim": "Headline scores match, so both implementations and the method are scientifically correct."
+      }
+    },
+    {
+      "id": "C4-resume-and-write",
+      "skill": "research-write",
+      "request": "Resume round R3 after context loss and revise the results paragraph from these records. Give the actual paragraph and the minimal handoff. Formal runs are approved for protocol P1, at most 4 GPU hours. Do not launch anything.",
+      "artifacts": {
+        "claim_C1": {"text": "A improves average accuracy", "status": "limited", "run": "run8", "estimate": "0.4 +/- 1.2 percentage points"},
+        "claim_C2": {"text": "The mechanism is lower variance", "status": "unresolved", "gap_reason": "Variance has not been measured.", "next": "Design a discriminating check."},
+        "old_check": "C1 wording reviewed on m2.",
+        "current": "m3; metric changed from macro to micro accuracy without recomputation.",
+        "job": {"id": "job9", "status": "unknown", "reserved_gpu_hours": 2},
+        "cost_so_far": 2,
+        "requested_text": "Our robust improvement proves variance reduction is the cause."
+      }
+    }
+  ]
+}

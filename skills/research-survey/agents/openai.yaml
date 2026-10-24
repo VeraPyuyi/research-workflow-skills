@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Survey"
+  short_description: "Map evidence and useful theories across disciplines"
+  default_prompt: "Use $research-survey to map relevant evidence and cross-disciplinary mathematical connections, checking source assumptions and transfer limits."

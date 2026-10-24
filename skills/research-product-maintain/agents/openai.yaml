@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Product Maintenance"
+  short_description: "Resolve product issues and trace their research impact"
+  default_prompt: "Use $research-product-maintain to resolve this bounded product issue and assess its effect on scientific outputs."

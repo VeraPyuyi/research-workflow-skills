@@ -1,0 +1,7 @@
+{
+  "runtime_profile": "codex-native",
+  "skills_dir": "skills",
+  "validation_receipt": "validation/release.json",
+  "automatic_update_authority_ref": "<recorded-user-authority>",
+  "note": "Resolve paths relative to this bundle or project; examples create no update or profile-switch authority."
+}

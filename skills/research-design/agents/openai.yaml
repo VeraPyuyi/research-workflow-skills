@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Design"
+  short_description: "Design testable studies with controls and resource limits"
+  default_prompt: "Use $research-design to turn this question into a testable protocol with controls and a resource plan."

@@ -1,0 +1,32 @@
+{
+  "review_mode": "venue_blind",
+  "review_round": 2,
+  "new_agent": true,
+  "fork_context": false,
+  "submission_root": "<canonical-absolute-submission-bundle-directory>",
+  "manuscript_revision": "paper-v2",
+  "venue_profile": "criteria-v1",
+  "author_models": [
+    "gpt-6.1-sol"
+  ],
+  "author_evidence": "<observed-author-identity-record>",
+  "prior_agent_ids": [
+    "<author-agent>"
+  ],
+  "prior_review_agent_ids": [
+    "<round-one-reviewer>"
+  ],
+  "previous_round_completed": false,
+  "allowed_inputs": [
+    {
+      "kind": "manuscript",
+      "ref": "paper.pdf",
+      "revision": "paper-v2"
+    },
+    {
+      "kind": "venue_criteria",
+      "ref": "criteria.txt",
+      "revision": "criteria-v1"
+    }
+  ]
+}

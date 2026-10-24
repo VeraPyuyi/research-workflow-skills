@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Submission"
+  short_description: "Prepare paper submissions, rebuttals and revision packages"
+  default_prompt: "Use $research-submit to prepare this submission or revision package and verify its readiness and authorization."

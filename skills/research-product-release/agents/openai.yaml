@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Product Release"
+  short_description: "Verify release candidates and prepare authorized publishing"
+  default_prompt: "Use $research-product-release to prepare and verify this product release candidate before any authorized publication."

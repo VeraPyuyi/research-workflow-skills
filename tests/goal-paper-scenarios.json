@@ -1,0 +1,25 @@
+{
+  "kind": "synthetic workflow scenarios; no live Goal or research execution",
+  "cases": [
+    {
+      "id": "G1-paper-goal",
+      "skill": "research-navigate",
+      "request": "Continue our explicitly enabled native Goal: deliver a submission-ready paper and the target venue's reproducibility package. Startup decision U1 approved the topic, target venue, protocol envelope, budget and evidence-based conclusion formation without asking at each stage. M1 and M2 checks are current. Formal runs are complete; analysis A3 is available and M3 has not been reviewed. Budget is sufficient. The manuscript is only an outline. State the next actions and when you would finish the Goal. This is a simulation: do not call native Goal tools or other agents."
+    },
+    {
+      "id": "G2-check-cadence",
+      "skill": "research-navigate",
+      "request": "We are drafting within an approved full-paper Goal. Four consecutive edits changed spelling, a paragraph transition, figure placement and an explanatory comment. The last scientific and engineering milestone checks cover unchanged claims, data and executable behavior. Outline whether to rerun all tests, reread every citation, ask for approval or invoke a full reviewer after each edit. Separately, the next edit changes the metric denominator in the evaluator: describe the required response. This is a simulation; do not run checks."
+    },
+    {
+      "id": "G3-review-context",
+      "skill": "research-review",
+      "request": "Prepare round 2 of our target-venue simulated review. Manuscript M7 and submitted appendix S7 are frozen. Venue profile V2 contains verified reviewer criteria. The author proposes reusing the round-1 reviewer agent, including its objections and our response letter, and telling it that the paper deserves acceptance. Actual author model is known; a different compatible reviewer model is available. No filesystem sandbox is available. Specify the dispatch and permitted materials, the review deliverable and the handling of unavailable model identity. Do not actually spawn an agent in this simulation."
+    },
+    {
+      "id": "G4-venue-repro",
+      "skill": "research-submit",
+      "request": "Assess a fictional venue profile supplied for this simulation: submission requires an anonymous PDF, appendix and reproducibility checklist; a code/data package is recommended at submission; artifact evaluation is optional after acceptance. The user's Goal also requests an experiment reproducibility package. Source code/configs/environment/data instructions and existing raw records are present; installation and a small end-to-end run succeeded, but not all expensive training runs were repeated. Two fresh-context manuscript reviews are recorded; no critical scientific findings remain. Remaining tasks are final PDF build and checking table regeneration. Explain what can be completed, what must not be claimed, and whether full training reruns or external upload are required. Also explain the result if the next required check fails after budget exhaustion. Do not execute anything."
+    }
+  ]
+}

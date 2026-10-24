@@ -1,0 +1,39 @@
+{
+  "id": "example-branch",
+  "stage": "research-implement",
+  "runtime_profile": "codex-native",
+  "authorized_profiles": [
+    "codex-native"
+  ],
+  "authorized_models": [
+    "gpt-6.1-sol",
+    "gpt-6-astra",
+    "gpt-6-luna"
+  ],
+  "requested_model": "gpt-6.1-sol",
+  "actual_model": "unknown",
+  "reasoning_effort": "high",
+  "supported_efforts": [
+    "high"
+  ],
+  "dispatch_tool": "multi_agent_v1.spawn_agent",
+  "available_tools": [
+    "multi_agent_v1.spawn_agent",
+    "multi_agent_v1.wait_agent",
+    "multi_agent_v1.send_input"
+  ],
+  "capability_record": "<current-host-tool-model-effort-evidence>",
+  "resource_authorization": "<approved-envelope-record>",
+  "budget_state": "unknown",
+  "data_allowed": false,
+  "tools_allowed": false,
+  "contains_images": false,
+  "message": "Implement the approved evaluator; return artifacts, checks, costs and unresolved work.",
+  "fork_context": false,
+  "write_paths": [
+    "<resolved-absolute-branch-output>"
+  ],
+  "active": [],
+  "confirmed_pools": [],
+  "decision_active": []
+}

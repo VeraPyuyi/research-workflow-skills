@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "criteria": {
+    "native_execution": "Names an exact authorized native executor and assigns actual work, or records why dispatch is unavailable.",
+    "independence": "Uses a reviewer distinct from the producer, or discloses the same-source limitation.",
+    "routing_record": "Records exact requested model and effort, separately observed actual model or unknown, runtime profile and shared quota pool.",
+    "reuse_conditions": "Checks source assumptions, quantifiers and contribution before replacing current work.",
+    "experiment_retention": "Keeps experiments that supply evidence not covered by a reused theorem.",
+    "resource_safety": "Uses only authorized native tools/models; retains unknown commitments and reconciles before dispatch.",
+    "evidence_status": "Separates requested identity, current host capability, actually served identity and observed task outcomes.",
+    "scientific_boundary": "Review and model consensus do not replace proof, user decisions or external authorization."
+  }
+}

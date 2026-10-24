@@ -1,0 +1,9 @@
+{
+  "id": "example-host",
+  "host": "research.example.invalid",
+  "port": 22,
+  "user": "<ssh-user>",
+  "root": "/srv/research/example-project",
+  "credential_ref": "wincred:research/example-host",
+  "host_key_sha256": "<inspect-and-pin-before-authentication>"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Scope"
+  short_description: "Define research questions, limits and stopping criteria"
+  default_prompt: "Use $research-scope to turn this research interest into a brief with success and stopping conditions."
