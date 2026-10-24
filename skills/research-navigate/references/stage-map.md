@@ -21,6 +21,7 @@ chat or an obligatory stage number. Inspect existing artifacts first.
 | Installable, distributable release candidate | research-product-release | Candidate readiness and publishing authority are explicit |
 | Requested issue or compatibility/effect regression | research-product-maintain | Fix and affected outputs are checked, remaining work is stated |
 | Bounded workflow improvement of a completed, delivered stage | research-optimize | Candidate set, revision and single publication are recorded inside its own bounds |
+| Original theme, cumulative alignment or auxiliary-branch boundaries | research-focus | Provenance, theme/thesis versions, alignment and next scientific dependency are explicit |
 
 ## Dependencies by study type
 
@@ -60,6 +61,10 @@ never authorizes submission or release.
 
 ## Return paths
 
+- Cumulative topic drift or a side tool becoming the paper's subject -> focus,
+  then the relevant scientific stage. An authorized in-theme pivot needs a
+  recorded rationale, not a new topic vote. An out-of-theme proposal stays pending.
+
 - Missing source, theoretical transfer conditions or unsupported novelty -> survey,
   then ideate only if the question/contribution needs changing.
 - Existing-paper contribution strength or explanatory/theoretical opportunities
@@ -90,7 +95,8 @@ round crosses a stage boundary. A completed round does not finish a paper Goal.
 
 Where a stage compares genuine candidates - topic and transfer choices in survey,
 direction selection in ideate, protocol and identification choices in design,
-interpretation and reuse choices in analyze, disposition choices in review, and
+interpretation and reuse choices in analyze, theme-aligned pivot and auxiliary
+scope choices in focus, disposition choices in review, and
 routing between them in navigate - read
 [Jev decision support](decision-support.md). It is advisory: evidence and hard
 program constraints decide first, unknown account coverage means no call, and the
@@ -99,10 +105,12 @@ the deliverable.
 
 ## Optimizer event queue
 
-Each substantial stage completion queues one stable event for the sibling
+Each substantial scientific stage completion queues one stable event for the sibling
 `research-optimize` skill: stage identity, strengths, weaknesses, artifact and
 evidence references, and the actual cost. The event does not trigger a full test
 suite or a scientific review, does not authorize new scientific claims, and does
 not delay a completed paper. Duplicate delivery of the same event is idempotent.
 Read `research-optimize` for its authoritative bounds; this map records only the
 routing edge and no new stage skill.
+Focus and optimizer bookkeeping never generate new support events. Carry the
+focus reminder into each scientific branch and keep it out of blind venue inputs.

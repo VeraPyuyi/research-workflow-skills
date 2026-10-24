@@ -18,6 +18,13 @@ missing conditions; it is not permission to repeat calls until an answer changes
 
 ## Prepare a comparable decision
 
+For theme-sensitive choices, carry the versioned `research_focus` envelope,
+current thesis, cumulative changes, candidate-to-main-claim mapping and known
+scope restrictions. Include staying with the current question and insufficient
+evidence where appropriate. Jev's preference cannot change the user-governed
+theme, erase a negative result or turn an auxiliary success into core evidence.
+Routine focus reminders are record updates and require no decision-service call.
+
 Scientific workers first prepare each candidate in the same shape: stable id,
 research objective, objects/definitions, assumptions, supporting and opposing
 evidence with actual locations/revisions, prior-work/reuse relationship, proof

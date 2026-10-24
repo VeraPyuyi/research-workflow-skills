@@ -196,6 +196,14 @@ class MagpieRoutingHelperTests(unittest.TestCase):
         self.assertTrue(all("tokens" not in rule and "images" not in rule
                             for rule in cursor_rules))
 
+    def test_focus_has_an_explicit_free_intent_route(self):
+        group = build_target_group(ROUTING, load_effort_evidence(self.catalog_path))
+        routes = [rule for rule in group["rules"] if "topic drift" in rule["intent"].lower()]
+        self.assertEqual(len(routes), 1)
+        self.assertTrue(routes[0]["use"].startswith("workbuddy-ai/step-5-preview"))
+        self.assertNotIn("tokens", routes[0])
+        self.assertNotIn("images", routes[0])
+
     def test_subscription_group_member_requires_supported_fixed_effort(self):
         evidence = load_effort_evidence(self.catalog_path)
         evidence["levels"]["cursor/grok-4.6"] = ["high"]

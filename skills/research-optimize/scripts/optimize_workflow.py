@@ -306,6 +306,8 @@ def transition(root, state_path, state, action, packet):
     if action == "event":
         if packet.get("stage") == "research-optimize":
             return "self-event-suppressed"
+        if packet.get("stage") == "research-focus":
+            return "focus-event-suppressed"
         for field in ("stage", "round", "revision", "coverage"):
             text(packet.get(field))
         for field in ("strengths", "weaknesses", "artifact_refs"):

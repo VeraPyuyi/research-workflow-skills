@@ -35,7 +35,12 @@
     "optimizer_budget_fraction_max": 0.2,
     "optimizer_candidates_per_milestone": 3,
     "optimizer_revisions_per_candidate": 1,
-    "optimizer_publications_per_milestone": 1
+    "optimizer_publications_per_milestone": 1,
+    "focus_cadence": "compact scientific handoff reminder; cumulative alignment at M1-M5; internal only for blind venue review",
+    "support_event_exclusions": [
+      "research-focus",
+      "research-optimize"
+    ]
   },
   "models": [
     {
@@ -639,7 +644,8 @@
         "research-product-discover": "alternative solutions and research applicability boundaries",
         "research-product-build": "bounded implementation and engineering second opinion",
         "research-product-maintain": "bounded defect diagnosis and regression interpretation",
-        "research-optimize": "compare evidence-backed workflow alternatives at an existing decision point"
+        "research-optimize": "compare evidence-backed workflow alternatives at an existing decision point",
+        "research-focus": "bounded comparison of candidate questions with original theme, cumulative pivots and scientific value"
       }
     },
     {
@@ -1020,6 +1026,23 @@
         "cursor/grok-4.6",
         "cursor/composer-2.5",
         "google-vertex/gemini-3.8-flash"
+      ]
+    },
+    "research-focus": {
+      "free_executors": [
+        "workbuddy-ai/step-5-preview",
+        "workbuddy-ai/deepseek-v4.1-flash"
+      ],
+      "reviewers": [
+        "codex/gpt-6-astra",
+        "google-vertex/gemini-4-argon"
+      ],
+      "integrator": "codex/gpt-6.1-sol",
+      "covered_account_executors": [
+        "cursor/grok-4.6"
+      ],
+      "decision_services": [
+        "typesafe/jev-latest"
       ]
     }
   },

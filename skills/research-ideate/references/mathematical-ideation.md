@@ -48,6 +48,11 @@ Whether the resulting bound is relevant or novel remains a separate question.
 
 ## Compare contributions, not mathematical decoration
 
+Compare each candidate with the stable theme and cumulative pivot history from
+[research-focus](../../research-focus/SKILL.md). Mathematical tools may change;
+the important phenomenon and user boundaries remain the reference. A local lemma
+needs a concrete claim link, not automatic promotion to the paper's thesis.
+
 For each theoretical prototype, explain:
 
 - What phenomenon, limitation or design choice the result clarifies.

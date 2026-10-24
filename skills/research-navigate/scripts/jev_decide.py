@@ -28,6 +28,7 @@ STAGES = {
     "research-experiment", "research-analyze", "research-write", "research-review",
     "research-submit", "research-product-discover", "research-product-build",
     "research-product-maintain", "research-product-release", "research-optimize",
+    "research-focus",
 }
 
 

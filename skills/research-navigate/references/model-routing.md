@@ -298,6 +298,18 @@ content isolation. Record the actual fresh-agent call and actual access coverage
 
 ## Gates
 
+`research-focus` uses Step/DeepSeek free branches for a substantive provenance or
+alignment task, Cursor Grok 4.6 for a bounded alternative-question critique when
+current subscription coverage permits, and Sol integration with Astra/Argon
+milestone review. See the actual stage registry; this is allocation, not a new
+model ranking or a claim of current quota. Routine focus reminders reuse records
+without model calls. Jev comparison is optional at real candidate choices.
+Use the covered Cursor critique branch through direct exact-endpoint dispatch;
+the mixed group's general focus intent selects Step and does not promise Cursor.
+Carry the theme/current-thesis reminder in scientific task packets, excluding
+blind venue-review packets. Focus and optimizer bookkeeping cannot recursively
+spawn each other or create a per-handoff independent-review requirement.
+
 Run `research-review` at the research/protocol gate, the principal-conclusions
 gate and the submission/release gate. For full papers these map to M1/M3/M5;
 M2 consolidates engineering checks and M4 is the first complete-manuscript venue

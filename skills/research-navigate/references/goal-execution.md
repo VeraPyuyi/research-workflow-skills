@@ -32,6 +32,15 @@ Do not infer this delegated authority from a request merely to read one paper.
 
 ## Native Goal lifecycle
 
+Keep the paper Goal connected to the versioned theme and current thesis through
+[research-focus](../../research-focus/SKILL.md). At resumption or stage handoff,
+reuse the anchor, compare cumulative pivots and carry its compact reminder.
+With explicit in-theme delegation, evidence-backed method/question/assumption
+changes inside that envelope can continue; reopen affected scientific checks.
+This policy refines the general direction-change rule above. It does not permit
+changing explicit user boundaries, expanding resources or silently replacing the
+promised research question with an easier side project.
+
 - On entry/resumption, use the available native `get_goal` to inspect the objective,
   status and allowance. Reuse a matching active Goal; do not overwrite an unrelated
   unfinished Goal. If none exists, call `create_goal` only after explicit user
@@ -115,6 +124,8 @@ may follow the project):
 - `blockers`: affected dependencies and independent work still available.
 - `resume`: job IDs, budget commitments, retained artifact/check versions and
   the last meaningful transition. Do not replace an existing richer state store.
+- `research_focus`: anchor reference, theme/thesis versions, alignment and task
+  link; private coordinator context, excluded from blind-review input.
 
 At first activation or recovery from a premature stop, distinguish three kinds
 of evidence: a real Goal binding; work crossing a stage boundary; and, if observed,

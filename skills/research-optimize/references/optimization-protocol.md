@@ -13,6 +13,8 @@ An event includes `stage`, `round`, `revision`, `strengths`, `weaknesses`,
 gap. Its project is the designated optimizer record. Identical repeat events do
 not write again; conflicting data under the same identity needs reconciliation.
 An event from `research-optimize` is suppressed, even if that skill changed itself.
+Events from `research-focus` bookkeeping are also suppressed. Attach alignment
+lessons to the original scientific-stage event rather than forming a support loop.
 
 Keep independently maintained controls outside candidate directories:
 

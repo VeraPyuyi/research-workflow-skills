@@ -59,6 +59,20 @@ For a full-paper Goal, add a compact continuation line:
 
 Keep these coordinator records out of the M4/M5 blind reviewer input bundles.
 
+For a project main-line handoff, add a compact reminder:
+
+- Theme E1: preserve facts/relations while ignoring retrieval-irrelevant paraphrases.
+- Thesis T3: test a boundary of subspace retrieval at matched capacity and budget.
+- Alignment: in-theme-pivot from T2's benefit hypothesis; inspect old T1/T2 as well.
+- Task: grouped bootstrap -> source-dependent retrieval scores -> uncertainty
+  for claim K3. Supporting analysis, not a new statistics-software paper.
+- Return: one bounded existing-data analysis, then main evidence synthesis.
+- Provenance: actual original instruction and later decision references; missing
+  original material stays a gap, not an invented confirmation.
+
+These are synthetic illustrations. A negative direction is not a measured result;
+the evidence ledger determines whether the observation or mechanism is established.
+
 For a workflow release, optimizer event or Jev comparison, add the matching
 compact line instead of a new section:
 

@@ -66,6 +66,7 @@ CLASSIFIER = "typesafe/jev-latest"
 INTENTS = {
     "classify": "Structured research task classification and stage routing: identify navigation, retrieval, reuse review, independent review, math, engineering, experiment, analysis, writing, or submission.",
     "optimize": "Workflow retrospective: preserve strengths, identify evidence-backed weaknesses, prepare bounded improvement candidates for milestone validation without changing goals, criteria or budgets.",
+    "focus": "Research focus and cumulative topic drift: compare original user theme, current thesis and pivot history; map auxiliary theories or code to core claims and preserve valuable in-theme inquiry.",
     "retrieve": "Literature retrieval: search papers or public sources, verify facts, locate primary evidence, and organize references; deliver sources, not a conclusion.",
     "reuse": "Literature synthesis, reuse review, and contribution assessment: compare prior work and identify reusable versus replacement-needed material.",
     "review": "Independent scientific or mathematical review: check derivations, statistics, interpretations, and conclusion chains for errors and incomparable claims.",
@@ -365,6 +366,7 @@ def build_target_group(routing_path: Path, evidence: dict[str, Any]) -> dict[str
     rules = account_rules + [
         {"use": exact_member("opencode-zen/nemotron-3.5-lightning-free"), "intent": INTENTS["classify"]},
         {"use": exact_member("workbuddy-ai/step-5-preview"), "intent": INTENTS["optimize"]},
+        {"use": exact_member("workbuddy-ai/step-5-preview"), "intent": INTENTS["focus"]},
         {"use": exact_member("workbuddy-ai/hy3"), "intent": INTENTS["retrieve"]},
         {"use": exact_member("workbuddy-ai/step-5-preview"), "intent": INTENTS["reuse"]},
         {"use": exact_member("workbuddy-ai/deepseek-v4.1-flash"), "intent": INTENTS["review"]},

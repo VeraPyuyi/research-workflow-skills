@@ -76,6 +76,11 @@ class WorkflowReleaseTests(unittest.TestCase):
             "jobs": [{"id": "run-9", "status": "running", "workflow_release": "old", "code": "abc"}],
             "protocol": {"revision": "frozen-1"},
             "unknown": {"keep": [1, 2, 3]},
+            "research_focus": {
+                "theme_envelope": {"version": "E1", "source_refs": ["user:original"]},
+                "active_thesis": {"version": "T2", "question": "bounded current question"},
+                "pivot_history": [{"from": "T1", "to": "T2", "alignment": "in-theme-pivot"}],
+            },
             "workflow": {"custom": "keep", "running_job_pins": {"run-9": "old"}},
         }
         if authority:

@@ -125,6 +125,36 @@ reserved amounts, with three candidates, one revision each and one publication p
 milestone. Read `research-optimize` for its authoritative
 bounds and record shapes rather than duplicating them here.
 
+## Research main line
+
+For an ongoing project, maintain `research_focus` through
+[research-focus](../../research-focus/SKILL.md) and its
+[anchor protocol](../../research-focus/references/thesis-anchor.md).
+Keep the original/later user-approved `theme_envelope` separate from the
+evidence-adjustable `active_thesis`. Recover instruction provenance, preserve
+history, and mark gaps rather than treating the latest draft as the original goal.
+This is not required for an unrelated single-paper reading or bounded calculation.
+
+When the user delegates autonomous pivots within the theme, this specific policy
+governs direction/method/assumption changes covered by that delegation: record
+the evidence, value and affected coverage, then continue without a repeated vote.
+Cross-theme changes, explicit locked boundaries, expanded resources and external
+actions retain their decisions. No instruction here creates missing delegation.
+
+At a stage handoff, relate the next task to the theme/current thesis and cumulative
+pivots; use `on-spine`, `in-theme-pivot`, `auxiliary-only`, or
+`out-of-theme-drift`. Carry a short reminder and a concrete claim link in worker
+packages. Borrowed theory, engineering and calibration retain a bounded supporting
+role unless evidence establishes a valuable on-theme contribution.
+Keep evidence/proof and execution status separate from alignment.
+
+Consolidate full alignment at existing M1-M5 checks. Internal review can inspect
+the anchor; blind venue reviewers receive neither focus history nor internal
+reminders. Focus/optimizer completion emits no new optimizer or focus event;
+attach support notes to the original scientific stage's handoff instead.
+Negative results and revised hypotheses can be on-theme. Do not lower the value
+standard just to complete an easier paper.
+
 ## Check cadence
 
 For full papers, consolidate checks at M1 research/protocol, M2 implementation and
@@ -226,6 +256,7 @@ Each round package contains:
 | Part | Required information |
 | --- | --- |
 | Question/evidence | Round identity, contribution gap, competing explanations, claim/evidence versions and prior understanding |
+| Main line | Theme/thesis versions or reference, cumulative alignment, task-to-core-claim link, auxiliary return condition and any proposed pivot |
 | Action/rationale | Chosen work, expected learning, minimal discriminating check, inputs, responsible stage and dependencies |
 | Resources/authority | Estimated cost or explicit unknown, remaining allowance and actual approval reference covering the action |
 | Decision/stop | For support, refutation and inconclusive results: next action (continue, close or pivot) and expected-information-value rationale; completion, futility and resource stopping conditions |
@@ -286,6 +317,8 @@ records; it need not repeat every source or create a new file system.
 For full papers also carry the Goal binding/completion conditions, M1-M5 node,
 venue requirements and two review rounds. Native Goal statuses are distinct from
 local stage statuses; follow the actual Goal-tool lifecycle before setting them.
+Preserve the focus reference and short reminder across context recovery. A suite
+update does not replace project themes, thresholds, valid results or job pins.
 
 Use [the handoff example](handoff-example.md) for a compact representation. The
 fields are the contract; exact headings and serialization are not mandatory.

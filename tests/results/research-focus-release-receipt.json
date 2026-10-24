@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "receipt_id": "research-20261025-focus-v5-magpie-acceptance",
+  "bundle_digest": "sha256:7151b3f4cb788ab8772a4e5554915027d78ac0964d914da5cd9456c479cfce7f",
+  "runtime_profile": "magpie",
+  "scope": "workflow-release",
+  "status": "passed",
+  "checked_at": "2026-10-24T16:43:40.840421+00:00",
+  "evidence_refs": [
+    "tests/results/research-focus-code-validation.json",
+    "tests/results/research-focus-behavior.json",
+    "tests/results/research-focus-review-disposition.json",
+    "docs/research-focus-validation-20261025.md"
+  ],
+  "evidence_sha256": {
+    "tests/results/research-focus-code-validation.json": "6b79b49b6105ddf4d96ad298b72cd56e6e093cddfefa656d27cee67892773fec",
+    "tests/results/research-focus-behavior.json": "ca5d3067f62f0bb11c72c06d63cec60e064eb60f6dc70f8ac2700d1e35be8ef6",
+    "tests/results/research-focus-review-disposition.json": "7bf9530c7f32c2f2d84cee586bafde25d0e9b1557429658289cb5d1ab986d162",
+    "docs/research-focus-validation-20261025.md": "1cafa543897b596f2b49ab7808760b9084efbf6649a76bb982ad16848da9239e"
+  },
+  "limits": [
+    "Offline tests and synthetic behavior; no new scientific experiment or provider inference validation",
+    "Unknown actual review model; no claim of model-independent scientific gate"
+  ]
+}

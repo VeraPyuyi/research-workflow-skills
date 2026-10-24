@@ -20,6 +20,13 @@ Read [workflow updates](references/workflow-updates.md) at entry, resumption or 
 handoff to adopt a compatible validated suite release.
 Resolve all reference paths relative to this skill's directory.
 
+At project entry/resumption, use [research-focus](../research-focus/SKILL.md)
+to recover the stable theme and current thesis from original instructions and
+explicit decisions. Carry its compact reminder in scientific task packages.
+Compare cumulative pivots at M1-M5; ordinary handoffs need only an alignment note.
+An evidence-backed in-theme pivot within delegated scope/resources can proceed.
+Changing the theme or an explicit boundary needs the user's concrete decision.
+
 For a full-paper task or explicitly enabled native Goal, read
 [Goal execution](references/goal-execution.md). The endpoint is a submission-ready
 paper and venue-appropriate reproduction package, not the next route or outline.
@@ -93,11 +100,13 @@ independently customized local copies are never overwritten.
 After adopting a release, actually read its affected instructions. A release
 record alone neither reloads an old context nor activates a native Goal.
 
-Each substantial stage completion queues one stable event for the sibling
+Each substantial scientific stage completion queues one stable event for the sibling
 [research-optimize](../research-optimize/SKILL.md) skill, carrying strengths,
 weaknesses, artifact/evidence references and actual cost. Use its bounded event
 and milestone protocol; an event alone triggers no comprehensive review or tests.
 Optional optimization never delays a paper that meets its completion contract.
+Focus/optimizer bookkeeping emits no new support event. The focus record's
+scientific task mapping is maintained by the integrator, not a recurring reviewer.
 
 ## Deliver
 
