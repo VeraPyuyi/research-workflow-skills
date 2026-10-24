@@ -38,6 +38,11 @@ reruns just because a venue recommends code availability.
    is unavailable, label unverified requirements and prepare only supported parts.
 3. Check consistency across manuscript, metadata, authorship, references, appendix
    and code/data statements. Verify document build/render when applicable.
+   Apply the [submission leakage audit](../research-review/references/submission-leakage.md)
+   to the exact deliverable bytes, including nested reproduction archives, hidden
+   metadata, local path keys and stray agent content. Unresolved private information
+   or required uninspected surfaces prevent submission readiness. Infrastructure
+   placeholders are allowed; required scientific content and disclosures stay truthful.
 4. Produce a candidate manifest and readiness report, with verified checks and
    unresolved blockers. A materially changed claim, author list, destination or
    attachment requires the affected decision; routine edits within authority do not.

@@ -16,6 +16,15 @@ substantive claims and numerical statements.
 
 ## Build from available evidence
 
+Write submission-facing content separately from internal project records. Use
+relative paths or explicit infrastructure placeholders, never real machine paths,
+credentials, private endpoints, chat fragments or execution notes in the paper.
+Preserve truthful scientific AI descriptions and required AI-use declarations.
+Before freezing a complete/revised manuscript, apply the
+[submission leakage audit](../research-review/references/submission-leakage.md)
+to sources, rendered pages, metadata and intended attachments. Keep audit records
+private; reuse unchanged coverage and recheck only repaired surfaces.
+
 Use the [research-focus](../research-focus/SKILL.md) theme/current-thesis reminder
 to organize title, abstract and headline contributions. Auxiliary theory,
 engineering and calibration stay in their justified roles. Assess whole-paper

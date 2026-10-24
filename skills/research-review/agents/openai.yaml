@@ -1,4 +1,4 @@
 interface:
   display_name: "Research Review"
-  short_description: "Review scientific evidence or simulate venue peer review"
-  default_prompt: "Use $research-review to review this scientific artifact; for a venue simulation, use a new agent without project history, the submitted materials and verified venue criteria."
+  short_description: "Review science, submission privacy and venue readiness"
+  default_prompt: "Use $research-review to review this scientific artifact and inspect submitted content for private paths, secrets and internal agent material. Preserve required disclosures; venue simulation uses a new context and only sanitized frozen submissions and verified criteria."

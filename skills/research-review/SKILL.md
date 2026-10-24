@@ -1,6 +1,6 @@
 ---
 name: research-review
-description: Use when research needs scientific review of contributions, proofs, validity, evidence, reproducibility or reuse, including fresh-context simulated venue peer review. Generic code review is outside this stage.
+description: Use when research needs scientific review of contributions, proofs, evidence or reuse, submission-content and privacy checks, or fresh-context simulated venue peer review. Generic code review is outside this stage.
 ---
 
 # Review Scientific Claims and Evidence
@@ -41,6 +41,16 @@ author-side coordinator. Blind reviewers reconstruct the question from the paper
 they do not receive the intended answer or a directive to preserve the author's thesis.
 
 ## Review the artifact actually supplied
+
+Before M4/M5 reviewer admission and final delivery, apply the
+[submission leakage audit](references/submission-leakage.md) to the actual sources,
+rendered paper and every submitted attachment, including nested archives and
+metadata. Remove local/private paths, credentials and accidental internal agent
+content from submission copies; explicit infrastructure placeholders are allowed.
+Preserve legitimate scientific AI discussion and required AI-use declarations.
+Record unresolved findings and uninspected surfaces; neither a filename allowlist
+nor an automated scan alone establishes a clean submission. Keep this author-side
+audit outside blind-review inputs and reuse valid coverage between milestones.
 
 Use an independent context/reviewer when available and authorized within the task;
 provide the question, artifacts and relevant evidence without steering toward a
