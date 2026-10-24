@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Review"
+  short_description: "Review scientific evidence or simulate venue peer review"
+  default_prompt: "Use $research-review to review this scientific artifact; for a venue simulation, use a new agent without project history, the submitted materials and verified venue criteria."

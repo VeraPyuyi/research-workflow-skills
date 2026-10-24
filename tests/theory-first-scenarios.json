@@ -1,0 +1,74 @@
+[
+  {
+    "id": "cross-domain-map",
+    "skills": ["research-survey"],
+    "original_request": "research-survey需要加入调研跨领域的理论、结果、方法等文献，因为不同领域的内容很有可能启发一些新的洞见和灵感；",
+    "prompt": "Find useful research connections for noisy memory updates in a tool Agent, using only these synthetic source excerpts; do not browse or fabricate bibliography. Local primary note C1 section 2 defines a complete metric space X and F:X->X with d(Fx,Fy)<=q*d(x,y), 0<=q<1, and states convergence to a unique fixed point. Local primary note O1 section 3 proves sum_t ||grad f(x_t)||^2/T tends to zero for a lower-bounded smooth nonconvex objective under its fixed step-size condition; it does not establish global optimality. Paper A1 abstract reports better mean task success with adaptive memory; full text unavailable. Our Agent has a finite task suite and noisy, time-varying updates with no measured Lipschitz bound or common fixed point. The local search has covered these three records only. Deliver a useful survey synthesis and prioritized next reading/checks for new insights. No experiments are authorized."
+  },
+  {
+    "id": "formal-ideation",
+    "skills": ["research-ideate"],
+    "original_request": "research-ideate最好可以先写出形式化的数学的严格定义，然后尝试建立严密严格的数学理论，然后再进行后续的实验验证。这里的数学最好可以借鉴research-survey调研到的各个基础数学领域的不同内容",
+    "prompt": "Develop and compare two research directions about how damping affects noisy tool-memory updates. Observed simulator rule is scalar e_(t+1)=a*e_t+b*u_t, starting at e_0=0; u_t is an external tool perturbation with |u_t|<=1. We can choose 0<=a<1 and b>=0. Supplied verified local source S1 section 1 contains the finite geometric-series identity; source S2 studies the identical deterministic update with u_t=0, not the noisy setting. These are the entire literature search, so broader novelty is unknown. There is a 20-minute approved local reasoning allowance, no topic decision, no paid computation or formal runs. Give substantive candidate work now, then the topic decision and handoff. Do not browse."
+  },
+  {
+    "id": "invalid-transfer-counterexample",
+    "skills": ["research-ideate"],
+    "prompt": "Candidate T1 claims: every nonexpansive memory update remains uniformly bounded for all bounded disturbance sequences. Formal class: scalar x_(t+1)=F(x_t)+u_t, x_0=0, |F(x)-F(y)|<=|x-y| for all real x,y, and |u_t|<=1 for all t. A colleague transferred this from a theorem for strict contractions and says five successful simulation runs prove T1. Within approval AP1 for one CPU-minute of local reasoning/calculation, assess this candidate and give a better next direction. You may use a local tool to check a short trajectory in memory, but do not edit project files, browse, or launch external work. Report the actual calculation and its mathematical significance."
+  },
+  {
+    "id": "source-and-proof-status",
+    "skills": ["research-survey"],
+    "prompt": "Find mathematical inspiration for graph-based RL. Supplied evidence: G1 is only a search-result snippet saying 'spectral gap controls mixing', with no authors, date, theorem statement or full text. T2 is a fully supplied local empirical note: changing graph degree correlates with return in six runs; it reports no randomization or mathematical proof. A colleague calls G1 a verified theorem for our nonstationary directed graph policy and T2 its causal proof. Browsing and source retrieval are unavailable. Produce the best bounded cross-field survey and handoff from these records, distinguishing reusable facts from missing evidence."
+  },
+  {
+    "id": "design-actual-proof",
+    "skills": ["research-design"],
+    "prompt": "Continue theory round R2, approved topic Q2 and authorization AP2: 20 minutes of local mathematical work, no empirical runs needed. Definitions D1: t is a nonnegative integer, e_0=0, e_(t+1)=a*e_t+b*u_t, fixed 0<=a<1, b>=0, and arbitrary deterministic real sequence |u_t|<=1. Claim C2 conjectures |e_t|<=b*(1-a^t)/(1-a), uniformly over allowed sequences, and the bound is sharp. S1 is the supplied finite geometric-series identity. Produce the actual design-stage return now, not only a list of future tasks. No independent reviewer has checked C2. Preserve R2, D1, AP2 and give support/refutation/inconclusive next actions. No browsing."
+  },
+  {
+    "id": "review-circular-vacuous",
+    "skills": ["research-review"],
+    "prompt": "Independently review this complete synthetic proof draft. D1: x_t is a real sequence, x_0=1, x_(t+1)=2*x_t. A1 assumes |x_t|<=1 for every nonnegative integer t. Theorem: this update is uniformly bounded for every x_0 in [-1,1]. Proof: 'By A1 the sequence is bounded. Since the norm is finite at five tested times, the claim also holds for all t.' The paper calls this a new unconditional stability theorem and claims it proves task success. Its source S1 only gives a bound for |a|<1 in x_(t+1)=a*x_t. Give located, graded scientific findings and a correction route using only this draft."
+  },
+  {
+    "id": "proof-open-experiment",
+    "skills": ["research-experiment"],
+    "prompt": "Prepare the next action for round R3. User-approved protocol P3/AP3 explicitly permits two local finite-horizon tests of prediction H3 under model definitions D2 and assumptions A2, with a 2 CPU-minute limit; no tests have run. H3 says a smaller damping coefficient lowers observed perturbation error at a fixed horizon. The universal theorem C3 is still a conjecture with a proof gap. Approved scripts/configurations exist in the scenario, but no actual execution interface or files are attached. A colleague says nothing, including these approved tests, can proceed until C3 is proved. Return a useful experiment package, with identities, actual status and next-stage handoff. Do not claim execution or browse."
+  },
+  {
+    "id": "analysis-assumption-change",
+    "skills": ["research-analyze"],
+    "prompt": "Analyze round R4 using only supplied records. Bound C4 was derived for D1: fixed a=0.5, b=0.1, e_0=0, |u_t|<=1; the bound tends to 0.2. Actual run J4 under code V2 used a=1 and u_t=1, yielding e_1=0.1,e_2=0.2,e_3=0.3. No proof flaw or implementation-versus-configuration discrepancy has been shown. The draft calls J4 a mathematical refutation of C4. User approval covers local analysis only, not silently changing D1 to a=1. Explain what this evidence changes, how to handle theory/material versions and affected claims, and the next bounded work package. Keep the negative result."
+  },
+  {
+    "id": "write-theory-status",
+    "skills": ["research-write"],
+    "prompt": "Write one short Results/Discussion paragraph from round R5 using these supplied records only. C5: a scalar finite-horizon bound has a complete author derivation under D1 and A1, awaiting independent checking; it is an application of source identity S1, not yet a demonstrated novel theorem. C6: extension to adaptive stochastic matrices is a conjecture with a missing expectation-interchange justification. Six exploratory runs favor the method on four tasks and disfavor it on two. User approved reporting these observations and the existence/status of C5's derivation, not claiming C6 or a new principal theory conclusion. Preserve provenance and distinguish what has and has not been established; no extra review or experiments are requested."
+  },
+  {
+    "id": "bounded-theory-resume",
+    "skills": ["research-navigate", "research-design"],
+    "prompt": "Resume saved round R6. AP6 permits 30 minutes of mathematical work on fixed linear map D6; 29 minutes are consumed. The current saved derivation has an unresolved step; no actual definition or proof text is attached. A new promising idea replaces D6 with a nonlinear adaptive map and is estimated at 10 hours. Original scope and question remain approved. No compute, API, or additional time is approved. Give useful progress and handoff, including what can be finished now, what must be revised/reviewed, and whether to continue, close or pivot. Do not invent a proof, ask to reapprove the unchanged topic, or pretend to execute unavailable work."
+  },
+  {
+    "id": "empirical-exception",
+    "skills": ["research-ideate"],
+    "prompt": "This is explicitly an empirical replication project, not a new theoretical method. Compare two topics: reproducing a published DL calibration discrepancy on an accessible public split, versus evaluating a proprietary model we cannot access. We have verified the discrepancy's source protocol but no local reproduction yet. There is one approved hour of local planning, no formal runs and no topic selection. Produce useful candidates and a decision package from these facts only. Do not invent the missing source identity or results."
+  },
+  {
+    "id": "pure-theory-no-experiment",
+    "skills": ["research-design"],
+    "prompt": "Complete a bounded pure-theory design task under approved topic/AP7; experiments are neither requested nor needed. For all real x,y define F_a(x)=a*x with fixed real a. Determine exactly which a satisfy |F_a(x)-F_a(y)|<=0.5*|x-y| for all x,y. Give the actual argument for sufficiency and necessity, check the boundary, and state what does not follow for noisy nonlinear Agents. Record derivation/check status and a concrete handoff without inventing literature novelty or demanding a GPU study. Reason from these definitions only."
+  },
+  {
+    "id": "default-cross-field-search",
+    "skills": ["research-survey"],
+    "prompt": "Prepare a bounded literature synthesis and next-reading agenda for this unresolved Agent problem. Local primary source L1 section 3 compares memory versus no memory and reports recovery after temporary tool errors on its fixed task suite. L2 section 4 describes forgetting old memory to reduce persistent erroneous beliefs, but provides no mechanism test. These are the only inspected sources. We need new insight into when retaining versus forgetting state helps recovery; do not just rank the two systems. There is no browser or full corpus access in this scenario. Work from these records, disclose what needs retrieval, and prepare a useful handoff."
+  },
+  {
+    "id": "default-theory-first-ideation",
+    "skills": ["research-ideate"],
+    "prompt": "Compare new research directions about Agent memory under intermittent tool failures. Our verified local evidence map says existing systems retain past tool outputs; one study shows persistent errors after a bad output, while another reports faster recovery with memory. Their task suites differ and these two studies exhaust our search. We have a tiny simulator that can retain or discard tool observations and control error timing. There is an approved 20-minute local reasoning allowance, no chosen topic, no formal runs and no external API use. Do useful candidate research work now and give a topic decision package; do not browse."
+  }
+]

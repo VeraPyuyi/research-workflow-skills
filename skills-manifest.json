@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "runtime_profile": "magpie",
+  "skills": [
+    "research-navigate",
+    "research-scope",
+    "research-survey",
+    "research-ideate",
+    "research-design",
+    "research-baseline",
+    "research-implement",
+    "research-experiment",
+    "research-analyze",
+    "research-write",
+    "research-review",
+    "research-submit",
+    "research-product-discover",
+    "research-product-build",
+    "research-product-release",
+    "research-product-maintain",
+    "research-optimize"
+  ]
+}

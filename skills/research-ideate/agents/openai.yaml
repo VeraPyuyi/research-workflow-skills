@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Ideation"
+  short_description: "Formalize research ideas and develop theory prototypes"
+  default_prompt: "Use $research-ideate to formalize candidate research questions, attempt bounded theoretical derivations, and compare contributions before topic selection."

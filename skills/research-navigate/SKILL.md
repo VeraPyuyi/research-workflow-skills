@@ -1,0 +1,111 @@
+---
+name: research-navigate
+description: Use when starting, resuming, or coordinating multi-stage AI research, a full-paper Codex Goal, or a research-product project. A direct request for one research stage belongs to that stage skill.
+---
+
+# Research Navigator
+
+Turn the user's current objective and actual artifacts into the next useful work
+package. Coordinate the stages; leave their scientific work to the stage skills.
+
+Read the [workflow contract](references/workflow-contract.md) and
+[stage map](references/stage-map.md). Select relevant references through the
+[domain index](references/domains/index.md); do not load every domain by default.
+Read [model routing](references/model-routing.md) when assigning work packages,
+free-model execution branches, independent reviews or parallel workers. Read
+[reuse and simplification](references/reuse-and-simplification.md) when existing
+theory, methods, implementations or results may replace or simplify current work.
+Read [workflow updates](references/workflow-updates.md) at entry, resumption or a
+handoff to adopt a compatible validated suite release.
+Resolve all reference paths relative to this skill's directory.
+
+For a full-paper task or explicitly enabled native Goal, read
+[Goal execution](references/goal-execution.md). The endpoint is a submission-ready
+paper and venue-appropriate reproduction package, not the next route or outline.
+Preserve bounded stage requests; selecting this skill alone does not create a Goal.
+
+## Route from evidence
+
+1. Inspect the supplied brief, protocol, decisions, sources, code, runs, manuscript
+   or product artifacts. Distinguish existing, verified, stale and absent material.
+   A new chat is not evidence that a project must restart.
+2. Identify the requested outcome and study type: method, experiment, evaluation,
+   empirical analysis, theory, a combination, or product. Combine relevant domain tags.
+3. Find the smallest missing dependency for the next outcome. Preserve valid
+   previous decisions. Skip irrelevant stages with a reason.
+4. For method studies, arrange minimal evaluation support, baseline verification,
+   then substantial new-method implementation. For new benchmarks or empirical
+   studies, arrange measurement implementation and calibration before baselines.
+   For open theoretical/method directions, route structural literature connections
+   to survey, formal candidate work to ideate, and selected derivations/validation
+   to design. Carry theory revisions and proof status; do not restart an approved
+   topic or impose a completed-proof gate on approved empirical tests.
+5. Identify the next applicable human decision and any resource/permission blocker.
+   Advance already authorized work. Do not treat every handoff as a new approval.
+   At a real candidate choice, a typed comparison through the native Jev decision
+   service may support it; see `references/decision-support.md` and
+   `scripts/jev_decide.py`. It has no proof or gate authority: evidence and hard
+   program constraints take precedence, and unknown account coverage means no call.
+6. For substantive work, assign a free executor, milestone review ownership and an
+   integrator from the model map. Consolidate review at the applicable milestone;
+   do not dispatch a reviewer after every branch or edit. Check model access, effort, context,
+   modality and data restrictions. Split independent branches; reserve shared
+   resources and non-overlapping write scopes. Route to the matching stage using
+   the host's supported skill mechanism, or name the next skill with its input
+   package when dispatch is unavailable. Do not claim to have invoked a tool,
+   model or stage that did not run.
+7. For full papers, use M1 research/protocol, M2 implementation/pilot, M3 principal
+   conclusions, M4 first venue review and M5 revised-paper review/delivery.
+   Reuse valid coverage; reopen only affected checks. Review findings return to
+   their stage. Existing startup delegation covers in-scope decisions; scientific
+   review never authorizes submission or release.
+
+For contribution-improvement requests, preserve the shared round package and
+coordinate analyze -> needed design/implementation/experiment -> analyze.
+Advance feasible authorized stages while the requested loop remains in scope,
+instead of stopping after recommending a route. Carry actual artifacts and
+consumption back into the same round. Stop at its completion/decision boundary
+or a dependent execution blocker; continue independent authorized preparation.
+
+## Continue under existing authority
+
+Plan internally and keep advancing work already covered by startup delegation, the
+current round package and the approved resource envelope; a stage transition does
+not require fresh approval. The user's milestone check cadence takes precedence
+over generic advice to run a reviewer or a full suite after every task: queue
+findings for the applicable milestone. Switch native Plan mode only when the host
+provides that operation; otherwise plan within execution mode and continue.
+Create or reuse a native Goal only under explicit user authorization and the
+actual Goal tools. Preserve the project handoff if native support is unavailable.
+
+At entry, resumption or a handoff, adopt a compatible validated suite release
+through [workflow updates](references/workflow-updates.md) under recorded
+automatic-update authority. Running jobs keep their pinned versions and
+independently customized local copies are never overwritten.
+
+Each substantial stage completion queues one stable event for the sibling
+[research-optimize](../research-optimize/SKILL.md) skill, carrying strengths,
+weaknesses, artifact/evidence references and actual cost. Use its bounded event
+and milestone protocol; an event alone triggers no comprehensive review or tests.
+Optional optimization never delays a paper that meets its completion contract.
+
+## Deliver
+
+Provide current objective and artifact status, missing/stale dependencies,
+recommended stage and work package, applicable decision, and the shared handoff.
+The package includes inputs, intended outcome, accepted constraints, evidence
+needed for completion, free and reviewer assignments, requested/actual model and
+effort, resource-pool accounting, parallel branches, write scopes, and the next
+decision if any. If an exact model cannot be dispatched, label the work
+unexecuted and provide a compatible package rather than inventing a result.
+
+An existing benchmark with approved tasks but no evaluator goes to
+`research-implement` for measurement infrastructure, then `research-baseline`;
+it does not restart topic selection.
+
+A routing-only request is complete when the next action and prerequisites are
+unambiguous. A continued-research request also needs actual round progress or an
+explicit unmet prerequisite. Routing completion is not completed scientific work.
+For a full-paper Goal, keep advancing authorized dependencies until its delivery
+contract is met or a genuine limit prevents progress. Save the compact milestone
+handoff for continuation; do not finish the Goal merely because this stage ended.

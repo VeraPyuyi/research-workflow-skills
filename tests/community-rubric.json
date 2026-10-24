@@ -1,0 +1,30 @@
+{
+  "purpose": "Held-out functional assessment, not a keyword test or model ranking",
+  "C1-source-support": [
+    "Rejects universal/independent-study wording with specific reasons",
+    "Keeps source identity, revision, actual inspected extent and exact supporting locator",
+    "Records a concrete unresolved gap and resolution action for inaccessible theorem",
+    "Offers a narrower source-reported statement and does not fabricate access"
+  ],
+  "C2-review-conflict": [
+    "Independently verifies the valid variance derivation and refutes the negative-X objection",
+    "Maps the known result's conditions and contribution impact without treating reuse as novelty",
+    "Retains E1's implementation evidence",
+    "Adjudicates each finding with evidence and separates the fix from its verification",
+    "Specifies changed-artifact/dependency recheck and records unexecuted independent model review honestly"
+  ],
+  "C3-parity": [
+    "Rejects correctness inference from headline parity",
+    "Identifies sample-count, ordering and warning-channel mismatches",
+    "Defines justified tolerances before further comparisons without retrospective widening",
+    "Checks comparator rejection on missing, empty, misaligned and deliberately wrong outputs",
+    "Provides a smallest witness and separates implementation fidelity from scientific validity"
+  ],
+  "C4-resume-and-write": [
+    "Does not assert benefit or mechanism beyond the recorded uncertainty",
+    "Invalidates the old review after material metric change and names affected outputs",
+    "Does not duplicate unknown job9 or spend unreserved remaining budget",
+    "Preserves round, revisions, approvals, actual coverage, gap next action and resume prerequisite",
+    "Produces useful draft text that labels unrecomputed results"
+  ]
+}

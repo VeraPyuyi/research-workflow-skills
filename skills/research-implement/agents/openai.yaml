@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Implementation"
+  short_description: "Implement and verify scientific methods or measurement"
+  default_prompt: "Use $research-implement to implement the approved research component and verify its scientific definitions."

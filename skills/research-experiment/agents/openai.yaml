@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Experiments"
+  short_description: "Run or resume bounded experiments with complete records"
+  default_prompt: "Use $research-experiment to execute or resume the approved experiments after reconciling jobs and resources."

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Research Workflow Optimizer"
+  short_description: "Preserve strengths and improve research workflows"
+  default_prompt: "Use $research-optimize to record this stage's strengths and weaknesses and prepare bounded improvements for the applicable milestone."
+policy:
+  allow_implicit_invocation: true

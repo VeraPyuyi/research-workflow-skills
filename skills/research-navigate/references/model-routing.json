@@ -1,0 +1,1001 @@
+{
+  "version": 4,
+  "captured_at": "2026-10-24",
+  "policy": {
+    "selection_basis": [
+      "public primary evidence",
+      "existing local routing records",
+      "live capability checks"
+    ],
+    "new_model_calibration_runs": false,
+    "unknown_is_not_available": true,
+    "free_is_channel_specific": true,
+    "explicit_model_and_effort": true,
+    "max_active_workers": 6,
+    "max_concurrency_per_confirmed_pool": 2,
+    "max_concurrency_unknown_pool": 1,
+    "dot_max_concurrency": 1,
+    "strict_dispatch": "direct fully qualified endpoint; mixed groups forbidden for free-only or identity-pinned work",
+    "automatic_group": "group/smart-split is best-effort ordering with cross-member fallback",
+    "caller_retry_limit": 1,
+    "gateway_retry_limit": "not enforceable by skill or group patience alone",
+    "admission_check": "scripts/check_dispatch.py; advisory snapshot, not a quota reservation",
+    "review_cadence": "consolidate at applicable milestones; reuse valid coverage; no per-edit full review",
+    "paper_milestones": [
+      "M1",
+      "M2",
+      "M3",
+      "M4",
+      "M5"
+    ],
+    "venue_review_rounds": 2,
+    "venue_review_fork_context": false,
+    "decision_services_bypass_group": true,
+    "paid_account_coverage_required": true,
+    "optimizer_budget_fraction_max": 0.2,
+    "optimizer_candidates_per_milestone": 3,
+    "optimizer_revisions_per_candidate": 1,
+    "optimizer_publications_per_milestone": 1
+  },
+  "models": [
+    {
+      "id": "codex/gpt-6-astra",
+      "role": "difficult scientific integration",
+      "effort": "max",
+      "access": "configured Codex subscription",
+      "free": false,
+      "quota_pool": "codex",
+      "evidence": [
+        "FrontierMath Tier 4 v2",
+        "Astra official report: GPQA/HLE/BrowseComp; settings differ"
+      ],
+      "limitations": [
+        "Highest reported score may combine effort settings",
+        "Paid shared pool"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "gpt-6-astra"
+    },
+    {
+      "id": "codex/gpt-6.1-sol",
+      "role": "formal derivation and reliable implementation",
+      "effort": "max",
+      "access": "configured Codex subscription",
+      "free": false,
+      "quota_pool": "codex",
+      "evidence": [
+        "FrontierMath Tier 4 v2; does not certify full proof quality"
+      ],
+      "limitations": [
+        "Do not substitute legacy gpt-6-sol",
+        "Paid shared pool"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "gpt-6.1-sol"
+    },
+    {
+      "id": "google-vertex/gemini-4-argon",
+      "role": "long evidence and independent science review",
+      "effort": "high",
+      "access": "configured Vertex account; verify entitlement",
+      "free": false,
+      "quota_pool": "google-vertex",
+      "evidence": [
+        "GraphWalks 256K-1M",
+        "LABBench 2; provider reported"
+      ],
+      "limitations": [
+        "Provider-reported results",
+        "Tool parity with Magpie not established"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "gemini-4-argon"
+    },
+    {
+      "id": "workbuddy-ai/deepseek-v4.1-flash",
+      "role": "free scientific reasoning and code",
+      "effort": "max",
+      "access": "configured WorkBuddy AI free channel",
+      "free": true,
+      "quota_pool": "workbuddy-ai",
+      "evidence": [
+        "DeepSeek V4.1 Flash model card",
+        "HLE",
+        "GPQA Diamond"
+      ],
+      "limitations": [
+        "Exact served checkpoint not verified",
+        "Same name on another WorkBuddy channel is billed"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "deepseek-v4.1-flash"
+    },
+    {
+      "id": "workbuddy-ai/step-5-preview",
+      "role": "free literature and research synthesis",
+      "effort": "high",
+      "access": "configured WorkBuddy AI free channel",
+      "free": true,
+      "quota_pool": "workbuddy-ai",
+      "evidence": [
+        "Official Step-5-Preview repository"
+      ],
+      "limitations": [
+        "Preview model",
+        "Limited independently verified benchmark evidence"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "step-5-preview"
+    },
+    {
+      "id": "workbuddy-ai/hy3",
+      "role": "free retrieval and source checks",
+      "effort": "high",
+      "access": "configured WorkBuddy AI free channel",
+      "free": true,
+      "quota_pool": "workbuddy-ai",
+      "evidence": [
+        "Official Hy3 repository"
+      ],
+      "limitations": [
+        "Official upstream context 256K; local endpoint limit must be checked",
+        "Limited endpoint-specific benchmark evidence"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "hy3"
+    },
+    {
+      "id": "opencode-zen/beam-free",
+      "role": "free mathematical checks",
+      "effort": "max",
+      "access": "OpenCode Zen free endpoint",
+      "free": true,
+      "quota_pool": "opencode-zen-free",
+      "evidence": [
+        "Prior successful calls",
+        "No verified base-model parity"
+      ],
+      "limitations": [
+        "Identity and endpoint capability incomplete"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "beam"
+    },
+    {
+      "id": "opencode-zen/deepseek-v4.1-flash-free",
+      "role": "free scientific reasoning and code alternative",
+      "effort": "max",
+      "access": "OpenCode Zen free endpoint; live availability unverified",
+      "free": true,
+      "quota_pool": "opencode-zen-free",
+      "evidence": [
+        "Catalog metadata",
+        "Existing call history must be checked"
+      ],
+      "limitations": [
+        "Exact served checkpoint and endpoint parity unverified",
+        "Check data policy"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "deepseek-v4.1-flash"
+    },
+    {
+      "id": "opencode-zen/glm-5.3-flash-free",
+      "role": "free engineering branch",
+      "effort": "max",
+      "access": "OpenCode Zen free endpoint",
+      "free": true,
+      "quota_pool": "opencode-zen-free",
+      "evidence": [
+        "GLM-5.3-Flash base-model benchmark",
+        "Prior successful calls"
+      ],
+      "limitations": [
+        "Do not transfer base-model score to free endpoint",
+        "Check data policy"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "glm-5.3-flash"
+    },
+    {
+      "id": "opencode-zen/mimo-v2.6-flash-free",
+      "role": "free second implementation branch",
+      "effort": "max",
+      "access": "OpenCode Zen free endpoint",
+      "free": true,
+      "quota_pool": "opencode-zen-free",
+      "evidence": [
+        "Catalog metadata",
+        "One prior successful call"
+      ],
+      "limitations": [
+        "No endpoint-specific benchmark verified",
+        "Check data policy"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "mimo-v2.6-flash"
+    },
+    {
+      "id": "opencode-zen/nemotron-3.5-super-vl-free",
+      "role": "free multimodal extraction",
+      "effort": "xhigh",
+      "access": "OpenCode Zen free endpoint",
+      "free": true,
+      "quota_pool": "opencode-zen-free",
+      "evidence": [
+        "Catalog metadata",
+        "Prior successful calls"
+      ],
+      "limitations": [
+        "Trial data restrictions",
+        "No endpoint-specific benchmark verified"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "nemotron-3.5-super-vl"
+    },
+    {
+      "id": "opencode-zen/jev-1.13-free",
+      "role": "unverified separate free decision alternative",
+      "effort": null,
+      "access": "OpenCode Zen free endpoint",
+      "free": true,
+      "quota_pool": "opencode-zen-free",
+      "evidence": [
+        "Catalog metadata",
+        "Prior successful calls"
+      ],
+      "limitations": [
+        "Interface and decision primitive support need verification before use",
+        "Not a generative worker or scientific authority",
+        "Do not substitute for the official Typesafe service"
+      ],
+      "effort_status": "not applicable; channel interface unverified",
+      "kind": "structured_decision",
+      "model_family": "jev-1.13",
+      "capability_status": "unverified",
+      "adapter": null,
+      "group_eligible": false
+    },
+    {
+      "id": "opencode-zen/longcat-2.5-preview-free",
+      "role": "free long-context alternative",
+      "effort": "max",
+      "access": "OpenCode Zen free endpoint; live availability unverified",
+      "free": true,
+      "quota_pool": "opencode-zen-free",
+      "evidence": [
+        "Cached catalog metadata"
+      ],
+      "limitations": [
+        "May be absent from current official listing",
+        "Check data policy"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "longcat-2.5-preview"
+    },
+    {
+      "id": "opencode-zen/nemotron-3-ultra-free",
+      "role": "free long-context alternative",
+      "effort": "max",
+      "access": "OpenCode Zen free endpoint; live availability unverified",
+      "free": true,
+      "quota_pool": "opencode-zen-free",
+      "evidence": [
+        "Cached catalog metadata",
+        "Prior successful call"
+      ],
+      "limitations": [
+        "May be absent from current official listing",
+        "Trial data restrictions"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "nemotron-3-ultra"
+    },
+    {
+      "id": "opencode-zen/space-bunny-free",
+      "role": "free challenging alternative",
+      "effort": "max",
+      "access": "OpenCode Zen free endpoint",
+      "free": true,
+      "quota_pool": "opencode-zen-free",
+      "evidence": [
+        "Catalog metadata",
+        "Prior successful calls"
+      ],
+      "limitations": [
+        "Identity and benchmark evidence incomplete"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "space-bunny"
+    },
+    {
+      "id": "opencode-zen/nemotron-3.5-lightning-free",
+      "role": "free structured task checks",
+      "effort": "max",
+      "access": "OpenCode Zen free endpoint",
+      "free": true,
+      "quota_pool": "opencode-zen-free",
+      "evidence": [
+        "Catalog metadata",
+        "One prior successful call"
+      ],
+      "limitations": [
+        "Limited scientific reasoning evidence"
+      ],
+      "effort_status": "preferred; verify supported effort on current endpoint before use",
+      "kind": "generative",
+      "model_family": "nemotron-3.5-lightning"
+    },
+    {
+      "id": "typesafe/jev-latest",
+      "kind": "structured_decision",
+      "model_family": "jev",
+      "role": "native structured research and optimizer decisions",
+      "effort": null,
+      "effort_status": "not applicable",
+      "free": false,
+      "quota_pool": "typesafe",
+      "access": "Magpie credential reference present; official catalog query succeeded; remaining allowance unknown",
+      "allowance_state": "unknown",
+      "capability_status": "native_schema_verified",
+      "adapter": "jev_decide.py",
+      "group_eligible": false,
+      "evidence": [
+        "Typesafe System One official schema",
+        "read-only authenticated model list: jev-latest and jev-preview",
+        "historical successful actual identities: jev-1.13.0 and jev-1.14.0"
+      ],
+      "limitations": [
+        "No current allowance coverage established; execution requires a confirmed account record",
+        "Alias may move; record actual served identity",
+        "Confidence is distribution concentration, not proof truth",
+        "No generation, tools, effort override or extended-context opt-in"
+      ],
+      "credential_ref": "magpie:typesafe/key",
+      "decision_types": [
+        "Choice",
+        "Score",
+        "Noul"
+      ]
+    },
+    {
+      "id": "google-vertex/gemini-3.1-pro-preview",
+      "kind": "generative",
+      "model_family": "gemini-3.1-pro-preview",
+      "role": "long-document evidence and review",
+      "effort": "high",
+      "effort_status": "local endpoint catalog; verify actual adapter behavior before execution",
+      "effort_mode": "selectable",
+      "fixed_effort": null,
+      "supported_efforts_observed": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "access": "configured Magpie account; actual allowance and task capabilities must be checked",
+      "free": false,
+      "quota_pool": "google-vertex",
+      "allowance_state": "unknown",
+      "group_eligible": false,
+      "evidence": [
+        "current local configured endpoint catalog",
+        "current local Codex supported efforts and context metadata"
+      ],
+      "limitations": [
+        "No endpoint-specific superiority is established",
+        "No new inference or ranking calibration performed",
+        "Unknown allowance cannot authorize metered fallback",
+        "Configured identity is distinct from actually served model identity"
+      ]
+    },
+    {
+      "id": "google-vertex/gemini-3.1-pro-preview-customtools",
+      "kind": "generative",
+      "model_family": "gemini-3.1-pro-preview",
+      "role": "tool-oriented evidence collection and protocol work",
+      "effort": "high",
+      "effort_status": "local endpoint catalog; verify actual adapter behavior before execution",
+      "effort_mode": "selectable",
+      "fixed_effort": null,
+      "supported_efforts_observed": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "access": "configured Magpie account; actual allowance and task capabilities must be checked",
+      "free": false,
+      "quota_pool": "google-vertex",
+      "allowance_state": "unknown",
+      "group_eligible": false,
+      "evidence": [
+        "current local configured endpoint catalog",
+        "current local Codex supported efforts and context metadata"
+      ],
+      "limitations": [
+        "No endpoint-specific superiority is established",
+        "No new inference or ranking calibration performed",
+        "Unknown allowance cannot authorize metered fallback",
+        "Configured identity is distinct from actually served model identity"
+      ]
+    },
+    {
+      "id": "google-vertex/gemini-3-flash-preview",
+      "kind": "generative",
+      "model_family": "gemini-3-flash-preview",
+      "role": "bounded retrieval synthesis and extraction",
+      "effort": "high",
+      "effort_status": "local endpoint catalog; verify actual adapter behavior before execution",
+      "effort_mode": "selectable",
+      "fixed_effort": null,
+      "supported_efforts_observed": [
+        "minimal",
+        "low",
+        "medium",
+        "high"
+      ],
+      "access": "configured Magpie account; actual allowance and task capabilities must be checked",
+      "free": false,
+      "quota_pool": "google-vertex",
+      "allowance_state": "unknown",
+      "group_eligible": false,
+      "evidence": [
+        "current local configured endpoint catalog",
+        "current local Codex supported efforts and context metadata"
+      ],
+      "limitations": [
+        "No endpoint-specific superiority is established",
+        "No new inference or ranking calibration performed",
+        "Unknown allowance cannot authorize metered fallback",
+        "Configured identity is distinct from actually served model identity"
+      ]
+    },
+    {
+      "id": "google-vertex/gemini-3.8-flash",
+      "kind": "generative",
+      "model_family": "gemini-3.8-flash",
+      "role": "bounded source extraction and structured research records",
+      "effort": "high",
+      "effort_status": "local endpoint catalog; verify actual adapter behavior before execution",
+      "effort_mode": "selectable",
+      "fixed_effort": null,
+      "supported_efforts_observed": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "access": "configured Magpie account; actual allowance and task capabilities must be checked",
+      "free": false,
+      "quota_pool": "google-vertex",
+      "allowance_state": "unknown",
+      "group_eligible": false,
+      "evidence": [
+        "current local configured endpoint catalog",
+        "current local Codex supported efforts and context metadata"
+      ],
+      "limitations": [
+        "No endpoint-specific superiority is established",
+        "No new inference or ranking calibration performed",
+        "Unknown allowance cannot authorize metered fallback",
+        "Configured identity is distinct from actually served model identity"
+      ]
+    },
+    {
+      "id": "google-vertex/gemini-3.7-flash",
+      "kind": "generative",
+      "model_family": "gemini-3.7-flash",
+      "role": "secondary extraction and consistency checks",
+      "effort": "high",
+      "effort_status": "local endpoint catalog; verify actual adapter behavior before execution",
+      "effort_mode": "selectable",
+      "fixed_effort": null,
+      "supported_efforts_observed": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "access": "configured Magpie account; actual allowance and task capabilities must be checked",
+      "free": false,
+      "quota_pool": "google-vertex",
+      "allowance_state": "unknown",
+      "group_eligible": false,
+      "evidence": [
+        "current local configured endpoint catalog",
+        "current local Codex supported efforts and context metadata"
+      ],
+      "limitations": [
+        "No endpoint-specific superiority is established",
+        "No new inference or ranking calibration performed",
+        "Unknown allowance cannot authorize metered fallback",
+        "Configured identity is distinct from actually served model identity"
+      ]
+    },
+    {
+      "id": "cursor/composer-2.5",
+      "kind": "generative",
+      "model_family": "composer-2.5",
+      "role": "implementation, refactoring and bounded engineering work",
+      "effort": "medium",
+      "effort_status": "Observed Plus plan: medium and Fast off; reverify if subscription changes",
+      "effort_mode": "fixed",
+      "fixed_effort": "medium",
+      "supported_efforts_observed": [
+        "medium"
+      ],
+      "access": "configured Magpie account; actual allowance and task capabilities must be checked",
+      "free": false,
+      "quota_pool": "cursor",
+      "allowance_state": "unknown",
+      "group_eligible": false,
+      "evidence": [
+        "current local configured endpoint catalog",
+        "current local Codex supported efforts and context metadata",
+        "https://cursor.com/docs/models-and-pricing; checked 2026-10-24; Plus own-model coverage"
+      ],
+      "limitations": [
+        "No endpoint-specific superiority is established",
+        "No new inference or ranking calibration performed",
+        "Unknown allowance cannot authorize metered fallback",
+        "Configured identity is distinct from actually served model identity",
+        "Observed max_tokens was not enforced; no verified hard generation cap"
+      ],
+      "allowed_service_tiers": [
+        "default"
+      ],
+      "dispatch_block_reason": "2026-10-24 Plus probe requested medium but gateway recorded xhigh; reverify adapter and account before strict dispatch"
+    },
+    {
+      "id": "cursor/grok-4.7@256k",
+      "kind": "generative",
+      "model_family": "grok-4.7@256k",
+      "role": "alternative explanations and independent technical critique",
+      "effort": "medium",
+      "effort_status": "Observed Plus plan: medium and Fast off; reverify if subscription changes",
+      "effort_mode": "fixed",
+      "fixed_effort": "medium",
+      "supported_efforts_observed": [
+        "medium"
+      ],
+      "access": "configured Magpie account; actual allowance and task capabilities must be checked",
+      "free": false,
+      "quota_pool": "cursor",
+      "allowance_state": "unknown",
+      "group_eligible": false,
+      "evidence": [
+        "current local configured endpoint catalog",
+        "current local Codex supported efforts and context metadata",
+        "https://cursor.com/docs/models-and-pricing; checked 2026-10-24; Plus own-model coverage"
+      ],
+      "limitations": [
+        "No endpoint-specific superiority is established",
+        "No new inference or ranking calibration performed",
+        "Unknown allowance cannot authorize metered fallback",
+        "Configured identity is distinct from actually served model identity"
+      ],
+      "allowed_service_tiers": [
+        "default"
+      ]
+    },
+    {
+      "id": "cursor/grok-4.6",
+      "kind": "generative",
+      "model_family": "grok-4.6",
+      "role": "alternative research routes and technical synthesis",
+      "effort": "medium",
+      "effort_status": "Observed Plus plan: medium and Fast off; reverify if subscription changes",
+      "effort_mode": "fixed",
+      "fixed_effort": "medium",
+      "supported_efforts_observed": [
+        "medium"
+      ],
+      "access": "configured Magpie account; actual allowance and task capabilities must be checked",
+      "free": false,
+      "quota_pool": "cursor",
+      "allowance_state": "unknown",
+      "group_eligible": false,
+      "evidence": [
+        "current local configured endpoint catalog",
+        "current local Codex supported efforts and context metadata",
+        "https://cursor.com/docs/models-and-pricing; checked 2026-10-24; Plus own-model coverage"
+      ],
+      "limitations": [
+        "No endpoint-specific superiority is established",
+        "No new inference or ranking calibration performed",
+        "Unknown allowance cannot authorize metered fallback",
+        "Configured identity is distinct from actually served model identity"
+      ],
+      "allowed_service_tiers": [
+        "default"
+      ]
+    },
+    {
+      "id": "cursor/grok-4.5",
+      "kind": "generative",
+      "model_family": "grok-4.5",
+      "role": "bounded alternative explanations and maintenance triage",
+      "effort": "medium",
+      "effort_status": "Observed Plus plan: medium and Fast off; reverify if subscription changes",
+      "effort_mode": "fixed",
+      "fixed_effort": "medium",
+      "supported_efforts_observed": [
+        "medium"
+      ],
+      "access": "configured Magpie account; actual allowance and task capabilities must be checked",
+      "free": false,
+      "quota_pool": "cursor",
+      "allowance_state": "unknown",
+      "group_eligible": false,
+      "evidence": [
+        "current local configured endpoint catalog",
+        "current local Codex supported efforts and context metadata",
+        "https://cursor.com/docs/models-and-pricing; checked 2026-10-24; Plus own-model coverage"
+      ],
+      "limitations": [
+        "No endpoint-specific superiority is established",
+        "No new inference or ranking calibration performed",
+        "Unknown allowance cannot authorize metered fallback",
+        "Configured identity is distinct from actually served model identity"
+      ],
+      "allowed_service_tiers": [
+        "default"
+      ]
+    }
+  ],
+  "review_roles": {
+    "scientific_math": [
+      "workbuddy-ai/deepseek-v4.1-flash",
+      "codex/gpt-6.1-sol",
+      "codex/gpt-6-astra"
+    ],
+    "math_check": [
+      "opencode-zen/beam-free",
+      "codex/gpt-6.1-sol"
+    ],
+    "contribution_reuse": [
+      "workbuddy-ai/step-5-preview",
+      "codex/gpt-6-astra"
+    ],
+    "long_evidence": [
+      "google-vertex/gemini-4-argon",
+      "codex/gpt-6-astra"
+    ],
+    "engineering": [
+      "opencode-zen/glm-5.3-flash-free",
+      "opencode-zen/mimo-v2.6-flash-free",
+      "codex/gpt-6.1-sol"
+    ],
+    "escalation": [
+      "codex/gpt-6-astra",
+      "codex/gpt-6.1-sol"
+    ],
+    "venue_blind": [
+      "google-vertex/gemini-4-argon",
+      "workbuddy-ai/deepseek-v4.1-flash",
+      "codex/gpt-6-astra"
+    ]
+  },
+  "stages": {
+    "research-navigate": {
+      "free_executors": [
+        "workbuddy-ai/step-5-preview",
+        "opencode-zen/nemotron-3.5-lightning-free"
+      ],
+      "reviewers": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
+      ],
+      "integrator": "codex/gpt-6.1-sol",
+      "decision_services": [
+        "typesafe/jev-latest"
+      ],
+      "covered_account_executors": [
+        "google-vertex/gemini-3.8-flash"
+      ]
+    },
+    "research-scope": {
+      "free_executors": [
+        "workbuddy-ai/hy3",
+        "workbuddy-ai/step-5-preview",
+        "workbuddy-ai/deepseek-v4.1-flash"
+      ],
+      "reviewers": [
+        "google-vertex/gemini-4-argon",
+        "workbuddy-ai/step-5-preview"
+      ],
+      "integrator": "codex/gpt-6.1-sol",
+      "covered_account_executors": [
+        "cursor/grok-4.5"
+      ]
+    },
+    "research-survey": {
+      "free_executors": [
+        "workbuddy-ai/hy3",
+        "workbuddy-ai/step-5-preview",
+        "workbuddy-ai/deepseek-v4.1-flash",
+        "opencode-zen/nemotron-3.5-super-vl-free"
+      ],
+      "reviewers": [
+        "codex/gpt-6-astra",
+        "google-vertex/gemini-4-argon",
+        "workbuddy-ai/deepseek-v4.1-flash"
+      ],
+      "integrator": "codex/gpt-6-astra",
+      "decision_services": [
+        "typesafe/jev-latest"
+      ],
+      "covered_account_executors": [
+        "google-vertex/gemini-3.1-pro-preview-customtools",
+        "google-vertex/gemini-3-flash-preview"
+      ]
+    },
+    "research-ideate": {
+      "free_executors": [
+        "workbuddy-ai/deepseek-v4.1-flash",
+        "workbuddy-ai/step-5-preview",
+        "opencode-zen/beam-free",
+        "opencode-zen/space-bunny-free"
+      ],
+      "reviewers": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra",
+        "workbuddy-ai/step-5-preview"
+      ],
+      "integrator": "codex/gpt-6-astra",
+      "decision_services": [
+        "typesafe/jev-latest"
+      ],
+      "covered_account_executors": [
+        "cursor/grok-4.7@256k"
+      ]
+    },
+    "research-design": {
+      "free_executors": [
+        "workbuddy-ai/deepseek-v4.1-flash",
+        "workbuddy-ai/step-5-preview",
+        "opencode-zen/glm-5.3-flash-free"
+      ],
+      "reviewers": [
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol",
+        "google-vertex/gemini-4-argon"
+      ],
+      "integrator": "codex/gpt-6-astra",
+      "decision_services": [
+        "typesafe/jev-latest"
+      ],
+      "covered_account_executors": [
+        "cursor/grok-4.6",
+        "google-vertex/gemini-3.1-pro-preview"
+      ]
+    },
+    "research-baseline": {
+      "free_executors": [
+        "opencode-zen/glm-5.3-flash-free",
+        "opencode-zen/mimo-v2.6-flash-free",
+        "workbuddy-ai/deepseek-v4.1-flash",
+        "workbuddy-ai/step-5-preview"
+      ],
+      "reviewers": [
+        "codex/gpt-6.1-sol",
+        "google-vertex/gemini-4-argon"
+      ],
+      "integrator": "codex/gpt-6.1-sol",
+      "covered_account_executors": [
+        "cursor/composer-2.5"
+      ]
+    },
+    "research-implement": {
+      "free_executors": [
+        "opencode-zen/glm-5.3-flash-free",
+        "opencode-zen/mimo-v2.6-flash-free",
+        "workbuddy-ai/deepseek-v4.1-flash",
+        "workbuddy-ai/hy3"
+      ],
+      "reviewers": [
+        "codex/gpt-6.1-sol",
+        "google-vertex/gemini-4-argon",
+        "codex/gpt-6-astra"
+      ],
+      "integrator": "codex/gpt-6.1-sol",
+      "covered_account_executors": [
+        "cursor/composer-2.5"
+      ]
+    },
+    "research-experiment": {
+      "free_executors": [
+        "opencode-zen/glm-5.3-flash-free",
+        "workbuddy-ai/step-5-preview",
+        "workbuddy-ai/deepseek-v4.1-flash",
+        "opencode-zen/nemotron-3.5-lightning-free"
+      ],
+      "reviewers": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
+      ],
+      "integrator": "codex/gpt-6.1-sol",
+      "covered_account_executors": [
+        "cursor/composer-2.5",
+        "google-vertex/gemini-3.8-flash"
+      ]
+    },
+    "research-analyze": {
+      "free_executors": [
+        "workbuddy-ai/deepseek-v4.1-flash",
+        "workbuddy-ai/step-5-preview",
+        "opencode-zen/glm-5.3-flash-free",
+        "opencode-zen/nemotron-3.5-super-vl-free"
+      ],
+      "reviewers": [
+        "google-vertex/gemini-4-argon",
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
+      ],
+      "integrator": "codex/gpt-6-astra",
+      "decision_services": [
+        "typesafe/jev-latest"
+      ],
+      "covered_account_executors": [
+        "cursor/grok-4.7@256k",
+        "google-vertex/gemini-3.1-pro-preview"
+      ]
+    },
+    "research-write": {
+      "free_executors": [
+        "workbuddy-ai/step-5-preview",
+        "workbuddy-ai/deepseek-v4.1-flash",
+        "workbuddy-ai/hy3",
+        "opencode-zen/glm-5.3-flash-free"
+      ],
+      "reviewers": [
+        "google-vertex/gemini-4-argon",
+        "codex/gpt-6-astra"
+      ],
+      "integrator": "codex/gpt-6-astra",
+      "covered_account_executors": [
+        "google-vertex/gemini-3.7-flash"
+      ]
+    },
+    "research-review": {
+      "free_executors": [
+        "workbuddy-ai/deepseek-v4.1-flash",
+        "opencode-zen/beam-free",
+        "workbuddy-ai/step-5-preview",
+        "opencode-zen/glm-5.3-flash-free",
+        "opencode-zen/mimo-v2.6-flash-free"
+      ],
+      "reviewers": [
+        "google-vertex/gemini-4-argon",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
+      ],
+      "integrator": "google-vertex/gemini-4-argon",
+      "decision_services": [
+        "typesafe/jev-latest"
+      ],
+      "covered_account_executors": [
+        "google-vertex/gemini-3.1-pro-preview",
+        "cursor/grok-4.6"
+      ]
+    },
+    "research-submit": {
+      "free_executors": [
+        "workbuddy-ai/hy3",
+        "workbuddy-ai/step-5-preview",
+        "workbuddy-ai/deepseek-v4.1-flash",
+        "opencode-zen/glm-5.3-flash-free"
+      ],
+      "reviewers": [
+        "codex/gpt-6.1-sol",
+        "google-vertex/gemini-4-argon"
+      ],
+      "integrator": "codex/gpt-6.1-sol",
+      "covered_account_executors": [
+        "google-vertex/gemini-3-flash-preview"
+      ]
+    },
+    "research-product-discover": {
+      "free_executors": [
+        "workbuddy-ai/hy3",
+        "workbuddy-ai/step-5-preview",
+        "workbuddy-ai/deepseek-v4.1-flash"
+      ],
+      "reviewers": [
+        "codex/gpt-6-astra",
+        "google-vertex/gemini-4-argon"
+      ],
+      "integrator": "codex/gpt-6-astra",
+      "covered_account_executors": [
+        "cursor/grok-4.7@256k"
+      ]
+    },
+    "research-product-build": {
+      "free_executors": [
+        "opencode-zen/glm-5.3-flash-free",
+        "opencode-zen/mimo-v2.6-flash-free",
+        "workbuddy-ai/deepseek-v4.1-flash",
+        "workbuddy-ai/step-5-preview",
+        "workbuddy-ai/hy3"
+      ],
+      "reviewers": [
+        "codex/gpt-6.1-sol",
+        "google-vertex/gemini-4-argon",
+        "codex/gpt-6-astra"
+      ],
+      "integrator": "codex/gpt-6.1-sol",
+      "covered_account_executors": [
+        "cursor/composer-2.5"
+      ]
+    },
+    "research-product-release": {
+      "free_executors": [
+        "opencode-zen/glm-5.3-flash-free",
+        "workbuddy-ai/step-5-preview",
+        "workbuddy-ai/hy3",
+        "opencode-zen/mimo-v2.6-flash-free"
+      ],
+      "reviewers": [
+        "codex/gpt-6.1-sol",
+        "google-vertex/gemini-4-argon"
+      ],
+      "integrator": "codex/gpt-6.1-sol",
+      "covered_account_executors": [
+        "google-vertex/gemini-3.7-flash"
+      ]
+    },
+    "research-product-maintain": {
+      "free_executors": [
+        "workbuddy-ai/hy3",
+        "opencode-zen/mimo-v2.6-flash-free",
+        "opencode-zen/glm-5.3-flash-free",
+        "workbuddy-ai/deepseek-v4.1-flash"
+      ],
+      "reviewers": [
+        "codex/gpt-6.1-sol",
+        "google-vertex/gemini-4-argon",
+        "codex/gpt-6-astra"
+      ],
+      "integrator": "codex/gpt-6.1-sol",
+      "covered_account_executors": [
+        "cursor/composer-2.5",
+        "cursor/grok-4.5"
+      ]
+    },
+    "research-optimize": {
+      "free_executors": [
+        "workbuddy-ai/step-5-preview",
+        "opencode-zen/glm-5.3-flash-free"
+      ],
+      "reviewers": [
+        "codex/gpt-6.1-sol",
+        "google-vertex/gemini-4-argon"
+      ],
+      "integrator": "codex/gpt-6.1-sol",
+      "decision_services": [
+        "typesafe/jev-latest"
+      ],
+      "covered_account_executors": [
+        "cursor/composer-2.5",
+        "google-vertex/gemini-3.8-flash"
+      ]
+    }
+  },
+  "gates": [
+    "research/protocol review before formal experiments",
+    "principal-conclusions review before adopting findings or writing them as settled",
+    "submission/release review before external action"
+  ],
+  "runtime_profile": "magpie"
+}

@@ -1,0 +1,116 @@
+{
+  "checked_at": "2026-10-24T11:22:18.219206+00:00",
+  "runtime_profile": "magpie",
+  "scope": "offline structure, executable tests, temporary installation and byte comparison",
+  "tests": {
+    "run": 249,
+    "passed": 247,
+    "failures": 0,
+    "errors": 0,
+    "skips": [
+      {
+        "test": "test_linked_source_root_is_rejected_before_copy (test_bundle.BundleTests.test_linked_source_root_is_rejected_before_copy)",
+        "reason": "Directory links are unavailable in this environment: [WinError 1314] 客户端没有所需的特权。: '<release-root>\\\\.build\\\\tmpeo_iylzf\\\\external-skills' -> '<release-root>\\\\.build\\\\tmpeo_iylzf\\\\bundle\\\\skills'"
+      },
+      {
+        "test": "test_symlink_and_junction_inputs_are_rejected_without_following (test_workflow_release.WorkflowReleaseTests.test_symlink_and_junction_inputs_are_rejected_without_following)",
+        "reason": "Junction creation unavailable: Access is denied.\n"
+      }
+    ]
+  },
+  "structure_errors": [],
+  "official_skill_validation": [
+    {
+      "skill": "research-navigate",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-scope",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-survey",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-ideate",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-design",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-baseline",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-implement",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-experiment",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-analyze",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-write",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-review",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-submit",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-product-discover",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-product-build",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-product-release",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-product-maintain",
+      "exit": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research-optimize",
+      "exit": 0,
+      "output": "Skill is valid!"
+    }
+  ],
+  "manifest_profile_matches": true,
+  "temporary_install": {
+    "skills": 17,
+    "byte_equal": true,
+    "scope": "isolated destination; does not replace personal skills"
+  },
+  "passed": true
+}

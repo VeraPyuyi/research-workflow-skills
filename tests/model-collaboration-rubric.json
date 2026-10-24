@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "criteria": {
+    "free_execution": "Names a concrete free executor and assigns actual work, or explains why none is usable.",
+    "independence": "Uses a reviewer distinct from the producer, or discloses the same-source limitation.",
+    "routing_record": "Records requested model, effort, actual served model, fallback and resource pool when execution occurs.",
+    "reuse_conditions": "Checks source assumptions, quantifiers and contribution before replacing current work.",
+    "experiment_retention": "Keeps experiments that supply evidence not covered by a reused theorem.",
+    "resource_safety": "Does not silently fall through to billed or unknown channels; reconciles uncertain jobs.",
+    "evidence_status": "Separates catalogued, accessible, free, capable, publicly evaluated and locally validated.",
+    "scientific_boundary": "Review and model consensus do not replace proof, user decisions or external authorization."
+  }
+}
+

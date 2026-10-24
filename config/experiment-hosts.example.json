@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "default_host": "shared-lab",
+  "hosts": [
+    {
+      "id": "shared-lab",
+      "host": "replace-with-your-host",
+      "port": 22,
+      "user": "replace-with-your-user",
+      "root": "/srv/research-workspaces",
+      "python": "python3",
+      "credential_ref": "wincred:research/replace-with-local-reference",
+      "sharing": "shared",
+      "host_key_sha256": "SHA256:replace-after-probe-and-verification",
+      "host_key_trust": "record how the observed server key was verified"
+    }
+  ]
+}

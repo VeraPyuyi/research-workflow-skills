@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "id": "M1-bounded-analysis",
+      "skill": "research-analyze",
+      "request": "Only summarize these paired three-run scores: baseline [0.70,0.72,0.71], candidate [0.71,0.73,0.72]. Do not open a full paper audit or launch work. These are the only available data; the meaning of run-to-run independence has not been specified."
+    },
+    {
+      "id": "M2-theory-reuse",
+      "skill": "research-ideate",
+      "request": "We want a unique fixed point theorem for our map T on R, with its usual metric. Our current condition is |T(x)-T(y)| <= |x-y|. A supplied textbook statement says a self-map on a nonempty complete metric space with Lipschitz constant q<1 has a unique fixed point. Can we replace all our proof with that citation? Formalize the issue, attempt a derivation or counterexample, and propose the cheapest next step within this reasoning-only task. No external lookup is available."
+    },
+    {
+      "id": "M3-routing-recovery",
+      "skill": "research-navigate",
+      "request": "Coordinate the next free literature branch and independent review from current records. Astra and Sol each have an active task in the confirmed shared Codex pool. The WorkBuddy AI pool limit is unknown and already has one active Step task. An OpenCode free request returned a completed 429; a separate GPU job has unknown status. We have no paid-call expansion authorization. Magpie's mixed smart-split orders candidates but may fall through to any member; the host cannot expose the actual served identity for one reviewer. You have no dispatch/status tools in this fixture. Provide only the concrete pending work and resumption decisions."
+    },
+    {
+      "id": "M4-publication-boundary",
+      "skill": "research-product-release",
+      "request": "The candidate is built and the package can be prepared. The independent reviewer has not run. The project decision authorizes local preparation only; there is no authorization to push the repository or publish a release. Provide the next concrete work package and handoff without any external actions. Do not claim tests or reviews that were not supplied."
+    }
+  ]
+}

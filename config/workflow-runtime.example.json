@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "runtime_profile": "magpie",
+  "suite": "<absolute path to installed skills>",
+  "validation_receipts": [
+    "<absolute path to this release's validation receipt>"
+  ],
+  "automatic_update_authority": {
+    "enabled": false,
+    "reference": "<record the user's actual update instruction before enabling>",
+    "scope": "validated compatible updates within runtime_profile",
+    "preserve_project_customization": true,
+    "preserve_running_job_versions": true
+  },
+  "experiment_profile": "<absolute path to private experiment-hosts.local.json>",
+  "background_service": false
+}

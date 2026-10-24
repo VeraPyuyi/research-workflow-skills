@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Baselines"
+  short_description: "Verify reference results and explain reproduction gaps"
+  default_prompt: "Use $research-baseline to verify these baseline results and identify unresolved comparison gaps."

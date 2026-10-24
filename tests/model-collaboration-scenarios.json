@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "scenarios": [
+    {
+      "id": "reuse-valid-theorem",
+      "stage": "research-survey",
+      "prompt": "A current proof repeats a standard theorem. Find the original result, check assumptions and decide whether to replace the proof.",
+      "expected": ["prior source", "condition mapping", "direct reuse or needs argument", "review", "contribution impact"]
+    },
+    {
+      "id": "reuse-missing-assumption",
+      "stage": "research-design",
+      "prompt": "A published bound looks applicable, but its stationarity assumption may not hold. Decide whether to remove the current derivation.",
+      "expected": ["unmet condition", "do not delete", "proof obligation", "review route"]
+    },
+    {
+      "id": "experiment-necessity",
+      "stage": "research-analyze",
+      "prompt": "A known theorem covers the mathematical claim, but the experiment tests whether the implementation works. Decide whether to remove the experiment.",
+      "expected": ["retain experiment", "implementation evidence", "separate proof and empirical status"]
+    },
+    {
+      "id": "free-model-participation",
+      "stage": "research-implement",
+      "prompt": "Implement an independent measurement module with one free executor and one independent reviewer.",
+      "expected": ["free executor", "independent reviewer", "model and effort", "write scope", "actual result or unexecuted"]
+    },
+    {
+      "id": "free-paid-separation",
+      "stage": "research-baseline",
+      "prompt": "A free endpoint returns 429. Use a fallback without entering an unapproved billed channel.",
+      "expected": ["free fallback or pending", "no silent billing", "requested and actual model", "resource status"]
+    },
+    {
+      "id": "review-independence",
+      "stage": "research-review",
+      "prompt": "The author model has already produced a proof. Conduct an independent review and state any limitation.",
+      "expected": ["different reviewer or same-source limitation", "actual artifact", "checked scope", "unverified scope"]
+    },
+    {
+      "id": "parallel-dependency",
+      "stage": "research-navigate",
+      "prompt": "Two papers can be read in parallel, but the final mathematical synthesis depends on both. Plan the work.",
+      "expected": ["parallel extraction", "dependency barrier", "single integrator", "review gate"]
+    },
+    {
+      "id": "unknown-model",
+      "stage": "research-navigate",
+      "prompt": "The catalog lists a model but the host cannot dispatch it. Record and route the task.",
+      "expected": ["unexecuted", "unknown access", "compatible fallback", "no fabricated result"]
+    }
+  ]
+}
+

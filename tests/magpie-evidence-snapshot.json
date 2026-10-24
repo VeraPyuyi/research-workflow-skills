@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "source": "Magpie provider configuration backup",
+  "captured_at": "2026-10-23",
+  "scope": "configured model catalog and research routing evidence; no credentials",
+  "limitations": "Backup may differ from the active snapshot; use active CLI for final application.",
+  "configured_exposed_models": [
+    {
+      "provider": "opencode-zen",
+      "model": "nemotron-3-ultra-free",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "opencode-zen",
+      "model": "beam-free",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "opencode-zen",
+      "model": "mimo-v2.6-flash-free",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "opencode-zen",
+      "model": "nemotron-3.5-super-vl-free",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "opencode-zen",
+      "model": "nemotron-3.5-lightning-free",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "opencode-zen",
+      "model": "jev-1.13-free",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "opencode-zen",
+      "model": "longcat-2.5-preview-free",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "opencode-zen",
+      "model": "deepseek-v4.1-flash-free",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "opencode-zen",
+      "model": "glm-5.3-flash-free",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "opencode-zen",
+      "model": "space-bunny-free",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "codex",
+      "model": "gpt-6-luna",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "typesafe",
+      "model": "jev-latest",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "workbuddy-ai",
+      "model": "hy3",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "workbuddy-ai",
+      "model": "step-5-preview",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "workbuddy-ai",
+      "model": "deepseek-v4.1-flash",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "google-vertex",
+      "model": "gemini-4-argon",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "google-vertex",
+      "model": "gemini-3.1-pro-preview",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "google-vertex",
+      "model": "gemini-3.1-pro-preview-customtools",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "google-vertex",
+      "model": "gemini-3-flash-preview",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "workbuddy",
+      "model": "step-5-preview",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "workbuddy",
+      "model": "hy3",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "cursor",
+      "model": "composer-2.5",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "cursor",
+      "model": "grok-4.7@256k",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "cursor",
+      "model": "grok-4.6",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    },
+    {
+      "provider": "cursor",
+      "model": "grok-4.5",
+      "status": "exposed in provider catalog",
+      "source": "providers backup"
+    }
+  ],
+  "research_group_before": [
+    {
+      "id": "smart-split",
+      "name": "科研",
+      "members": [
+        "codex/gpt-6-astra:max",
+        "codex/gpt-6-astra:xhigh",
+        "codex/gpt-6-astra:high",
+        "group/auto-step-5-preview",
+        "google-vertex/gemini-3-flash-preview",
+        "opencode-zen/nemotron-3-ultra-free",
+        "cursor/composer-2.5",
+        "group/auto-hy3",
+        "opencode-zen/beam-free",
+        "cursor/grok-4.6",
+        "workbuddy-ai/deepseek-v4.1-flash",
+        "opencode-zen/nemotron-3.5-super-vl-free",
+        "opencode-zen/glm-5.3-flash-free",
+        "cursor/grok-4.7@256k",
+        "google-vertex/gemini-3.1-pro-preview",
+        "opencode-zen/mimo-v2.6-flash-free",
+        "opencode-zen/deepseek-v4.1-flash-free",
+        "cursor/grok-4.5",
+        "opencode-zen/longcat-2.5-preview-free",
+        "opencode-zen/space-bunny-free",
+        "google-vertex/gemini-3.1-pro-preview-customtools",
+        "opencode-zen/nemotron-3.5-lightning-free",
+        "dot/text",
+        "group/dot-astra-text",
+        "group/dot-astra-cloud-task"
+      ],
+      "routing": "order",
+      "classifier": "typesafe/jev-latest"
+    }
+  ]
+}
