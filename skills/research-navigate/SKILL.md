@@ -5,8 +5,9 @@ description: Use when starting, resuming, or coordinating multi-stage AI researc
 
 # Research Navigator
 
-Turn the user's current objective and actual artifacts into the next useful work
-package. Coordinate the stages; leave their scientific work to the stage skills.
+Advance the user's requested outcome from the actual project artifacts.
+Coordinate the stages; leave their scientific work to the stage skills. For a
+full-paper request, a useful next work package is an intermediate step.
 
 Read the [workflow contract](references/workflow-contract.md) and
 [stage map](references/stage-map.md). Select relevant references through the
@@ -19,10 +20,20 @@ Read [workflow updates](references/workflow-updates.md) at entry, resumption or 
 handoff to adopt a compatible validated suite release.
 Resolve all reference paths relative to this skill's directory.
 
+At project entry/resumption, use [research-focus](../research-focus/SKILL.md)
+to recover the stable theme and current thesis from original instructions and
+explicit decisions. Carry its compact reminder in scientific task packages.
+Compare cumulative pivots at M1-M5; ordinary handoffs need only an alignment note.
+An evidence-backed in-theme pivot within delegated scope/resources can proceed.
+Changing the theme or an explicit boundary needs the user's concrete decision.
+
 For a full-paper task or explicitly enabled native Goal, read
 [Goal execution](references/goal-execution.md). The endpoint is a submission-ready
 paper and venue-appropriate reproduction package, not the next route or outline.
 Preserve bounded stage requests; selecting this skill alone does not create a Goal.
+When the user explicitly asks to enable or resume a paper Goal, perform the native
+Goal binding at entry, record the actual tool result, and then advance the project.
+Do not turn that request into only a plan for enabling Goal later.
 
 ## Route from evidence
 
@@ -44,8 +55,8 @@ Preserve bounded stage requests; selecting this skill alone does not create a Go
    Advance already authorized work. Do not treat every handoff as a new approval.
    At a real candidate choice, use inspected evidence and hard program constraints,
    then a bounded native comparison and an integrator decision; see
-   [evidence comparison and optional Jev](references/decision-support.md). It has no proof
-   or gate authority and must not invent probabilities.
+   [evidence comparison and optional Jev](references/decision-support.md).
+   Jev has no proof or gate authority, and unknown account coverage means no call.
 6. For substantive work, assign a native executor, milestone review ownership and an
    integrator from the model map. Consolidate review at the applicable milestone;
    do not dispatch a reviewer after every branch or edit. Check model access, effort, context,
@@ -62,10 +73,11 @@ Preserve bounded stage requests; selecting this skill alone does not create a Go
 
 For contribution-improvement requests, preserve the shared round package and
 coordinate analyze -> needed design/implementation/experiment -> analyze.
-Advance feasible authorized stages while the requested loop remains in scope,
-instead of stopping after recommending a route. Carry actual artifacts and
-consumption back into the same round. Stop at its completion/decision boundary
-or a dependent execution blocker; continue independent authorized preparation.
+Advance feasible authorized stages while the requested loop remains in scope.
+Carry actual artifacts and consumption back into the same round. A completed
+round closes that round; in a paper Goal, select and execute the next dependency.
+An unavailable input, reviewer or resource blocks its dependent work, not every
+other authorized stage. A bounded request retains its own completion boundary.
 
 ## Continue under existing authority
 
@@ -82,12 +94,16 @@ At entry, resumption or a handoff, adopt a compatible validated suite release
 through [workflow updates](references/workflow-updates.md) under recorded
 automatic-update authority. Running jobs keep their pinned versions and
 independently customized local copies are never overwritten.
+After adopting a release, actually read its affected instructions. A release
+record alone neither reloads an old context nor activates a native Goal.
 
-Each substantial stage completion queues one stable event for the sibling
+Each substantial scientific stage completion queues one stable event for the sibling
 [research-optimize](../research-optimize/SKILL.md) skill, carrying strengths,
 weaknesses, artifact/evidence references and actual cost. Use its bounded event
 and milestone protocol; an event alone triggers no comprehensive review or tests.
 Optional optimization never delays a paper that meets its completion contract.
+Focus/optimizer bookkeeping emits no new support event. The focus record's
+scientific task mapping is maintained by the integrator, not a recurring reviewer.
 
 ## Deliver
 
@@ -108,4 +124,7 @@ unambiguous. A continued-research request also needs actual round progress or an
 explicit unmet prerequisite. Routing completion is not completed scientific work.
 For a full-paper Goal, keep advancing authorized dependencies until its delivery
 contract is met or a genuine limit prevents progress. Save the compact milestone
-handoff for continuation; do not finish the Goal merely because this stage ended.
+handoff for continuation, including the next action actually started or the exact
+dependency preventing it. A phase report is an internal checkpoint. Follow the
+[continuation procedure](references/goal-execution.md#stage-to-stage-continuation)
+before ending a turn; do not finish the Goal merely because this stage ended.

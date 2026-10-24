@@ -17,7 +17,8 @@
     "research-product-build",
     "research-product-release",
     "research-product-maintain",
-    "research-optimize"
+    "research-optimize",
+    "research-focus"
   ],
   "runtime_profile": "codex-native"
 }

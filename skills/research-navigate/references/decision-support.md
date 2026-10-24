@@ -10,6 +10,13 @@ from the three generative models and never performs scientific or venue review.
 
 ## Build the comparison from evidence
 
+For theme-sensitive choices, carry the versioned `research_focus` envelope,
+current thesis, cumulative changes, candidate-to-main-claim mapping and known
+scope restrictions. Include staying with the current question and insufficient
+evidence where appropriate. Jev's preference cannot change the user-governed
+theme, erase a negative result or turn an auxiliary success into core evidence.
+Routine focus reminders are record updates and require no decision-service call.
+
 1. Freeze the candidate identities, input revisions, scientific objective, resource
    envelope and authorized decision scope. Include a retain-current-work option
    when useful. Record unknown and inaccessible evidence explicitly.

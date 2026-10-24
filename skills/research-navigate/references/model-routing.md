@@ -196,6 +196,14 @@ No automatic third complete round is created by this routing guide.
 
 ## Candidate choices
 
+Use [research-focus](../../research-focus/SKILL.md) for theme-sensitive choices.
+Sol maintains the shared anchor and next-task mapping; Luna can extract
+instruction provenance from supplied sources. Astra reviews material scientific
+alignment at M1-M5. Routine reminders require no new worker or review.
+Preserve evidence-backed in-theme pivots and negative findings. Private theme,
+pivot history and reminders remain outside both blind-review bundles.
+Focus/optimizer bookkeeping cannot generate recursive stage events.
+
 Use [native evidence comparison](decision-support.md): inspected evidence and
 program constraints first, bounded native comparison when useful, then the
 integrator's justified decision. Do not invent confidence distributions or

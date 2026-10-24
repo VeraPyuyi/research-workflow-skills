@@ -23,6 +23,11 @@ source identity, actual inspected locations and unresolved gaps through writing.
 
 ## Choose the requested mode
 
+For project-connected exploration, read [research-focus](../research-focus/SKILL.md)
+when recovering or revising the main line. Map each borrowed theory/result to a
+theme object and a served claim; retain useful distant tools without letting a
+more convenient field become the paper's topic. Bounded close reading keeps its scope.
+
 - **Close reading:** inspect the supplied paper and necessary supporting material;
   do not expand into a full field survey unless the task needs it.
 - **Search/update:** define question, concepts, inclusion criteria and search

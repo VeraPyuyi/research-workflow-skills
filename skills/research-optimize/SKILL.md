@@ -24,6 +24,12 @@ another optimizer event. This is a light retrospective in the existing handoff,
 not an automatic review, test suite, model call or workflow release. If a new
 state store is unnecessary, keep the same logical record in the project's tool.
 
+Use [research-focus](../research-focus/SKILL.md) for a proposed scientific pivot:
+the optimizer may improve execution but cannot rewrite the theme/value baseline
+or acceptance criteria. Focus bookkeeping also emits no optimizer event; attach
+its lessons to the original stage event instead. Neither support skill triggers
+the other recursively.
+
 Continue the scientific next step under existing authority. For a real choice
 among improvement candidates, use [native comparison](../research-navigate/references/decision-support.md):
 inspected evidence and program constraints, bounded native comparison when useful,

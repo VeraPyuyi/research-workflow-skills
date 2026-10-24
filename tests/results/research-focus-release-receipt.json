@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "receipt_id": "research-20261025-focus-v5-codex-native-acceptance",
+  "bundle_digest": "sha256:9268c91dfbc1ecd7b232607bdb7de0b84454a6c90f9acf272d46eb8aa9119f30",
+  "runtime_profile": "codex-native",
+  "scope": "workflow-release",
+  "status": "passed",
+  "checked_at": "2026-10-24T16:43:40.955247+00:00",
+  "evidence_refs": [
+    "tests/results/research-focus-code-validation.json",
+    "tests/results/research-focus-behavior.json",
+    "tests/results/research-focus-review-disposition.json",
+    "docs/research-focus-validation-20261025.md"
+  ],
+  "evidence_sha256": {
+    "tests/results/research-focus-code-validation.json": "750ff4f405e2485b1351d409af0a0272f755fe52a5d3ba50eac6cb9d98468550",
+    "tests/results/research-focus-behavior.json": "ca5d3067f62f0bb11c72c06d63cec60e064eb60f6dc70f8ac2700d1e35be8ef6",
+    "tests/results/research-focus-review-disposition.json": "f50dede11da74274340ac5c496b2830bfdedd7fe3bf8cef7dd8fd49ea2a32133",
+    "docs/research-focus-validation-20261025.md": "10ad72ca334cacb8a924227210220bcbc28ba36da9921c14f8e45cfb17a95967"
+  },
+  "limits": [
+    "Offline tests and synthetic behavior; no new scientific experiment or provider inference validation",
+    "Unknown actual review model; no claim of model-independent scientific gate"
+  ]
+}

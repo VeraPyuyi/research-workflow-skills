@@ -1,0 +1,6 @@
+interface:
+  display_name: "Research Focus"
+  short_description: "Preserve the research theme and control topic drift"
+  default_prompt: "Use $research-focus to recover the original research theme, assess cumulative drift and continue evidence-backed work within the authorized theme."
+policy:
+  allow_implicit_invocation: true

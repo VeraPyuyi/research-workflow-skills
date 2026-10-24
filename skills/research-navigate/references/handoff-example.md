@@ -51,10 +51,29 @@ For a full-paper Goal, add a compact continuation line:
 - Venue V2 distinguishes submission requirements and optional post-acceptance artifacts.
 - M4/M5 reviewers are scheduled, not executed; no finished-paper claim is warranted.
 - A completed analysis hands off to evidence review/writing rather than completing G1.
+- Stage status: analysis A4 complete; paper status: incomplete; native G1 active.
+- Next action: writing branch W2 started from reviewed claims K1-K7. J7 status
+  reconciliation is separate; it does not prevent drafting those supported claims.
+- On the next host continuation, resume W2/J7 from their records. Do not rerun R12
+  or ask for another "continue" merely because analysis A4 finished.
 
 Keep these coordinator records out of the M4/M5 blind reviewer input bundles.
 
-For a workflow release, optimizer event or native comparison, add the matching
+For a project main-line handoff, add a compact reminder:
+
+- Theme E1: preserve facts/relations while ignoring retrieval-irrelevant paraphrases.
+- Thesis T3: test a boundary of subspace retrieval at matched capacity and budget.
+- Alignment: in-theme-pivot from T2's benefit hypothesis; inspect old T1/T2 as well.
+- Task: grouped bootstrap -> source-dependent retrieval scores -> uncertainty
+  for claim K3. Supporting analysis, not a new statistics-software paper.
+- Return: one bounded existing-data analysis, then main evidence synthesis.
+- Provenance: actual original instruction and later decision references; missing
+  original material stays a gap, not an invented confirmation.
+
+These are synthetic illustrations. A negative direction is not a measured result;
+the evidence ledger determines whether the observation or mechanism is established.
+
+For a workflow release, optimizer event or native/Jev comparison, add the matching
 compact line instead of a new section:
 
 - Candidate release `research-<id>` and digest inspected; adoption is held because
@@ -62,6 +81,5 @@ compact line instead of a new section:
   protocol/code versions. Independent authorized research continues.
 - Stage `research-survey` R2/S3 queued one optimizer event; actual cost and
   artifact references recorded. Duplicate delivery of the same event is idempotent.
-- Native comparison D1 checked source assumptions and program constraints before
-  the integrator chose a route. The optional comparison worker was unavailable,
-  so it remains unexecuted; evidence-based authorized work continued.
+- Jev decision D1 was advisory only; evidence decided the choice. Unknown billing
+  coverage meant no call, so the Jev comparison is recorded as unexecuted.

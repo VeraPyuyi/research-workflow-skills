@@ -26,6 +26,12 @@ Keep useful local analysis moving when a remote dependency is unavailable.
 
 ## Audit the whole argument
 
+Include the [focus anchor](../../research-focus/references/thesis-anchor.md)
+and cumulative thesis changes in the author-side audit. Record which important
+theme question each core contribution answers. A tool or calibration result may
+support that question without replacing it. Reframing a null result requires the
+same evidential care as a positive claim; a plausible mechanism stays a hypothesis.
+
 Read the available abstract, introduction, methods, results, discussion, figures,
 appendices and research assets. Audit substantive claims and content units;
 necessary background need not make a novel contribution. Mark absent sections.

@@ -29,6 +29,12 @@ belongs to research-review.
 
 ## Analyze the actual record
 
+For a project's next-round or contribution audit, use
+[research-focus](../research-focus/SKILL.md) to compare the current argument and
+cumulative pivots with the stable theme. Distinguish an important narrower or
+negative conclusion from an easier substitute problem. Preserve uncertainty:
+neither on-theme relevance nor explanatory wording proves a mechanism.
+
 1. Inspect the approved protocol, raw records, versions, selection rules and run
    manifest. Reconcile every attempt and explain missingness/exclusions before
    aggregation. Preserve original records.

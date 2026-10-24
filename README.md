@@ -1,6 +1,6 @@
 # Research Workflow Skills — Codex-native edition
 
-Seventeen portable research workflows for LLM, Agent, DL, RL, causality and useful
+Eighteen portable research workflows for LLM, Agent, DL, RL, causality and useful
 research products. The runtime profile is `codex-native`. Install the whole suite:
 stage skills share sibling-relative scientific contracts and references.
 
@@ -23,6 +23,7 @@ $research-ideate Formalize candidate questions and attempt useful derivations.
 $research-design Design a fair study for this approved question.
 $research-analyze Audit this paper's contributions and prioritize the next research round.
 $research-review Independently check the actual proof, evidence and reuse conditions.
+$research-focus Recover the main theme, assess cumulative drift and bound side branches.
 $research-optimize Preserve strengths and evaluate bounded workflow improvements.
 $research-product-discover Define a useful product, target users and bounded MVP.
 ```
@@ -38,7 +39,20 @@ within existing authorization and communicate in the user's preferred language.
 | Evidence | `research-baseline`, `research-implement`, `research-experiment`, `research-analyze` |
 | Manuscript | `research-write`, `research-review`, `research-submit` |
 | Product | `research-product-discover`, `research-product-build`, `research-product-release`, `research-product-maintain` |
+| Main-line maintenance | `research-focus` |
 | Improvement | `research-optimize` |
+
+## Preserve the research main line
+
+Keep a versioned `research_focus` record separating the stable user-governed
+theme from the evidence-adjustable paper thesis. Recover original instructions,
+record provenance gaps, and compare cumulative pivots with that same theme.
+Within explicit delegation and existing resources, useful in-theme changes may
+proceed. New theories, counterexamples and negative results can serve the main
+question; convenient tooling alone cannot replace it. Bound auxiliary branches
+by their claim link and return condition. Carry a short reminder at handoff and
+consolidate alignment at M1-M5, without new per-edit agents or tests. Internal
+anchors stay out of blind reviews; focus and optimizer events never recurse.
 
 ## Preserve scientific substance
 
@@ -153,6 +167,12 @@ in-scope protocol/conclusion authority. Continue authorized dependencies without
 stage-by-stage approval. A partial draft, routing package, exhausted budget or
 inaccessible required evidence does not complete a paper Goal.
 
+On explicit activation, bind the native Goal immediately and record the actual
+tool result. At a completed stage, start the next authorized dependency; a
+blocked branch does not stop independent work. Save actual next-action state,
+job commitments and valid coverage for native continuation. A workflow release
+does not itself activate Goal or reload an already-running context.
+
 1. M1: research/protocol and scientific assumptions.
 2. M2: integrated implementation, measurement/baselines and pilot.
 3. M3: evidence, principal conclusions and contribution audit.
@@ -220,7 +240,7 @@ python -B scripts/install_skills.py --target <chosen-skills-directory>
 The installer command is a dry run; an authorized installation additionally uses
 `--apply`. It checks conflicts before copying, preserves unrelated/customized
 skills and refuses differing same-name directories. No installation or personal
-configuration change is needed for offline validation. Install all seventeen
+configuration change is needed for offline validation. Install all eighteen
 skills together for local reference closure.
 
 `config/` contains portable examples for native dispatch, workflow runtime and
@@ -247,3 +267,5 @@ separate from held-out rubrics. See [release validation](docs/release-validation
 for final test counts, real native calls and their identity/isolation limits.
 The [review disposition](docs/review-disposition.md) records the integrated
 review findings and their verified repairs.
+
+[Research-focus release validation](docs/research-focus-validation-20261025.md) records the 18-skill checks and their limits.

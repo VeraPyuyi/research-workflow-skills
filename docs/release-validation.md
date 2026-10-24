@@ -1,3 +1,7 @@
+Current focus release (October 25, 2026): [18-skill acceptance](research-focus-validation-20261025.md).
+
+The earlier checks below are historical.
+
 # 发布验收记录 — codex-native
 
 核验日期：2026 年 10 月 24 日。此版本以 Sol、Astra、Luna 原生子代理执行科研，并可用独立 API key 调用 Jev；不读取 Magpie 配置。缺少 Jev 密钥或额度依据时使用原生证据比较。

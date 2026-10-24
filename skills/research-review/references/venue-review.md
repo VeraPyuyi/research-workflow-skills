@@ -23,6 +23,10 @@ self-assessments, desired acceptance verdicts/scores, prior reviews and response
 letters. Do not attach internal evidence ledgers or the coordinator's handoff.
 Exclude optimizer events, candidate evaluations, native selections and internal
 workflow-improvement records from both blind rounds.
+
+Also exclude private `research_focus` anchors, pivot history and alignment
+reminders. The coordinator assesses intent alignment separately; blind reviewers
+judge the scientific question and contribution actually presented in the submission.
 For anonymous venues, also remove identifying material required by the actual
 policy. An abstract or author summary cannot replace the full paper.
 

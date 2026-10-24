@@ -43,6 +43,12 @@ remaining mechanism, conditions, boundary or application.
 
 ## Compare genuine options
 
+Use [research-focus](../research-focus/SKILL.md) to compare candidates against
+the original theme and cumulative pivots. With in-theme delegation, select an
+evidence-backed new question/method inside existing resources and record why its
+value is preserved. A beautiful proof, easy benchmark or available dataset alone
+does not justify downgrading the research question or changing the broad theme.
+
 1. Express candidate contributions as questions or falsifiable hypotheses. Method,
    benchmark, replication, failure analysis and negative-result contributions are
    legitimate when they answer a meaningful question.

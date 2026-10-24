@@ -19,6 +19,12 @@ when useful, then the integrator decision. Comparison has no proof or gate autho
 
 ## Make the claim testable
 
+Carry the versioned [research-focus](../research-focus/SKILL.md) anchor into the
+protocol. Relate each derivation, metric and experiment to the main question;
+bound calibration and auxiliary theory by their served claim and return condition.
+In-theme delegated revisions reopen affected validity checks, not automatic
+topic approval. Explicit locked assumptions and resource limits still apply.
+
 When receiving a contribution-improvement round, preserve its identity, targeted
 claim, competing explanations and applicable authorization. Turn its proposed
 check into explicit proof/test obligations and support/refutation/inconclusive

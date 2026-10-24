@@ -37,6 +37,7 @@ For each promising connection, record:
 | Transfer strength | Directly applicable, requires an argument, requires a changed model, or heuristic analogy |
 | Research value | Phenomenon explained, candidate insight, closest-work overlap and why this connection matters |
 | Next check | Smallest discriminating derivation, source inspection or authorized exploratory check; expected effort or unknown |
+| Main-line relation | Theme/thesis versions; source tool -> project object -> served claim; core or auxiliary role and bounded return condition |
 
 Do not treat similar terminology as a structure-preserving correspondence.
 For a proposed direct application, check every condition needed by the source

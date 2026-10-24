@@ -13,6 +13,11 @@ to assign native background/question-definition branches and milestone review ow
 
 ## Build a decision-ready brief
 
+Use [research-focus](../research-focus/SKILL.md) to separate the stable broad
+theme/value from the current paper question. Recover original instructions and
+later decisions; mark inferred boundaries and missing provenance. In an existing
+project, extend its anchor instead of resetting it to the latest brief.
+
 1. Inspect supplied questions, code, papers, data and prior decisions. Describe
    what already exists and which facts remain unknown.
 2. Define the intended scientific question and contribution type: method,

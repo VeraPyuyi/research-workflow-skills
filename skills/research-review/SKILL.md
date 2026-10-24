@@ -25,6 +25,10 @@ when useful, then the integrator decision. Comparison has no proof or gate autho
 ## Choose the review mode
 
 Internal evidence audit may inspect project records and repair history.
+At the applicable milestone, use [research-focus](../research-focus/SKILL.md)
+to compare the original theme, cumulative pivots and actual headline contribution.
+Check whether an auxiliary result has replaced an important question, while
+allowing evidence-backed in-theme negative findings and changed methods.
 For a target-venue simulation, read [venue review](references/venue-review.md):
 launch a new agent with `fork_context: false` and only the frozen submitted paper,
 permitted attachments and verified venue criteria. Do not give it this project's
@@ -32,6 +36,9 @@ history, author self-assessment or previous reviews. Full-paper work uses two
 complete rounds at M4 and M5, with different fresh agents; an explicitly bounded
 review remains one review. Context independence, model independence and filesystem
 isolation are different facts and must be reported separately.
+Private focus anchors, user-intent history and alignment verdicts remain with the
+author-side coordinator. Blind reviewers reconstruct the question from the paper;
+they do not receive the intended answer or a directive to preserve the author's thesis.
 
 ## Review the artifact actually supplied
 

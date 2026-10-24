@@ -20,7 +20,12 @@
     "optimizer_budget_fraction_max": 0.2,
     "optimizer_candidates_per_milestone": 3,
     "optimizer_revisions_per_candidate": 1,
-    "optimizer_publications_per_milestone": 1
+    "optimizer_publications_per_milestone": 1,
+    "support_event_exclusions": [
+      "research-focus",
+      "research-optimize"
+    ],
+    "focus_cadence": "compact handoff reminder; cumulative alignment at M1-M5; excluded from blind input"
   },
   "native_tools": {
     "spawn_agent": {
@@ -253,6 +258,18 @@
       ],
       "bounded_extractor": "gpt-6-luna",
       "milestone_review": true
+    },
+    "research-focus": {
+      "default_executor": "gpt-6.1-sol",
+      "integrator": "gpt-6.1-sol",
+      "reviewers": [
+        "gpt-6-astra"
+      ],
+      "bounded_extractor": "gpt-6-luna",
+      "milestone_review": true,
+      "decision_services": [
+        "jev"
+      ]
     }
   },
   "decision_services": {

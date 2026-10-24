@@ -16,6 +16,12 @@ substantive claims and numerical statements.
 
 ## Build from available evidence
 
+Use the [research-focus](../research-focus/SKILL.md) theme/current-thesis reminder
+to organize title, abstract and headline contributions. Auxiliary theory,
+engineering and calibration stay in their justified roles. Assess whole-paper
+alignment at M4/M5 author-side; exclude private anchors/history from blind inputs.
+Do not strengthen claims merely to make them match the intended storyline.
+
 For a contribution-improvement round, consume its contribution audit and
 claim-evidence map with the approval record. Carry the round identity into the
 revision handoff. Use observation, explanation, conditions and meaning to improve

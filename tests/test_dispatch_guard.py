@@ -148,15 +148,20 @@ class NativeDispatchTests(unittest.TestCase):
         r = self.ready(p); self.assertFalse(r['model_independent']); self.assertFalse(r['independent_gate_eligible'])
     def test_blind_prompt_excludes_coordinator_history(self):
         for number in (1, 2):
-            r = self.ready(blind(number)); prompt = r['spawn_request']['arguments']['message']
+            p = blind(number)
+            p['research_focus'] = {'theme_history': 'private-focus-do-not-forward'}
+            r = self.ready(p); prompt = r['spawn_request']['arguments']['message']
             self.assertIn('review-bundle/paper.pdf', prompt); self.assertNotIn('author-agent', prompt)
             self.assertNotIn('reviewer-round-1', prompt); self.assertFalse(r['spawn_request']['arguments']['fork_context'])
+            self.assertNotIn('private-focus-do-not-forward', prompt)
+            self.assertNotIn('theme_history', prompt)
         p = blind(); p['message'] = 'Round one says reject'; self.blocked(p)
     def test_round_two_requires_prior_identity_and_completion(self):
         for key, value in [('prior_review_agent_ids', []), ('previous_round_completed', False)]:
             p = blind(2); p[key] = value; self.blocked(p)
     def test_blind_manifest_rejects_internal_material_and_bad_versions(self):
-        for kind in ('prior_review', 'response_letter', 'internal_logs', 'optimizer', 'project_history'):
+        for kind in ('prior_review', 'response_letter', 'internal_logs', 'optimizer', 'project_history',
+                     'research_focus', 'pivot_history'):
             p = blind(2); p['allowed_inputs'].append(dict(kind=kind, ref='private', revision='v1')); self.blocked(p)
         for key, value in [('review_round', True), ('review_round', 3), ('allowed_inputs', []),
                            ('venue_profile', ''), ('review_mode', 'almost-blind')]:
