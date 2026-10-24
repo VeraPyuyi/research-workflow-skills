@@ -48,10 +48,10 @@ promised research question with an easier side project.
 - An explicit activation request is permission to perform this binding now.
   Retain the returned Goal identifier/status and the activation instruction in
   the project record. A locally written `"active"` field is not an activation
-  receipt. A coordinator authorized to resume an existing chat sends the scoped
-  instruction through the host's supported chat tool; Goal lifecycle calls run
-  in that owning chat. Never edit a host Goal database or create a second chat
-  merely to bypass the original project's state.
+  receipt. A coordinator authorized to resume an existing chat uses the supported
+  host lifecycle interface for that same Goal, then verifies its native status.
+  Sending a follow-up chat message alone does not change a blocked Goal to active.
+  Never edit a host Goal database or create a second chat to bypass its state.
 - Include the manuscript and reproduction completion conditions in the objective
   or its linked project record. Supply `token_budget` only when the user explicitly
   requested that token allowance. Token allowance is distinct from money, GPU
@@ -135,6 +135,47 @@ events. Do not fabricate a turn to make this verification pass. If Goal tools or
 host continuation are unavailable, report that precise limit and continue useful
 in-turn work; do not claim unattended execution or install an unrequested service.
 
+## Recover a blocked native Goal
+
+A delivered "continue" message can run an ordinary chat turn while the native
+Goal remains blocked. Read the actual Goal after delivery; do not infer activation
+from chat activity or local project state. The in-turn `update_goal` tool may not
+offer an active/resume status.
+
+With an explicit user instruction to resume this Goal, use the host's actual
+resume control. For compatible Codex hosts, `scripts/goal_recovery.py` provides a
+bounded app-server adapter: `--binary` selects the installed host, `--thread` the
+existing owning chat, `--output` a new private receipt; read-only is the default.
+`--resume --authority <USER_REQUEST_REF>` is an explicit mutation. Verify support
+against the installed host's generated experimental app-server schema before
+using it; never guess unsupported methods or modify the Goal database.
+
+The adapter uses `thread/goal/get`, then `thread/goal/set` with only the existing
+thread ID, `status: active` and `origin: user`, followed by a readback. It preserves
+the objective, original creation time, token budget and accumulated usage. It
+does not unpause or bypass budget/usage limits, create a Goal, start an inference
+turn, add an automation or expand scientific authority.
+
+An owning desktop session can retain its writer even after its turn is idle.
+Let current substantive work finish naturally and preserve its checkpoint.
+Prefer that same running application's native Resume Goal control: it uses
+the owning server rather than a second process. An idle chat alone does not make
+the standalone adapter eligible to write. If the writer remains, do not repeat
+the standalone mutation, unload/restart the application, interrupt valid work,
+create an empty turn or repeatedly send "continue". On uncertain transport
+completion, inspect state once without repeating the mutation. If the interface
+is unavailable, report that exact limitation and continue independent authorized
+work; do not claim the host has resumed.
+
+After status recovery, separately observe a later host-triggered Goal turn
+(`source="goal"` where exposed) with no intervening human/coordinator continuation
+message. A successful status readback is not that observation. If activation
+alone does not schedule a turn, use the host's supported resume path and distinguish
+any initiating recovery turn from a genuinely automatic following turn. Retain
+timestamps and event provenance privately. Reuse completed results and checks.
+A resumed blocked Goal starts a fresh consecutive-blocker audit under the actual
+tool rules; a scientific decision/budget blocker remains binding.
+
 ## Five substantial milestones
 
 These are check boundaries, not five compulsory user interruptions. Choose review
@@ -201,6 +242,11 @@ Before completion, establish all of the following:
   document was actually built/exported and inspected with the applicable tools.
 - The delivery manifest names exact versions, actual check coverage and limitations.
   No unresolved blocker to the promised submission-ready outcome remains.
+- Exact submission sources, rendered pages, metadata and attachments (including
+  nested archives) passed the author-side
+  [submission leakage audit](../../research-review/references/submission-leakage.md);
+  private infrastructure and internal agent content are removed, legitimate AI
+  science/disclosures preserved, and required uninspected surfaces resolved.
 
 After the second review, make scoped repairs and recheck affected material. A
 third full review is not automatic; if a core change makes another full review

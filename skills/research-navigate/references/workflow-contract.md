@@ -49,6 +49,7 @@ Use stable identifiers or unambiguous references appropriate to the existing too
 | Product | Need evidence, approved MVP, research boundary, acceptance, tested candidate and release target |
 | Dispatch | Stage, requested/actual model and effort, runtime profile, quota pool, dependencies, write scope, review and unresolved capability limits |
 | Full-paper Goal, when requested | Native binding, completion contract, startup authority, milestone, valid/stale coverage, venue-profile revision and two review-round records |
+| Submission content audit | Exact artifact hashes, nested/member/metadata coverage, redacted findings, scoped exceptions, manual/rendered checks and unresolved gaps; private author-side record, excluded from blind inputs |
 | Workflow improvement | Stable stage event, retained strengths, weaknesses, cost/commitments, frozen criteria, candidate outcomes, review and release/adoption references |
 | Decision assistance, when used | Candidate/evidence/criteria versions, requested and served identity, raw structured outputs, usage, final choice and evidence-based disposition |
 
@@ -90,7 +91,11 @@ again for each in-scope protocol or principal finding. The six decision categori
 still identify ownership, not six mandatory interruptions. Material changes reopen
 only affected decisions. Review is due at milestones, not every intermediate claim.
 See [Goal execution](goal-execution.md) for lifecycle and exact completion conditions.
-
+Chat activity and native Goal status are distinct: sending a follow-up does not
+reactivate a blocked Goal. Apply the supported lifecycle recovery only under
+explicit user authority, preserve the objective/budget, wait for an active writer
+to finish, and separately observe a later automatic Goal turn before claiming
+unattended continuation.
 ## Continuing under existing authority
 
 Make internal plans and keep advancing work already covered by startup delegation,
@@ -172,7 +177,12 @@ Budget, permission and job-state admission still precede dependent execution.
 Scientific experiments, proofs and counterexample searches remain research work.
 M4/M5 use [fresh-context venue review](../../research-review/references/venue-review.md);
 internal evidence audits may inspect project records, while blind reviewers may not.
-
+Before M4/M5 dispatch and final packaging, apply the
+[submission leakage audit](../../research-review/references/submission-leakage.md)
+to exact sources, rendered outputs and all submitted attachments. A clean filename
+list or regex scan is insufficient. Retain required AI-use disclosures and
+scientific AI content; use relative paths/placeholders for private infrastructure.
+Reuse unchanged audit coverage and recheck only affected surfaces after repair.
 ## Evidence and validity
 
 - Separate observed results, source-reported claims, hypotheses, inferences and

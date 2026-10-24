@@ -1,3 +1,7 @@
+Current Goal/content-audit release (October 25, 2026): [validation and live-runtime limits](goal-leakage-validation-20261025.md).
+
+Earlier acceptance below is historical.
+
 Current focus release (October 25, 2026): [18-skill acceptance](research-focus-validation-20261025.md).
 
 The earlier checks below are historical.

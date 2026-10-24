@@ -269,3 +269,20 @@ The [review disposition](docs/review-disposition.md) records the integrated
 review findings and their verified repairs.
 
 [Research-focus release validation](docs/research-focus-validation-20261025.md) records the 18-skill checks and their limits.
+
+## Goal recovery and submission privacy
+
+A chat follow-up does not itself reactivate a blocked native Goal. Use
+the original host's supported, explicitly authorized resume control. Its writer
+lock may persist while the chat is idle; a separate app-server cannot override
+it. Preserve the objective and budgets and separately observe an automatic Goal
+turn. See the navigator's goal-execution reference.
+
+Before M4/M5 and delivery, research-review inspects submitted sources,
+rendered pages, metadata and nested attachments for private paths,
+credentials and accidental internal agent material. Use relative paths
+or explicit placeholders while retaining scientific AI descriptions and
+required disclosures. Automated scans report coverage gaps; human/agent
+inspection of rendered and unsupported content remains required.
+
+[Goal/content-audit validation](docs/goal-leakage-validation-20261025.md) distinguishes offline acceptance from pending live recovery.

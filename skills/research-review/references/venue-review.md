@@ -41,6 +41,15 @@ hashes files and emits absolute allowlisted paths in the neutral prompt, so a
 fresh agent does not guess a working directory or search the project root. Check the actual contents for excluded material; filenames
 and an `allowed_inputs` label alone do not establish clean inputs.
 
+Apply the [submission leakage audit](submission-leakage.md) before dispatch.
+Inspect nested archives, run-manifest keys, document metadata and rendered images,
+as well as visible prose. Replace private infrastructure with relative paths or
+explicit placeholders in submitted copies. Preserve scientific AI-method content
+and required AI-use disclosure. Freeze the sanitized bytes and bind the audit to
+their hashes. Unresolved leakage or required coverage gaps prevent a clean-input
+claim. An already contaminated review stays recorded with its actual limitations;
+it is not retroactively a clean blind round.
+
 ## Launch a new reviewer
 
 Use a newly spawned agent with explicit `fork_context: false`, not a fork, resumed

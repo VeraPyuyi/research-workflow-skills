@@ -2,7 +2,7 @@
   "schema_version": 1,
   "contract_version": "1.4",
   "runtime_profile": "codex-native",
-  "release_id": "research-20261025-focus-v5-codex-native",
+  "release_id": "research-20261025-goal-leakage-v6-codex-native",
   "status": "candidate",
   "files": {
     "research-analyze/agents/openai.yaml": "8a58845388ee589405c021542a413987528991cf7105e7d1a215ef30c66b4d9b",
@@ -34,16 +34,17 @@
     "research-navigate/references/domains/llm.md": "ab879f05f917218a41a240b8056fb510dd4882087ccad6cfd9bf469e7bb614ec",
     "research-navigate/references/domains/rl.md": "9bed15e93d77914c3a610b2338ea656564ab551ff1585c684ddea9da00850d2f",
     "research-navigate/references/evidence-ledger.md": "b2cd8bbd2f3e2ce8cc950522aa14f8f62fb3b26bd3328b05d8935feaced418d7",
-    "research-navigate/references/goal-execution.md": "479cf65f5c875437d5f04913ddcbe4b0cfde99b926be6ba94c9e1fc646b8505e",
+    "research-navigate/references/goal-execution.md": "f46d500e24f389f7e020058c9cc5a56554cf9b2245919637e965799bc7baf983",
     "research-navigate/references/handoff-example.md": "fa17bbee8c39be79e2eb03ada8ce197f7190ffb5a021602aeecb8fd167b2cbb8",
     "research-navigate/references/implementation-comparison.md": "a9a6d957bb6fd37ea87382b63df5bdd34a8e60804f4e41552c97d0b5b40e1f90",
     "research-navigate/references/model-routing.json": "6eec46b3c83309379ae19ba1e1a367ef4668a63e4eaca767511dcb0632bd0ac0",
     "research-navigate/references/model-routing.md": "56443d95c0c45e9c05b94b7428f137fadba436061dadb08da38567e3a194d71a",
     "research-navigate/references/reuse-and-simplification.md": "2f1d66459a1a36e5805bc8911ceb2926e1a56e16d02cc0eab44e34ae84808ba8",
     "research-navigate/references/stage-map.md": "b2ba69424597afa5540aced806f5c9ed2e9d653846afff6d5b0d786520d7d339",
-    "research-navigate/references/workflow-contract.md": "6460f05e83e0e725bb203237697df711179e57d8f0f6141902e363e0f94d1af3",
+    "research-navigate/references/workflow-contract.md": "c30ba03e76fde289e324298ded64e7713c9803f30b5bddbd81defe8fc069f1ed",
     "research-navigate/references/workflow-updates.md": "d82cf687d7652cb63fa5520f7f39cb7c39d29e6686caf74e1627ad749f3b6f97",
     "research-navigate/scripts/check_dispatch.py": "fe59f84102fe6423aaae397a17dac408418550231073134252706f3ad6731950",
+    "research-navigate/scripts/goal_recovery.py": "4792997d64911bf6b6e8570382a2f53fc6e0aee5d94aecde5bb9ad25dd3aba41",
     "research-navigate/scripts/jev_decide.py": "0221a540a5516f5b730f116062cd18ab34345751d3a5dcef57ab9643d42c9322",
     "research-navigate/scripts/workflow_release.py": "7391c7235a89106594623558a885ca3ede48757b922261df6caeac2d832e2cab",
     "research-navigate/SKILL.md": "3e74a61ea268b330879397e218a8fb059f682c9a1d69542543c7bc7814cf7353",
@@ -59,22 +60,24 @@
     "research-product-maintain/SKILL.md": "ba7461489f65d687d1d3313cca20077fd3e3029e8fcbf51c89b9bffe440955b2",
     "research-product-release/agents/openai.yaml": "ef41d5756b841c82cb3a04d41154ac668f8153dcd60e2b14bb038ffdb0b002ef",
     "research-product-release/SKILL.md": "d91392893eecab7c08c9ee8a746531ea85f8ca7e8c115fec0d493ac1cd020542",
-    "research-review/agents/openai.yaml": "d793b2dd48659526a9e66993eb8006c240bbb7f559fbb9244e113c5009d1e04c",
+    "research-review/agents/openai.yaml": "d5fa2449066d72f6467de64a8a43af0a317e8b5a77f654df16dfe7b35a38f58b",
     "research-review/references/independent-review.md": "1aff90eb80a08e31699a1843c246b123e2a4b2f2083eb3163d72bf6467848af0",
-    "research-review/references/venue-review.md": "73ccff06145c1399e16b1a5c8522087375f8ccaeebb7153b86bea8137c1f1311",
-    "research-review/SKILL.md": "f22fcd49431b84324f823c315d140275a192685b4ad640ffa5ca38a19d4d9e04",
+    "research-review/references/submission-leakage.md": "9250cafc42bf8e19064766b5634d13b77b18e058bbec12c8dbe9ccdafa3844cc",
+    "research-review/references/venue-review.md": "7898b168900bf5c44a267cf2a9a52cf093d82634e598a3be5661a3b246ee1616",
+    "research-review/scripts/check_submission.py": "f8b7ef449070a6c9009333ee1e00df40432a28ba69dd34593c0182c85ebe962c",
+    "research-review/SKILL.md": "aa60d25ffc485d5fc3e323d0acebf0fa3f570159d7c808d864e73bc67e3838ce",
     "research-scope/agents/openai.yaml": "5057355cd14b0fc035dc609893085cc260fc03836bdb45221687404ab8be2ab0",
     "research-scope/SKILL.md": "c86f304a3a0f8899d0b50adc7ec2cccbead343bb5591a0da3467af5d472bbe68",
     "research-submit/agents/openai.yaml": "374376e8b32678dee51837fea0264a0d73989cdd08b57c8b273d88037b4c01fd",
-    "research-submit/SKILL.md": "bd25a41c2e559e16e7f5ea124741784b11c501c8e111e2c1711cee87f263a49e",
+    "research-submit/SKILL.md": "1aa9638156bae8a20b5ceb1829953110bf718b9b06da96d44efaac7784e8b404",
     "research-survey/agents/openai.yaml": "67d91c44aa95aee1ef66da39a0c909c8b77dfa2ee30276e8e2e33194d3aa28ad",
     "research-survey/references/cross-domain-survey.md": "4886b4f3c3ce1efb45af54eee929f1b354ecd275da6602bd695dd3e7503c5285",
     "research-survey/SKILL.md": "0c8bd535715edd8248f1085edc1ad211b30a8827d5eb679f20646722bce1c568",
     "research-write/agents/openai.yaml": "0c63035071f59761630d4e097e9dadbd4c7e886bbab1187c318f88c86ae6511e",
-    "research-write/SKILL.md": "1a047807e957554d43e26d6d3da170fe3702300f37d12576b1339435eb26d085"
+    "research-write/SKILL.md": "05120aedc083e11a18e6413d53989ba195de103da14e86c2cf413c5f8f0e3fc7"
   },
   "validation_receipts": [
-    "tests/results/research-focus-release-receipt.json"
+    "tests/results/goal-leakage-release-receipt.json"
   ],
-  "bundle_digest": "sha256:9268c91dfbc1ecd7b232607bdb7de0b84454a6c90f9acf272d46eb8aa9119f30"
+  "bundle_digest": "sha256:654af5057e59667c186c08733a7dc266c8657cab5dc784f2a75bbaeb0fef5e64"
 }

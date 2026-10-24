@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "receipt_id": "research-20261025-goal-leakage-v6-codex-native-acceptance",
+  "bundle_digest": "sha256:654af5057e59667c186c08733a7dc266c8657cab5dc784f2a75bbaeb0fef5e64",
+  "runtime_profile": "codex-native",
+  "scope": "workflow-release",
+  "status": "passed",
+  "checked_at": "2026-10-24T18:35:16.195199+00:00",
+  "evidence_refs": [
+    "tests/results/goal-leakage-code-validation.json",
+    "tests/results/goal-leakage-behavior.json",
+    "tests/results/goal-leakage-forward.md",
+    "tests/results/goal-leakage-review-disposition.json",
+    "tests/results/goal-leakage-runtime-status.json",
+    "docs/goal-leakage-validation-20261025.md"
+  ],
+  "evidence_sha256": {
+    "tests/results/goal-leakage-code-validation.json": "96da9268a2bb0143cd254c2eead7ba4e880dbc84c024630c1d19227001e73b95",
+    "tests/results/goal-leakage-behavior.json": "3503f0cd602c0ebd8124c73dbf23efea503ac804302d341314bb10aec3a93bda",
+    "tests/results/goal-leakage-forward.md": "8e7ba2d5be82229df9ed14daf8106aec3adc216d698ded5988fdaf4e61659456",
+    "tests/results/goal-leakage-review-disposition.json": "74fbfe77b0c5a06b25382d6ae5bc6d8deefc9ec535fe423b8c9f52b3de338570",
+    "tests/results/goal-leakage-runtime-status.json": "f402645479d9694e8d8c77b0c98f3d8cb26855f09f732dc4074ef27334ed70f4",
+    "docs/goal-leakage-validation-20261025.md": "c9f3f46bd85fc8e876e4077c4e16a176c226edc837c1b715feab146ad111a39c"
+  },
+  "limits": [
+    "Offline skill-release acceptance only; the affected real Goal remains blocked.",
+    "Automatic continuation after recovery unobserved; no scientific completion claim.",
+    "No complete automated guarantee against content leaks; unresolved coverage requires review."
+  ]
+}
