@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "contract_version": "1.2",
+  "contract_version": "1.3",
   "runtime_profile": "magpie",
-  "release_id": "research-20261024-magpie-v2",
+  "release_id": "research-20261024-cursor-routing-v4",
   "status": "candidate",
   "files": {
     "research-analyze/agents/openai.yaml": "8a58845388ee589405c021542a413987528991cf7105e7d1a215ef30c66b4d9b",
@@ -16,13 +16,13 @@
     "research-experiment/references/shared-server.md": "3873551c1e2a59d915705b882accb732c60da95005dffdaa535e81de8a17cf93",
     "research-experiment/scripts/remote_experiment.py": "91d7622ec8a2b5ab43b97b2a577453790b337fec891623f01f873c83ccefcfd9",
     "research-experiment/scripts/remote_worker.py": "347a441b3896ede16d508cf3b390185db272c471488655873e52b522be8b9776",
-    "research-experiment/SKILL.md": "834e14c6d7dab4dc4e2621e2c5bea2e2146793aba5c0a33b96af3da48c678a45",
+    "research-experiment/SKILL.md": "de254b91f3d00cee6ad7937815d0152f3d5ed1995aecd4953e4eb522e2ad4cfe",
     "research-ideate/agents/openai.yaml": "4c206596f1735e4bb7e6270e81924c4b603899a60aea96d7706c8765146b8624",
     "research-ideate/references/mathematical-ideation.md": "4cda731d353d5153e08512a8978a866fd67d2739b5476cfee0a2a3c504c539f9",
     "research-ideate/SKILL.md": "67f1fe64e4d88d6e1f700407edf8f8d3e926fa1c992bc33caf6a1e3fef467d73",
     "research-implement/agents/openai.yaml": "dccc748a0fd6ed623ec9b24c0b198f092357636235084299ba1b7db71e6235a2",
     "research-implement/SKILL.md": "cba54817d85e3e137db6a6db64498f63bc6c7133f9300af6fcb4ec52a3880c80",
-    "research-navigate/agents/openai.yaml": "4c581a833d98675f7f1633dc26ad6303cda4c24f68848d691ba2c4a21bab9472",
+    "research-navigate/agents/openai.yaml": "d7ba654f9f0778a6411a210ea8551a0afc6f86abb36be16383c1d6bca0766f6e",
     "research-navigate/references/decision-support.md": "2667e4722ad3f9ac0bb2a86961b53b8da3436d4e7072a5244905f48ff9c20361",
     "research-navigate/references/domains/agent.md": "f429610c87f433e296672a5889c62e5edb0c472f11d09ef0a4ea092fd77bc1d7",
     "research-navigate/references/domains/causality.md": "18f444039d499eff6c5885a66562f6bf7a2ff50373eee5d387fabbcd236c5ff9",
@@ -31,20 +31,20 @@
     "research-navigate/references/domains/llm.md": "ab879f05f917218a41a240b8056fb510dd4882087ccad6cfd9bf469e7bb614ec",
     "research-navigate/references/domains/rl.md": "9bed15e93d77914c3a610b2338ea656564ab551ff1585c684ddea9da00850d2f",
     "research-navigate/references/evidence-ledger.md": "b2cd8bbd2f3e2ce8cc950522aa14f8f62fb3b26bd3328b05d8935feaced418d7",
-    "research-navigate/references/goal-execution.md": "d4f2cff5f210f08139a48a78421984f8a5546f4347c5f52d5398a07b13ce5fd4",
-    "research-navigate/references/handoff-example.md": "1d51ef2052348c9f672d539bef2680af1c82d074da1926f390c20baa203edf48",
+    "research-navigate/references/goal-execution.md": "58ba75556aa1dc46b3a308cf078d6dea08a35846f971a3e5b053ac4fb62d845b",
+    "research-navigate/references/handoff-example.md": "16cb32a83e64df56f17cdd0b369b1dd1ea4d42207ddd3b321112235002ed32c2",
     "research-navigate/references/implementation-comparison.md": "a9a6d957bb6fd37ea87382b63df5bdd34a8e60804f4e41552c97d0b5b40e1f90",
     "research-navigate/references/live-validation.md": "1308f798f689f48d917c8db56e53f8ae8222758135a3de9c389210fabbd8759a",
-    "research-navigate/references/model-routing.json": "bfa3c0b1de130d53d8ef5d1f74bc9574654fc21ef0ec9896f16d298464953da4",
-    "research-navigate/references/model-routing.md": "b0072c3fe3d0e853e96bbd07d22943b60721ca2c637dc7f301c594da0195e5ff",
+    "research-navigate/references/model-routing.json": "43558c102147d8ed578d69d2a69be5f58d2885ef62142b631bfb6fdc409501a6",
+    "research-navigate/references/model-routing.md": "d3c7eeb407973c80330163f422ce0f5918abbae9543e286db018cadaf9447da6",
     "research-navigate/references/reuse-and-simplification.md": "2f1d66459a1a36e5805bc8911ceb2926e1a56e16d02cc0eab44e34ae84808ba8",
     "research-navigate/references/stage-map.md": "87e1c05cd5d3dec86ed985e732ae6c25e07883017201fc2927bfcf8345d7371b",
-    "research-navigate/references/workflow-contract.md": "829c835df65b6083aa33c9a895dd7257d78e4e5fd0426ee1f65f6c68b502724a",
+    "research-navigate/references/workflow-contract.md": "71d1083676c766a75340ace215240a71e57d2b045ab5359e350a6beccf9185a8",
     "research-navigate/references/workflow-updates.md": "daa31b4a8e0469a315e76c9ca3ee71468cadde4c44f34488f54d0a358858ab96",
     "research-navigate/scripts/check_dispatch.py": "11350337e139c3042009d5c5349b548210333ecee916b891029bfbc6fee1171a",
     "research-navigate/scripts/jev_decide.py": "9e26c68c4f0c1ee791909a7fed62ae44ba8bbcb00d6e0d28d47bbac8605ff95b",
     "research-navigate/scripts/workflow_release.py": "7391c7235a89106594623558a885ca3ede48757b922261df6caeac2d832e2cab",
-    "research-navigate/SKILL.md": "ed56d10fadd2a04ce26a4853ee502c195b3ab5ff9989e5b1b7622f8b62c0e616",
+    "research-navigate/SKILL.md": "430ae12932e3826490a105fce2d72ce35c4616c5301034f9a69361b3d9ecfe43",
     "research-optimize/agents/openai.yaml": "0554615813b673c2b5d58df21c71590c05a26a60a4e9bd1f246ffe3985d93dfd",
     "research-optimize/references/optimization-protocol.md": "aa0dce94e016bc51f6650ad12496809917dc926815f13c3e48c2bc8a1b1e1277",
     "research-optimize/scripts/optimize_workflow.py": "e66eaedf121b4123e44b2b3197b86975f794a2581623cabc109060b8bc478158",
@@ -60,7 +60,7 @@
     "research-review/agents/openai.yaml": "d793b2dd48659526a9e66993eb8006c240bbb7f559fbb9244e113c5009d1e04c",
     "research-review/references/independent-review.md": "1aff90eb80a08e31699a1843c246b123e2a4b2f2083eb3163d72bf6467848af0",
     "research-review/references/venue-review.md": "8f550da886c38867f7bf3cee3a8cc82b5cbe71543859f29349097389ce6c3e40",
-    "research-review/SKILL.md": "8e9658baaaeb71fcff8e9101c614ba151c12e901f3f05e23ac06632a1cf0b9a0",
+    "research-review/SKILL.md": "8211a228d41e6c282a22a69991581f724d5d8ef9f086c5cef4b9cc1b543a551b",
     "research-scope/agents/openai.yaml": "5057355cd14b0fc035dc609893085cc260fc03836bdb45221687404ab8be2ab0",
     "research-scope/SKILL.md": "b770f838c308ba267d31baa1fac47163bad47be60a3106843852dc1116dd60a0",
     "research-submit/agents/openai.yaml": "374376e8b32678dee51837fea0264a0d73989cdd08b57c8b273d88037b4c01fd",
@@ -72,7 +72,7 @@
     "research-write/SKILL.md": "0979011522291aa28934ba583707364281a5c8ff3c13717018472cd64de74fdc"
   },
   "validation_receipts": [
-    "tests/results/release-receipt.json"
+    "validation:cursor-routing-20261024"
   ],
-  "bundle_digest": "sha256:2ad67a30360ff228925363d6ab5dad9943cf059e426aaf2b67f38928ce19fbce"
+  "bundle_digest": "sha256:26078489f114a30817b49f420b56d3f5f604b0fba5c86537d0ba7740ce0ed3c9"
 }

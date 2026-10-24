@@ -1,4 +1,4 @@
 interface:
   display_name: "Research Navigator"
   short_description: "Coordinate research or an explicitly enabled paper Goal"
-  default_prompt: "Use $research-navigate to inspect my existing project, preserve my requested scope and continue the next authorized work."
+  default_prompt: "Use $research-navigate to inspect existing progress and execute the next authorized work. If I explicitly request a full-paper Goal, bind it through native tools and continue across stages until its delivery contract is met."

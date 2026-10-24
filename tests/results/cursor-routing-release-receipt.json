@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "receipt_id": "cursor-routing-20261024",
+  "bundle_digest": "sha256:26078489f114a30817b49f420b56d3f5f604b0fba5c86537d0ba7740ce0ed3c9",
+  "runtime_profile": "magpie",
+  "scope": "workflow-release",
+  "status": "passed",
+  "checked_at": "2026-10-24T15:26:34.257133+00:00",
+  "evidence_refs": [
+    "tests/results/cursor-routing-code-validation.json",
+    "docs/cursor-routing-validation-20261024.md",
+    "docs/release-validation.md"
+  ],
+  "limits": [
+    "Cursor Composer 2.5 remains blocked pending medium/xhigh adapter reconciliation",
+    "Mixed group routing is not a subscription-only spend guard or hard output cap"
+  ],
+  "evidence_sha256": {
+    "tests/results/cursor-routing-code-validation.json": "d34ea9a6164e1fac7f3488b82ad4895dddc6774eba5b36db4fcabaa037d5713c",
+    "docs/cursor-routing-validation-20261024.md": "7d150023b213a3fbcfe8a651244ea51ed02373d3d565e69ac49f9a7aaa5a859d",
+    "docs/release-validation.md": "b22f74b440fb973ff18ecf101d1e5f167a96e38ba912f58cfd635265cf0282c4"
+  }
+}

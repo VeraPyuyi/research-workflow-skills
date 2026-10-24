@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "captured_at": "2026-10-24",
   "policy": {
     "selection_basis": [
@@ -605,21 +605,42 @@
       "free": false,
       "quota_pool": "cursor",
       "allowance_state": "unknown",
-      "group_eligible": false,
+      "group_eligible": true,
       "evidence": [
         "current local configured endpoint catalog",
         "current local Codex supported efforts and context metadata",
-        "https://cursor.com/docs/models-and-pricing; checked 2026-10-24; Plus own-model coverage"
+        "https://cursor.com/docs/models-and-pricing; checked 2026-10-24; Plus own-model coverage",
+        "2026-10-24 direct Grok 4.6 retest: request, response and gateway medium agree; docs/release-validation.md"
       ],
       "limitations": [
         "No endpoint-specific superiority is established",
         "No new inference or ranking calibration performed",
         "Unknown allowance cannot authorize metered fallback",
-        "Configured identity is distinct from actually served model identity"
+        "Configured identity is distinct from actually served model identity",
+        "Automatic group membership does not verify current allowance or enforce a subscription spending cap",
+        "Cursor output limit is not a verified hard cap; strict-budget work requires a suitable alternative"
       ],
       "allowed_service_tiers": [
         "default"
-      ]
+      ],
+      "automatic_group_intents": [
+        "Competing explanations and alternative research routes: compare supplied hypotheses, theory or method choices, identify discriminating predictions, and critique an approved design.",
+        "Bounded engineering second opinion: inspect a supplied implementation, test, baseline discrepancy, or numerical routine; propose a focused fix without taking over experimental execution."
+      ],
+      "stage_roles": {
+        "research-scope": "bounded problem definitions and feasibility alternatives",
+        "research-ideate": "competing explanations, method and theory alternatives from supplied evidence",
+        "research-design": "protocol alternatives and discriminating predictions",
+        "research-baseline": "bounded reproduction discrepancy diagnosis",
+        "research-implement": "bounded code diagnosis and a second implementation proposal",
+        "research-experiment": "read-only anomaly diagnosis from a bounded log excerpt",
+        "research-analyze": "competing explanations and contribution-boundary critique",
+        "research-review": "independent technical critique at the applicable milestone",
+        "research-product-discover": "alternative solutions and research applicability boundaries",
+        "research-product-build": "bounded implementation and engineering second opinion",
+        "research-product-maintain": "bounded defect diagnosis and regression interpretation",
+        "research-optimize": "compare evidence-backed workflow alternatives at an existing decision point"
+      }
     },
     {
       "id": "cursor/grok-4.5",
@@ -717,6 +738,7 @@
       ],
       "integrator": "codex/gpt-6.1-sol",
       "covered_account_executors": [
+        "cursor/grok-4.6",
         "cursor/grok-4.5"
       ]
     },
@@ -758,6 +780,7 @@
         "typesafe/jev-latest"
       ],
       "covered_account_executors": [
+        "cursor/grok-4.6",
         "cursor/grok-4.7@256k"
       ]
     },
@@ -794,6 +817,7 @@
       ],
       "integrator": "codex/gpt-6.1-sol",
       "covered_account_executors": [
+        "cursor/grok-4.6",
         "cursor/composer-2.5"
       ]
     },
@@ -811,6 +835,7 @@
       ],
       "integrator": "codex/gpt-6.1-sol",
       "covered_account_executors": [
+        "cursor/grok-4.6",
         "cursor/composer-2.5"
       ]
     },
@@ -827,6 +852,7 @@
       ],
       "integrator": "codex/gpt-6.1-sol",
       "covered_account_executors": [
+        "cursor/grok-4.6",
         "cursor/composer-2.5",
         "google-vertex/gemini-3.8-flash"
       ]
@@ -848,6 +874,7 @@
         "typesafe/jev-latest"
       ],
       "covered_account_executors": [
+        "cursor/grok-4.6",
         "cursor/grok-4.7@256k",
         "google-vertex/gemini-3.1-pro-preview"
       ]
@@ -886,8 +913,8 @@
         "typesafe/jev-latest"
       ],
       "covered_account_executors": [
-        "google-vertex/gemini-3.1-pro-preview",
-        "cursor/grok-4.6"
+        "cursor/grok-4.6",
+        "google-vertex/gemini-3.1-pro-preview"
       ]
     },
     "research-submit": {
@@ -918,6 +945,7 @@
       ],
       "integrator": "codex/gpt-6-astra",
       "covered_account_executors": [
+        "cursor/grok-4.6",
         "cursor/grok-4.7@256k"
       ]
     },
@@ -936,6 +964,7 @@
       ],
       "integrator": "codex/gpt-6.1-sol",
       "covered_account_executors": [
+        "cursor/grok-4.6",
         "cursor/composer-2.5"
       ]
     },
@@ -969,6 +998,7 @@
       ],
       "integrator": "codex/gpt-6.1-sol",
       "covered_account_executors": [
+        "cursor/grok-4.6",
         "cursor/composer-2.5",
         "cursor/grok-4.5"
       ]
@@ -987,6 +1017,7 @@
         "typesafe/jev-latest"
       ],
       "covered_account_executors": [
+        "cursor/grok-4.6",
         "cursor/composer-2.5",
         "google-vertex/gemini-3.8-flash"
       ]

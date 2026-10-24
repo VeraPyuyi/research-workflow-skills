@@ -104,6 +104,11 @@ Use native Plan transitions only when supported; otherwise plan within execution
 mode and continue authorized work. Native Goal creation requires explicit user
 authorization and actual Goal tools. When those tools are absent, preserve the
 project handoff without claiming native activation or background continuation.
+For an explicit paper Goal request, bind it through those tools at entry and
+retain the actual result. A completed stage, failed optional branch or prepared
+next-round package does not end the paper task. Apply the
+[stage-to-stage continuation procedure](goal-execution.md#stage-to-stage-continuation):
+execute the next authorized dependency, and scope blockers to their dependent work.
 
 At entry, resumption or a handoff, inspect the current suite and adopt a
 compatible validated release under recorded automatic-update authority through
@@ -260,6 +265,13 @@ printing a long report after each edit, or requesting fresh approval:
    pending decisions or execution/resource limits.
 5. **Next step:** concrete work package, appropriate stage, prerequisites, and any
    specific human decision.
+
+In a full-paper Goal, also record whether that next step actually started, is
+ready for the native continuation, is waiting on a named job, or needs a specific
+decision. Keep stage status separate from paper status. Stage completion normally
+hands control back to the navigator inside the ongoing Goal; it does not require
+a new user message. Resume from valid evidence and checks instead of rerunning
+them to demonstrate activity.
 
 For a dispatched or parallel round, also state each branch's requested and actual
 model/effort, free/paid status, actual artifacts, review status and unresolved

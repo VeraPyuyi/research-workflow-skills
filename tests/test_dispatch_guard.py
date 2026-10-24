@@ -155,6 +155,17 @@ class DispatchGuardTests(unittest.TestCase):
                            "status": "running"}]
         self.assertEqual(self.check(plan)["status"], "blocked")
 
+    def test_cursor_variants_share_one_unknown_concurrency_pool(self):
+        plan = packet()
+        plan.update(
+            model="cursor/grok-4.6", free_only=False, effort="medium",
+            supported_efforts=["medium"], cost_authorization="included subscription only",
+            allowance_coverage="confirmed", allowance_record="refreshed Plus snapshot",
+            active=[{"id": "cursor-running-1", "model": "cursor/grok-4.5",
+                     "status": "running", "write_paths": ["D:/project/branch-2"]}],
+        )
+        self.assertEqual(self.check(plan)["status"], "blocked")
+
     def test_unknown_status_exhaustion_and_duplicate_do_not_expand(self):
         for state in ("unknown", "exhausted"):
             plan = packet()

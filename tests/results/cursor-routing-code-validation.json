@@ -1,0 +1,101 @@
+{
+  "checked_at": "2026-10-24T15:25:29.759211+00:00",
+  "runtime_profile": "magpie",
+  "scope": "portable export, offline tests, structure, package hashes and temporary installation",
+  "tests": {
+    "run": 255,
+    "passed": 252,
+    "failures": 0,
+    "errors": 0,
+    "skips": [
+      {
+        "test": "test_linked_source_root_is_rejected_before_copy (test_bundle.BundleTests.test_linked_source_root_is_rejected_before_copy)",
+        "reason": "Directory links are unavailable in this environment: [WinError 1314] 客户端没有所需的特权。: '<release-root>\\\\.build\\\\tmpa3fydy4k\\\\external-skills' -> '<release-root>\\\\.build\\\\tmpa3fydy4k\\\\bundle\\\\skills'"
+      },
+      {
+        "test": "test_exact_legacy_release_migrates_to_magpie_without_rewriting_its_digest (test_workflow_release.WorkflowReleaseTests.test_exact_legacy_release_migrates_to_magpie_without_rewriting_its_digest)",
+        "reason": "Exact original metadata requires RESEARCH_LEGACY_RELEASE_FIXTURE"
+      },
+      {
+        "test": "test_symlink_and_junction_inputs_are_rejected_without_following (test_workflow_release.WorkflowReleaseTests.test_symlink_and_junction_inputs_are_rejected_without_following)",
+        "reason": "Junction creation unavailable: Access is denied.\n"
+      }
+    ]
+  },
+  "structure_errors": [],
+  "official_skill_validation": [
+    {
+      "skill": "research-navigate",
+      "exit": 0
+    },
+    {
+      "skill": "research-scope",
+      "exit": 0
+    },
+    {
+      "skill": "research-survey",
+      "exit": 0
+    },
+    {
+      "skill": "research-ideate",
+      "exit": 0
+    },
+    {
+      "skill": "research-design",
+      "exit": 0
+    },
+    {
+      "skill": "research-baseline",
+      "exit": 0
+    },
+    {
+      "skill": "research-implement",
+      "exit": 0
+    },
+    {
+      "skill": "research-experiment",
+      "exit": 0
+    },
+    {
+      "skill": "research-analyze",
+      "exit": 0
+    },
+    {
+      "skill": "research-write",
+      "exit": 0
+    },
+    {
+      "skill": "research-review",
+      "exit": 0
+    },
+    {
+      "skill": "research-submit",
+      "exit": 0
+    },
+    {
+      "skill": "research-product-discover",
+      "exit": 0
+    },
+    {
+      "skill": "research-product-build",
+      "exit": 0
+    },
+    {
+      "skill": "research-product-release",
+      "exit": 0
+    },
+    {
+      "skill": "research-product-maintain",
+      "exit": 0
+    },
+    {
+      "skill": "research-optimize",
+      "exit": 0
+    }
+  ],
+  "package_hashes_verified": true,
+  "bundle_digest": "sha256:26078489f114a30817b49f420b56d3f5f604b0fba5c86537d0ba7740ce0ed3c9",
+  "temporary_install_equal": true,
+  "external_inference_requests": 0,
+  "passed": true
+}

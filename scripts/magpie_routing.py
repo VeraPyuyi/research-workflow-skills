@@ -324,7 +324,7 @@ def build_target_group(routing_path: Path, evidence: dict[str, Any]) -> dict[str
     routing = load_json(routing_path)
     free_ids = [item["id"] for item in routing["models"]
                 if item.get("free") and item.get("kind", "generative") == "generative"
-                and item.get("group_eligible", True)]
+                and item.get("group_eligible", True) and not item.get("dispatch_block_reason")]
     effort_by_id = {item["id"]: item.get("effort") for item in routing["models"]}
     def verified(member: str, wanted: str) -> str:
         levels = supported_efforts(member, evidence)
@@ -338,10 +338,31 @@ def build_target_group(routing_path: Path, evidence: dict[str, Any]) -> dict[str
     for model_id in free_ids:
         effort = effort_by_id.get(model_id, "")
         members.append(verified(model_id, effort) if effort else model_id)
+    account_rules = []
+    for item in routing["models"]:
+        intents = item.get("automatic_group_intents", [])
+        if (not intents or item.get("group_eligible") is not True
+                or item.get("kind", "generative") != "generative"
+                or item.get("dispatch_block_reason")):
+            continue
+        effort = (item.get("fixed_effort") if item.get("effort_mode") == "fixed"
+                  else item.get("effort"))
+        # Never turn a fixed subscription effort into an inherited group effort.
+        if not effort or effort not in supported_efforts(item["id"], evidence):
+            continue
+        member = f"{item['id']}:{effort}"
+        if member not in members:
+            members.append(member)
+        if not isinstance(intents, list) or any(
+            not isinstance(intent, str) or not intent.strip()
+            or len(intent) > MAX_INTENT_CHARS for intent in intents
+        ):
+            raise ValueError(f"invalid automatic group intents for {item['id']}")
+        account_rules.extend({"use": member, "intent": intent} for intent in intents)
     def exact_member(model_id: str) -> str:
         return next(member for member in members if member_model(member) == model_id)
 
-    rules = [
+    rules = account_rules + [
         {"use": exact_member("opencode-zen/nemotron-3.5-lightning-free"), "intent": INTENTS["classify"]},
         {"use": exact_member("workbuddy-ai/step-5-preview"), "intent": INTENTS["optimize"]},
         {"use": exact_member("workbuddy-ai/hy3"), "intent": INTENTS["retrieve"]},

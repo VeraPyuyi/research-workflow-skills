@@ -1,5 +1,6 @@
 import json
 import os
+import shutil
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -57,7 +58,7 @@ def sample_config():
             },
             {
                 "id": "cursor",
-                "models": ["composer-2.5"],
+                "models": ["composer-2.5", "grok-4.6"],
             },
         ],
         "groups": [
@@ -88,8 +89,13 @@ def sample_config():
 
 class MagpieRoutingHelperTests(unittest.TestCase):
     def setUp(self):
-        self.base = ROOT / ".build" / "model-collaboration" / "magpie" / "test-runs" / self.id().split(".")[-1]
-        self.base.mkdir(parents=True, exist_ok=True)
+        test_root = ROOT / ".build" / "model-collaboration" / "magpie" / "test-runs"
+        self.base = test_root / self.id().split(".")[-1]
+        self.assertTrue(self.base.resolve().is_relative_to(ROOT.resolve()))
+        self.assertEqual(self.base.resolve().parent, test_root.resolve())
+        if self.base.exists():
+            shutil.rmtree(self.base)
+        self.base.mkdir(parents=True)
         self.config_path = self.base / "providers.json"
         self.settings_path = self.base / "settings.json"
         self.catalog_path = self.base / "models_cache.json"
@@ -131,6 +137,7 @@ class MagpieRoutingHelperTests(unittest.TestCase):
                         {"slug": "opencode-zen/jev-1.13-free", "default_reasoning_level": "max", "supported_reasoning_levels": [{"effort": "max"}]},
                         {"slug": "typesafe/jev-latest", "default_reasoning_level": "max", "supported_reasoning_levels": [{"effort": "max"}]},
                         {"slug": "cursor/composer-2.5", "default_reasoning_level": "high", "supported_reasoning_levels": [{"effort": "high"}]},
+                        {"slug": "cursor/grok-4.6", "default_reasoning_level": "medium", "supported_reasoning_levels": [{"effort": "medium"}]},
                     ]
                 }
             ),
@@ -168,12 +175,51 @@ class MagpieRoutingHelperTests(unittest.TestCase):
         self.assertEqual(group["classifier"], "typesafe/jev-latest")
         self.assertNotIn("typesafe/jev-latest", members)
         self.assertFalse(any("jev-" in m for m in members))
-        self.assertFalse(any(m.startswith("cursor/") for m in members))
+        self.assertIn("cursor/grok-4.6:medium", members)
+        self.assertFalse(any(m.startswith("cursor/composer-2.5") for m in members))
         self.assertLessEqual(max(len(rule["intent"]) for rule in rules), 200)
         intents = " ".join(rule["intent"] for rule in rules)
         self.assertIn("Routine research writing", intents)
         self.assertIn("Final manuscript integration", intents)
         self.assertIn("Experiment and protocol coordination", intents)
+
+    def test_cursor_receives_its_own_intents_not_only_fallback_membership(self):
+        evidence = load_effort_evidence(self.catalog_path)
+        group = build_target_group(ROUTING, evidence)
+        cursor_rules = [rule for rule in group["rules"]
+                        if rule["use"] == "cursor/grok-4.6:medium"]
+        self.assertGreaterEqual(len(cursor_rules), 2)
+        self.assertTrue(any("competing explanations" in rule["intent"].lower()
+                            for rule in cursor_rules))
+        self.assertTrue(any("engineering" in rule["intent"].lower()
+                            for rule in cursor_rules))
+        self.assertTrue(all("tokens" not in rule and "images" not in rule
+                            for rule in cursor_rules))
+
+    def test_subscription_group_member_requires_supported_fixed_effort(self):
+        evidence = load_effort_evidence(self.catalog_path)
+        evidence["levels"]["cursor/grok-4.6"] = ["high"]
+        group = build_target_group(ROUTING, evidence)
+        self.assertFalse(any(member.startswith("cursor/") for member in group["members"]))
+        self.assertFalse(any(rule["use"].startswith("cursor/") for rule in group["rules"]))
+
+    def test_blocked_endpoint_cannot_reenter_group_through_registry_flag(self):
+        routing = json.loads(ROUTING.read_text(encoding="utf-8"))
+        endpoint = next(item for item in routing["models"] if item["id"] == "cursor/grok-4.6")
+        endpoint["dispatch_block_reason"] = "new adapter mismatch"
+        routing_path = self.base / "blocked-routing.json"
+        routing_path.write_text(json.dumps(routing), encoding="utf-8")
+        group = build_target_group(routing_path, load_effort_evidence(self.catalog_path))
+        self.assertFalse(any(member.startswith("cursor/") for member in group["members"]))
+
+    def test_unverified_account_candidates_do_not_join_automatic_group(self):
+        routing = json.loads(ROUTING.read_text(encoding="utf-8"))
+        endpoint = next(item for item in routing["models"] if item["id"] == "cursor/grok-4.6")
+        endpoint["group_eligible"] = False
+        routing_path = self.base / "direct-only-routing.json"
+        routing_path.write_text(json.dumps(routing), encoding="utf-8")
+        group = build_target_group(routing_path, load_effort_evidence(self.catalog_path))
+        self.assertFalse(any(member.startswith("cursor/") for member in group["members"]))
 
     def test_build_plan_redacts_credentials_and_preserves_other_groups(self):
         plan = build_plan(self.config_path, ROUTING, self.artifact_dir, self.catalog_path)

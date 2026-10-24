@@ -77,6 +77,7 @@ quality ranking.
 | --- | --- | --- | --- | --- |
 | Difficult scientific integration | `codex/gpt-6-astra` | `max` for difficult, `xhigh` for revision | original research, contribution judgement, difficult diagnosis | paid shared Codex pool |
 | Formal derivation and reliable implementation | `codex/gpt-6.1-sol` | `max` for formal/engineering, `high` for coordination | mathematical subproblems, implementation, reproducibility | paid shared Codex pool; not the legacy `gpt-6-sol` |
+| Covered Cursor branch | `cursor/grok-4.6` | `medium`, Fast off | competing explanations, bounded engineering, protocol alternatives and milestone critique | shared Cursor subscription pool; refresh coverage; no verified hard output cap |
 | Long evidence and independent science review | `google-vertex/gemini-4-argon` | `high` | long-document consistency, multimodal evidence, cross-model review | paid Vertex; do not infer tool parity from context size |
 | Free scientific reasoning and code | `workbuddy-ai/deepseek-v4.1-flash` | `max` | derivations, statistics, code, independent review | exact served checkpoint may be opaque; channel-specific |
 | Free literature and research synthesis | `workbuddy-ai/step-5-preview` | `high` | long-context synthesis, alternatives, contribution and reuse review | preview model; public evidence is limited |
@@ -122,15 +123,34 @@ programmatic routing and records the full list of free and reviewer candidates.
 | `research-product-maintain` | Hy3 triage; MiMo reproduction; GLM fix; DeepSeek effect regression | Sol integration; Argon regression; Astra scientific impact |
 | `research-optimize` | Step preserves strengths and proposes changes; GLM implements bounded candidates | Sol/Argon independent milestone validation |
 
-The `covered_account_executors` lists add Cursor Composer for code and packaging,
-Cursor Grok variants for alternative explanations, and Vertex Pro/Flash variants
-for long evidence, extraction, tools and consistency. They are configured
-alternatives, not claims of benchmark leadership or prepaid access. All entries
-from the current Cursor and Vertex catalog are registered with channel-specific
-quota pools and observed capabilities. Confirm actual account coverage and
-context/tool behavior before using them; do not infer independent quota from
-different names. New endpoints with unknown coverage remain direct-dispatch
-candidates and are not added to a mixed group's automatic fallback members.
+Use `covered_account_executors` as real assignment choices alongside the free
+branch, with each model entry's `stage_roles` defining its bounded work. When an
+independent task fits and Cursor's current subscription covers it, assign
+`cursor/grok-4.6` at `medium` with Fast off; do not silently ignore this list
+because the stage already has a free executor. This is useful when the shared
+Codex pool is busy. Record the dispatch/result or an actual reason for skipping.
+Do not add a redundant task or an immediate review just to consume a channel.
+
+Grok 4.6 has a recorded direct functional check and is eligible for two
+`smart-split` intent rules: competing explanations/design alternatives and
+bounded engineering second opinions. The generator reads `automatic_group_intents`
+from the registry and requires the fixed effort in the live capability catalog.
+Group membership is an ordering choice, not verified current coverage or a
+guarantee of execution. Strict stage assignments still use the direct endpoint.
+Composer 2.5 remains blocked because its requested and observed efforts disagree;
+Grok 4.7/4.5 remain conditional direct candidates. Do not claim they were tested
+merely because their account lists them.
+
+Vertex Pro/Flash variants remain conditional long-evidence, extraction and
+consistency alternatives. These assignments are not benchmark rankings. All
+Cursor variants share one Cursor pool, with one concurrent worker while its
+concurrency limit is unknown. Refresh the actual subscription window before a
+batch and account for shared in-flight use; a historical percentage or reset is
+not current authorization. On-demand/top-up usage is excluded unless separately
+authorized. Magpie may continue into on-demand usage when the account allows it,
+so a mixed group is not a subscription-spend guard. Do not use it when the task
+requires enforceable no-overage or hard-output limits; choose a covered endpoint
+with those guarantees. Do not change account billing settings to work around this.
 
 For a simple bounded request, use one free executor and proportionate checks;
 do not spawn every model merely to satisfy the table. For a full paper, queue

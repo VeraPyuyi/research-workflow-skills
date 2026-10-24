@@ -77,7 +77,7 @@ These internal-audit inputs do not override the blind mode's submitted-input lim
 missing necessary evidence in a submission is a finding, not permission to browse
 the author's private records.
 
-## Deliver and finish
+## Deliver and continue
 
 Deliver strengths and actionable findings, each with location, observed evidence, scientific
 impact, requested correction and destination stage. Separate required fixes from
@@ -93,6 +93,11 @@ baseline/implement for comparison correctness, experiment/analyze for missing
 evidence, and write for unsupported wording. Add the shared handoff, reviewer and
 review-coverage record, and readiness assessment; an AI assessment does not replace
 the user's conclusion decision.
+For a paper Goal, route required repairs or the next milestone into actual work
+under existing delegation. A failed review branch blocks the dependent gate;
+record the failure and continue independent authorized work. Keep the Goal active
+until the paper delivery contract is met or the native lifecycle requires another
+status. A review report alone is not a completed paper.
 
 Consolidate internal reviews at the research/protocol gate and
 principal-conclusions gate; for full papers use M4/M5 venue reviews and the

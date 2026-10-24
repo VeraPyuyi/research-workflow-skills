@@ -59,13 +59,17 @@ the completed evidence for M3; reopen M1/M2 only when their covered dependencies
 materially changed. Scientific repetitions in the approved matrix are research,
 not redundant process testing.
 
-## Deliver and finish
+## Deliver and continue
 
 Deliver the run manifest, actual raw artifacts, completed/remaining matrix,
 failures, consumption and recovery prerequisites. Use the shared handoff.
 When no execution tool exists, deliver a clearly unexecuted task package.
 Route usable records to research-analyze; return validity failures to implement,
 baseline or design. Extra experiments require the relevant remaining authorization.
+In a paper Goal, a completed run batch hands its usable artifacts to analysis in
+the ongoing workflow. Record that next action and keep the paper Goal active;
+do not end the research just because the batch or pilot is complete. An uncertain
+job prevents duplicate submission, while independent existing-data work continues.
 
 Example: a client timeout after submitting a training job does not establish that
 the remote job stopped. Recover its identity and reconcile status and consumption

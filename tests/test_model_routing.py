@@ -73,6 +73,22 @@ class ModelRoutingTests(unittest.TestCase):
         self.assertEqual(policy["max_concurrency_unknown_pool"], 1)
         self.assertLessEqual(policy["dot_max_concurrency"], policy["max_active_workers"])
 
+    def test_verified_cursor_is_an_actionable_stage_assignment(self):
+        for stage in ("research-ideate", "research-design", "research-analyze",
+                      "research-review", "research-implement", "research-product-build"):
+            with self.subTest(stage=stage):
+                self.assertEqual(
+                    self.routing["stages"][stage]["covered_account_executors"][0],
+                    "cursor/grok-4.6",
+                )
+        model = self.models["cursor/grok-4.6"]
+        self.assertTrue(model["group_eligible"])
+        self.assertTrue(model["automatic_group_intents"])
+        self.assertGreaterEqual(len(model["stage_roles"]), 12)
+        self.assertEqual(model["fixed_effort"], "medium")
+        self.assertEqual(model["quota_pool"], "cursor")
+        self.assertFalse(self.models["cursor/composer-2.5"]["group_eligible"])
+
     def test_effective_concurrency_never_exceeds_cap(self):
         limits = {
             "codex": self.routing["policy"]["max_concurrency_per_confirmed_pool"],

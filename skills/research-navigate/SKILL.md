@@ -5,8 +5,9 @@ description: Use when starting, resuming, or coordinating multi-stage AI researc
 
 # Research Navigator
 
-Turn the user's current objective and actual artifacts into the next useful work
-package. Coordinate the stages; leave their scientific work to the stage skills.
+Advance the user's requested outcome from the actual project artifacts.
+Coordinate the stages; leave their scientific work to the stage skills. For a
+full-paper request, a useful next work package is an intermediate step.
 
 Read the [workflow contract](references/workflow-contract.md) and
 [stage map](references/stage-map.md). Select relevant references through the
@@ -23,6 +24,9 @@ For a full-paper task or explicitly enabled native Goal, read
 [Goal execution](references/goal-execution.md). The endpoint is a submission-ready
 paper and venue-appropriate reproduction package, not the next route or outline.
 Preserve bounded stage requests; selecting this skill alone does not create a Goal.
+When the user explicitly asks to enable or resume a paper Goal, perform the native
+Goal binding at entry, record the actual tool result, and then advance the project.
+Do not turn that request into only a plan for enabling Goal later.
 
 ## Route from evidence
 
@@ -47,7 +51,10 @@ Preserve bounded stage requests; selecting this skill alone does not create a Go
    `scripts/jev_decide.py`. It has no proof or gate authority: evidence and hard
    program constraints take precedence, and unknown account coverage means no call.
 6. For substantive work, assign a free executor, milestone review ownership and an
-   integrator from the model map. Consolidate review at the applicable milestone;
+   integrator from the model map. Also evaluate its covered-account assignments:
+   dispatch a useful Cursor branch when current coverage and capacity permit, or
+   record why it was skipped; a catalog entry alone is not participation.
+   Consolidate review at the applicable milestone;
    do not dispatch a reviewer after every branch or edit. Check model access, effort, context,
    modality and data restrictions. Split independent branches; reserve shared
    resources and non-overlapping write scopes. Route to the matching stage using
@@ -62,10 +69,11 @@ Preserve bounded stage requests; selecting this skill alone does not create a Go
 
 For contribution-improvement requests, preserve the shared round package and
 coordinate analyze -> needed design/implementation/experiment -> analyze.
-Advance feasible authorized stages while the requested loop remains in scope,
-instead of stopping after recommending a route. Carry actual artifacts and
-consumption back into the same round. Stop at its completion/decision boundary
-or a dependent execution blocker; continue independent authorized preparation.
+Advance feasible authorized stages while the requested loop remains in scope.
+Carry actual artifacts and consumption back into the same round. A completed
+round closes that round; in a paper Goal, select and execute the next dependency.
+An unavailable input, reviewer or resource blocks its dependent work, not every
+other authorized stage. A bounded request retains its own completion boundary.
 
 ## Continue under existing authority
 
@@ -82,6 +90,8 @@ At entry, resumption or a handoff, adopt a compatible validated suite release
 through [workflow updates](references/workflow-updates.md) under recorded
 automatic-update authority. Running jobs keep their pinned versions and
 independently customized local copies are never overwritten.
+After adopting a release, actually read its affected instructions. A release
+record alone neither reloads an old context nor activates a native Goal.
 
 Each substantial stage completion queues one stable event for the sibling
 [research-optimize](../research-optimize/SKILL.md) skill, carrying strengths,
@@ -108,4 +118,7 @@ unambiguous. A continued-research request also needs actual round progress or an
 explicit unmet prerequisite. Routing completion is not completed scientific work.
 For a full-paper Goal, keep advancing authorized dependencies until its delivery
 contract is met or a genuine limit prevents progress. Save the compact milestone
-handoff for continuation; do not finish the Goal merely because this stage ended.
+handoff for continuation, including the next action actually started or the exact
+dependency preventing it. A phase report is an internal checkpoint. Follow the
+[continuation procedure](references/goal-execution.md#stage-to-stage-continuation)
+before ending a turn; do not finish the Goal merely because this stage ended.

@@ -51,6 +51,11 @@ For a full-paper Goal, add a compact continuation line:
 - Venue V2 distinguishes submission requirements and optional post-acceptance artifacts.
 - M4/M5 reviewers are scheduled, not executed; no finished-paper claim is warranted.
 - A completed analysis hands off to evidence review/writing rather than completing G1.
+- Stage status: analysis A4 complete; paper status: incomplete; native G1 active.
+- Next action: writing branch W2 started from reviewed claims K1-K7. J7 status
+  reconciliation is separate; it does not prevent drafting those supported claims.
+- On the next host continuation, resume W2/J7 from their records. Do not rerun R12
+  or ask for another "continue" merely because analysis A4 finished.
 
 Keep these coordinator records out of the M4/M5 blind reviewer input bundles.
 

@@ -36,6 +36,13 @@ Do not infer this delegated authority from a request merely to read one paper.
   status and allowance. Reuse a matching active Goal; do not overwrite an unrelated
   unfinished Goal. If none exists, call `create_goal` only after explicit user
   activation of Goal mode, not because a skill was selected.
+- An explicit activation request is permission to perform this binding now.
+  Retain the returned Goal identifier/status and the activation instruction in
+  the project record. A locally written `"active"` field is not an activation
+  receipt. A coordinator authorized to resume an existing chat sends the scoped
+  instruction through the host's supported chat tool; Goal lifecycle calls run
+  in that owning chat. Never edit a host Goal database or create a second chat
+  merely to bypass the original project's state.
 - Include the manuscript and reproduction completion conditions in the objective
   or its linked project record. Supply `token_budget` only when the user explicitly
   requested that token allowance. Token allowance is distinct from money, GPU
@@ -64,6 +71,58 @@ advance within the current authorized interaction without silently creating a Go
 
 Official background: [Using Goals in Codex](https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex).
 Use the tools actually exposed by the current host, not a guessed CLI switch.
+
+## Stage-to-stage continuation
+
+Apply this at meaningful stage completion or resumption, using existing project
+records rather than creating a second scheduler:
+
+1. Close only the completed stage or round. Preserve its artifact versions, valid
+   check coverage, actual consumption and unresolved findings. Legacy R0/R1
+   stopping rules describe those rounds; they do not shorten a newly authorized
+   complete-paper objective.
+2. Compare the actual manuscript, evidence, reviews and reproduction package with
+   the paper completion contract. If anything required remains, leave the native
+   Goal active. Do not use a checklist of planned deliverables as evidence.
+3. Select a concrete unfinished dependency covered by existing authority and
+   resources, and start it in this turn when possible. Record stage/owner, inputs,
+   intended artifact and the action actually taken. Merely recommending the next
+   skill does not execute it.
+4. Scope a blocker to the work it prevents. For example, an unavailable original
+   attachment blocks an exact original-draft audit; it does not automatically
+   block source checking, theory work or an independently specified implementation.
+   Failed reviewer calls remain failed; choose a supported authorized alternative
+   or continue independent preparation while that review stays pending.
+5. Reconcile possibly active jobs and resource commitments before new launches.
+   Reuse unchanged completed runs, pilots and checks. Proposed budgets are not
+   approved budgets; stop expansion of the affected resource use while doing
+   work covered by the existing envelope. Ask for an actual missing decision only
+   when it is needed, with a concrete bounded choice and its consequences.
+6. When the host ends a turn before paper delivery, save a compact resumption
+   checkpoint and keep the native Goal active for host-driven continuation. An
+   interim final response describes progress and unfinished work; it is not an
+   invitation requiring another human "continue". Native host limits still apply.
+   If no meaningful authorized work remains, follow the actual blocker/decision
+   lifecycle rather than manufacturing activity or empty continuation turns.
+
+The checkpoint adds these fields to the existing handoff (names/serialization
+may follow the project):
+
+- `goal`: actual native binding/status, completion-contract reference and authority.
+- `stage_status` and `paper_status`: separate values with artifact evidence.
+- `next_action`: owner/stage, inputs, intended artifact and execution state
+  (`started`, `ready`, `waiting_for_job`, or `needs_decision`).
+- `blockers`: affected dependencies and independent work still available.
+- `resume`: job IDs, budget commitments, retained artifact/check versions and
+  the last meaningful transition. Do not replace an existing richer state store.
+
+At first activation or recovery from a premature stop, distinguish three kinds
+of evidence: a real Goal binding; work crossing a stage boundary; and, if observed,
+a later native continuation turn with no intervening human continue prompt.
+Installing a skill or passing a simulated scenario proves none of those runtime
+events. Do not fabricate a turn to make this verification pass. If Goal tools or
+host continuation are unavailable, report that precise limit and continue useful
+in-turn work; do not claim unattended execution or install an unrequested service.
 
 ## Five substantial milestones
 
