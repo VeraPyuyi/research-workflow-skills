@@ -329,7 +329,7 @@ class DispatchGuardTests(unittest.TestCase):
                     adapter="jev_decide.py")
         self.assertEqual(self.check(plan)["status"], "blocked")
 
-    def test_cursor_and_vertex_require_current_allowance_and_exact_capability(self):
+    def test_cursor_requires_current_allowance_and_exact_capability(self):
         plan = packet()
         plan.update(model="cursor/grok-4.6", free_only=False, effort="medium",
                     supported_efforts=["medium"], cost_authorization="account-scope",
@@ -338,11 +338,25 @@ class DispatchGuardTests(unittest.TestCase):
         plan["effort"] = "max"
         plan["supported_efforts"] = ["medium", "max"]
         self.assertEqual(self.check(plan)["status"], "blocked")
-        plan.update(model="google-vertex/gemini-3.8-flash", effort="high",
-                    supported_efforts=["high"], allowance_coverage="unknown")
-        self.assertEqual(self.check(plan)["status"], "blocked")
-        plan["allowance_coverage"] = "confirmed"
-        self.assertEqual(self.check(plan)["status"], "ready-for-dispatch")
+
+    def test_vertex_generic_allowance_does_not_prove_app_builder_credit(self):
+        registry = json.loads(self.module.REGISTRY.read_text(encoding="utf-8"))
+        for endpoint in registry["models"]:
+            if not endpoint["id"].startswith("google-vertex/"):
+                continue
+            # A caller declaration or stale registry flag cannot unlock billing.
+            endpoint.pop("dispatch_block_reason", None)
+            endpoint.update(group_eligible=True, allowance_state="confirmed")
+            plan = packet()
+            plan.update(model=endpoint["id"], free_only=False, effort="high",
+                        supported_efforts=["high"], cost_authorization="existing budget",
+                        allowance_coverage="confirmed", allowance_record="billing enabled",
+                        promotional_credit="Trial credit for GenAI App Builder")
+            with self.subTest(model=endpoint["id"]):
+                result = self.module.check(plan, registry)
+                self.assertEqual(result["status"], "blocked")
+                self.assertTrue(any("GenAI App Builder" in error for error in result["errors"]))
+
 
 
 if __name__ == "__main__":

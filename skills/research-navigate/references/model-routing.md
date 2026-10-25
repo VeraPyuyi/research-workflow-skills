@@ -78,7 +78,7 @@ quality ranking.
 | Difficult scientific integration | `codex/gpt-6-astra` | `max` for difficult, `xhigh` for revision | original research, contribution judgement, difficult diagnosis | paid shared Codex pool |
 | Formal derivation and reliable implementation | `codex/gpt-6.1-sol` | `max` for formal/engineering, `high` for coordination | mathematical subproblems, implementation, reproducibility | paid shared Codex pool; not the legacy `gpt-6-sol` |
 | Covered Cursor branch | `cursor/grok-4.6` | `medium`, Fast off | competing explanations, bounded engineering, protocol alternatives and milestone critique | shared Cursor subscription pool; refresh coverage; no verified hard output cap |
-| Long evidence and independent science review | `google-vertex/gemini-4-argon` | `high` | long-document consistency, multimodal evidence, cross-model review | paid Vertex; do not infer tool parity from context size |
+| Vertex catalogue (held) | `google-vertex/*` | not admitted | no executable default assignment | App Builder promotional credit scope unverified; provider off; see [credit policy](vertex-credit-policy.md) |
 | Free scientific reasoning and code | `workbuddy-ai/deepseek-v4.1-flash` | `max` | derivations, statistics, code, independent review | exact served checkpoint may be opaque; channel-specific |
 | Free literature and research synthesis | `workbuddy-ai/step-5-preview` | `high` | long-context synthesis, alternatives, contribution and reuse review | preview model; public evidence is limited |
 | Free retrieval and source checks | `workbuddy-ai/hy3` | `high` | search branches, source verification, requirement checks | upstream reports 256K; endpoint context and tools need checking |
@@ -106,22 +106,22 @@ programmatic routing and records the full list of free and reviewer candidates.
 | Stage | Free execution branch | Independent review / integration |
 | --- | --- | --- |
 | `research-navigate` | Step progress; Lightning structured records | Sol complex coordination; Astra scientific disputes |
-| `research-scope` | Hy3 background; Step brief; DeepSeek question definition | Argon or Step reviews scope and stopping conditions |
-| `research-survey` | Hy3 searches; Step synthesis; DeepSeek transfer; Nemotron VL figures | Astra research judgement; Argon long evidence; DeepSeek reuse conditions |
+| `research-scope` | Hy3 background; Step brief; DeepSeek question definition | Astra or Step reviews scope and stopping conditions |
+| `research-survey` | Hy3 searches; Step synthesis; DeepSeek transfer; Nemotron VL figures | Astra research judgement; Sol long evidence; DeepSeek reuse conditions |
 | `research-ideate` | DeepSeek definitions/derivations; Step alternatives; Beam checks; Space Bunny objections | Sol/Astra key mathematics; Step duplicate-contribution review |
-| `research-design` | DeepSeek theory/statistics; Step controls; GLM protocol support | Astra validity; Sol mathematics; Argon experiment necessity |
-| `research-baseline` | GLM and MiMo separate baselines; DeepSeek formula/code; Step discrepancy record | Sol engineering; Argon independent reproduction |
-| `research-implement` | GLM/MiMo modules; DeepSeek algorithm; Hy3 tests/docs | Sol/Argon integration; Astra unresolved method design |
+| `research-design` | DeepSeek theory/statistics; Step controls; GLM protocol support | Astra validity; Sol mathematics; independent Sol/Astra experiment-necessity review |
+| `research-baseline` | GLM and MiMo separate baselines; DeepSeek formula/code; Step discrepancy record | Sol engineering; Astra independent reproduction |
+| `research-implement` | GLM/MiMo modules; DeepSeek algorithm; Hy3 tests/docs | Sol integration with Astra review; Astra unresolved method design |
 | `research-experiment` | GLM run scripts; Step status; DeepSeek anomalies; Lightning public logs | Sol run coordination; Astra difficult diagnosis |
-| `research-analyze` | DeepSeek statistics/interpretations; Step contribution/reuse audit; GLM figures; Nemotron VL public figures | Argon evidence chain; Sol mathematics; Astra contribution decision |
-| `research-write` | Step sections; DeepSeek mathematics/method; Hy3 citations; GLM artifacts | Argon consistency; Astra integration |
-| `research-review` | DeepSeek scientific; Beam mathematics; Step reuse; GLM/MiMo engineering | Argon evidence chair; Astra/Sol escalation |
-| `research-submit` | Hy3 venue requirements; Step response matrix; DeepSeek technical response; GLM attachments | Sol package; Argon evidence consistency |
-| `research-product-discover` | Hy3 need/alternatives; Step product brief; DeepSeek research boundary | Astra product value; Argon need evidence |
-| `research-product-build` | GLM/MiMo modules; DeepSeek algorithm; Step/Hy3 examples | Sol/Argon integration; Astra complex design |
-| `research-product-release` | GLM package; Step release text; Hy3 install checks; MiMo examples | Sol release candidate; Argon independent user journey |
-| `research-product-maintain` | Hy3 triage; MiMo reproduction; GLM fix; DeepSeek effect regression | Sol integration; Argon regression; Astra scientific impact |
-| `research-optimize` | Step preserves strengths and proposes changes; GLM implements bounded candidates | Sol/Argon independent milestone validation |
+| `research-analyze` | DeepSeek statistics/interpretations; Step contribution/reuse audit; GLM figures; Nemotron VL public figures | Sol evidence chain; Sol mathematics; Astra contribution decision |
+| `research-write` | Step sections; DeepSeek mathematics/method; Hy3 citations; GLM artifacts | Sol consistency; Astra integration |
+| `research-review` | DeepSeek scientific; Beam mathematics; Step reuse; GLM/MiMo engineering | Sol evidence chair; Astra/Sol escalation |
+| `research-submit` | Hy3 venue requirements; Step response matrix; DeepSeek technical response; GLM attachments | Sol package; Astra evidence consistency |
+| `research-product-discover` | Hy3 need/alternatives; Step product brief; DeepSeek research boundary | Astra product value; Sol need evidence |
+| `research-product-build` | GLM/MiMo modules; DeepSeek algorithm; Step/Hy3 examples | Sol integration with Astra review; Astra complex design |
+| `research-product-release` | GLM package; Step release text; Hy3 install checks; MiMo examples | Sol release candidate; Astra independent user journey |
+| `research-product-maintain` | Hy3 triage; MiMo reproduction; GLM fix; DeepSeek effect regression | Sol integration; Astra regression; Astra scientific impact |
+| `research-optimize` | Step preserves strengths and proposes changes; GLM implements bounded candidates | Sol/Astra independent milestone validation |
 
 Use `covered_account_executors` as real assignment choices alongside the free
 branch, with each model entry's `stage_roles` defining its bounded work. When an
@@ -141,9 +141,12 @@ Composer 2.5 remains blocked because its requested and observed efforts disagree
 Grok 4.7/4.5 remain conditional direct candidates. Do not claim they were tested
 merely because their account lists them.
 
-Vertex Pro/Flash variants remain conditional long-evidence, extraction and
-consistency alternatives. These assignments are not benchmark rankings. All
-Cursor variants share one Cursor pool, with one concurrent worker while its
+All Vertex variants, including Argon, are held outside executable assignments
+until **Trial credit for GenAI App Builder** coverage and no-overage enforcement
+are verified. Follow [the credit policy](vertex-credit-policy.md); a generic
+allowance confirmation cannot admit these endpoints. The provider remains off,
+including for direct calls and groups outside research. These assignments are
+not benchmark rankings. All Cursor variants share one Cursor pool, with one concurrent worker while its
 concurrency limit is unknown. Refresh the actual subscription window before a
 batch and account for shared in-flight use; a historical percentage or reset is
 not current authorization. On-demand/top-up usage is excluded unless separately
@@ -195,13 +198,13 @@ sole reviewer of a central mathematical or scientific claim.
 
 Useful fallback groups:
 
-- **Long evidence:** Argon `high` -> Step `high` -> LongCat/Nemotron Ultra free,
+- **Long evidence:** Step `high` -> LongCat/Nemotron Ultra free -> Sol,
   with context and data-policy checks.
 - **Mathematics:** DeepSeek free `max` -> Beam `max` -> Sol `max`; Astra `max`
   for an unresolved research-level dispute.
 - **Engineering:** GLM free `max` -> MiMo free `max` -> Sol `max`; Astra for
   a scientific blocker rather than routine implementation.
-- **Science review:** DeepSeek free `max` -> Argon `high` -> Astra `max`.
+- **Science review:** DeepSeek free `max` -> Sol `max` -> Astra `max`.
 - **Generative routing records:** Lightning -> Step -> Sol `high`.
 - **Structured decisions:** native Typesafe Jev only through its verified adapter.
   If unavailable, the scientific integrator continues from evidence and records
@@ -262,7 +265,9 @@ absolute `write_paths`; include all workers sharing the allowance. A review adds
 `author_model` and `author_evidence` for its actually served identity; a billed
 dispatch adds `cost_authorization`, `allowance_coverage: "confirmed"` and
 `allowance_record` pointing to the actual account evidence. These are distinct
-from a catalog entry or a user preference. Same-model review will fail independent
+from a catalog entry or a user preference. Vertex remains blocked by the specific
+App Builder credit hold even when these generic fields are present. Same-model
+review will fail independent
 preflight even if its channel differs. A direct image route also needs
 `vision_endpoint_verified: true` after checking that it accepts the input and will
 not invoke an auxiliary model. `tools_allowed: false` blocks a task that needs tools.
@@ -288,6 +293,13 @@ calls can race. Record actual served model/effort from runtime evidence when
 available; otherwise mark it unknown and do not certify independence. Count
 gateway retries and auxiliary calls when the runtime exposes them.
 
+Its declared packet checks image inputs, not general audio/video capability or
+a universal spending cap. Adding ad hoc fields such as `video_endpoint_verified`
+or `no_paid_overage_verified` does not implement those checks. Keep audio/video
+work pending until the coordinator verifies the actual endpoint and coverage;
+use the provider-level hold for the current Vertex restriction. A `ready` result
+for a different provider is not proof of zero incremental charges.
+
 For M4/M5 blind venue review, add `review_mode: "venue_blind"`, round 1/2,
 `new_agent: true`, `fork_context: false`, `manuscript_revision`, `venue_profile`
 and an explicit `allowed_inputs` manifest. See
@@ -300,7 +312,7 @@ content isolation. Record the actual fresh-agent call and actual access coverage
 
 `research-focus` uses Step/DeepSeek free branches for a substantive provenance or
 alignment task, Cursor Grok 4.6 for a bounded alternative-question critique when
-current subscription coverage permits, and Sol integration with Astra/Argon
+current subscription coverage permits, and Sol integration with Astra/Sol
 milestone review. See the actual stage registry; this is allocation, not a new
 model ranking or a claim of current quota. Routine focus reminders reuse records
 without model calls. Jev comparison is optional at real candidate choices.

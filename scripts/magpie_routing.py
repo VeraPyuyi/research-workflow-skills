@@ -325,6 +325,7 @@ def build_target_group(routing_path: Path, evidence: dict[str, Any]) -> dict[str
     routing = load_json(routing_path)
     free_ids = [item["id"] for item in routing["models"]
                 if item.get("free") and item.get("kind", "generative") == "generative"
+                and not item["id"].startswith("google-vertex/")
                 and item.get("group_eligible", True) and not item.get("dispatch_block_reason")]
     effort_by_id = {item["id"]: item.get("effort") for item in routing["models"]}
     def verified(member: str, wanted: str) -> str:
@@ -334,13 +335,16 @@ def build_target_group(routing_path: Path, evidence: dict[str, Any]) -> dict[str
     members = [
         verified("codex/gpt-6-astra", "max"),
         verified("codex/gpt-6.1-sol", "max"),
-        verified("google-vertex/gemini-4-argon", "high"),
     ]
     for model_id in free_ids:
         effort = effort_by_id.get(model_id, "")
         members.append(verified(model_id, effort) if effort else model_id)
     account_rules = []
     for item in routing["models"]:
+        # No Vertex route has verified App Builder credit/no-overage coverage.
+        # Generic group eligibility must not override this billing hold.
+        if item["id"].startswith("google-vertex/"):
+            continue
         intents = item.get("automatic_group_intents", [])
         if (not intents or item.get("group_eligible") is not True
                 or item.get("kind", "generative") != "generative"
@@ -373,7 +377,7 @@ def build_target_group(routing_path: Path, evidence: dict[str, Any]) -> dict[str
         {"use": exact_member("opencode-zen/beam-free"), "intent": INTENTS["math"]},
         {"use": exact_member("opencode-zen/glm-5.3-flash-free"), "intent": INTENTS["engineering"]},
         {"use": exact_member("opencode-zen/nemotron-3.5-super-vl-free"), "intent": INTENTS["vision"]},
-        {"use": exact_member("google-vertex/gemini-4-argon"), "intent": INTENTS["consistency"]},
+        {"use": exact_member("workbuddy-ai/step-5-preview"), "intent": INTENTS["consistency"]},
         {"use": exact_member("codex/gpt-6-astra"), "intent": INTENTS["hard"]},
         {"use": exact_member("codex/gpt-6.1-sol"), "intent": INTENTS["formal"]},
         {"use": exact_member("codex/gpt-6.1-sol"), "intent": INTENTS["experiment"]},

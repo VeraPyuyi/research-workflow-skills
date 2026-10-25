@@ -23,7 +23,7 @@ do not rerun J7 while its status is unknown.
 
 **Dispatch:** Step-5-Preview Free drafted the synthesis; DeepSeek V4.1 Flash Free
 independently checked the stated assumptions. Requested and served models are
-recorded separately. Argon review is unexecuted because this worker could not
+recorded separately. Astra review is unexecuted because this worker could not
 dispatch it, so the claim is not treated as independently verified.
 
 If the user asks only for a paper reading, use the same fields for the reading

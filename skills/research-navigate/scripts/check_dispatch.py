@@ -77,6 +77,14 @@ def check(plan, registry=None):
     errors = review_errors(plan)
     model = plan.get("model", "")
     selected = models.get(model)
+    if isinstance(model, str) and model.startswith("google-vertex/"):
+        # No verified credit-backed adapter is implemented in this release.
+        # Caller flags cannot turn billing/quota evidence into promotional credit.
+        errors.append(
+            "Vertex is on hold: Trial credit for GenAI App Builder coverage and "
+            "no-paid-overage enforcement are unverified; generic allowance "
+            "confirmation cannot authorize dispatch"
+        )
     if selected and selected.get("dispatch_block_reason"):
         errors.append("Endpoint needs re-verification: " + selected["dispatch_block_reason"])
     if (plan.get("requires_hard_output_cap") is True

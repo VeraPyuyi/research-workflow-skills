@@ -151,7 +151,7 @@ class MagpieRoutingHelperTests(unittest.TestCase):
         rules = group["rules"]
         self.assertIn("codex/gpt-6-astra:max", members)
         self.assertIn("codex/gpt-6.1-sol:max", members)
-        self.assertIn("google-vertex/gemini-4-argon:high", members)
+        self.assertFalse(any(m.startswith("google-vertex/") for m in members))
         free_prefixes = {
             "workbuddy-ai/deepseek-v4.1-flash",
             "workbuddy-ai/step-5-preview",
@@ -219,6 +219,23 @@ class MagpieRoutingHelperTests(unittest.TestCase):
         routing_path.write_text(json.dumps(routing), encoding="utf-8")
         group = build_target_group(routing_path, load_effort_evidence(self.catalog_path))
         self.assertFalse(any(member.startswith("cursor/") for member in group["members"]))
+
+    def test_vertex_cannot_reenter_group_with_generic_eligibility_or_free_flag(self):
+        routing = json.loads(ROUTING.read_text(encoding="utf-8"))
+        for endpoint in routing["models"]:
+            if endpoint["id"].startswith("google-vertex/"):
+                endpoint.update(group_eligible=True, free=True,
+                                allowance_state="confirmed",
+                                automatic_group_intents=["Review supplied evidence"])
+                endpoint.pop("dispatch_block_reason", None)
+        path = self.base / "generic-vertex-approval.json"
+        path.write_text(json.dumps(routing), encoding="utf-8")
+        group = build_target_group(path, load_effort_evidence(self.catalog_path))
+        self.assertFalse(any(m.startswith("google-vertex/") for m in group["members"]))
+        self.assertFalse(any(r["use"].startswith("google-vertex/") for r in group["rules"]))
+        consistency = next(r for r in group["rules"] if "Long-evidence consistency" in r["intent"])
+        self.assertTrue(consistency["use"].startswith("workbuddy-ai/step-5-preview"))
+        self.assertIn("cursor/grok-4.6:medium", group["members"])
 
     def test_unverified_account_candidates_do_not_join_automatic_group(self):
         routing = json.loads(ROUTING.read_text(encoding="utf-8"))

@@ -37,6 +37,13 @@ alone does not establish enforcement.
   by offline validation, with live allowance and primitive checks pending.
 - Vertex application credentials matched the configured quota project locally;
   this does not establish applicable remaining credits.
+- On 2026-10-25, the funding restriction was narrowed to **Trial credit for
+  GenAI App Builder** only. The billing page still required sign-in; no
+  eligible model/SKU mapping or remaining credit was verified and no inference
+  probe was sent. All six configured Vertex endpoints are on hold, the provider
+  is switched off, and default research assignments use other authorized
+  channels. Follow [the credit policy](vertex-credit-policy.md) before any
+  reviewed re-enable; generic allowance records cannot bypass the hold.
 
 Request model, gateway-sent model, response-reported model, effort and billing
 evidence are separate fields. Preserve disagreements. An adapter may echo a

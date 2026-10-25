@@ -74,6 +74,7 @@ $research-focus 回溯原始研究主题和历次转向，判断当前论文是�
 - Cursor Grok 4.6 已接入科研组的竞争解释、方案比较和有界工程审读规则，并分配到 13 个阶段（含主线维护）的适用分支；使用 `medium`、Fast 关闭和共享 Cursor 额度池。Composer 档位偏差仍待修复，其余 Grok 版本保留为条件候选。详见 [Cursor 路由修复记录](docs/cursor-routing-validation-20261024.md)。
 - 每批派发重新核对订阅额度与在途消耗。混合组不能保证订阅费用封顶；不能把 `max_tokens` 被接受等同于上游硬上限，也不能自动使用未经授权的按量付费。
 - Jev/Vertex 额度未核实则跳过真实调用，继续其他已授权任务。详见 [验收报告](docs/release-validation.md)。
+- Vertex 只允许使用 **Trial credit for GenAI App Builder** 覆盖的调用。当前未核实赠金适用服务/SKU和余额，全部 Vertex 路由暂缓，Magpie 渠道停用；长文一致性转给 Step，复杂证据整合和独立审读使用现有授权内的 Sol/Astra。普通额度确认不能解除此限制，详见 [赠金路由核验](docs/vertex-credit-validation-20261025.md)。
 
 复制 `config/*.example.json` 为本机私有配置并填写实际位置。模板不提供账户、密钥、真实服务器连接或项目授权。Magpie 凭据只在运行时从用户配置读取，不存入仓库。共享服务器的 CPU、内存和 GPU 按资源预留共享，任务固定编号并可恢复；默认不独占。
 

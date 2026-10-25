@@ -89,6 +89,21 @@ class ModelRoutingTests(unittest.TestCase):
         self.assertEqual(model["quota_pool"], "cursor")
         self.assertFalse(self.models["cursor/composer-2.5"]["group_eligible"])
 
+    def test_unverified_vertex_has_no_default_stage_or_review_assignment(self):
+        for endpoint in self.models.values():
+            if endpoint["id"].startswith("google-vertex/"):
+                self.assertFalse(endpoint.get("group_eligible", True))
+                self.assertTrue(endpoint.get("dispatch_block_reason"))
+        for stage, allocation in self.routing["stages"].items():
+            with self.subTest(stage=stage):
+                assigned = [allocation["integrator"]]
+                for field in ("free_executors", "reviewers", "covered_account_executors"):
+                    assigned += allocation.get(field, [])
+                self.assertFalse(any(m.startswith("google-vertex/") for m in assigned))
+                self.assertTrue(allocation["reviewers"])
+        for assigned in self.routing["review_roles"].values():
+            self.assertFalse(any(m.startswith("google-vertex/") for m in assigned))
+
     def test_effective_concurrency_never_exceeds_cap(self):
         limits = {
             "codex": self.routing["policy"]["max_concurrency_per_confirmed_pool"],

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "contract_version": "1.4",
   "runtime_profile": "magpie",
-  "release_id": "research-20261025-goal-leakage-v6-magpie",
+  "release_id": "research-20261025-vertex-credit-v7-magpie",
   "status": "candidate",
   "files": {
     "research-analyze/agents/openai.yaml": "8a58845388ee589405c021542a413987528991cf7105e7d1a215ef30c66b4d9b",
@@ -35,16 +35,17 @@
     "research-navigate/references/domains/rl.md": "9bed15e93d77914c3a610b2338ea656564ab551ff1585c684ddea9da00850d2f",
     "research-navigate/references/evidence-ledger.md": "b2cd8bbd2f3e2ce8cc950522aa14f8f62fb3b26bd3328b05d8935feaced418d7",
     "research-navigate/references/goal-execution.md": "a66fc9101476b9cce4e58a477ed6ee0bddb0f73ea2555e6487b46403fadf878b",
-    "research-navigate/references/handoff-example.md": "432597938c0931aece7c078e043c100c8529914db0cecab861e41abafd408e68",
+    "research-navigate/references/handoff-example.md": "c0130b1e165191e4c801a5649b0e70d0c0d9625723c3d532e2b2b3bcdfa9ba42",
     "research-navigate/references/implementation-comparison.md": "a9a6d957bb6fd37ea87382b63df5bdd34a8e60804f4e41552c97d0b5b40e1f90",
-    "research-navigate/references/live-validation.md": "1308f798f689f48d917c8db56e53f8ae8222758135a3de9c389210fabbd8759a",
-    "research-navigate/references/model-routing.json": "c6271b0725ec44d14e756babd518c86ce0568200bd7ea0d9797e248147454b9f",
-    "research-navigate/references/model-routing.md": "c7a3f31e61b28c7201ed886a078e9378664eb82dc7023ba830f0148f7a8345ff",
+    "research-navigate/references/live-validation.md": "8faaa49f3b484b8aaa1f518dd965eae4df244c9effea0406bafd30c1a85a92ea",
+    "research-navigate/references/model-routing.json": "fe2a0391c5ece8e4441ef8b63fc1d40a51ae9fccbc93ab52d41bb7cb3e2a6a64",
+    "research-navigate/references/model-routing.md": "5e86c9a375588bb725b014da9ae2e6869e46b6cbfed98551ce386eccc7ca7002",
     "research-navigate/references/reuse-and-simplification.md": "2f1d66459a1a36e5805bc8911ceb2926e1a56e16d02cc0eab44e34ae84808ba8",
     "research-navigate/references/stage-map.md": "ceee5278e283873ac03665d19286352776a5d948d453a7d8d68b74cdf48097eb",
+    "research-navigate/references/vertex-credit-policy.md": "9c1f1d5576114960faae3a065498e42f81a1eb64dc7e15e6564de7ffc79d05b0",
     "research-navigate/references/workflow-contract.md": "414ca8c439996626e8eab29f76dc66925016af8e98298f367d0f006ff49c6eac",
     "research-navigate/references/workflow-updates.md": "daa31b4a8e0469a315e76c9ca3ee71468cadde4c44f34488f54d0a358858ab96",
-    "research-navigate/scripts/check_dispatch.py": "11350337e139c3042009d5c5349b548210333ecee916b891029bfbc6fee1171a",
+    "research-navigate/scripts/check_dispatch.py": "0d4a45e51b05475ef75f1b8dd6039a0434eb42769a9e0dcee4299d262d795651",
     "research-navigate/scripts/goal_recovery.py": "4792997d64911bf6b6e8570382a2f53fc6e0aee5d94aecde5bb9ad25dd3aba41",
     "research-navigate/scripts/jev_decide.py": "38b74a5714575eb1360c07f887d1397b69b2a78fcf8459a83c29b1992dc72507",
     "research-navigate/scripts/workflow_release.py": "7391c7235a89106594623558a885ca3ede48757b922261df6caeac2d832e2cab",
@@ -78,7 +79,7 @@
     "research-write/SKILL.md": "e22bfb26defdd22ccfd1565867bc47cc729eb02eab82b439c941d409e31f3372"
   },
   "validation_receipts": [
-    "tests/results/goal-leakage-release-receipt.json"
+    "tests/results/vertex-credit-release-receipt.json"
   ],
-  "bundle_digest": "sha256:59302988aa8a3e91c1a02311bd430a78783686795650f2e7c15ab85d1767635b"
+  "bundle_digest": "sha256:ea3012bfa7a949dad76a62db0bd7d7d88b82f87c736252873b356d09d6b280bc"
 }

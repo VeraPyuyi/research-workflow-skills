@@ -1,6 +1,6 @@
 {
-  "version": 5,
-  "captured_at": "2026-10-24",
+  "version": 6,
+  "captured_at": "2026-10-25",
   "policy": {
     "selection_basis": [
       "public primary evidence",
@@ -40,7 +40,15 @@
     "support_event_exclusions": [
       "research-focus",
       "research-optimize"
-    ]
+    ],
+    "vertex_credit_policy": {
+      "required_credit": "Trial credit for GenAI App Builder",
+      "status": "unverified-hold",
+      "automatic_group_allowed": false,
+      "paid_overage_allowed": false,
+      "verified_routes": [],
+      "reference": "vertex-credit-policy.md"
+    }
   },
   "models": [
     {
@@ -89,7 +97,8 @@
       "quota_pool": "google-vertex",
       "evidence": [
         "GraphWalks 256K-1M",
-        "LABBench 2; provider reported"
+        "LABBench 2; provider reported",
+        "2026-10-25 official billing page required sign-in; no account credit evidence or inference probe"
       ],
       "limitations": [
         "Provider-reported results",
@@ -97,7 +106,11 @@
       ],
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
-      "model_family": "gemini-4-argon"
+      "model_family": "gemini-4-argon",
+      "group_eligible": false,
+      "allowance_state": "unverified-app-builder-credit",
+      "billing_policy": "genai-app-builder-credit-only",
+      "dispatch_block_reason": "Trial credit for GenAI App Builder: account balance, expiry, eligible service/SKUs and exact endpoint coverage unverified; provider held off; no paid overage authorized"
     },
     {
       "id": "workbuddy-ai/deepseek-v4.1-flash",
@@ -394,18 +407,21 @@
       "access": "configured Magpie account; actual allowance and task capabilities must be checked",
       "free": false,
       "quota_pool": "google-vertex",
-      "allowance_state": "unknown",
+      "allowance_state": "unverified-app-builder-credit",
       "group_eligible": false,
       "evidence": [
         "current local configured endpoint catalog",
-        "current local Codex supported efforts and context metadata"
+        "current local Codex supported efforts and context metadata",
+        "2026-10-25 official billing page required sign-in; no account credit evidence or inference probe"
       ],
       "limitations": [
         "No endpoint-specific superiority is established",
         "No new inference or ranking calibration performed",
         "Unknown allowance cannot authorize metered fallback",
         "Configured identity is distinct from actually served model identity"
-      ]
+      ],
+      "billing_policy": "genai-app-builder-credit-only",
+      "dispatch_block_reason": "Trial credit for GenAI App Builder: account balance, expiry, eligible service/SKUs and exact endpoint coverage unverified; provider held off; no paid overage authorized"
     },
     {
       "id": "google-vertex/gemini-3.1-pro-preview-customtools",
@@ -424,18 +440,21 @@
       "access": "configured Magpie account; actual allowance and task capabilities must be checked",
       "free": false,
       "quota_pool": "google-vertex",
-      "allowance_state": "unknown",
+      "allowance_state": "unverified-app-builder-credit",
       "group_eligible": false,
       "evidence": [
         "current local configured endpoint catalog",
-        "current local Codex supported efforts and context metadata"
+        "current local Codex supported efforts and context metadata",
+        "2026-10-25 official billing page required sign-in; no account credit evidence or inference probe"
       ],
       "limitations": [
         "No endpoint-specific superiority is established",
         "No new inference or ranking calibration performed",
         "Unknown allowance cannot authorize metered fallback",
         "Configured identity is distinct from actually served model identity"
-      ]
+      ],
+      "billing_policy": "genai-app-builder-credit-only",
+      "dispatch_block_reason": "Trial credit for GenAI App Builder: account balance, expiry, eligible service/SKUs and exact endpoint coverage unverified; provider held off; no paid overage authorized"
     },
     {
       "id": "google-vertex/gemini-3-flash-preview",
@@ -455,18 +474,21 @@
       "access": "configured Magpie account; actual allowance and task capabilities must be checked",
       "free": false,
       "quota_pool": "google-vertex",
-      "allowance_state": "unknown",
+      "allowance_state": "unverified-app-builder-credit",
       "group_eligible": false,
       "evidence": [
         "current local configured endpoint catalog",
-        "current local Codex supported efforts and context metadata"
+        "current local Codex supported efforts and context metadata",
+        "2026-10-25 official billing page required sign-in; no account credit evidence or inference probe"
       ],
       "limitations": [
         "No endpoint-specific superiority is established",
         "No new inference or ranking calibration performed",
         "Unknown allowance cannot authorize metered fallback",
         "Configured identity is distinct from actually served model identity"
-      ]
+      ],
+      "billing_policy": "genai-app-builder-credit-only",
+      "dispatch_block_reason": "Trial credit for GenAI App Builder: account balance, expiry, eligible service/SKUs and exact endpoint coverage unverified; provider held off; no paid overage authorized"
     },
     {
       "id": "google-vertex/gemini-3.8-flash",
@@ -485,18 +507,21 @@
       "access": "configured Magpie account; actual allowance and task capabilities must be checked",
       "free": false,
       "quota_pool": "google-vertex",
-      "allowance_state": "unknown",
+      "allowance_state": "unverified-app-builder-credit",
       "group_eligible": false,
       "evidence": [
         "current local configured endpoint catalog",
-        "current local Codex supported efforts and context metadata"
+        "current local Codex supported efforts and context metadata",
+        "2026-10-25 official billing page required sign-in; no account credit evidence or inference probe"
       ],
       "limitations": [
         "No endpoint-specific superiority is established",
         "No new inference or ranking calibration performed",
         "Unknown allowance cannot authorize metered fallback",
         "Configured identity is distinct from actually served model identity"
-      ]
+      ],
+      "billing_policy": "genai-app-builder-credit-only",
+      "dispatch_block_reason": "Trial credit for GenAI App Builder: account balance, expiry, eligible service/SKUs and exact endpoint coverage unverified; provider held off; no paid overage authorized"
     },
     {
       "id": "google-vertex/gemini-3.7-flash",
@@ -515,18 +540,21 @@
       "access": "configured Magpie account; actual allowance and task capabilities must be checked",
       "free": false,
       "quota_pool": "google-vertex",
-      "allowance_state": "unknown",
+      "allowance_state": "unverified-app-builder-credit",
       "group_eligible": false,
       "evidence": [
         "current local configured endpoint catalog",
-        "current local Codex supported efforts and context metadata"
+        "current local Codex supported efforts and context metadata",
+        "2026-10-25 official billing page required sign-in; no account credit evidence or inference probe"
       ],
       "limitations": [
         "No endpoint-specific superiority is established",
         "No new inference or ranking calibration performed",
         "Unknown allowance cannot authorize metered fallback",
         "Configured identity is distinct from actually served model identity"
-      ]
+      ],
+      "billing_policy": "genai-app-builder-credit-only",
+      "dispatch_block_reason": "Trial credit for GenAI App Builder: account balance, expiry, eligible service/SKUs and exact endpoint coverage unverified; provider held off; no paid overage authorized"
     },
     {
       "id": "cursor/composer-2.5",
@@ -696,7 +724,7 @@
       "codex/gpt-6-astra"
     ],
     "long_evidence": [
-      "google-vertex/gemini-4-argon",
+      "workbuddy-ai/step-5-preview",
       "codex/gpt-6-astra"
     ],
     "engineering": [
@@ -709,7 +737,7 @@
       "codex/gpt-6.1-sol"
     ],
     "venue_blind": [
-      "google-vertex/gemini-4-argon",
+      "codex/gpt-6.1-sol",
       "workbuddy-ai/deepseek-v4.1-flash",
       "codex/gpt-6-astra"
     ]
@@ -728,9 +756,7 @@
       "decision_services": [
         "typesafe/jev-latest"
       ],
-      "covered_account_executors": [
-        "google-vertex/gemini-3.8-flash"
-      ]
+      "covered_account_executors": []
     },
     "research-scope": {
       "free_executors": [
@@ -739,7 +765,7 @@
         "workbuddy-ai/deepseek-v4.1-flash"
       ],
       "reviewers": [
-        "google-vertex/gemini-4-argon",
+        "codex/gpt-6-astra",
         "workbuddy-ai/step-5-preview"
       ],
       "integrator": "codex/gpt-6.1-sol",
@@ -757,17 +783,14 @@
       ],
       "reviewers": [
         "codex/gpt-6-astra",
-        "google-vertex/gemini-4-argon",
+        "codex/gpt-6.1-sol",
         "workbuddy-ai/deepseek-v4.1-flash"
       ],
       "integrator": "codex/gpt-6-astra",
       "decision_services": [
         "typesafe/jev-latest"
       ],
-      "covered_account_executors": [
-        "google-vertex/gemini-3.1-pro-preview-customtools",
-        "google-vertex/gemini-3-flash-preview"
-      ]
+      "covered_account_executors": []
     },
     "research-ideate": {
       "free_executors": [
@@ -798,16 +821,14 @@
       ],
       "reviewers": [
         "codex/gpt-6-astra",
-        "codex/gpt-6.1-sol",
-        "google-vertex/gemini-4-argon"
+        "codex/gpt-6.1-sol"
       ],
       "integrator": "codex/gpt-6-astra",
       "decision_services": [
         "typesafe/jev-latest"
       ],
       "covered_account_executors": [
-        "cursor/grok-4.6",
-        "google-vertex/gemini-3.1-pro-preview"
+        "cursor/grok-4.6"
       ]
     },
     "research-baseline": {
@@ -819,7 +840,7 @@
       ],
       "reviewers": [
         "codex/gpt-6.1-sol",
-        "google-vertex/gemini-4-argon"
+        "codex/gpt-6-astra"
       ],
       "integrator": "codex/gpt-6.1-sol",
       "covered_account_executors": [
@@ -836,7 +857,6 @@
       ],
       "reviewers": [
         "codex/gpt-6.1-sol",
-        "google-vertex/gemini-4-argon",
         "codex/gpt-6-astra"
       ],
       "integrator": "codex/gpt-6.1-sol",
@@ -859,8 +879,7 @@
       "integrator": "codex/gpt-6.1-sol",
       "covered_account_executors": [
         "cursor/grok-4.6",
-        "cursor/composer-2.5",
-        "google-vertex/gemini-3.8-flash"
+        "cursor/composer-2.5"
       ]
     },
     "research-analyze": {
@@ -871,7 +890,6 @@
         "opencode-zen/nemotron-3.5-super-vl-free"
       ],
       "reviewers": [
-        "google-vertex/gemini-4-argon",
         "codex/gpt-6.1-sol",
         "codex/gpt-6-astra"
       ],
@@ -881,8 +899,7 @@
       ],
       "covered_account_executors": [
         "cursor/grok-4.6",
-        "cursor/grok-4.7@256k",
-        "google-vertex/gemini-3.1-pro-preview"
+        "cursor/grok-4.7@256k"
       ]
     },
     "research-write": {
@@ -893,13 +910,11 @@
         "opencode-zen/glm-5.3-flash-free"
       ],
       "reviewers": [
-        "google-vertex/gemini-4-argon",
+        "codex/gpt-6.1-sol",
         "codex/gpt-6-astra"
       ],
       "integrator": "codex/gpt-6-astra",
-      "covered_account_executors": [
-        "google-vertex/gemini-3.7-flash"
-      ]
+      "covered_account_executors": []
     },
     "research-review": {
       "free_executors": [
@@ -910,17 +925,15 @@
         "opencode-zen/mimo-v2.6-flash-free"
       ],
       "reviewers": [
-        "google-vertex/gemini-4-argon",
         "codex/gpt-6-astra",
         "codex/gpt-6.1-sol"
       ],
-      "integrator": "google-vertex/gemini-4-argon",
+      "integrator": "codex/gpt-6.1-sol",
       "decision_services": [
         "typesafe/jev-latest"
       ],
       "covered_account_executors": [
-        "cursor/grok-4.6",
-        "google-vertex/gemini-3.1-pro-preview"
+        "cursor/grok-4.6"
       ]
     },
     "research-submit": {
@@ -932,12 +945,10 @@
       ],
       "reviewers": [
         "codex/gpt-6.1-sol",
-        "google-vertex/gemini-4-argon"
+        "codex/gpt-6-astra"
       ],
       "integrator": "codex/gpt-6.1-sol",
-      "covered_account_executors": [
-        "google-vertex/gemini-3-flash-preview"
-      ]
+      "covered_account_executors": []
     },
     "research-product-discover": {
       "free_executors": [
@@ -947,7 +958,7 @@
       ],
       "reviewers": [
         "codex/gpt-6-astra",
-        "google-vertex/gemini-4-argon"
+        "codex/gpt-6.1-sol"
       ],
       "integrator": "codex/gpt-6-astra",
       "covered_account_executors": [
@@ -965,7 +976,6 @@
       ],
       "reviewers": [
         "codex/gpt-6.1-sol",
-        "google-vertex/gemini-4-argon",
         "codex/gpt-6-astra"
       ],
       "integrator": "codex/gpt-6.1-sol",
@@ -983,12 +993,10 @@
       ],
       "reviewers": [
         "codex/gpt-6.1-sol",
-        "google-vertex/gemini-4-argon"
+        "codex/gpt-6-astra"
       ],
       "integrator": "codex/gpt-6.1-sol",
-      "covered_account_executors": [
-        "google-vertex/gemini-3.7-flash"
-      ]
+      "covered_account_executors": []
     },
     "research-product-maintain": {
       "free_executors": [
@@ -999,7 +1007,6 @@
       ],
       "reviewers": [
         "codex/gpt-6.1-sol",
-        "google-vertex/gemini-4-argon",
         "codex/gpt-6-astra"
       ],
       "integrator": "codex/gpt-6.1-sol",
@@ -1016,7 +1023,7 @@
       ],
       "reviewers": [
         "codex/gpt-6.1-sol",
-        "google-vertex/gemini-4-argon"
+        "codex/gpt-6-astra"
       ],
       "integrator": "codex/gpt-6.1-sol",
       "decision_services": [
@@ -1024,8 +1031,7 @@
       ],
       "covered_account_executors": [
         "cursor/grok-4.6",
-        "cursor/composer-2.5",
-        "google-vertex/gemini-3.8-flash"
+        "cursor/composer-2.5"
       ]
     },
     "research-focus": {
@@ -1034,8 +1040,7 @@
         "workbuddy-ai/deepseek-v4.1-flash"
       ],
       "reviewers": [
-        "codex/gpt-6-astra",
-        "google-vertex/gemini-4-argon"
+        "codex/gpt-6-astra"
       ],
       "integrator": "codex/gpt-6.1-sol",
       "covered_account_executors": [

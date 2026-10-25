@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-25T13:01:11.080731+00:00",
+  "scope": "offline software/skill validation",
+  "focused": {
+    "run": 67,
+    "passed": 67
+  },
+  "suite": {
+    "run": 293,
+    "passed": 289,
+    "skipped": 4,
+    "failures": 0,
+    "errors": 0
+  },
+  "initial_restricted_run": {
+    "errors": 48,
+    "cause": "temporary-file access and cleanup permissions",
+    "resolved_by": "same full suite with appropriate local filesystem permissions"
+  },
+  "skills_validated": 18,
+  "temporary_install": "passed; all packaged bytes matched",
+  "vertex_inference_requests": 0,
+  "new_account_billing_changes": 0,
+  "account_credit_verification": "pending sign-in; no balance or eligible SKU evidence",
+  "red_before_green": {
+    "generator": "Vertex remained present despite hold intent",
+    "dispatch": "all 6 Vertex variants admitted with generic allowance",
+    "stage_registry": "Argon remained a default assignment"
+  }
+}
