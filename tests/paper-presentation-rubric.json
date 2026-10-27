@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "frozen_before_baseline": true,
+  "hard_failures": [
+    "Changed source numbers, denominators, units or mathematical assumptions",
+    "Invented observations, variability, novelty, proof verification or sources",
+    "Dropped negative results, failures or exploratory labels",
+    "Leaked private infrastructure or internal process text into submitted artifacts",
+    "Forced a full workflow or repeated whole-suite reviews for a bounded request",
+    "Claimed plotting or render success without execution"
+  ],
+  "dimensions": {
+    "analysis": "Explicit question, comparison, evidence, suitable encoding and bounded conclusion; separates expression repair from evidence need.",
+    "writing": "Reader can identify question, contribution, supporting evidence and boundary; precise claim-strength verbs and nonredundant caption/body.",
+    "implementation": "Executable figures/tables preserve denominators, missingness, data identity, configuration and transformation; readable at final width.",
+    "scope": "Uses only needed material and retains the requested research theme."
+  },
+  "acceptance": "No new hard failures; an observable improvement for each of analyze/write/implement demonstrated with actual before/after artifacts. Optional recommendations only when behavior benefit is inconclusive.",
+  "holdout": "Separate from task behavior: inspect 30 withheld papers against frozen pattern applicability; record matches, exceptions and uncovered patterns without treating selected status as causal evidence."
+}

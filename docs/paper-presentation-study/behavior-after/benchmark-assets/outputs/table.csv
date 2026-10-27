@@ -1,0 +1,3 @@
+method,attempted,successful,failed,success_rate,mean_success_latency_seconds
+reference,20,16,4,0.8,15.0
+candidate,20,14,6,0.7,10.0

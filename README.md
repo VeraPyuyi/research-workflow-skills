@@ -64,6 +64,31 @@ $research-focus 回溯原始研究主题和历次转向，判断当前论文是�
 
 每次阶段交接只保留简短主线提醒，累计偏移审读并入 M1—M5。私有主线与决策历史不进入两轮盲审材料。`research-focus` 和优化器的收尾不互相产生新事件。已有项目在启动、恢复或交接时采用新版；运行中的任务保留原版本，由原聊天整合新规则，避免覆盖并行写入的状态。
 
+## 论文论证与图表
+
+`research-write`、`research-analyze` 和 `research-implement` 共享
+[论证与图表记录](skills/research-write/references/argument-and-figure-contract.md)：
+研究问题、主张、证据版本、比较条件、分母、不确定性和图表规格沿同一份记录交接。
+写作按方法、理论、解释性研究或评测任务选择适用结构；分析区分表达、分析、证据和主张修复；
+实现生成可重跑的图、表及公开安全的追溯记录。
+
+[模式库](skills/research-write/references/paper-style-study/index.md) 保存来源、页码、
+适用条件和反例，详细阅读与验收记录见
+[研究报告](docs/paper-presentation-study/report.md)。它研究精选与普通录用论文的表达方式，
+不预测录用概率，也不把报告形式与论文奖项合并为同一种类别。
+
+运行小型示例：
+
+```powershell
+python skills/research-implement/scripts/render_evidence.py --spec skills/research-implement/assets/evidence-example/figure.json --output .build/evidence-example
+```
+
+示例需要 Matplotlib，生成 PDF/SVG/PNG、CSV/TeX 表格及追溯记录；数据明确为示例。
+已有项目沿用合适的绘图工具。实际栏宽以目标场所模板为准，生成文件后检查真实尺寸。
+局部改写、简单分析和单图调整保持原有范围，整体检查继续并入 M2—M5。
+在研项目在下一次启动、恢复或交接时采用同运行版本内的兼容更新，沿用有效结果和检查；
+已完成稿件的整体重组安排在对应写作或审稿节点。
+
 ## 模型、额度与配置
 
 [模型分工](skills/research-navigate/references/model-routing.md) 和 [机器可读登记](skills/research-navigate/references/model-routing.json) 记录免费模型、独立审读、Codex、Cursor、Vertex 及 Jev 决策服务。Jev 使用原生结构化接口，不能替代证明或授权。

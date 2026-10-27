@@ -66,6 +66,10 @@ does not constitute actual external peer review.
    narrower supported statement.
 4. Check consistency, citation support, reproducibility details and practical
    limitations. Do not demand unrelated experiments merely to lengthen a review.
+   For a presentation-focused review, verify that the claimed question, comparison,
+   evidence, denominator, display and bounded conclusion form one chain. Check
+   caption/body division and final-size readability, but do not confuse polished
+   prose or design with scientific support.
 5. Audit whether prior theory, methods, benchmarks or implementations can replace,
    shorten or merge the current content. Check assumptions, quantifiers, proof or
    implementation equivalence, and whether removing an experiment would remove

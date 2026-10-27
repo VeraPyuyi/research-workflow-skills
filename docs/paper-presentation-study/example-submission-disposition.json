@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-26T13:02:49.654262+00:00",
+  "scope": "Eight generated illustrative artifacts; explicit paths supplied to the existing scanner",
+  "automated_scan": "Retained unchanged: three candidates and explicit PDF/raster/manual gaps, not automated_passed",
+  "candidate_dispositions": [
+    {
+      "artifact": "artifact-0001",
+      "matched_public_token": "/Root",
+      "decision": "PDF catalog keyword, not a filesystem path; checked in generated PDF structure and extracted text"
+    },
+    {
+      "artifact": "artifact-0003",
+      "matched_public_token": "//W3C//DTD",
+      "decision": "Public SVG DOCTYPE identifier, not a network-share location; checked in XML declaration"
+    },
+    {
+      "artifact": "artifact-0006",
+      "matched_public_token": "/Root",
+      "decision": "PDF catalog keyword, not a filesystem path; checked in generated PDF structure and extracted text"
+    }
+  ],
+  "additional_checks": [
+    "Both actual PDF pages rendered with pdftoppm at 300 dpi and viewed",
+    "Both generator PNGs viewed; no clipping or private text observed",
+    "PDF metadata and extracted text inspected; catalog has no Names/EmbeddedFiles entry",
+    "PNG metadata inspected: only software and DPI fields",
+    "SVG XML and plain CSV/TeX/provenance reviewed"
+  ],
+  "conclusion": "No unresolved concrete leakage finding within these generated artifacts after scoped adjudication. This is not a universal privacy guarantee or venue submission approval.",
+  "bounds": "No venue or anonymous-author policy supplied; full manuscript and other attachments were outside this example."
+}

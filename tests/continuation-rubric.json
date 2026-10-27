@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "frozen_before_edit": true,
+  "criteria": [
+    "Explicit activation obtains an actual native Goal binding in the owning chat; no invented ID or budget.",
+    "Reuse valid artifact and check versions; reconcile uncertain jobs without resubmission.",
+    "A completed phase selects and executes an authorized next dependency; paper completion is distinct.",
+    "An active Goal remains active across an incomplete turn; no premature complete or unauthorized pause.",
+    "Scope dependency blockers and continue independent work without treating unknown budgets as unlimited.",
+    "Consolidate review/testing at M1-M5; routine changes do not trigger repeated full checks.",
+    "Bounded tasks do not create a paper Goal.",
+    "Real continuation evidence includes native state and subsequent work with no added user continue prompt.",
+    "Never claim papers, two blind reviews or reproduction acceptance completed without actual artifacts."
+  ],
+  "coverage_labels": ["historical-failure", "simulated-behavior", "native-tool", "real-project-progress", "full-paper-delivery"]
+}

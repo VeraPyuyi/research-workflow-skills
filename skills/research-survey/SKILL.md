@@ -68,6 +68,11 @@ retrieval does not establish fabrication.
 Compare closest work on the actual proposed contribution, not only title keywords.
 Mark a gap as "not found in this search" when coverage is limited. Refresh relevant
 work at topic selection and submission preparation when current novelty matters.
+When inspecting exemplar papers for presentation, distinguish observed practice
+from editorial advice and from evidence about acceptance. Record actual pages and
+figures, including weaknesses and counterexamples; do not infer causality from a
+venue category. Route reusable presentation guidance to research-write and
+evidence-design questions to research-analyze.
 
 Look for prior results that can simplify the project as well as gaps that justify
 new work. For each candidate, record whether it is directly reusable, needs an

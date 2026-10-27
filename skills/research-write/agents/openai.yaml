@@ -1,4 +1,4 @@
 interface:
   display_name: "Research Writing"
   short_description: "Write papers with traceable claims, figures and sources"
-  default_prompt: "Use $research-write to draft or revise this paper using verified methods, evidence and approved conclusions."
+  default_prompt: "Use $research-write to build the requested paper argument from its evidence, with calibrated claims and complementary figures and captions."

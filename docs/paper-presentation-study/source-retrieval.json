@@ -1,0 +1,398 @@
+[
+  {
+    "venue": "iclr",
+    "year": 2026,
+    "url": "https://iclr.cc/static/virtual/data/iclr-2026-orals-posters.json",
+    "sha256": "064c43404a720a56ae51831dd6db48bfb58ec79f300f29b8d7cc8f889fcf1aca",
+    "bytes": 15031089,
+    "count": 5691,
+    "decisions": {
+      "Accept (Poster)": 5244,
+      "Accept (Oral)": 447
+    },
+    "retrieved_at": "2026-10-26T09:38:20Z"
+  },
+  {
+    "venue": "iclr",
+    "year": 2025,
+    "url": "https://iclr.cc/static/virtual/data/iclr-2025-orals-posters.json",
+    "sha256": "ebd6fa23d9ca54628eb715885756bf7e5addf72db134648dc683251678f86a70",
+    "bytes": 16535673,
+    "count": 4040,
+    "decisions": {
+      "Accept (Poster)": 3185,
+      "Accept (Spotlight)": 380,
+      "Accept (Oral)": 426,
+      "Accept": 49
+    },
+    "retrieved_at": "2026-10-26T09:38:30Z"
+  },
+  {
+    "venue": "iclr",
+    "year": 2024,
+    "url": "https://iclr.cc/static/virtual/data/iclr-2024-orals-posters.json",
+    "sha256": "23f4d0512a8d9d65b3b4e4908201416f0e343b188f85d33f3cf6a8d1b22f969a",
+    "bytes": 10587487,
+    "count": 2382,
+    "decisions": {
+      "Accept (poster)": 1807,
+      "Accept (oral)": 172,
+      "Accept (spotlight)": 367,
+      "Accept (Poster)": 36
+    },
+    "retrieved_at": "2026-10-26T09:37:46Z"
+  },
+  {
+    "venue": "icml",
+    "year": 2026,
+    "url": "https://icml.cc/static/virtual/data/icml-2026-orals-posters.json",
+    "sha256": "33a88df8976684e3a1ebe96d203a318b37ba41299daf31e72b5b4a7ab382eed2",
+    "bytes": 16408466,
+    "count": 6797,
+    "decisions": {
+      "Accept (regular)": 5986,
+      "Accept (spotlight)": 742,
+      "null": 62,
+      "Accept (Poster)": 7
+    },
+    "retrieved_at": "2026-10-26T09:38:34Z"
+  },
+  {
+    "venue": "icml",
+    "year": 2025,
+    "url": "https://icml.cc/static/virtual/data/icml-2025-orals-posters.json",
+    "sha256": "1e2ff498f2559b2a0e34504e84b5e6d41906dcd4a7fe868122514adaaba06c7b",
+    "bytes": 14110788,
+    "count": 3459,
+    "decisions": {
+      "Accept (poster)": 2987,
+      "Accept (oral)": 240,
+      "Accept (spotlight poster)": 224,
+      "Accept (Poster)": 8
+    },
+    "retrieved_at": "2026-10-26T09:38:34Z"
+  },
+  {
+    "venue": "icml",
+    "year": 2024,
+    "url": "https://icml.cc/static/virtual/data/icml-2024-orals-posters.json",
+    "sha256": "77eb6ee09ee69875743c67c3e06bf47eef06c4838299392481feaeb8241cb8e9",
+    "bytes": 11354731,
+    "count": 2778,
+    "decisions": {
+      "Accept (Poster)": 2299,
+      "Accept (Spotlight)": 191,
+      "Accept (Oral)": 288
+    },
+    "retrieved_at": "2026-10-26T09:38:11Z"
+  },
+  {
+    "venue": "cvpr",
+    "year": 2026,
+    "url": "https://cvpr.thecvf.com/static/virtual/data/cvpr-2026-orals-posters.json",
+    "sha256": "bad6bf5d7fa5af4b2bb9cde4ac4458b88196a95b0ea316444051e1fcffb037d1",
+    "bytes": 413438,
+    "count": 200,
+    "decisions": {
+      "Accept (Poster)": 91,
+      "null": 82,
+      "Accept (Highlight)": 18,
+      "Accept (Oral)": 9
+    },
+    "retrieved_at": "2026-10-26T09:38:13Z"
+  },
+  {
+    "venue": "cvpr",
+    "year": 2025,
+    "url": "https://cvpr.thecvf.com/static/virtual/data/cvpr-2025-orals-posters.json",
+    "sha256": "850cf956e56dd2731e5b9959f5194a3cad5d5add5308a9015a2b7acf5072c8cd",
+    "bytes": 13121777,
+    "count": 2966,
+    "decisions": {
+      "null": 2966
+    },
+    "retrieved_at": "2026-10-26T09:38:40Z"
+  },
+  {
+    "venue": "cvpr",
+    "year": 2024,
+    "url": "https://cvpr.thecvf.com/static/virtual/data/cvpr-2024-orals-posters.json",
+    "sha256": "e3c40179e8ccf6076f1da736409ba7060071d9d75b6eb34131c99b934d0c8d4c",
+    "bytes": 14841645,
+    "count": 2806,
+    "decisions": {
+      "Accept: Oral": 180,
+      "Accept: Poster": 2302,
+      "Accept: Poster (Highlight)": 324
+    },
+    "retrieved_at": "2026-10-26T09:38:55Z"
+  },
+  {
+    "venue": "neurips",
+    "year": 2026,
+    "url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+    "sha256": "618d74e9fd072a6ff1f2d427c0367709c89ed4338efe969ebd996aaa5bf2d456",
+    "bytes": 19650229,
+    "count": 9278,
+    "decisions": {
+      "Accept (poster)": 8379,
+      "null": 160,
+      "Accept (spotlight)": 333,
+      "Accept (Oral)": 15,
+      "Accept (oral)": 253,
+      "Accept": 125,
+      "Accept (Spotlight)": 13
+    },
+    "retrieved_at": "2026-10-26T09:40:27Z"
+  },
+  {
+    "venue": "neurips",
+    "year": 2025,
+    "url": "https://neurips.cc/static/virtual/data/neurips-2025-orals-posters.json",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  },
+  {
+    "venue": "neurips",
+    "year": 2024,
+    "url": "https://neurips.cc/static/virtual/data/neurips-2024-orals-posters.json",
+    "sha256": "fe4cee02e95b1883f5ee2ddc121b3eb9e253dc67d9407f1aa9dfdedd298f0652",
+    "bytes": 24537777,
+    "count": 4610,
+    "decisions": {
+      "Accept (poster)": 3648,
+      "Accept (spotlight)": 326,
+      "Accept (oral)": 122,
+      "null": 17,
+      "Accept (Poster)": 419,
+      "Accept (Oral)": 22,
+      "Accept (Spotlight)": 56
+    },
+    "retrieved_at": "2026-10-26T09:40:35Z"
+  },
+  {
+    "venue": "acl",
+    "year": 2026,
+    "url": "https://2026.aclweb.org/program/best_papers/",
+    "sha256": "21e0a7031ce5455796521dc918e36e2c6d9ec3981c6c0ded67ff8a916b30e008",
+    "bytes": 18970,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:38:42Z"
+  },
+  {
+    "venue": "acl",
+    "year": 2025,
+    "url": "https://2025.aclweb.org/program/best_papers/",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "venue": "acl",
+    "year": 2024,
+    "url": "https://2024.aclweb.org/program/best_papers/",
+    "sha256": "177f3a3de5b5d3efcdc222314797fa5fbb415c8fc6f39ef4dc5ae60a9c79c695",
+    "bytes": 27940,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:38:44Z"
+  },
+  {
+    "venue": "acl-anthology",
+    "year": 2026,
+    "url": "https://aclanthology.org/events/acl-2026/",
+    "sha256": "8a4eaf77dce3d275c57a15adca865ba1721c1f61f761e5c3de5e294df90529f9",
+    "bytes": 18928031,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:44:32Z"
+  },
+  {
+    "venue": "acl-anthology",
+    "year": 2025,
+    "url": "https://aclanthology.org/events/acl-2025/",
+    "sha256": "07455a6eefe0c1585885af4216c64aa0dea3c152edca58fa4274e7a1d00193d9",
+    "bytes": 12225011,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:44:00Z"
+  },
+  {
+    "venue": "acl-anthology",
+    "year": 2024,
+    "url": "https://aclanthology.org/events/acl-2024/",
+    "sha256": "4468f8416f34414c3ea811999a4010116e2c0f80eabae3f1d7a9d4fe98611f83",
+    "bytes": 7217344,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:42:22Z"
+  },
+  {
+    "venue": "acl",
+    "year": 2025,
+    "url": "https://2025.aclweb.org/program/awards/",
+    "sha256": "eb5140e92c8663235843284b2af06a2401df7da8b96b2fcb7174fb9a72c58cf9",
+    "bytes": 35471,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:42:45Z"
+  },
+  {
+    "venue": "neurips",
+    "year": 2025,
+    "url": "https://neurips.cc/static/virtual/data/neurips-2025-orals-posters.json",
+    "sha256": "73bbfc7fb9fbf4f52eae00cebe9cbc085f27493ee2294f2e29f326ef403986f8",
+    "bytes": 26803205,
+    "count": 6002,
+    "decisions": {
+      "Accept (Oral)": 15,
+      "Accept (poster)": 4957,
+      "Accept (spotlight)": 743,
+      "Accept (oral)": 222,
+      "Accept": 31,
+      "null": 20,
+      "Accept (Poster)": 14
+    },
+    "retrieved_at": "2026-10-26T09:45:14Z"
+  },
+  {
+    "venue": "cvpr-accepted",
+    "year": 2025,
+    "url": "https://cvpr.thecvf.com/Conferences/2025/AcceptedPapers",
+    "sha256": "59a1d5dfe886bb80c680196d5a53de2a0c04852e1f05d2126bc1f2f2179fadee",
+    "bytes": 4241267,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:43:13Z"
+  },
+  {
+    "venue": "cvpr-accepted",
+    "year": 2026,
+    "url": "https://cvpr.thecvf.com/Conferences/2026/AcceptedPapers",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "venue": "iclr-proceedings",
+    "year": 2026,
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026",
+    "sha256": "82533e67b136f9d513723815f7ee7341bce70c42e7042fd9d2a4b8fb980e5ad0",
+    "bytes": 3703349,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:42:54Z"
+  },
+  {
+    "venue": "iclr-proceedings",
+    "year": 2025,
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025",
+    "sha256": "5bbd1d59f6ab87b53fcdd42060a5631f625b38d6fc68c4581aea1e4ad50173c6",
+    "bytes": 2536904,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:42:54Z"
+  },
+  {
+    "venue": "iclr-proceedings",
+    "year": 2024,
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2024",
+    "sha256": "8e7f1951ec66a102cf2fa827f7527ba8ec55cb56d527e7b28db4a239d2c46eaa",
+    "bytes": 1534245,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:42:51Z"
+  },
+  {
+    "venue": "neurips-proceedings",
+    "year": 2026,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2026",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "venue": "neurips-proceedings",
+    "year": 2025,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025",
+    "sha256": "d653a2ce6057507d84d68d82e77b0dd4e874d9c4748ff3e7424d50fac7379dac",
+    "bytes": 53914,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:42:55Z"
+  },
+  {
+    "venue": "neurips-proceedings",
+    "year": 2024,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2024",
+    "sha256": "0563caf8d9a661bfa9d26e3e8692cc352ce6a446ea922e27f73b37b87a4f7506",
+    "bytes": 3149226,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:43:06Z"
+  },
+  {
+    "venue": "icml-proceedings",
+    "year": 2025,
+    "url": "https://proceedings.mlr.press/v267/",
+    "sha256": "9e17ee7ed7eda2727ad46178644225738ee1d8e3e319441ad4d1c11e4986288d",
+    "bytes": 3639879,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:42:57Z"
+  },
+  {
+    "venue": "icml-proceedings",
+    "year": 2024,
+    "url": "https://proceedings.mlr.press/v235/",
+    "sha256": "ab9400795dbdd1f63eb42499e69fddf9803ccdc2e055311c6bd8d7a49240beb6",
+    "bytes": 2552499,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:42:59Z"
+  },
+  {
+    "venue": "icml-proceedings",
+    "year": 2026,
+    "url": "https://proceedings.mlr.press/v306/",
+    "sha256": "b6bb3f3207225197ffe44514c58959f1a103a36d6c2e19e42d96d6e649f45a2e",
+    "bytes": 7156776,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:49:46Z"
+  },
+  {
+    "venue": "neurips-main",
+    "year": 2025,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/vol38-main-conference",
+    "sha256": "48c2de5e5acae991a8b88eaa00174387a7ce066efeb337e30593989bd5015c9a",
+    "bytes": 4104303,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:49:42Z"
+  },
+  {
+    "venue": "neurips",
+    "year": 2023,
+    "url": "https://neurips.cc/static/virtual/data/neurips-2023-orals-posters.json",
+    "sha256": "cd701e2a0869169ea970d929f9558beab77130e97e7ab18ae6ca7ce026c1c174",
+    "bytes": 18854395,
+    "count": 3661,
+    "decisions": {
+      "Accept (poster)": 2773,
+      "Accept (spotlight)": 378,
+      "Accept (oral)": 134,
+      "Accept (Poster)": 311,
+      "Accept (Spotlight)": 22,
+      "Accept (Oral)": 20,
+      "Accept (Outstanding Paper)": 1,
+      "Accept": 21,
+      "Accept (Outstanding Paper Honorable Mention)": 1
+    },
+    "retrieved_at": "2026-10-26T09:50:02Z"
+  },
+  {
+    "venue": "neurips-proceedings",
+    "year": 2023,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2023",
+    "sha256": "7511a4e6456f30144e8ee4a2f94c93ec1f1f1375bd3b567a44bf0437ac54d721",
+    "bytes": 2445813,
+    "count": 0,
+    "decisions": {},
+    "retrieved_at": "2026-10-26T09:49:36Z"
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "baseline": "docs/autonomy-stop-diagnosis-20261024.md",
+  "scope": "Skill behavior and real native Goal continuation; no synthetic scientific results",
+  "cases": [
+    {
+      "id": "explicit-resume",
+      "request": "Enable a complete-paper Goal and continue from completed R0. Do not repeat valid work.",
+      "state": "No native Goal, R0 manifest valid, no active jobs, next analysis uses existing data, existing authority covers it."
+    },
+    {
+      "id": "phase-end",
+      "request": "Continue the active paper Goal.",
+      "state": "Analysis A2 is complete, M3 passed, manuscript and both fresh reviews remain, writing is authorized."
+    },
+    {
+      "id": "partial-block",
+      "request": "Continue the active paper Goal within existing resources.",
+      "state": "Reviewer endpoint failed once and a historical manuscript attachment is unavailable. Literature sources and an approved local implementation task remain accessible."
+    },
+    {
+      "id": "uncertain-job",
+      "request": "Resume without duplicating experiments.",
+      "state": "J7 completion is unknown; no new compute can be reserved. A verified prior run supports an unfinished analysis."
+    },
+    {
+      "id": "single-stage",
+      "request": "Summarize this supplied table only.",
+      "state": "No Goal requested, all needed table data are present."
+    },
+    {
+      "id": "real-projects",
+      "request": "Resume the three existing research chats to complete papers under existing authority and budgets.",
+      "state": "Observed historical normal phase completion, no native Goal; current project evidence and actual host tools must be inspected."
+    }
+  ]
+}

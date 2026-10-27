@@ -14,6 +14,8 @@ chat or an obligatory stage number. Inspect existing artifacts first.
 | Actual experiment records | research-experiment | Attempts, outcomes and resource use are reconciled |
 | Defensible interpretation or stronger existing-paper contribution | research-analyze | Claims map to evidence; requested contribution audit yields prioritized next work |
 | Manuscript or revision text | research-write | Supported content and evidence gaps are distinguishable |
+| Paper-facing claim/display specification | research-analyze | Question, comparison, denominator, uncertainty and bounded conclusion are linked |
+| Reproducible table/figure/provenance generation | research-implement | Actual outputs and provenance reproduce; missing data remain missing |
 | Scientific challenge and rework decisions | research-review | Material findings identify evidence, impact and destination |
 | Submission/rebuttal package | research-submit | Package checks and action authorization are explicit |
 | Product value and bounded MVP | research-product-discover | Need evidence, scope and acceptance are reviewable |

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "data_kind": "illustrative",
+  "data_file": "results.csv",
+  "claim_ids": [
+    "reliability-denominator",
+    "conditional-latency"
+  ],
+  "analysis_revision": "example-v1",
+  "width_inches": 3.25
+}

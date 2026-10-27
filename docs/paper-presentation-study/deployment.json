@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "status": "local-deployment-complete",
+  "checked_at": "2026-10-27T17:45:47.737244+00:00",
+  "runtime_profile": "magpie",
+  "bundle_digest": "sha256:d7c78ac629423d0a342ed04d9265c5977c619c5328c7528bd764903675089ad1",
+  "source_snapshot_files_checked": 251,
+  "source_files_changed": 116,
+  "personal_skills_updated": [
+    "research-navigate",
+    "research-survey",
+    "research-implement",
+    "research-experiment",
+    "research-analyze",
+    "research-write",
+    "research-review"
+  ],
+  "personal_skills_unchanged": [
+    "research-scope",
+    "research-ideate",
+    "research-design",
+    "research-baseline",
+    "research-submit",
+    "research-product-discover",
+    "research-product-build",
+    "research-product-release",
+    "research-product-maintain",
+    "research-optimize",
+    "research-focus"
+  ],
+  "installed_release_status": "verified",
+  "backup": "External to skill discovery; private absolute location retained locally.",
+  "source_backup": "Original changed source files preserved outside packaged sources.",
+  "comparison": "Every packaged skill file compared by hash and exact bytes.",
+  "runtime_change": "Replace stale validation receipt reference only.",
+  "reconciled_change": "Only generated research-experiment Python bytecode; no code or instruction changes. Preserved with old package backup.",
+  "project_continuation": "Compatible update at next start/resume/handoff; no project chats awakened.",
+  "publication": "pending",
+  "codex_native": "Separately tested temporary install; personal installation remains Magpie."
+}

@@ -1,0 +1,23 @@
+{
+  "data_kind": "synthetic fixture",
+  "question": "Compare reliability and latency of two agents under the same 20-task protocol.",
+  "rows": [
+    {
+      "method": "reference",
+      "attempted": 20,
+      "successful": 16,
+      "failed": 4,
+      "mean_success_latency_seconds": 15.0
+    },
+    {
+      "method": "candidate",
+      "attempted": 20,
+      "successful": 14,
+      "failed": 6,
+      "mean_success_latency_seconds": 10.0
+    }
+  ],
+  "uncertainty": "Only aggregates supplied; no per-task or per-seed variability.",
+  "paper_width_inches": 3.25,
+  "scope": "Do not invent per-task observations."
+}
