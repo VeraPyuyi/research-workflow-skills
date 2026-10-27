@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="3.25in" height="3in" viewBox="0 0 234 216" role="img" aria-labelledby="title description">
+<title id="title">Synthetic agent reliability and successful latency</title>
+<desc id="description">Reference: 16 successes and 4 failures in 20 attempts, with mean successful latency 15 seconds. Candidate: 14 successes and 6 failures in 20 attempts, with mean successful latency 10 seconds. Latency conditions on successes; no variability is supplied.</desc>
+<rect width="234" height="216" fill="white"/>
+<g font-family="DejaVu Sans, sans-serif" font-size="8" fill="#17212b">
+<text x="10" y="14" font-size="10" text-anchor="start" font-weight="bold" fill="#17212b">Synthetic evaluation summary</text>
+<text x="10" y="27" font-size="8" text-anchor="start" font-weight="normal" fill="#17212b">Same 20-task protocol</text>
+<text x="10" y="43" font-size="9" text-anchor="start" font-weight="bold" fill="#17212b">A  Outcomes out of 20 attempts</text>
+<text x="10" y="62" font-size="8" text-anchor="start" font-weight="normal" fill="#17212b">reference</text>
+<rect x="67" y="52" width="115.2" height="14" fill="#176b5b"/>
+<rect x="182.2" y="52" width="28.8" height="14" fill="#c3c8ce"/>
+<text x="124.6" y="62" font-size="8" text-anchor="middle" font-weight="normal" fill="white">16/20 (80%)</text>
+<text x="196.6" y="62" font-size="8" text-anchor="middle" font-weight="normal" fill="#17212b">4</text>
+<text x="10" y="85" font-size="8" text-anchor="start" font-weight="normal" fill="#17212b">candidate</text>
+<rect x="67" y="75" width="100.8" height="14" fill="#176b5b"/>
+<rect x="167.8" y="75" width="43.2" height="14" fill="#c3c8ce"/>
+<text x="117.4" y="85" font-size="8" text-anchor="middle" font-weight="normal" fill="white">14/20 (70%)</text>
+<text x="189.4" y="85" font-size="8" text-anchor="middle" font-weight="normal" fill="#17212b">6</text>
+<line x1="67" y1="94" x2="211" y2="94" stroke="#66717c" stroke-width="0.65"/>
+<line x1="67" y1="94" x2="67" y2="97" stroke="#66717c" stroke-width="0.65"/>
+<text x="67" y="106" font-size="8" text-anchor="middle" font-weight="normal" fill="#17212b">0</text>
+<line x1="103" y1="94" x2="103" y2="97" stroke="#66717c" stroke-width="0.65"/>
+<text x="103" y="106" font-size="8" text-anchor="middle" font-weight="normal" fill="#17212b">5</text>
+<line x1="139" y1="94" x2="139" y2="97" stroke="#66717c" stroke-width="0.65"/>
+<text x="139" y="106" font-size="8" text-anchor="middle" font-weight="normal" fill="#17212b">10</text>
+<line x1="175" y1="94" x2="175" y2="97" stroke="#66717c" stroke-width="0.65"/>
+<text x="175" y="106" font-size="8" text-anchor="middle" font-weight="normal" fill="#17212b">15</text>
+<line x1="211" y1="94" x2="211" y2="97" stroke="#66717c" stroke-width="0.65"/>
+<text x="211" y="106" font-size="8" text-anchor="middle" font-weight="normal" fill="#17212b">20</text>
+<rect x="67" y="113" width="7" height="7" fill="#176b5b"/>
+<text x="78" y="120" font-size="8" text-anchor="start" font-weight="normal" fill="#17212b">Successful</text>
+<rect x="153" y="113" width="7" height="7" fill="#c3c8ce"/>
+<text x="164" y="120" font-size="8" text-anchor="start" font-weight="normal" fill="#17212b">Failed</text>
+<text x="10" y="138" font-size="9" text-anchor="start" font-weight="bold" fill="#17212b">B  Mean successful latency (s)</text>
+<text x="10" y="162" font-size="8" text-anchor="start" font-weight="normal" fill="#17212b">reference</text>
+<circle cx="175" cy="159" r="3.2" fill="#243a54"/>
+<text x="175" y="152" font-size="8" text-anchor="middle" font-weight="normal" fill="#17212b">15 s; n=16</text>
+<text x="10" y="184" font-size="8" text-anchor="start" font-weight="normal" fill="#17212b">candidate</text>
+<circle cx="139" cy="181" r="3.2" fill="#243a54"/>
+<text x="139" y="174" font-size="8" text-anchor="middle" font-weight="normal" fill="#17212b">10 s; n=14</text>
+<line x1="67" y1="189" x2="211" y2="189" stroke="#66717c" stroke-width="0.65"/>
+<line x1="67" y1="189" x2="67" y2="192" stroke="#66717c" stroke-width="0.65"/>
+<text x="67" y="201" font-size="8" text-anchor="middle" font-weight="normal" fill="#17212b">0</text>
+<line x1="139" y1="189" x2="139" y2="192" stroke="#66717c" stroke-width="0.65"/>
+<text x="139" y="201" font-size="8" text-anchor="middle" font-weight="normal" fill="#17212b">10</text>
+<line x1="211" y1="189" x2="211" y2="192" stroke="#66717c" stroke-width="0.65"/>
+<text x="211" y="201" font-size="8" text-anchor="middle" font-weight="normal" fill="#17212b">20</text>
+<text x="10" y="213" font-size="8" text-anchor="start" font-weight="normal" fill="#17212b">No variability supplied; intervals omitted.</text>
+</g>
+</svg>

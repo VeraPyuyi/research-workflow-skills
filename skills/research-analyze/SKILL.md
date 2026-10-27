@@ -26,6 +26,10 @@ or further research planning, read the
 strengths and gaps across project evidence and produce an actionable next round.
 Pure prose editing belongs to research-write; independent scientific criticism
 belongs to research-review.
+When the requested outcome includes a paper-facing display or results subsection,
+read [evidence presentation](references/evidence-presentation.md). Plan from the
+question and comparison to the claim, denominator and display; separate
+presentation repair from missing analysis or evidence.
 
 ## Analyze the actual record
 
@@ -53,6 +57,9 @@ neither on-theme relevance nor explanatory wording proves a mechanism.
    Carry estimand, denominator, dependence structure, uncertainty type and level.
    Apply [the evidence ledger](../research-navigate/references/evidence-ledger.md)
    when support is disputed or incomplete; do not infer what an untyped `+/-` means.
+   For a paper-facing result, add the reader question, suitable display and
+   bounded conclusion; keep failures, missingness and conditional populations
+   visible in the same record.
 6. Recommend continuation, targeted evidence, redesign, reframing or stopping.
    Negative results can complete an analysis; inconclusive evidence is not proof
    of equivalence or absence of an effect.

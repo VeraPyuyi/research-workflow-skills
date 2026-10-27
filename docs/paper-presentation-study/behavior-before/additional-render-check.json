@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-10-26T12:52:57.491995+00:00",
+  "operation": "Additional parent browser rendering after baseline outputs were frozen",
+  "baseline_svg_sha256": "955a9dfb836c560a6f3f83e082c9e2c1720ab512e5d3d633ce3767aa6e028501",
+  "baseline_files_changed": false,
+  "image_sha256": "714d890c2fd8411903bd4f7875b6ffa70ad947c0ce4df3cf7e0e11f0f2aafab5",
+  "observations": "Actual image viewed: labels, counts, conditional latency and unavailable variability legible; no clipping observed. No claim that the new layout is visually superior.",
+  "limits": "One synthetic two-method figure; browser render, not venue-specific manuscript build."
+}

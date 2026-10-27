@@ -13,6 +13,11 @@ drafting branches and independent review, and
 when presenting prior results or simplified content.
 Use [the evidence ledger](../research-navigate/references/evidence-ledger.md) for
 substantive claims and numerical statements.
+For a full manuscript, major section or paper-facing figure argument, read the
+[presentation guide](references/paper-presentation.md). Select the applicable
+method, theory, empirical or benchmark spine and form an argument outline before
+drafting. Use its calibrated language and display guidance; do not copy sample
+sentences or infer that a conference category causes acceptance.
 
 ## Build from available evidence
 
@@ -55,13 +60,18 @@ generalization, mechanism or real-task claims.
    language and format; otherwise propose a suitable representation.
 2. Organize the argument around the question, closest work, contribution, method,
    evidence, limits and reproducibility. Keep contribution wording within its
-   supported scope.
+   supported scope. Give each section a reader question and role in the evidence
+   chain, not just a topic label.
 3. Write framing and method records early when useful. If experiments or main
    conclusion review are pending, explicitly mark result slots and evidence gaps.
    A hypothesis or outline note is not a measured result.
 4. Build figures/tables from recorded data and transformations. Link each number
-   to run/data versions and aggregation. Reuse verified citations; inspect primary
-   material for claims not yet supported by the source record.
+   to run/data versions and aggregation. State the reader question, comparison,
+   denominator and uncertainty before choosing an encoding; keep caption and
+   body complementary. Use research-analyze for the evidence specification and
+   research-implement for generated outputs when appropriate. Reuse verified
+   citations; inspect primary material for claims not yet supported by the
+   source record.
 5. Report relevant assumptions, controls, uncertainty, failure/negative findings,
    resource conditions, data/code access and reproducibility limits. Separate
    real measurements, simulations and proposed work.

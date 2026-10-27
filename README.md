@@ -85,6 +85,36 @@ Preserve valid authorization and do not run until a preferred outcome appears.
 Acceptance requests yield evidence-based risks and priorities, never invented
 acceptance probabilities or guarantees.
 
+## Paper arguments and evidence displays
+
+`research-write`, `research-analyze` and `research-implement` share an
+[argument/display record](skills/research-write/references/argument-and-figure-contract.md):
+question, claim, evidence revision, comparison, denominator, uncertainty and
+display specification stay aligned across stages. Writing selects a suitable
+method/theory/empirical/benchmark structure; analysis separates presentation,
+analysis, evidence and claim repairs; implementation generates reproducible
+figures, tables and public-safe provenance.
+
+The [pattern library](skills/research-write/references/paper-style-study/index.md)
+retains sources, PDF locators, applicability and counterexamples. Detailed reading
+and validation records are in the
+[study report](docs/paper-presentation-study/report.md). Conference selection
+categories remain distinct; the study does not predict acceptance.
+
+```text
+python skills/research-implement/scripts/render_evidence.py --spec skills/research-implement/assets/evidence-example/figure.json --output .build/evidence-example
+```
+
+The small Matplotlib example produces PDF/SVG/PNG, CSV/TeX and provenance from
+explicitly illustrative data. Keep an existing suitable plotting stack; derive
+real column width from the target venue template and inspect actual output.
+Local edits remain bounded. Whole checks stay at M2-M5.
+
+Ongoing projects adopt compatible updates within their runtime profile at the
+next start, resume or handoff, retaining valid results, checks and running-job
+pins. Reorganize an already completed manuscript at its writing/review node.
+
+
 ## Native dispatch and review
 
 | Work | Exact requested model |

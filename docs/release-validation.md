@@ -1,3 +1,5 @@
+Current presentation release (October 26, 2026): [90-paper study, behavior comparison and deployment](paper-presentation-study/report.md).
+
 Current Goal/content-audit release (October 25, 2026): [validation and live-runtime limits](goal-leakage-validation-20261025.md).
 
 Earlier acceptance below is historical.

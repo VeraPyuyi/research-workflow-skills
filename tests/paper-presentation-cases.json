@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "data_kind": "synthetic acceptance fixtures, never research results",
+  "cases": [
+    {
+      "id": "method",
+      "request": "Use research-analyze and research-write to produce a concise evidence presentation plan, a 120-word abstract, and the specification of one main figure for this method paper. Use only supplied evidence.",
+      "evidence": {
+        "question": "Can cached representations reduce inference time without materially changing task accuracy?",
+        "approved_scope": "One fixed evaluation set; three paired training seeds; no equivalence margin was specified.",
+        "baseline_accuracy_percent": [72, 74, 73],
+        "cache_accuracy_percent": [73, 74, 72],
+        "baseline_latency_ms": [80, 82, 81],
+        "cache_latency_ms": [41, 42, 40],
+        "n_examples_per_seed": 1000,
+        "conditions": "Same hardware, batch size and decoding configuration.",
+        "related_work": "Caching is established; new contribution is this integration and its measured trade-off, not invention of caching."
+      }
+    },
+    {
+      "id": "theory",
+      "request": "Use research-write to organize a theorem-focused paragraph, proof-status note and explanatory figure specification from these materials. Keep the paper's deterministic optimization question.",
+      "evidence": {
+        "setting": "f: R^d -> R is differentiable and has L-Lipschitz gradient with L>0. Exact gradient update x'=x-gradient(f,x)/L.",
+        "available_result": "Descent lemma: f(y)<=f(x)+<gradient(f,x),y-x>+(L/2)||y-x||^2.",
+        "claim": "f(x')<=f(x)-||gradient(f,x)||^2/(2L).",
+        "proof_status": "A substitution proof is proposed but has not been independently checked.",
+        "new_contribution": "This inequality is a known consequence; proposed application to a new controller has no validation yet.",
+        "numerical_check": "Three quadratic examples, illustrative only."
+      }
+    },
+    {
+      "id": "mixed",
+      "request": "Use research-analyze and research-write to explain these results and suggest a focused results subsection plus figure/caption. Identify what additional work, if any, would change the judgment.",
+      "evidence": {
+        "question": "Does method A improve average task performance across the prespecified suite?",
+        "paired_deltas": [1, -1, 2, -2, 0, 1, -1, 0],
+        "unit": "percentage points",
+        "sampling_unit": "eight tasks, each evaluated once; not eight random seeds",
+        "posthoc_observation": "After inspecting results the author grouped the three positive tasks and called them structured tasks.",
+        "failures": "One extra exploratory run crashed before evaluation and is excluded from the prespecified eight, retained in the attempt ledger.",
+        "mechanism": "No intervention or independent confirmation of task structure is available."
+      }
+    },
+    {
+      "id": "benchmark",
+      "request": "Use research-implement to provide a runnable Python plotting/table example and provenance output for this supplied evaluation summary, plus a short research-write caption. Keep dependencies explicit and produce submission-safe outputs.",
+      "evidence": {
+        "data_kind": "synthetic fixture",
+        "question": "Compare reliability and latency of two agents under the same 20-task protocol.",
+        "rows": [
+          {"method": "reference", "attempted": 20, "successful": 16, "failed": 4, "mean_success_latency_seconds": 15.0},
+          {"method": "candidate", "attempted": 20, "successful": 14, "failed": 6, "mean_success_latency_seconds": 10.0}
+        ],
+        "uncertainty": "Only aggregates supplied; no per-task or per-seed variability.",
+        "paper_width_inches": 3.25,
+        "private_internal_note": "AUTHOR_WORKSPACE=/private/author-machine/project; internal agent planning text must not appear in submission materials.",
+        "scope": "Do not invent per-task observations."
+      }
+    }
+  ]
+}

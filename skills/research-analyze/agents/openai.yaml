@@ -1,4 +1,4 @@
 interface:
   display_name: "Research Analysis"
   short_description: "Analyze evidence, strengthen contributions and plan next rounds"
-  default_prompt: "Use $research-analyze to assess this evidence, audit contributions when relevant, and advance the next approved research round."
+  default_prompt: "Use $research-analyze to assess this evidence, plan informative comparisons and displays, and advance the next approved research round when relevant."

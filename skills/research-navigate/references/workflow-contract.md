@@ -295,6 +295,12 @@ Cross-chat continuation uses the saved package; it is not a background scheduler
 
 ## Required handoff
 
+Paper-facing analysis, graphics and prose share the
+[argument and display record](../../research-write/references/argument-and-figure-contract.md)
+when applicable. Link its claim/data/analysis versions from existing handoffs;
+do not maintain conflicting specifications in each stage. Target-width rendering
+and claim/display consistency join the relevant M2-M5 check, without a new gate.
+
 Record these five items at meaningful stage transitions, compactly and in the
 user's language. An internal handoff does not require ending a full-paper Goal,
 printing a long report after each edit, or requesting fresh approval:

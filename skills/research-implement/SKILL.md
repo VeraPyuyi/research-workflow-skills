@@ -13,6 +13,14 @@ and the [reuse and simplification audit](../research-navigate/references/reuse-a
 When replacing or porting an implementation, apply
 [the comparison contract](../research-navigate/references/implementation-comparison.md)
 before accepting parity. A matching headline value does not establish equivalence.
+For paper-facing tables or figures, read the
+[evidence presentation plan](../research-analyze/references/evidence-presentation.md)
+and use [the runnable evidence renderer](scripts/render_evidence.py) or the
+project's existing plotting stack. Treat the approved metric, denominator and
+uncertainty as scientific interfaces, not cosmetic settings.
+Consume the same
+[argument and display record](../research-write/references/argument-and-figure-contract.md)
+used by analysis and writing; keep conceptual schematics distinct from data plots.
 
 ## Implement the approved behavior
 
@@ -34,6 +42,10 @@ before accepting parity. A matching headline value does not establish equivalenc
    configuration. Do not run a large training job merely to validate plumbing.
    Use targeted checks for actual defects or changed behavior during development;
    do not run the entire suite or dispatch a reviewer after each edit.
+   For a display artifact, generate tables and figures from recorded data,
+   preserve missing values and failures, write safe provenance, inspect the
+   actual rendered output at target width, and verify that rerunning from the
+   same inputs produces the same scientific content.
 5. Record exactly which checks ran and their outcomes. Route a required metric,
    data or protocol change to design instead of silently changing the comparison.
 

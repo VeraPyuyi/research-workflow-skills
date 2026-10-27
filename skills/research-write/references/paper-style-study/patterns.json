@@ -1,0 +1,585 @@
+{
+  "schema_version": 1,
+  "study_id": "paper-presentation-90-20261026",
+  "status": "frozen",
+  "cards": [
+    {
+      "id": "P1",
+      "title": "Turn a diagnostic question into a design obligation",
+      "evidence_level": "repeated-cross-venue-observation",
+      "purpose": "Explain why components exist and what would show they address the problem.",
+      "applicability": "Method or explanatory work with distinguishable failure modes and component-level evidence.",
+      "method": "Name the unresolved question; introduce the mechanism it motivates; return to the same question in a controlled diagnostic or ablation. Preserve alternatives.",
+      "original_example": "The aggregate score hides delayed failures. We therefore retain event order and test whether the proposed memory component changes delayed, rather than immediate, outcomes.",
+      "sources": [
+        {
+          "paper_id": "cvpr-2025-5",
+          "pdf_pages": [
+            1,
+            2,
+            7,
+            8
+          ],
+          "locator": "Introduction; Section 4.4",
+          "observation": "Two challenges motivate two modules and recur in ablations."
+        },
+        {
+          "paper_id": "icml-2026-5",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Diagnostic sections; Figure 5",
+          "observation": "Diagnostic questions precede an implementable gradient mask."
+        },
+        {
+          "paper_id": "iclr-2026-3",
+          "pdf_pages": [
+            4,
+            6,
+            8,
+            9,
+            10
+          ],
+          "locator": "Sections 4-5",
+          "observation": "Observed expert-evaluation failures motivate targeted adversarial probes."
+        },
+        {
+          "paper_id": "acl-2026-4",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Sections 4-5",
+          "observation": "Repeated mechanism/evidence/limitation units connect a shared model to several interventions."
+        }
+      ],
+      "limits": "Ablation performance alone does not identify a causal mechanism. Do not retrofit a prespecified story to an exploratory diagnostic.",
+      "counterexample": {
+        "paper_id": "cvpr-2026-5",
+        "locator": "Table 1, p.7",
+        "detail": "Question-led organization coexists with blanket-win wording contradicted by cells."
+      }
+    },
+    {
+      "id": "P2",
+      "title": "Bridge formal results to interpretation without dropping conditions",
+      "evidence_level": "repeated-cross-venue-observation",
+      "purpose": "Help a reader understand what a mathematical statement changes.",
+      "applicability": "Theoretical or identification work; also method papers using inherited guarantees.",
+      "method": "Define objects and assumptions, state the result and proof status, then explain the consequence with a worked case. Map ideal results to practical approximations explicitly.",
+      "original_example": "Under Assumptions A1-A3, the bound shrinks with the intervention budget. The implemented approximation is not covered by this statement; its error is measured separately.",
+      "sources": [
+        {
+          "paper_id": "iclr-2026-1",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Section 2.3",
+          "observation": "A theorem is followed by intuition and a small example."
+        },
+        {
+          "paper_id": "iclr-2025-1",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Sections 3-4, Remarks",
+          "observation": "Remarks explain algorithmic implications of bounds."
+        },
+        {
+          "paper_id": "icml-2024-3",
+          "pdf_pages": [
+            4,
+            6,
+            8
+          ],
+          "locator": "Theorem interpretations; Section 5",
+          "observation": "Interpretations preserve valid-versus-tight and sampling distinctions."
+        },
+        {
+          "paper_id": "icml-2024-1",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Section 5; Remark 2",
+          "observation": "Ideal and practical algorithms have different computational and output guarantees."
+        },
+        {
+          "paper_id": "neurips-2023-1",
+          "pdf_pages": [
+            6,
+            8,
+            9
+          ],
+          "locator": "Sections 3-5",
+          "observation": "Plain-language results distinguish identifiability, a conjectured necessity condition and proof-of-concept simulations."
+        }
+      ],
+      "limits": "An analogy or numerical example cannot close a proof. Intuitive explanations must retain quantifiers, assumptions and whether a bound is only an upper bound.",
+      "counterexample": {
+        "paper_id": "iclr-2024-5",
+        "locator": "Sections 3.3-5, pp.7-9",
+        "detail": "The paper qualifies upper-bound comparisons and impractical stochastic batch sizes; theory is not neural-network practicality."
+      }
+    },
+    {
+      "id": "P3",
+      "title": "Operationalize a capability before presenting rankings",
+      "evidence_level": "repeated-cross-venue-observation",
+      "purpose": "Make benchmark scores interpretable as measurements of a specified construct.",
+      "applicability": "Benchmarks, evaluations and empirical taxonomies with inspectable tasks and scoring.",
+      "method": "Define capability dimensions, show representative tasks and measurement boundaries, assess evaluator validity, then compare methods by those dimensions.",
+      "original_example": "We measure recovery after a tool failure, not general autonomy. The task examples and scoring rules distinguish recovery from avoiding the tool entirely.",
+      "sources": [
+        {
+          "paper_id": "iclr-2024-3",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "locator": "Figure 1; Sections 3-4",
+          "observation": "Skill taxonomy and agreement checks precede capability comparisons."
+        },
+        {
+          "paper_id": "cvpr-2024-3",
+          "pdf_pages": [
+            3,
+            4,
+            8
+          ],
+          "locator": "Figure 2; Section 5.2",
+          "observation": "Capability examples and a bounded human-agreement check expose measurement scope."
+        },
+        {
+          "paper_id": "icml-2025-3",
+          "pdf_pages": [
+            3,
+            7,
+            8,
+            9
+          ],
+          "locator": "Figure 2; Sections 5-7",
+          "observation": "Concept detection and steering remain separate tasks with label-quality limitations."
+        },
+        {
+          "paper_id": "iclr-2025-5",
+          "pdf_pages": [
+            3,
+            4,
+            6
+          ],
+          "locator": "Sections 2-3; Figure 1",
+          "observation": "Three generalization categories organize tests and failures."
+        },
+        {
+          "paper_id": "acl-2026-3",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections 3-4",
+          "observation": "Task variants and worked metric examples precede consistency comparisons."
+        }
+      ],
+      "limits": "A taxonomy does not establish construct validity. Judge agreement on a subset or correlation with humans does not prove universal alignment or real-world efficacy.",
+      "counterexample": {
+        "paper_id": "iclr-2026-3",
+        "locator": "Section 6, p.10",
+        "detail": "Expert QA ratings do not establish therapeutic efficacy or multi-turn behavior."
+      }
+    },
+    {
+      "id": "P4",
+      "title": "Put comparison conditions beside the numbers",
+      "evidence_level": "repeated-cross-venue-observation",
+      "purpose": "Let readers see which rows are comparable without reconstructing the entire protocol.",
+      "applicability": "Comparisons that differ by modality, data access, budget, backbone, sampling or metric population.",
+      "method": "Use meaningful row blocks or condition columns, explicit units and metric direction. Keep attempts, exclusions and conditional denominators visible. State uncertainty rather than imply it.",
+      "original_example": "Both systems attempted 24 tasks. The table reports 21 and 19 successes; latency uses successful tasks only, so it does not measure end-to-end utility.",
+      "sources": [
+        {
+          "paper_id": "cvpr-2025-2",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Tables 2-3",
+          "observation": "Modality indicators and grouped rows expose input differences."
+        },
+        {
+          "paper_id": "cvpr-2024-2",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Table 2",
+          "observation": "Supplementary data and target-shot conditions are distinguished."
+        },
+        {
+          "paper_id": "iclr-2024-2",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Table 1",
+          "observation": "Buffer sizes accompany accuracy and forgetting."
+        },
+        {
+          "paper_id": "icml-2026-1",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Tables 1-2",
+          "observation": "Backbone blocks and temperature rows expose comparison regimes."
+        },
+        {
+          "paper_id": "neurips-2025-2",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Table 2",
+          "observation": "Dataset blocks and mixed-training exceptions identify evaluation conditions."
+        }
+      ],
+      "limits": "Visible conditions do not make an unfair comparison fair. Do not fabricate error bars or interpret absent variability as zero.",
+      "counterexample": {
+        "paper_id": "cvpr-2024-2",
+        "locator": "Table 2, p.6",
+        "detail": "Bold entries do not consistently follow the claimed best-value convention; compute emphasis from values."
+      }
+    },
+    {
+      "id": "P5",
+      "title": "Give diagrams, captions and body text different jobs",
+      "evidence_level": "repeated-cross-venue-observation",
+      "purpose": "Make the scientific objects and argument readable without redundant prose.",
+      "applicability": "Multi-component methods, task definitions and quantitative figures.",
+      "method": "The graphic encodes the comparison or object relationship; the caption decodes panels, marks and conditions; the body explains why it changes the claim. Use stable semantics across panels.",
+      "original_example": "The diagram separates observation, intervention and evaluation. Its caption defines the arrows; the body explains which intervention distinguishes the two hypotheses.",
+      "sources": [
+        {
+          "paper_id": "cvpr-2026-1",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Figure 2",
+          "observation": "Colored geometry/topology branches identify operations; body defines operators."
+        },
+        {
+          "paper_id": "iclr-2024-3",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Figure 1",
+          "observation": "Parallel workflows introduce evaluation objects before detailed definitions."
+        },
+        {
+          "paper_id": "icml-2025-3",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Figure 2",
+          "observation": "Shared examples and three panels distinguish tasks and training differences."
+        },
+        {
+          "paper_id": "icml-2024-5",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Figure 1",
+          "observation": "Conceptual sampling arrows precede distribution assumptions."
+        },
+        {
+          "paper_id": "neurips-2024-2",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Figure 1",
+          "observation": "Shared inputs branch into two architectural choices, with adjacent notation and definitions."
+        }
+      ],
+      "limits": "Conceptual diagrams are not measurements. Small prompts, formulas or photographs can become illegible when a complex pipeline is squeezed into a column.",
+      "counterexample": {
+        "paper_id": "cvpr-2026-2",
+        "locator": "Figure 2, p.4",
+        "detail": "Clear stage grouping still contains crowded miniature prompt text."
+      }
+    },
+    {
+      "id": "P6",
+      "title": "Let exceptions delimit the contribution",
+      "evidence_level": "repeated-cross-venue-observation",
+      "purpose": "Strengthen interpretation of mixed or negative evidence without changing its direction.",
+      "applicability": "Aggregate gains with subgroup losses, limited guarantees, counterexamples or failed conditions.",
+      "method": "Report the prespecified aggregate and relevant exceptions, state competing explanations, and identify which conclusion survives. Mark post-outcome subgroup selection as exploratory.",
+      "original_example": "The aggregate contrast is small. A data-selected subgroup motivates a prospective test; it does not yet establish a structure-dependent mechanism.",
+      "sources": [
+        {
+          "paper_id": "cvpr-2026-1",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Sections 4.6-5",
+          "observation": "Unimproved void counts and computational cost bound controllability."
+        },
+        {
+          "paper_id": "iclr-2025-2",
+          "pdf_pages": [
+            10,
+            11
+          ],
+          "locator": "Section 7",
+          "observation": "Difficult digit programs delimit the capability narrative."
+        },
+        {
+          "paper_id": "icml-2025-5",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Section 7",
+          "observation": "Score-estimation dependence qualifies directional-discovery performance."
+        },
+        {
+          "paper_id": "icml-2024-5",
+          "pdf_pages": [
+            3,
+            8
+          ],
+          "locator": "Example 2; Section 5.2",
+          "observation": "A counterexample limits collaboration and similar real-data effects are retained."
+        },
+        {
+          "paper_id": "neurips-2025-3",
+          "pdf_pages": [
+            7,
+            8,
+            10
+          ],
+          "locator": "Sections 4-6",
+          "observation": "Null changes, opposing model effects and entanglement limits remain in the explanation."
+        }
+      ],
+      "limits": "No difference is not equivalence. A subgroup selected after outcomes needs independent confirmation; a mechanism label is not evidence.",
+      "counterexample": {
+        "paper_id": "cvpr-2026-3",
+        "locator": "Table 3, p.6",
+        "detail": "Best mean coexists with dataset losses; universal superiority would misstate the table."
+      }
+    },
+    {
+      "id": "P7",
+      "title": "Show the cost axis alongside the performance claim",
+      "evidence_level": "repeated-cross-venue-observation",
+      "purpose": "Explain an efficiency contribution and its tradeoffs.",
+      "applicability": "Work claiming faster, cheaper, smaller, safer or more robust behavior with another quantity at risk.",
+      "method": "Define both quantities and their measurement conditions. Use paired tables, common-setting curves or a tradeoff plot; retain dominated or unfavorable regimes when material.",
+      "original_example": "Latency decreases under matched settings. The observed accuracy difference is small, but equivalence needs a justified margin and an appropriate comparison.",
+      "sources": [
+        {
+          "paper_id": "cvpr-2024-1",
+          "pdf_pages": [
+            5,
+            7
+          ],
+          "locator": "Section 4.3; Table 5",
+          "observation": "Inference alternatives are paired with accuracy and relative speed."
+        },
+        {
+          "paper_id": "iclr-2026-1",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Figure 4",
+          "observation": "Rate-quality curves appear beside overhead measures."
+        },
+        {
+          "paper_id": "iclr-2026-2",
+          "pdf_pages": [
+            1,
+            8,
+            9
+          ],
+          "locator": "Figure 1; Section 4",
+          "observation": "Success and inference speed are compared, with task exceptions."
+        },
+        {
+          "paper_id": "icml-2025-2",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Figures 3-4",
+          "observation": "Transfer and quality displays show different evaluation axes."
+        },
+        {
+          "paper_id": "acl-2025-1",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "Figures 3,5-7",
+          "observation": "Budget-matched comparisons and dashed oracle curves distinguish attainable performance from ceilings."
+        }
+      ],
+      "limits": "A Pareto frontier is conditional on the sampled configurations and metric definitions. Successful-only timing cannot silently represent overall completion cost.",
+      "counterexample": {
+        "paper_id": "icml-2025-2",
+        "locator": "Figure 4, p.7",
+        "detail": "Overlapping labels in a tradeoff scatter obscure some points despite a useful scientific question."
+      }
+    },
+    {
+      "id": "P8",
+      "title": "Treat readability and text-display consistency as failure modes",
+      "evidence_level": "repeated-cross-venue-observation",
+      "purpose": "Avoid imitating weaknesses that also occur in selected papers.",
+      "applicability": "Final-size diagrams, multi-panel plots and result tables.",
+      "method": "Inspect actual rendered size; verify labels, scales, uncertainty definitions, precision and computed emphasis against source values. Repair only affected artifacts during drafting; consolidate full checks at the milestone.",
+      "original_example": "A table cell is emphasized only if it satisfies the declared ranking rule. The caption defines the interval type and the body uses the same population and units.",
+      "sources": [
+        {
+          "paper_id": "cvpr-2024-3",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Figure 8",
+          "observation": "Nonzero magnitude-bar baseline magnifies differences."
+        },
+        {
+          "paper_id": "iclr-2026-2",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Figure 4",
+          "observation": "Shaded bands lack a local uncertainty definition."
+        },
+        {
+          "paper_id": "icml-2024-3",
+          "pdf_pages": [
+            5,
+            7
+          ],
+          "locator": "Figures 2-4",
+          "observation": "Some fine labels remain unreadable at the inspected detail scale."
+        },
+        {
+          "paper_id": "icml-2024-5",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Figure 4 and adjacent body",
+          "observation": "Reference estimates and directional descriptions differ between caption and body."
+        },
+        {
+          "paper_id": "acl-2026-3",
+          "pdf_pages": [
+            7,
+            10
+          ],
+          "locator": "Table 4 and surrounding prose; future-work discussion",
+          "observation": "Metric naming and described model coverage are not fully synchronized across sections."
+        }
+      ],
+      "limits": "The observation is that such defects occurred, not that a fixed font or palette caused acceptance. Target widths come from the actual venue template.",
+      "counterexample": {
+        "paper_id": "cvpr-2025-5",
+        "locator": "Table 3 and Figure 6, p.8",
+        "detail": "The compact ablation table is readable, while neighboring heatmaps lack a numeric scale; assess each display separately."
+      }
+    }
+  ],
+  "editorial_recommendations": [
+    {
+      "id": "R1",
+      "recommendation": "Use a shared argument/display record and reproducible generator.",
+      "basis": "Engineering response to observed consistency failures, not a claim that PDF authors used this workflow."
+    },
+    {
+      "id": "R2",
+      "recommendation": "Use original calibrated sentence examples proportionally to the request.",
+      "basis": "Editorial synthesis from condition/interpretation patterns; examples are not quotations or scored optimal wording."
+    }
+  ],
+  "frozen_at": "2026-10-26T12:24:29.177599+00:00",
+  "discovery_ids": [
+    "acl-2024-1",
+    "acl-2024-2",
+    "acl-2024-3",
+    "acl-2024-5",
+    "acl-2025-1",
+    "acl-2025-2",
+    "acl-2025-3",
+    "acl-2025-5",
+    "acl-2026-1",
+    "acl-2026-3",
+    "acl-2026-4",
+    "acl-2026-5",
+    "cvpr-2024-1",
+    "cvpr-2024-2",
+    "cvpr-2024-3",
+    "cvpr-2024-5",
+    "cvpr-2025-1",
+    "cvpr-2025-2",
+    "cvpr-2025-3",
+    "cvpr-2025-5",
+    "cvpr-2026-1",
+    "cvpr-2026-2",
+    "cvpr-2026-3",
+    "cvpr-2026-5",
+    "iclr-2024-1",
+    "iclr-2024-2",
+    "iclr-2024-3",
+    "iclr-2024-5",
+    "iclr-2025-1",
+    "iclr-2025-2",
+    "iclr-2025-3",
+    "iclr-2025-5",
+    "iclr-2026-1",
+    "iclr-2026-2",
+    "iclr-2026-3",
+    "iclr-2026-5",
+    "icml-2024-1",
+    "icml-2024-2",
+    "icml-2024-3",
+    "icml-2024-5",
+    "icml-2025-1",
+    "icml-2025-2",
+    "icml-2025-3",
+    "icml-2025-5",
+    "icml-2026-1",
+    "icml-2026-2",
+    "icml-2026-3",
+    "icml-2026-5",
+    "neurips-2023-1",
+    "neurips-2023-2",
+    "neurips-2023-3",
+    "neurips-2023-5",
+    "neurips-2024-1",
+    "neurips-2024-2",
+    "neurips-2024-3",
+    "neurips-2024-5",
+    "neurips-2025-1",
+    "neurips-2025-2",
+    "neurips-2025-3",
+    "neurips-2025-5"
+  ],
+  "discovery_record_hashes": {
+    "discovery-cvpr.json": "923bc7f2c596a1d7b87426df82b504bce4a011b452200bd275c575aaddb8addb",
+    "discovery-iclr.json": "6acac7a399baad0d35079ecc0edfdb638fbe441541a8ac930168d5c766a9c193",
+    "discovery-icml.json": "71ed9c81622b8465ac839e450d4ac8623f50345fd5d68298bbc49b496a3a2a13",
+    "discovery-acl.json": "36ecedaade1026cb084a9ba86c67e535f315c155fdfbecd1a26401d9f70ff58f",
+    "discovery-neurips.json": "1fbe2d7a359ee8044be917f2ca688992ba421bad1ab08574cd3731c49745c5d0"
+  }
+}
