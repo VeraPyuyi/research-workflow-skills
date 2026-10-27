@@ -1,8 +1,10 @@
 # Evidence-Led Paper Presentation Study
 
-Status: corpus reading, frozen-pattern holdout assessment, four-case behavior
-comparison and rendered artifact inspection completed. Consolidated validation
-and deployment are recorded separately in the release and deployment receipts.
+Status: study, behavior comparison and consolidated validation completed.
+On October 28, 2026, the Magpie suite was installed locally and both runtime
+profiles were published to the private two-branch repository. The Codex-native
+suite was validated in a separate temporary installation. Exact content
+versions and verification limits are in the release and deployment receipts.
 
 ## Scope and provenance
 

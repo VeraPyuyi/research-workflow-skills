@@ -35,6 +35,16 @@
   "runtime_change": "Replace stale validation receipt reference only.",
   "reconciled_change": "Only generated research-experiment Python bytecode; no code or instruction changes. Preserved with old package backup.",
   "project_continuation": "Compatible update at next start/resume/handoff; no project chats awakened.",
-  "publication": "pending",
+  "publication": {
+    "status": "published",
+    "repository": "VeraPyuyi/research-workflow-skills",
+    "private": true,
+    "branch": "magpie",
+    "default_branch": "magpie",
+    "branch_count": 2,
+    "verified_content_commit": "21e1927ebfdae30237f4f54ac8fbaee9cce885b0",
+    "checked_at": "2026-10-27T17:53:29.113454+00:00",
+    "note": "This receipt is added by a later documentation-only commit."
+  },
   "codex_native": "Separately tested temporary install; personal installation remains Magpie."
 }
