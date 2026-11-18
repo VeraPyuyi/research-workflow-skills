@@ -84,3 +84,8 @@ branch dispositions, and a concrete next scientific action with authority/status
 `research-analyze` evaluates contribution strength, `research-navigate` dispatches,
 and `research-optimize` improves execution. Focus bookkeeping and optimizer
 completion never trigger each other or create recurring optimizer events.
+
+## Mathematical work when applicable
+
+Keep the original scientific problem as the reference when local mathematics expands. Check the hardest remaining obstacle and cumulative changes; a correct easier surrogate is not automatically the original contribution.
+Read [mathematical work](../research-navigate/references/mathematical-work.md) for the optional record and return contract.

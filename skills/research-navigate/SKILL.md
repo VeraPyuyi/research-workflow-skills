@@ -131,3 +131,8 @@ handoff for continuation, including the next action actually started or the exac
 dependency preventing it. A phase report is an internal checkpoint. Follow the
 [continuation procedure](references/goal-execution.md#stage-to-stage-continuation)
 before ending a turn; do not finish the Goal merely because this stage ended.
+
+## Mathematical work when applicable
+
+For delegated proof work, carry the parent obligation, return point and sole continuation owner. Consume a returned result once, simplify pending work, and actually advance the next authorized dependency; children do not dispatch their own successors.
+Read [mathematical work](references/mathematical-work.md) for the optional record and return contract.

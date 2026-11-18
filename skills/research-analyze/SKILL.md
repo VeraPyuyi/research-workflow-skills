@@ -102,3 +102,8 @@ not the end of manuscript, two-round review or reproduction-package work.
 Example: a headline averaged across tasks should preserve per-task effects and
 resource conditions. If a gain comes only from one expensive task setting, state
 that dependency instead of presenting it as uniform improvement.
+
+## Mathematical work when applicable
+
+Measure what changed in the original problem, not the number of easy branches. Preserve the same obstacle identity across renaming and decompositions; two rounds without new understanding trigger a bounded route comparison. A useful local lemma can coexist with an open parent problem.
+Read [mathematical work](../research-navigate/references/mathematical-work.md) for the optional record and return contract.

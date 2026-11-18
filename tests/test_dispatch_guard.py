@@ -17,7 +17,7 @@ def packet():
     return {
         "id": "branch-1",
         "stage": "research-survey",
-        "model": "workbuddy-ai/hy3",
+        "model": "opencode-zen/nemotron-3.5-lightning-free",
         "effort": "high",
         "free_only": True,
         "budget_state": "within",
@@ -37,8 +37,8 @@ def packet():
 def blind_packet():
     plan = packet()
     plan.update(
-        stage="research-review", model="workbuddy-ai/step-5-preview",
-        author_model="workbuddy-ai/deepseek-v4.1-flash",
+        stage="research-review", model="opencode-zen/longcat-2.5-preview-free",
+        author_model="opencode-zen/deepseek-v4.1-flash-free",
         author_evidence="runtime author identity",
         review_mode="venue_blind", review_round=1, new_agent=True,
         fork_context=False, manuscript_revision="M4", venue_profile="V1",
@@ -95,7 +95,7 @@ class DispatchGuardTests(unittest.TestCase):
     def test_direct_compatible_free_route_is_admitted(self):
         result = self.check(packet())
         self.assertEqual(result["status"], "ready-for-dispatch")
-        self.assertEqual(result["model"], "workbuddy-ai/hy3")
+        self.assertEqual(result["model"], "opencode-zen/nemotron-3.5-lightning-free")
         self.assertFalse(result["executed"])
 
     def test_free_route_rejects_mixed_group_paid_and_provider_fallback(self):
@@ -151,7 +151,7 @@ class DispatchGuardTests(unittest.TestCase):
 
     def test_unknown_pool_permits_only_one(self):
         plan = packet()
-        plan["active"] = [{"id": "a", "model": "workbuddy-ai/step-5-preview",
+        plan["active"] = [{"id": "a", "model": "opencode-zen/longcat-2.5-preview-free",
                            "status": "running"}]
         self.assertEqual(self.check(plan)["status"], "blocked")
 
@@ -189,22 +189,22 @@ class DispatchGuardTests(unittest.TestCase):
         plan = packet()
         plan.update(model="opencode-zen/deepseek-v4.1-flash-free",
                     effort="max", supported_efforts=["max"],
-                    author_model="workbuddy-ai/deepseek-v4.1-flash",
+                    author_model="opencode-zen/deepseek-v4.1-flash-free",
                     author_evidence="actual served identity recorded")
         self.assertEqual(self.check(plan)["status"], "blocked")
 
     def test_unverified_author_identity_cannot_satisfy_independence(self):
         plan = packet()
-        plan.update(model="workbuddy-ai/step-5-preview",
-                    author_model="workbuddy-ai/deepseek-v4.1-flash",
+        plan.update(model="opencode-zen/longcat-2.5-preview-free",
+                    author_model="opencode-zen/deepseek-v4.1-flash-free",
                     author_evidence="")
         self.assertEqual(self.check(plan)["status"], "blocked")
 
     def test_review_requires_explicit_author_provenance(self):
         plan = packet()
         plan.update(stage="research-review",
-                    model="workbuddy-ai/step-5-preview",
-                    author_model="workbuddy-ai/deepseek-v4.1-flash")
+                    model="opencode-zen/longcat-2.5-preview-free",
+                    author_model="opencode-zen/deepseek-v4.1-flash-free")
         self.assertEqual(self.check(plan)["status"], "blocked")
         plan["author_evidence"] = "runtime log records the served identity"
         self.assertEqual(self.check(plan)["status"], "ready-for-dispatch")

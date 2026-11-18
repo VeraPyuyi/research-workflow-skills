@@ -71,3 +71,8 @@ actual candidate outcomes, cost including commitments, adopted or rejected
 changes and their evidence, and the next scientific step. Distinguish a proposal,
 validated candidate, eligibility record, installed release and observed adoption.
 Keep optimizer records out of both blind venue-review bundles.
+
+## Mathematical work when applicable
+
+Classify lessons as shared_behavior, domain_reference, project_only or defer, with evidence, consuming stage and protected strengths. Preserve the 20% budget and milestone publication limits; optimizing this process does not create a second dispatcher.
+Read [mathematical work](../research-navigate/references/mathematical-work.md) for the optional record and return contract.

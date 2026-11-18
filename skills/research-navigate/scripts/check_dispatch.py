@@ -6,6 +6,11 @@ import json
 from pathlib import Path, PurePosixPath, PureWindowsPath
 
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from math_work import validate_math_work
+from model_identity import model_family, NATIVE_MODELS, LEGACY_NATIVE_MODELS
+
 REGISTRY = Path(__file__).resolve().parents[1] / "references/model-routing.json"
 
 def review_errors(plan):
@@ -54,7 +59,7 @@ def review_errors(plan):
 def identity(model, models=None):
     """Conservatively treat known same-model free channels as one author identity."""
     registered = (models or {}).get(model, {})
-    return registered.get("model_family") or model.split("/", 1)[-1].removesuffix("-free")
+    return model_family(model, registered.get("model_family"))
 
 
 def overlap(first, second):
@@ -74,7 +79,7 @@ def overlap(first, second):
 def check(plan, registry=None):
     registry = registry or json.loads(REGISTRY.read_text(encoding="utf-8"))
     models = {item["id"]: item for item in registry["models"]}
-    errors = review_errors(plan)
+    errors = review_errors(plan) + validate_math_work(plan)
     model = plan.get("model", "")
     selected = models.get(model)
     if isinstance(model, str) and model.startswith("google-vertex/"):

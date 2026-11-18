@@ -67,7 +67,7 @@ class ModelRoutingTests(unittest.TestCase):
 
     def test_shared_codex_pool_is_explicit(self):
         codex = [m for m in self.routing["models"] if m["quota_pool"] == "codex"]
-        self.assertEqual({m["id"] for m in codex}, {"codex/gpt-6-astra", "codex/gpt-6.1-sol"})
+        self.assertEqual({m["id"] for m in codex}, {"codex/gpt-6-astra", "codex/gpt-6.1-sol", "codex/gpt-6.2-astra", "codex/gpt-6.2-sol"})
         policy = self.routing["policy"]
         self.assertEqual(policy["max_concurrency_per_confirmed_pool"], 2)
         self.assertEqual(policy["max_concurrency_unknown_pool"], 1)
@@ -129,7 +129,7 @@ class ModelRoutingTests(unittest.TestCase):
 
     def test_free_fallback_cannot_silently_enter_billed_endpoint(self):
         review = self.routing["review_roles"]["scientific_math"]
-        self.assertIn("workbuddy-ai/deepseek-v4.1-flash", review)
+        self.assertIn("opencode-zen/deepseek-v4.1-flash-free", review)
         self.assertIn("codex/gpt-6.1-sol", review)
         self.assertFalse(self.models["codex/gpt-6.1-sol"]["free"])
         text = (SKILLS / "research-navigate" / "references" / "model-routing.md").read_text(encoding="utf-8")

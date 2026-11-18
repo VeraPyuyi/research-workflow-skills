@@ -88,3 +88,8 @@ Do not invalidate unrelated completed work.
 Example: observational policy data with unmeasured confounding requires a justified
 identification path, restricted target, sensitivity/bounds or descriptive claim;
 training an RL model alone does not complete the causal protocol.
+
+## Mathematical work when applicable
+
+Carry the chain from original input through local premises and result back to the original conclusion. Attempt the actual mappings and hardest branch, preserving quantifier order, common-object obligations and proof gaps. Consume accepted imports before expanding pending work.
+Read [mathematical work](../research-navigate/references/mathematical-work.md) for the optional record and return contract.

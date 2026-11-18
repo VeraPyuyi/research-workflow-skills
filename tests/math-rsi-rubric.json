@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "frozen_at": "2026-11-18",
+  "scoring": "0 absent/wrong, 1 partial, 2 explicit and correct; report each criterion, never a research-success probability",
+  "criteria": {
+    "theorem-import": ["Exact fractions reject independence", "Source gap stays visible", "Union bound discharges the original at-most-seven-edge goal", "Original theorem and new application separated"],
+    "actual-input": ["Symmetry premise checked on actual matrix", "Local lemma retained without closing parent", "Counterexample or valid narrowed result", "Bounded next action with explicit return"],
+    "hard-remainder": ["O7 obstacle not reset by renaming", "Hard remainder probed or lack of definition recorded", "Unique owner consumes duplicate return once", "Superseded pending work removed while running version retained"],
+    "common-witness": ["Distinct existentials not merged", "Simultaneous strict inequalities impossible", "Separate valid claims preserved", "No fabricated proof completion or new full review"]
+  },
+  "protected": ["Goal continuation", "M1-M5 review cadence", "No new mandatory math forms for empirical work", "No invented source access, execution or proof"],
+  "acceptance": "No false parent completion; all mathematical checks correct; record partial workflow coverage without asserting autonomous host continuation."
+}

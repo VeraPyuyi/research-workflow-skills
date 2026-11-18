@@ -131,3 +131,8 @@ user's conclusion decision. Submission and release always retain their authority
 
 Example: when "equal cost" contradicts the reported budget, correct the claim or
 design a genuinely comparable study. Do not treat a textual edit as new evidence.
+
+## Mathematical work when applicable
+
+At the applicable milestone, check theorem imports, quantifiers, common witnesses and the connection to actual upstream inputs and the original conclusion. Separate local proof validity from applicability. This adds no per-lemma review gate.
+Read [mathematical work](../research-navigate/references/mathematical-work.md) for the optional record and return contract.

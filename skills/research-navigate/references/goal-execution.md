@@ -266,3 +266,10 @@ startup delegation, current M1-M5 node, artifact revisions, valid/stale check
 coverage, venue-profile revision, both review identities/versions/dispositions,
 remaining work, job IDs and committed/remaining resources. Update at meaningful
 transitions; do not build a second database or repeat the record after every edit.
+
+When the user explicitly requests resuming a paused project, the supported recovery
+helper accepts `--resume --resume-paused --authority <current-request-reference>`.
+Ordinary recovery never overrides a user pause. Preserve objective, original
+budget and consumed usage; a changed status alone is not an automatic next turn.
+An active writer rejection is respected; use the owning host rather than editing
+state databases or repeatedly sending synthetic continuation messages.

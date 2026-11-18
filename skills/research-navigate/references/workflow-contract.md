@@ -340,3 +340,12 @@ update does not replace project themes, thresholds, valid results or job pins.
 
 Use [the handoff example](handoff-example.md) for a compact representation. The
 fields are the contract; exact headings and serialization are not mandatory.
+
+## Optional mathematical work
+
+Substantial delegated proof packages use [mathematical-work.md](mathematical-work.md).
+Carry `math_work` and the parent binding; preserve the original specification,
+quantifiers, stable obstacle, theorem uses and a single continuation owner.
+Returns update existing records under their owner; only pending redundant tasks
+are superseded. The owner executes the next dependency under existing authority.
+These structural records neither prove mathematics nor add per-task review.

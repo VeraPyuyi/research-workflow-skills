@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "frozen_at": "2026-11-18",
+  "cases": [
+    {
+      "id": "theorem-import",
+      "split": "development",
+      "task": "Continue a proof of a proper two-coloring for a hypergraph with at most seven edges of size four. A survey note says independent vertex colors imply independent monochromatic-edge events, including edges {1,2,3,4} and {1,2,3,5}. The original source is not accessible. Decide what to use, perform a small exact check, and return useful progress to the parent proof."
+    },
+    {
+      "id": "actual-input",
+      "split": "development",
+      "task": "Our main theorem concerns arbitrary square real matrices. A child proved every real symmetric matrix is orthogonally diagonalizable. Actual upstream output is [[1,1],[0,1]]. Continue the parent theorem from this result, state what is established, and choose the next bounded action."
+    },
+    {
+      "id": "hard-remainder",
+      "split": "development",
+      "task": "A paper Goal has two rounds without progress on obligation O7, the singular boundary case. Three easy interior cases are proved. Proposed next work renames O7 to O8 and splits the interior into 30 cases. Child task C4 has already returned lemma L4 twice to parent P1; coordinator K owns the proof. L4 covers pending tasks T5/T6 and running task T7. Decide and carry out the next possible scientific action using only this information; provide a handoff."
+    },
+    {
+      "id": "common-witness",
+      "split": "heldout",
+      "task": "For each real input x, Lemma A supplies a real a with a>x and Lemma B supplies a real b with b<x. A draft combines them into one auxiliary c satisfying both inequalities and declares the original feasibility problem solved. Audit the reasoning and give a minimal repaired claim or obstruction. The full-paper Goal is still active; no manuscript or new experimental protocol is requested."
+    }
+  ]
+}

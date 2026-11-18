@@ -89,7 +89,8 @@ def sample_config():
 
 class MagpieRoutingHelperTests(unittest.TestCase):
     def setUp(self):
-        test_root = ROOT / ".build" / "model-collaboration" / "magpie" / "test-runs"
+        # Leave room for timestamped backup names on Windows without long paths.
+        test_root = ROOT / ".build" / "magpie-tests"
         self.base = test_root / self.id().split(".")[-1]
         self.assertTrue(self.base.resolve().is_relative_to(ROOT.resolve()))
         self.assertEqual(self.base.resolve().parent, test_root.resolve())
@@ -135,6 +136,11 @@ class MagpieRoutingHelperTests(unittest.TestCase):
                         {"slug": "opencode-zen/glm-5.3-flash-free", "default_reasoning_level": "max", "supported_reasoning_levels": [{"effort": "max"}]},
                         {"slug": "opencode-zen/nemotron-3.5-super-vl-free", "default_reasoning_level": "xhigh", "supported_reasoning_levels": [{"effort": "xhigh"}]},
                         {"slug": "opencode-zen/jev-1.13-free", "default_reasoning_level": "max", "supported_reasoning_levels": [{"effort": "max"}]},
+                        {"slug": "opencode-zen/deepseek-v4.1-flash-free", "default_reasoning_level": "max", "supported_reasoning_levels": [{"effort": "max"}]},
+                        {"slug": "opencode-zen/longcat-2.5-preview-free", "default_reasoning_level": "max", "supported_reasoning_levels": [{"effort": "max"}]},
+                        {"slug": "opencode-zen/nemotron-3.5-lightning-free", "default_reasoning_level": "max", "supported_reasoning_levels": [{"effort": "max"}]},
+                        {"slug": "opencode-zen/mimo-v2.6-flash-free", "default_reasoning_level": "max", "supported_reasoning_levels": [{"effort": "max"}]},
+                        {"slug": "opencode-zen/space-bunny-free", "default_reasoning_level": "max", "supported_reasoning_levels": [{"effort": "max"}]},
                         {"slug": "typesafe/jev-latest", "default_reasoning_level": "max", "supported_reasoning_levels": [{"effort": "max"}]},
                         {"slug": "cursor/composer-2.5", "default_reasoning_level": "high", "supported_reasoning_levels": [{"effort": "high"}]},
                         {"slug": "cursor/grok-4.6", "default_reasoning_level": "medium", "supported_reasoning_levels": [{"effort": "medium"}]},
@@ -149,20 +155,16 @@ class MagpieRoutingHelperTests(unittest.TestCase):
         group = build_target_group(ROUTING, evidence)
         members = group["members"]
         rules = group["rules"]
-        self.assertIn("codex/gpt-6-astra:max", members)
-        self.assertIn("codex/gpt-6.1-sol:max", members)
+        self.assertIn("codex/gpt-6-astra:high", members)
+        self.assertIn("codex/gpt-6.1-sol:high", members)
         self.assertFalse(any(m.startswith("google-vertex/") for m in members))
         free_prefixes = {
-            "workbuddy-ai/deepseek-v4.1-flash",
-            "workbuddy-ai/step-5-preview",
-            "workbuddy-ai/hy3",
             "opencode-zen/beam-free",
             "opencode-zen/deepseek-v4.1-flash-free",
             "opencode-zen/glm-5.3-flash-free",
             "opencode-zen/mimo-v2.6-flash-free",
             "opencode-zen/nemotron-3.5-super-vl-free",
             "opencode-zen/longcat-2.5-preview-free",
-            "opencode-zen/nemotron-3-ultra-free",
             "opencode-zen/space-bunny-free",
             "opencode-zen/nemotron-3.5-lightning-free",
         }
@@ -200,7 +202,7 @@ class MagpieRoutingHelperTests(unittest.TestCase):
         group = build_target_group(ROUTING, load_effort_evidence(self.catalog_path))
         routes = [rule for rule in group["rules"] if "topic drift" in rule["intent"].lower()]
         self.assertEqual(len(routes), 1)
-        self.assertTrue(routes[0]["use"].startswith("workbuddy-ai/step-5-preview"))
+        self.assertTrue(routes[0]["use"].startswith("opencode-zen/longcat-2.5-preview-free"))
         self.assertNotIn("tokens", routes[0])
         self.assertNotIn("images", routes[0])
 
@@ -234,7 +236,7 @@ class MagpieRoutingHelperTests(unittest.TestCase):
         self.assertFalse(any(m.startswith("google-vertex/") for m in group["members"]))
         self.assertFalse(any(r["use"].startswith("google-vertex/") for r in group["rules"]))
         consistency = next(r for r in group["rules"] if "Long-evidence consistency" in r["intent"])
-        self.assertTrue(consistency["use"].startswith("workbuddy-ai/step-5-preview"))
+        self.assertTrue(consistency["use"].startswith("opencode-zen/longcat-2.5-preview-free"))
         self.assertIn("cursor/grok-4.6:medium", group["members"])
 
     def test_unverified_account_candidates_do_not_join_automatic_group(self):
@@ -305,7 +307,25 @@ class MagpieRoutingHelperTests(unittest.TestCase):
         group = build_target_group(ROUTING, evidence)
         self.assertEqual(group["routing"], "order")
         self.assertNotEqual(group["rules"][0]["use"], "codex/gpt-6-astra:max")
-        self.assertIn("codex/gpt-6-astra:max", group["members"])
+        self.assertIn("codex/gpt-6-astra:high", group["members"])
+
+    def test_custom_api_order_and_pause_survive_retired_endpoint_repair(self):
+        from scripts.magpie_routing import preserve_custom_group
+        target = build_target_group(ROUTING, load_effort_evidence(self.catalog_path))
+        before = {
+            "id": "smart-split-api", "name": "Custom API", "routing": "order",
+            "members": ["openai/gpt-6-astra:high", "codex/gpt-6-astra:max",
+                        "workbuddy-ai/step-5-preview:high"],
+            "classifier": "typesafe/jev-latest",
+            "rules": [{"use": "codex/gpt-6-astra:max", "agents": ["codex"], "pause": True},
+                      {"use": "workbuddy-ai/step-5-preview:high", "intent": "custom prose"}]
+        }
+        after = preserve_custom_group(before, target, json.loads(ROUTING.read_text(encoding="utf-8")))
+        self.assertEqual(after["id"], before["id"])
+        self.assertEqual(after["members"][:2], before["members"][:2])
+        self.assertEqual(after["rules"][0], before["rules"][0])
+        self.assertEqual(after["rules"][1]["use"], "opencode-zen/longcat-2.5-preview-free:max")
+        self.assertFalse(any("workbuddy-ai/" in m or "6.2" in m for m in after["members"]))
 
     @mock.patch("scripts.magpie_routing._is_reparse_point")
     def test_reparse_ancestor_is_rejected(self, reparse_mock):

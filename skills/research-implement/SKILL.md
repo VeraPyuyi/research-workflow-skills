@@ -63,3 +63,8 @@ controls to experiment. Preserve the user's boundaries for a small requested fix
 Example: a discounted-return implementation can be checked on a short trajectory
 with known rewards and termination before training a policy. Include truncation
 and missing-reward cases required by the actual environment contract.
+
+## Mathematical work when applicable
+
+For mathematical computation distinguish floating-point discovery, exact finite checking, formal certificates and proof. Recheck actual-input and joint-witness conditions; use exact checks only where they answer the current obligation.
+Read [mathematical work](../research-navigate/references/mathematical-work.md) for the optional record and return contract.

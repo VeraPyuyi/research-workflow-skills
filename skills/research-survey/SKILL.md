@@ -99,3 +99,8 @@ citation, experimental detail or peer-review status.
 
 Example: an abstract reporting faster training supports a source-reported speed
 claim, not an inferred hardware setup, confidence interval or generalization gain.
+
+## Mathematical work when applicable
+
+When importing a theorem, return its exact source/version/location, quantifiers and hypotheses, object mapping, supplied and missing premises, and consuming proof obligation. A source gap stays explicit; a field analogy is not a usable theorem.
+Read [mathematical work](../research-navigate/references/mathematical-work.md) for the optional record and return contract.

@@ -79,9 +79,9 @@ quality ranking.
 | Formal derivation and reliable implementation | `codex/gpt-6.1-sol` | `max` for formal/engineering, `high` for coordination | mathematical subproblems, implementation, reproducibility | paid shared Codex pool; not the legacy `gpt-6-sol` |
 | Covered Cursor branch | `cursor/grok-4.6` | `medium`, Fast off | competing explanations, bounded engineering, protocol alternatives and milestone critique | shared Cursor subscription pool; refresh coverage; no verified hard output cap |
 | Vertex catalogue (held) | `google-vertex/*` | not admitted | no executable default assignment | App Builder promotional credit scope unverified; provider off; see [credit policy](vertex-credit-policy.md) |
-| Free scientific reasoning and code | `workbuddy-ai/deepseek-v4.1-flash` | `max` | derivations, statistics, code, independent review | exact served checkpoint may be opaque; channel-specific |
-| Free literature and research synthesis | `workbuddy-ai/step-5-preview` | `high` | long-context synthesis, alternatives, contribution and reuse review | preview model; public evidence is limited |
-| Free retrieval and source checks | `workbuddy-ai/hy3` | `high` | search branches, source verification, requirement checks | upstream reports 256K; endpoint context and tools need checking |
+| Free scientific reasoning and code | `opencode-zen/deepseek-v4.1-flash-free` | `max` | derivations, statistics, code, independent review | exact served checkpoint may be opaque; channel-specific |
+| Free literature and research synthesis | `opencode-zen/longcat-2.5-preview-free` | `high` | long-context synthesis, alternatives, contribution and reuse review | preview model; public evidence is limited |
+| Free retrieval and source checks | `opencode-zen/nemotron-3.5-lightning-free` | `high` | search branches, source verification, requirement checks | upstream reports 256K; endpoint context and tools need checking |
 | Free mathematical checks | `opencode-zen/beam-free` | `max` | bounded verification and counterexample search | base model and free endpoint parity unverified |
 | Free engineering branch | `opencode-zen/glm-5.3-flash-free` | `max` | code, tests, packaging, document production | free endpoint limits; data policy must be checked |
 | Free multimodal extraction | `opencode-zen/nemotron-3.5-super-vl-free` | `xhigh` | public figures, equations, screenshots | do not send private research data to a trial endpoint |
@@ -241,7 +241,7 @@ records, not another database:
 {
   "id": "literature-branch-4",
   "stage": "research-survey",
-  "model": "workbuddy-ai/hy3",
+  "model": "opencode-zen/nemotron-3.5-lightning-free",
   "effort": "high",
   "free_only": true,
   "budget_state": "within",
@@ -331,3 +331,22 @@ round-1 comments. A finding routes to its repair stage and never authorizes an
 external action. Internal audits retain project evidence; blind venue reviewers
 receive only the submitted bundle and criteria.
 
+
+## November 18 model update
+
+The exact new IDs are `gpt-6.2-astra` and `gpt-6.2-sol`. Both are registered
+but blocked pending current host exposure and covered resources. Public release
+alone does not establish local availability. Continue the existing admissible
+Astra/Sol assignments. Once verified, prefer 6.2 Astra for difficult science,
+actual-input connections and hardest branches; prefer 6.2 Sol for engineering,
+experiment control and drafting. Retain old Astra and 6.1 Sol for scientific
+second opinions; Luna remains bounded extraction. Benchmark evidence and limits
+are recorded in the repository's `docs/model-routing-20261118.md`.
+
+All Astra versions/channels share the Astra family, all Sol versions/channels the
+Sol family. A version change is not independent review. Record actual served
+identity and fresh context independently. Ordinary tasks prefer high only where
+supported; difficulty does not authorize an unsupported effort or API billing.
+New endpoints stay blocked until the registry and live capability evidence are
+updated together. Preserve six workers, confirmed-two/unknown-one shared pools,
+Jev abstention and M1-M5 review cadence.

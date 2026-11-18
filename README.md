@@ -134,3 +134,19 @@ required disclosures. Automated scans report coverage gaps; human/agent
 inspection of rendered and unsupported content remains required.
 
 [Goal/content-audit validation](docs/goal-leakage-validation-20261025.md) distinguishes offline acceptance from pending live recovery.
+
+## MathRSI integration and model readiness (2026-11-18)
+
+The 18 existing skills now share optional mathematical handoffs: exact theorem
+imports, connections to actual original inputs, a unique parent return owner,
+and bounded probes of the hardest remainder. Returns are consumed once before
+new work starts; useful in-flight work and original evidence remain pinned.
+Goal completion and M1-M5 checks are unchanged. See
+`skills/research-navigate/references/mathematical-work.md` and
+`docs/math-rsi-validation-20261118.md` for scope and measured checks.
+
+6.2 Astra/Sol are registered as pending local access. Old admissible models remain
+active until the host actually exposes the new IDs and resources are verified.
+Benchmark preferences do not grant access or certify mathematics. See
+`docs/model-routing-20261118.md`. Updates stay within the project's runtime
+profile; no paper is marked delivered merely because a suite was installed.

@@ -100,6 +100,7 @@ class Plan:
     before_hash: str
     after_hash: str
     config_hash_before: str
+    group_id: str = GROUP_ID
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -330,15 +331,16 @@ def build_target_group(routing_path: Path, evidence: dict[str, Any]) -> dict[str
     effort_by_id = {item["id"]: item.get("effort") for item in routing["models"]}
     def verified(member: str, wanted: str) -> str:
         levels = supported_efforts(member, evidence)
-        return f"{member}:{wanted}" if wanted in levels else member
+        return f"{member}:{wanted}" if wanted in levels else None
 
     members = [
-        verified("codex/gpt-6-astra", "max"),
-        verified("codex/gpt-6.1-sol", "max"),
+        verified("codex/gpt-6-astra", "high"),
+        verified("codex/gpt-6.1-sol", "high"),
     ]
     for model_id in free_ids:
         effort = effort_by_id.get(model_id, "")
         members.append(verified(model_id, effort) if effort else model_id)
+    members = [member for member in members if member]
     account_rules = []
     for item in routing["models"]:
         # No Vertex route has verified App Builder credit/no-overage coverage.
@@ -364,27 +366,30 @@ def build_target_group(routing_path: Path, evidence: dict[str, Any]) -> dict[str
         ):
             raise ValueError(f"invalid automatic group intents for {item['id']}")
         account_rules.extend({"use": member, "intent": intent} for intent in intents)
-    def exact_member(model_id: str) -> str:
-        return next(member for member in members if member_model(member) == model_id)
+    def exact_member(model_id: str) -> str | None:
+        return next((m for m in members if member_model(m) == model_id), None)
 
-    rules = account_rules + [
-        {"use": exact_member("opencode-zen/nemotron-3.5-lightning-free"), "intent": INTENTS["classify"]},
-        {"use": exact_member("workbuddy-ai/step-5-preview"), "intent": INTENTS["optimize"]},
-        {"use": exact_member("workbuddy-ai/step-5-preview"), "intent": INTENTS["focus"]},
-        {"use": exact_member("workbuddy-ai/hy3"), "intent": INTENTS["retrieve"]},
-        {"use": exact_member("workbuddy-ai/step-5-preview"), "intent": INTENTS["reuse"]},
-        {"use": exact_member("workbuddy-ai/deepseek-v4.1-flash"), "intent": INTENTS["review"]},
-        {"use": exact_member("opencode-zen/beam-free"), "intent": INTENTS["math"]},
-        {"use": exact_member("opencode-zen/glm-5.3-flash-free"), "intent": INTENTS["engineering"]},
-        {"use": exact_member("opencode-zen/nemotron-3.5-super-vl-free"), "intent": INTENTS["vision"]},
-        {"use": exact_member("workbuddy-ai/step-5-preview"), "intent": INTENTS["consistency"]},
-        {"use": exact_member("codex/gpt-6-astra"), "intent": INTENTS["hard"]},
-        {"use": exact_member("codex/gpt-6.1-sol"), "intent": INTENTS["formal"]},
-        {"use": exact_member("codex/gpt-6.1-sol"), "intent": INTENTS["experiment"]},
-        {"use": exact_member("workbuddy-ai/step-5-preview"), "intent": INTENTS["writing"]},
-        {"use": exact_member("codex/gpt-6-astra"), "intent": INTENTS["manuscript"]},
-        {"use": exact_member("workbuddy-ai/step-5-preview"), "intent": INTENTS["routine"]},
-    ]
+    roles = {
+        "classify": ["opencode-zen/nemotron-3.5-lightning-free"],
+        "retrieve": ["opencode-zen/nemotron-3.5-lightning-free", "opencode-zen/longcat-2.5-preview-free"],
+        "review": ["opencode-zen/deepseek-v4.1-flash-free"],
+        "math": ["opencode-zen/beam-free"],
+        "engineering": ["opencode-zen/glm-5.3-flash-free"],
+        "vision": ["opencode-zen/nemotron-3.5-super-vl-free"],
+        "hard": ["codex/gpt-6-astra"],
+        "formal": ["codex/gpt-6.1-sol"],
+        "experiment": ["codex/gpt-6.1-sol"],
+        "manuscript": ["codex/gpt-6-astra"],
+    }
+    for role in ("optimize", "focus", "reuse", "consistency", "writing", "routine"):
+        roles[role] = ["opencode-zen/longcat-2.5-preview-free", "opencode-zen/deepseek-v4.1-flash-free"]
+    rules = []
+    for role, choices in roles.items():
+        member = next((exact_member(m) for m in choices if exact_member(m)), None)
+        if member:
+            rules.append({"use": member, "intent": INTENTS[role]})
+    rules = [rule for rule in rules if not rule["use"].startswith("codex/")] + account_rules + [
+        rule for rule in rules if rule["use"].startswith("codex/")]
     for rule in rules:
         if len(rule["intent"]) > MAX_INTENT_CHARS:
             raise ValueError(f"intent exceeds {MAX_INTENT_CHARS} characters")
@@ -400,19 +405,59 @@ def build_target_group(routing_path: Path, evidence: dict[str, Any]) -> dict[str
     }
 
 
+
+def preserve_custom_group(before, generated, routing):
+    """Repair retired research targets without replacing user intent or API ordering."""
+    result = json.loads(json.dumps(before))
+    blocked = {m["id"] for m in routing["models"] if m.get("dispatch_block_reason")}
+    replacements = {
+        "workbuddy-ai/hy3": "opencode-zen/nemotron-3.5-lightning-free",
+        "workbuddy-ai/step-5-preview": "opencode-zen/longcat-2.5-preview-free",
+        "workbuddy-ai/deepseek-v4.1-flash": "opencode-zen/deepseek-v4.1-flash-free",
+    }
+    targets = {member_model(m): m for m in generated["members"]}
+    def replace(member):
+        base = member_model(member)
+        if base in replacements:
+            return targets.get(replacements[base])
+        if base in blocked or base.startswith(("anthropic/", "google-vertex/")):
+            return None
+        return member
+    result["members"] = list(dict.fromkeys(m for item in before["members"] if (m := replace(item))))
+    rules = []
+    for old in before.get("rules", []):
+        target = replace(old["use"])
+        if not target:
+            continue
+        rule = dict(old)
+        if target != old["use"]:
+            rule["use"] = target
+            rule.pop("useEffort", None)
+        rules.append(rule)
+    # Existing custom rules and their order remain authoritative.
+    for intent in ("Theorem reuse: map source hypotheses and quantifiers to the original proof obligation.",
+                   "Hardest mathematical remainder: check actual upstream inputs and return to the sole parent owner."):
+        target = targets.get("opencode-zen/deepseek-v4.1-flash-free")
+        if target and not any(rule.get("intent") == intent for rule in rules):
+            if target not in result["members"]:
+                result["members"].append(target)
+            rules.append({"use": target, "intent": intent})
+    result["rules"] = rules
+    return result
+
 def replace_group(config: dict[str, Any], new_group: dict[str, Any]) -> dict[str, Any]:
     updated = json.loads(json.dumps(config))
     groups = updated.setdefault("groups", [])
     for index, group in enumerate(groups):
-        if group.get("id") == GROUP_ID:
+        if group.get("id") == new_group["id"]:
             groups[index] = new_group
             return updated
     raise ValueError(f"group {GROUP_ID} not found")
 
 
-def extract_group(config: dict[str, Any]) -> dict[str, Any]:
+def extract_group(config: dict[str, Any], group_id: str = GROUP_ID) -> dict[str, Any]:
     for group in config.get("groups", []):
-        if group.get("id") == GROUP_ID:
+        if group.get("id") == group_id:
             return group
     raise ValueError(f"group {GROUP_ID} not found")
 
@@ -423,15 +468,18 @@ def diff_groups(before: dict[str, Any], after: dict[str, Any]) -> str:
     return "".join(difflib.unified_diff(before_lines, after_lines, fromfile="smart-split.before.json", tofile="smart-split.after.json"))
 
 
-def build_plan(config_path: Path, routing_path: Path, artifact_dir: Path, catalog_path: Path = DEFAULT_CATALOG) -> Plan:
+def build_plan(config_path: Path, routing_path: Path, artifact_dir: Path, catalog_path: Path = DEFAULT_CATALOG, *, preserve: bool = False, group_id: str = GROUP_ID) -> Plan:
     config_path = resolve_config_path(config_path)
     raw = read_config_bytes(config_path)
     config = json.loads(raw.decode("utf-8"))
-    before_group = extract_group(config)
+    before_group = extract_group(config, group_id)
     validate_group_fields(before_group)
     before_export = project_group(before_group)
     evidence = load_effort_evidence(catalog_path, set(provider_models(config)))
     after_group = build_target_group(routing_path, evidence)
+    if preserve:
+        after_group = preserve_custom_group(before_group, after_group, load_json(routing_path))
+    after_group["id"] = group_id
     validate_group_fields(after_group)
     validate_members(after_group, provider_models(config), evidence)
     updated = replace_group(config, after_group)
@@ -471,7 +519,7 @@ def build_plan(config_path: Path, routing_path: Path, artifact_dir: Path, catalo
         diff_text=diff_text,
         before_hash=before_hash,
         after_hash=after_hash,
-        config_hash_before=config_hash_before,
+        config_hash_before=config_hash_before, group_id=group_id,
     )
 
 
@@ -527,12 +575,12 @@ def apply_plan(config_path: Path, plan: Plan, expected_before_hash: str | None) 
     if sha256_bytes(written) != prepared_hash:
         raise ValueError("read-back mismatch")
     written_config = json.loads(written.decode("utf-8"))
-    if extract_group(written_config) != plan.after_group:
+    if extract_group(written_config, plan.group_id) != plan.after_group:
         raise ValueError("read-back mismatch")
     protected_before = json.loads(raw.decode("utf-8"))
-    protected_before["groups"] = [group for group in protected_before.get("groups", []) if group.get("id") != GROUP_ID]
+    protected_before["groups"] = [group for group in protected_before.get("groups", []) if group.get("id") != plan.group_id]
     protected_after = json.loads(json.dumps(written_config))
-    protected_after["groups"] = [group for group in protected_after.get("groups", []) if group.get("id") != GROUP_ID]
+    protected_after["groups"] = [group for group in protected_after.get("groups", []) if group.get("id") != plan.group_id]
     if protected_before != protected_after:
         raise ValueError("read-back mismatch")
     return {
@@ -548,6 +596,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--routing", type=Path, default=DEFAULT_ROUTING)
     parser.add_argument("--artifact-dir", type=Path, default=DEFAULT_ARTIFACT_DIR)
     parser.add_argument("--catalog", type=Path, default=DEFAULT_CATALOG)
+    parser.add_argument("--preserve-customizations", action="store_true")
+    parser.add_argument("--group", choices=("smart-split", "smart-split-api"), default=GROUP_ID)
     parser.add_argument("--apply", action="store_true", help="apply the prepared smart-split update")
     parser.add_argument("--expected-before-hash", help="abort apply when live config hash differs")
     return parser
@@ -557,7 +607,7 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     config_path = resolve_config_path(args.config)
     assert_config_target(config_path, args.config)
-    plan = build_plan(config_path, args.routing, args.artifact_dir, args.catalog)
+    plan = build_plan(config_path, args.routing, args.artifact_dir, args.catalog, preserve=args.preserve_customizations, group_id=args.group)
     print(json.dumps({"mode": "apply" if args.apply else "dry-run", "artifact_dir": str(args.artifact_dir), "before_hash": plan.before_hash, "after_hash": plan.after_hash, "config_hash_before": plan.config_hash_before}, indent=2))
     if args.apply:
         result = apply_plan(config_path, plan, args.expected_before_hash or plan.config_hash_before)

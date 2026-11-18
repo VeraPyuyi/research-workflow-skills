@@ -147,9 +147,17 @@ def validate_packet(packet):
                     and all(text(k) and (v is None or content(v)) for k, v in criteria.items()),
                     "invalid_choice_criteria")
             abstain = abstentions.get(name)
-            require(text(abstain) and abstain in criteria and content(criteria[abstain])
-                    and abstain not in candidates, "missing_abstention")
-            require(set(criteria) - {abstain} <= set(candidates), "unknown_candidate_option")
+            if text(abstain):
+                abstain_names = {abstain}
+            else:
+                require(isinstance(abstain, list) and bool(abstain)
+                        and all(text(item) for item in abstain)
+                        and len(set(abstain)) == len(abstain), "missing_abstention")
+                abstain_names = set(abstain)
+            require(abstain_names <= set(criteria)
+                    and all(content(criteria[item]) for item in abstain_names)
+                    and not abstain_names.intersection(candidates), "missing_abstention")
+            require(set(criteria) - abstain_names <= set(candidates), "unknown_candidate_option")
         elif kind == "score":
             require(isinstance(criteria, list) and 2 <= len(criteria) <= 10
                     and all(content(v) for v in criteria), "invalid_score_criteria")

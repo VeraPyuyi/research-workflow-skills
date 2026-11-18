@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "receipt_id": "math-rsi-20261118-magpie-v2",
+  "scope": "workflow-release",
+  "status": "passed",
+  "bundle_digest": "sha256:ffc35a26d14a6bdc880e7b162f5c0b6c552093f58f75ede45d6971ad3d22d771",
+  "evidence_refs": [
+    "docs/math-rsi-validation-20261118.md",
+    "docs/model-routing-20261118.md"
+  ],
+  "coverage": {
+    "unit_full_run": 323,
+    "skipped": 4,
+    "post_review_math_cases_passed": 4,
+    "temporary_install_files_matched": 90,
+    "new_model_calls": 0,
+    "host_goal_autocontinuation": "not-yet-observed"
+  },
+  "contract_version": "1.5"
+}

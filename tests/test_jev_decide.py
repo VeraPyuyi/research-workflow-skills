@@ -147,6 +147,21 @@ class JevTests(unittest.TestCase):
         self.assertNotIn("rationale", r)
         self.assertNotIn("conclusion", r)
 
+    def test_multiple_abstentions_are_local_choice_options(self):
+        p = packet()
+        p["abstention_options"]["compare"] = [
+            "insufficient_evidence",
+            "none_suitable",
+            "retain_current_model",
+        ]
+        p["request"]["questions"]["compare"]["criteria"].update({
+            "none_suitable": "No candidate is suitable",
+            "retain_current_model": "Keep the current model",
+        })
+        result = jev.decide(p)
+        self.assertEqual(result["execution_status"], "dry_run")
+        self.assertNotIn("none_suitable", p["candidates"]["items"])
+
     def test_preserves_all_raw_primitive_outputs_and_usage(self):
         r = self.execute()
         self.assertEqual(r["outputs"], response()["answers"])
