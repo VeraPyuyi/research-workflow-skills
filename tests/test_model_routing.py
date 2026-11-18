@@ -3,6 +3,7 @@ import importlib.util
 import json
 from pathlib import Path
 import unittest
+from unittest import mock
 from test_dispatch_guard import packet, guard
 ROOT = Path(__file__).resolve().parents[1]
 ROUTING = ROOT / 'skills/research-navigate/references/model-routing.json'
@@ -45,6 +46,24 @@ class NativeRoutingTests(unittest.TestCase):
         for invalid in ('unknown', 'external/author', 'codex/gpt-6.1-sol', 'jev-latest'):
             with self.subTest(model=invalid), self.assertRaises(ValueError):
                 optimizer.model_identity(invalid)
-        self.assertEqual(optimizer.model_identity('gpt-6-astra'), 'gpt-6-astra')
+        # Family identity is version-independent; exact IDs remain dispatch identities.
+        for model, family in (('gpt-6-astra', 'gpt-astra'), ('gpt-6.2-astra', 'gpt-astra'),
+                              ('gpt-6.1-sol', 'gpt-sol'), ('gpt-6.2-sol', 'gpt-sol'),
+                              ('gpt-6-luna', 'gpt-luna')):
+            with self.subTest(model=model):
+                self.assertEqual(optimizer.model_identity(model), family)
+        registry = json.loads(ROUTING.read_text())
+        registry['models'].append(dict(id='gpt-9-arbitrary', kind='generative',
+                                       model_family='gpt-arbitrary', quota_pool='codex'))
+        with mock.patch.object(optimizer, 'read', return_value=registry):
+            with self.assertRaises(ValueError):
+                optimizer.model_identity('gpt-9-arbitrary')
+        for item in registry['models']:
+            item['model_family'] = item['id']
+        with mock.patch.object(optimizer, 'read', return_value=registry):
+            self.assertEqual(optimizer.model_identity('gpt-6-astra'),
+                             optimizer.model_identity('gpt-6.2-astra'))
+            self.assertEqual(optimizer.model_identity('gpt-6.1-sol'),
+                             optimizer.model_identity('gpt-6.2-sol'))
 
 if __name__ == '__main__': unittest.main()

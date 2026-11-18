@@ -82,3 +82,8 @@ negative finding, or stopping rather than repeatedly searching for a win.
 Example: when a known method already uses the proposed memory mechanism, a
 controlled study of failure recovery may be a different contribution; describe it
 as a candidate question until the literature and topic decision support it.
+
+## Mathematical work when applicable
+
+Before adopting a decomposition, probe its hardest remainder within existing budget. Check whether the local theorem can apply to actual original inputs; independently existing witnesses do not imply a common witness.
+Read [mathematical work](../research-navigate/references/mathematical-work.md) for the optional record and return contract.

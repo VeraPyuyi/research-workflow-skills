@@ -190,6 +190,47 @@ class OptimizerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.op("validate", {"id": "c1", "milestone": "M1", "report": "validation.json"})
 
+    def check_versioned_review(self, author, reviewer, independent):
+        # Synthetic offline records exercise validation, not host model availability.
+        self.op("candidate", {"id": "c1", "milestone": "M1", "path": "candidate",
+                             "author_model": author, "author_context": "author-1",
+                             "cost": {"model": 2, "time": 5}})
+        self.settle()
+        report = self.validation()
+        report["review"]["reviewer_model"] = reviewer
+        self.write("validation.json", report)
+        before = self.state.read_bytes()
+        if independent:
+            result = self.op("validate", {"id": "c1", "milestone": "M1", "report": "validation.json"})
+            self.assertEqual(result["status"], "validation-recorded")
+            result = self.op("publish", {"id": "c1", "milestone": "M1"})
+            self.assertEqual(result["status"], "publication-recorded")
+            self.assertFalse(result["deployed"])
+        else:
+            with self.assertRaisesRegex(ValueError, "Independent reviewer must differ"):
+                self.op("validate", {"id": "c1", "milestone": "M1", "report": "validation.json"})
+            self.assertEqual(self.state.read_bytes(), before)
+            with self.assertRaises(ValueError):
+                self.op("publish", {"id": "c1", "milestone": "M1"})
+
+    def test_new_astra_reviewer_can_validate_sol_offline_records(self):
+        self.check_versioned_review('gpt-6.1-sol', 'gpt-6.2-astra', True)
+
+    def test_new_sol_reviewer_can_validate_astra_offline_records(self):
+        self.check_versioned_review('gpt-6-astra', 'gpt-6.2-sol', True)
+
+    def test_old_astra_author_new_astra_reviewer_not_independent(self):
+        self.check_versioned_review('gpt-6-astra', 'gpt-6.2-astra', False)
+
+    def test_new_astra_author_old_astra_reviewer_not_independent(self):
+        self.check_versioned_review('gpt-6.2-astra', 'gpt-6-astra', False)
+
+    def test_old_sol_author_new_sol_reviewer_not_independent(self):
+        self.check_versioned_review('gpt-6.1-sol', 'gpt-6.2-sol', False)
+
+    def test_new_sol_author_old_sol_reviewer_not_independent(self):
+        self.check_versioned_review('gpt-6.2-sol', 'gpt-6.1-sol', False)
+
     def test_jev_confidence_cannot_be_a_frozen_improvement_measure(self):
         criteria={"cases":[{"id":"core","held_out":False},{"id":"held","held_out":True}],
                   "strengths":["preserve-negative-results"],

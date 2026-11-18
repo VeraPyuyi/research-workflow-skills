@@ -9,7 +9,11 @@ import math
 import os
 from pathlib import Path
 import stat
+import sys
 import uuid
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "research-navigate/scripts"))
+from model_identity import NATIVE_MODELS, model_family
 
 
 UNITS = ("model", "time")
@@ -240,9 +244,9 @@ def model_identity(value):
     value = text(value)
     registry = Path(__file__).resolve().parents[2] / "research-navigate/references/model-routing.json"
     models = {item["id"]: item for item in read(registry)["models"]}
-    if value not in models or models[value].get("kind") != "generative":
+    if value not in NATIVE_MODELS or value not in models or models[value].get("kind") != "generative":
         raise ValueError("Unknown or unauthorized identity cannot establish native independent review")
-    return models[value]["model_family"]
+    return model_family(value)
 
 
 def validate_report(root, state, contract, candidate, report_path):
@@ -285,9 +289,10 @@ def validate_report(root, state, contract, candidate, report_path):
     if not improved:
         raise ValueError("No measured task or cost benefit")
     review = report["review"]
-    if review.get("reviewer_model") not in ("gpt-6.1-sol", "gpt-6-astra"):
+    reviewer_family = model_identity(review.get("reviewer_model"))
+    if reviewer_family not in ("gpt-sol", "gpt-astra"):
         raise ValueError("Independent publication review requires Sol or Astra; extraction is supporting evidence only")
-    if model_identity(review["reviewer_model"]) == model_identity(candidate["author_model"]):
+    if reviewer_family == model_identity(candidate["author_model"]):
         raise ValueError("Independent reviewer must differ from the author")
     if text(review["context_id"]) == candidate["author_context"]:
         raise ValueError("Reviewer context must be independent")

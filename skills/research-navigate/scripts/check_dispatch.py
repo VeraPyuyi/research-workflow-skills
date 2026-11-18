@@ -8,9 +8,14 @@ import stat
 import unicodedata
 from pathlib import Path, PurePosixPath, PureWindowsPath
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from math_work import validate_math_work
+from model_identity import model_family, NATIVE_MODELS, LEGACY_NATIVE_MODELS
+
 REGISTRY = Path(__file__).resolve().parents[1] / 'references/model-routing.json'
 PROFILE = 'codex-native'
-MODELS = frozenset(('gpt-6.1-sol', 'gpt-6-astra', 'gpt-6-luna'))
+MODELS = NATIVE_MODELS
 TOOLS = frozenset(('multi_agent_v1.spawn_agent', 'multi_agent_v1.wait_agent', 'multi_agent_v1.send_input'))
 
 
@@ -152,7 +157,7 @@ def review_errors(plan):
             errors.append('Independent review needs known actual author models')
         elif not text(plan.get('author_evidence')):
             errors.append('Independent review needs actual author identity evidence')
-        elif plan.get('requested_model') in authors:
+        elif any(model_family(plan.get('requested_model', '')) == model_family(a) for a in authors):
             if not (plan.get('allow_same_model_review') is True and text(plan.get('same_model_bias_record'))):
                 errors.append('Same-model review needs an explicit bias record; no independent gate credit')
         else:
@@ -291,12 +296,15 @@ def check(plan, registry=None):
         return blocked(['Expected a packet object'])
     registry = registry if registry is not None else json.loads(REGISTRY.read_text(encoding='utf-8'))
     errors, reviewing, independent = review_errors(plan)
+    errors.extend(validate_math_work(plan))
     registered = {item['id']: item for item in registry['models']}
-    if (registry.get('runtime_profile') != PROFILE or set(registered) != MODELS
+    if (registry.get('runtime_profile') != PROFILE or set(registered) != (MODELS if registry.get('version') == 2 else LEGACY_NATIVE_MODELS)
             or any(item.get('quota_pool') != 'codex' for item in registered.values())):
         errors.append('Unauthorized runtime registry')
     model = plan.get('requested_model')
     selected = registered.get(model) if isinstance(model, str) else None
+    if selected and selected.get('dispatch_block_reason'):
+        errors.append('Endpoint needs re-verification: ' + selected['dispatch_block_reason'])
     if not selected or model not in MODELS:
         errors.append('Use an exact authorized native model ID')
     if plan.get('runtime_profile') != PROFILE:

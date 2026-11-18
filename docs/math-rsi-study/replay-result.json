@@ -1,0 +1,12 @@
+{
+  "source_revision": "de556f3d5427343153d8d24bed4578ccfe66400c",
+  "execution": "independent exact arithmetic; no model calls",
+  "assignments_checked": 32,
+  "p_e": "1/8",
+  "p_f": "1/8",
+  "p_joint": "1/16",
+  "independence_product": "1/64",
+  "independence_claim": "refuted by the two overlapping edges",
+  "minimum_union_bound_for_m_0_to_7": "1/8",
+  "scope": "finite counterexample and bound arithmetic; not general workflow validation"
+}

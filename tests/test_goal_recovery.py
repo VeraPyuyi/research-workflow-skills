@@ -84,6 +84,15 @@ class GoalRecoveryTests(unittest.TestCase):
         result = self.api.recover(changed, "synthetic-chat", resume=True, authority="user-request")
         self.assertEqual("state_conflict", result["status"])
 
+    def test_explicit_paused_resume_preserves_goal_without_budget_reset(self):
+        self.goal["status"] = "paused"
+        result = self.recover(resume=True, resume_paused=True,
+                              authority="explicit current request to resume this project")
+        self.assertEqual("active_observed", result["status"])
+        self.assertTrue(result["preserved_objective_and_budget"])
+        self.assertTrue(result["usage_not_reset"])
+        self.assertFalse(result["automatic_continuation_observed"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -87,6 +87,104 @@ class NativeDispatchTests(unittest.TestCase):
         for model in ('gpt-6.1-sol', 'gpt-6-astra', 'gpt-6-luna'):
             p = packet(); p['requested_model'] = model
             self.assertEqual(self.ready(p)['spawn_request']['arguments']['model'], model)
+    def simulated_verified_registry(self):
+        """In-memory hypothetical activation; never changes the host or registry file."""
+        registry = json.loads(guard.REGISTRY.read_text(encoding='utf-8'))
+        for item in registry['models']:
+            if item['id'] in ('gpt-6.2-astra', 'gpt-6.2-sol'):
+                item.pop('dispatch_block_reason', None)
+                item['availability'] = 'synthetic-verified-for-test'
+        return registry
+    def test_pending_62_models_block_even_with_authorization_and_claimed_capability(self):
+        for model in ('gpt-6.2-astra', 'gpt-6.2-sol'):
+            with self.subTest(model=model):
+                p = packet(); p['authorized_models'].append(model)
+                p.update(requested_model=model, capability_record='claimed exact model/effort capability')
+                r = self.blocked(p, 're-verification')
+                self.assertIsNone(r['spawn_request'])
+                self.assertIsNone(r['request_digest'])
+                self.assertFalse(r['executed']); self.assertFalse(r['reserved'])
+                self.assertFalse(r['independent_gate_eligible'])
+                binding = guard.record_dispatch(r, {'agent_id': 'claimed-worker'},
+                                                spawn_evidence='synthetic claim')
+                self.assertEqual(binding['status'], 'blocked')
+    def test_simulated_verified_registry_dispatches_all_five_exact_ids(self):
+        registry = self.simulated_verified_registry()
+        models = ['gpt-6-astra', 'gpt-6.1-sol', 'gpt-6-luna', 'gpt-6.2-astra', 'gpt-6.2-sol']
+        for model in models:
+            with self.subTest(model=model):
+                p = packet(); p.update(requested_model=model, authorized_models=models)
+                r = guard.check(p, registry)
+                self.assertEqual(r['status'], 'ready-for-dispatch', r)
+                self.assertEqual(r['spawn_request']['arguments']['model'], model)
+                self.assertEqual(r['actual_model'], 'unknown')
+                self.assertFalse(r['executed']); self.assertFalse(r['reserved'])
+    def test_cross_version_same_family_review_and_receipts_never_gain_independence(self):
+        registry = self.simulated_verified_registry()
+        for author, reviewer in (('gpt-6-astra', 'gpt-6.2-astra'),
+                                 ('gpt-6.2-astra', 'gpt-6-astra'),
+                                 ('gpt-6.1-sol', 'gpt-6.2-sol'),
+                                 ('gpt-6.2-sol', 'gpt-6.1-sol')):
+            with self.subTest(author=author, reviewer=reviewer):
+                p = blind(); p['authorized_models'] += ['gpt-6.2-astra', 'gpt-6.2-sol']
+                p.update(requested_model=reviewer, author_models=[author])
+                r = guard.check(p, registry)
+                self.assertEqual(r['status'], 'blocked', r)
+                self.assertTrue(any('Same-model' in error for error in r['errors']), r)
+                p.update(allow_same_model_review=True, same_model_bias_record='Synthetic shared-family bias')
+                admission = guard.check(p, registry)
+                self.assertEqual(admission['status'], 'ready-for-dispatch', admission)
+                self.assertFalse(admission['model_independent'])
+                self.assertFalse(admission['review_gate_potential'])
+                dispatch = guard.record_dispatch(admission, {'agent_id': 'synthetic-reviewer'},
+                                                 spawn_evidence='synthetic spawn fixture; no live call')
+                self.assertEqual(dispatch['status'], 'dispatched', dispatch)
+                receipt = self.receipt(dispatch, actual_model=reviewer, fork_context=False,
+                                       input_manifest=p['allowed_inputs'], isolation_record='synthetic bundle',
+                                       input_audit_record='synthetic input audit')
+                completed = guard.check_completion(p, receipt, dispatch)
+                self.assertTrue(completed['completed'], completed)
+                self.assertTrue(completed['release_capacity'])
+                self.assertFalse(completed['independent_gate_eligible'])
+    def test_simulated_cross_family_review_receipt_needs_exact_served_identity(self):
+        registry = self.simulated_verified_registry()
+        for author, reviewer in (('gpt-6.1-sol', 'gpt-6.2-astra'),
+                                 ('gpt-6-astra', 'gpt-6.2-sol')):
+            with self.subTest(reviewer=reviewer):
+                p = blind(); p['authorized_models'] += ['gpt-6.2-astra', 'gpt-6.2-sol']
+                p.update(requested_model=reviewer, author_models=[author])
+                admission = guard.check(p, registry)
+                self.assertEqual(admission['status'], 'ready-for-dispatch', admission)
+                self.assertTrue(admission['review_gate_potential'])
+                self.assertFalse(admission['independent_gate_eligible'])
+                dispatch = guard.record_dispatch(admission, {'agent_id': 'synthetic-reviewer'},
+                                                 spawn_evidence='synthetic spawn fixture; no live call')
+                receipt = self.receipt(dispatch, actual_model=reviewer, fork_context=False,
+                                       input_manifest=p['allowed_inputs'], isolation_record='synthetic bundle',
+                                       input_audit_record='synthetic input audit')
+                completed = guard.check_completion(p, receipt, dispatch)
+                self.assertTrue(completed['completed'], completed)
+                self.assertTrue(completed['independent_gate_eligible'])
+                old_reviewer = 'gpt-6-astra' if reviewer == 'gpt-6.2-astra' else 'gpt-6.1-sol'
+                for actual in ('unknown', 'gpt-9-arbitrary', author, old_reviewer):
+                    bad = dict(receipt, actual_model=actual)
+                    r = guard.check_completion(p, bad, dispatch)
+                    self.assertFalse(r['completed'], r)
+                    self.assertFalse(r['release_capacity'])
+                    self.assertFalse(r['independent_gate_eligible'])
+    def test_arbitrary_model_rejected_even_if_injected_into_registry_and_authorization(self):
+        registry = self.simulated_verified_registry()
+        p = packet(); p.update(requested_model='gpt-9-arbitrary')
+        p['authorized_models'].append('gpt-9-arbitrary')
+        for injected in (False, True):
+            with self.subTest(injected=injected):
+                if injected:
+                    registry['models'].append(dict(id='gpt-9-arbitrary', kind='generative',
+                                                   model_family='gpt-arbitrary', quota_pool='codex'))
+                r = guard.check(p, registry)
+                self.assertEqual(r['status'], 'blocked', r)
+                self.assertIsNone(r['spawn_request'])
+                self.assertTrue(any('exact authorized native model ID' in e for e in r['errors']), r)
     def test_profile_model_authorization_fail_closed(self):
         for key, value in [('runtime_profile', 'external'), ('runtime_profile', None),
                            ('authorized_profiles', []), ('authorized_models', ['gpt-6-astra']),

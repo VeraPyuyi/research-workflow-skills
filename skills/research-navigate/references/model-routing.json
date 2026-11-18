@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "runtime_profile": "codex-native",
   "policy": {
     "max_active_workers": 6,
@@ -25,7 +25,16 @@
       "research-focus",
       "research-optimize"
     ],
-    "focus_cadence": "compact handoff reminder; cumulative alignment at M1-M5; excluded from blind input"
+    "focus_cadence": "compact handoff reminder; cumulative alignment at M1-M5; excluded from blind input",
+    "preferred_when_verified": {
+      "hard_math": "gpt-6.2-astra",
+      "original_problem_connection": "gpt-6.2-astra",
+      "engineering": "gpt-6.2-sol",
+      "experiment_control": "gpt-6.2-sol",
+      "drafting": "gpt-6.2-sol"
+    },
+    "new_model_activation": "Registry entry alone is insufficient; explicit live host capability, covered resources and actual served identity required",
+    "family_independence": "Astra versions share gpt-astra; Sol versions share gpt-sol across providers"
   },
   "native_tools": {
     "spawn_agent": {
@@ -56,7 +65,7 @@
   "models": [
     {
       "id": "gpt-6.1-sol",
-      "model_family": "gpt-6.1-sol",
+      "model_family": "gpt-sol",
       "kind": "generative",
       "quota_pool": "codex",
       "role": "Default integration, engineering, experiment control and writing",
@@ -69,7 +78,7 @@
     },
     {
       "id": "gpt-6-astra",
-      "model_family": "gpt-6-astra",
+      "model_family": "gpt-astra",
       "kind": "generative",
       "quota_pool": "codex",
       "role": "Hard mathematics, causality, scientific and contribution review",
@@ -82,7 +91,7 @@
     },
     {
       "id": "gpt-6-luna",
-      "model_family": "gpt-6-luna",
+      "model_family": "gpt-luna",
       "kind": "generative",
       "quota_pool": "codex",
       "role": "Bounded extraction; no principal scientific decisions",
@@ -92,6 +101,46 @@
         "Requested identity is not actual served identity",
         "All native models share the same Codex quota pool"
       ]
+    },
+    {
+      "id": "gpt-6.2-astra",
+      "model_family": "gpt-astra",
+      "kind": "generative",
+      "quota_pool": "codex",
+      "role": "Preferred difficult theory, actual-input connection, hardest branch and scientific review once locally verified",
+      "preferred_reasoning_effort": "high",
+      "access": "Pending local host/provider exposure; no new PAYG authority",
+      "limitations": [
+        "Scientific benchmark point estimates are not theorem correctness probabilities",
+        "Same family across versions is not independent review",
+        "Local context/effort limits unknown until endpoint verification"
+      ],
+      "availability": "pending-local-access",
+      "dispatch_block_reason": "Published model absent from current host/provider allowlist; access and covered allowance require re-verification",
+      "public_release_date": "2026-11-17",
+      "live_call_status": "not-run",
+      "effort": "high",
+      "effort_status": "preference only; verify exact endpoint levels"
+    },
+    {
+      "id": "gpt-6.2-sol",
+      "model_family": "gpt-sol",
+      "kind": "generative",
+      "quota_pool": "codex",
+      "role": "Preferred routine engineering, tool execution, experiment control and drafting once locally verified",
+      "preferred_reasoning_effort": "high",
+      "access": "Pending local host/provider exposure; no new PAYG authority",
+      "limitations": [
+        "Scientific benchmark point estimates are not theorem correctness probabilities",
+        "Same family across versions is not independent review",
+        "Local context/effort limits unknown until endpoint verification"
+      ],
+      "availability": "pending-local-access",
+      "dispatch_block_reason": "Published model absent from current host/provider allowlist; access and covered allowance require re-verification",
+      "public_release_date": "2026-11-17",
+      "live_call_status": "not-run",
+      "effort": "high",
+      "effort_status": "preference only; verify exact endpoint levels"
     }
   ],
   "task_roles": {
@@ -300,5 +349,6 @@
       ],
       "fallback": "native-evidence-comparison"
     }
-  }
+  },
+  "captured_at": "2026-11-18"
 }

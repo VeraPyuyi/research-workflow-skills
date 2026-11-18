@@ -26,7 +26,7 @@ def project(result):
     }
 
 
-def recover(request, thread_id, *, resume=False, authority=None):
+def recover(request, thread_id, *, resume=False, authority=None, resume_paused=False):
     record = {
         "schema_version": 1, "checked_at": datetime.now(timezone.utc).isoformat(),
         "transport": "official app-server", "resume_requested": resume,
@@ -45,7 +45,8 @@ def recover(request, thread_id, *, resume=False, authority=None):
         return dict(record, status="goal_unavailable")
     if not resume:
         return dict(record, status="read_only")
-    if goal.get("status") != "blocked":
+    resumable = {"blocked", "paused"} if resume_paused else {"blocked"}
+    if goal.get("status") not in resumable:
         return dict(record, status="not_blocked")
     mutation = None
     mutation_unknown = False
@@ -146,10 +147,14 @@ def main():
     parser.add_argument("--thread", required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--resume-paused", action="store_true",
+                        help="Also resume a paused Goal only under an explicit current user request")
     parser.add_argument("--authority")
     args = parser.parse_args()
     if args.resume and not args.authority:
         parser.error("--resume requires the actual explicit user request reference")
+    if args.resume_paused and not args.resume:
+        parser.error("--resume-paused requires --resume and explicit authority")
     if not args.binary.is_file():
         parser.error("The supplied host binary is unavailable")
     # Reserve the receipt first: a failed exclusive open must precede any mutation.
@@ -158,7 +163,8 @@ def main():
         try:
             server = AppServer(args.binary)
             server.initialize()
-            record = recover(server.request, args.thread, resume=args.resume, authority=args.authority)
+            record = recover(server.request, args.thread, resume=args.resume, authority=args.authority,
+                             resume_paused=args.resume_paused)
         except Exception:
             record = {"status": "transport_unavailable", "automatic_continuation_observed": False}
         finally:

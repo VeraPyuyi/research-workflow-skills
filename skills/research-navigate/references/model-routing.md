@@ -219,3 +219,22 @@ fallback are specified in [decision-support.md](decision-support.md). A key does
 not establish current credit; this edition records credit as unverified. Jev
 results are advisory evidence for the integrator and never independent-review or
 optimizer-publication approval.
+
+## November 18 model update
+
+The exact new IDs are `gpt-6.2-astra` and `gpt-6.2-sol`. Both are registered
+but blocked pending current host exposure and covered resources. Public release
+alone does not establish local availability. Continue the existing admissible
+Astra/Sol assignments. Once verified, prefer 6.2 Astra for difficult science,
+actual-input connections and hardest branches; prefer 6.2 Sol for engineering,
+experiment control and drafting. Retain old Astra and 6.1 Sol for scientific
+second opinions; Luna remains bounded extraction. Benchmark evidence and limits
+are recorded in the repository's `docs/model-routing-20261118.md`.
+
+All Astra versions/channels share the Astra family, all Sol versions/channels the
+Sol family. A version change is not independent review. Record actual served
+identity and fresh context independently. Ordinary tasks prefer high only where
+supported; difficulty does not authorize an unsupported effort or API billing.
+New endpoints stay blocked until the registry and live capability evidence are
+updated together. Preserve six workers, confirmed-two/unknown-one shared pools,
+Jev abstention and M1-M5 review cadence.
