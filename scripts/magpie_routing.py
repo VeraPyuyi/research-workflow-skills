@@ -324,16 +324,22 @@ def validate_members(group: dict[str, Any], catalog: dict[str, set[str]], eviden
 
 def build_target_group(routing_path: Path, evidence: dict[str, Any]) -> dict[str, Any]:
     routing = load_json(routing_path)
+    registered = {item["id"]: item for item in routing["models"]}
     free_ids = [item["id"] for item in routing["models"]
                 if item.get("free") and item.get("kind", "generative") == "generative"
                 and not item["id"].startswith("google-vertex/")
                 and item.get("group_eligible", True) and not item.get("dispatch_block_reason")]
     effort_by_id = {item["id"]: item.get("effort") for item in routing["models"]}
     def verified(member: str, wanted: str) -> str:
+        entry = registered.get(member, {})
+        if not entry or entry.get("dispatch_block_reason"):
+            return None
         levels = supported_efforts(member, evidence)
         return f"{member}:{wanted}" if wanted in levels else None
 
     members = [
+        verified("codex/gpt-6.2-astra", "high"),
+        verified("codex/gpt-6.2-sol", "high"),
         verified("codex/gpt-6-astra", "high"),
         verified("codex/gpt-6.1-sol", "high"),
     ]
@@ -374,12 +380,12 @@ def build_target_group(routing_path: Path, evidence: dict[str, Any]) -> dict[str
         "retrieve": ["opencode-zen/nemotron-3.5-lightning-free", "opencode-zen/longcat-2.5-preview-free"],
         "review": ["opencode-zen/deepseek-v4.1-flash-free"],
         "math": ["opencode-zen/beam-free"],
-        "engineering": ["opencode-zen/glm-5.3-flash-free"],
+        "engineering": ["opencode-zen/glm-5.3-flash-free", "opencode-zen/mimo-v2.6-flash-free"],
         "vision": ["opencode-zen/nemotron-3.5-super-vl-free"],
-        "hard": ["codex/gpt-6-astra"],
-        "formal": ["codex/gpt-6.1-sol"],
-        "experiment": ["codex/gpt-6.1-sol"],
-        "manuscript": ["codex/gpt-6-astra"],
+        "hard": ["codex/gpt-6.2-astra", "codex/gpt-6-astra"],
+        "formal": ["codex/gpt-6.2-sol", "codex/gpt-6.1-sol"],
+        "experiment": ["codex/gpt-6.2-sol", "codex/gpt-6.1-sol"],
+        "manuscript": ["codex/gpt-6.2-astra", "codex/gpt-6-astra"],
     }
     for role in ("optimize", "focus", "reuse", "consistency", "writing", "routine"):
         roles[role] = ["opencode-zen/longcat-2.5-preview-free", "opencode-zen/deepseek-v4.1-flash-free"]
@@ -412,13 +418,22 @@ def preserve_custom_group(before, generated, routing):
     blocked = {m["id"] for m in routing["models"] if m.get("dispatch_block_reason")}
     replacements = {
         "workbuddy-ai/hy3": "opencode-zen/nemotron-3.5-lightning-free",
-        "workbuddy-ai/step-5-preview": "opencode-zen/longcat-2.5-preview-free",
+        "workbuddy-ai/step-5-preview": "opencode-zen/deepseek-v4.1-flash-free",
         "workbuddy-ai/deepseek-v4.1-flash": "opencode-zen/deepseek-v4.1-flash-free",
+        "opencode-zen/longcat-2.5-preview-free": "opencode-zen/deepseek-v4.1-flash-free",
+        "opencode-zen/glm-5.3-flash-free": "opencode-zen/mimo-v2.6-flash-free",
+        "opencode-zen/space-bunny-free": "opencode-zen/deepseek-v4.1-flash-free",
     }
     targets = {member_model(m): m for m in generated["members"]}
+    upgrades = {
+        INTENTS["hard"]: ("codex/gpt-6-astra", "codex/gpt-6.2-astra"),
+        INTENTS["manuscript"]: ("codex/gpt-6-astra", "codex/gpt-6.2-astra"),
+        INTENTS["formal"]: ("codex/gpt-6.1-sol", "codex/gpt-6.2-sol"),
+        INTENTS["experiment"]: ("codex/gpt-6.1-sol", "codex/gpt-6.2-sol"),
+    }
     def replace(member):
         base = member_model(member)
-        if base in replacements:
+        if base in replacements and base in blocked:
             return targets.get(replacements[base])
         if base in blocked or base.startswith(("anthropic/", "google-vertex/")):
             return None
@@ -430,6 +445,15 @@ def preserve_custom_group(before, generated, routing):
         if not target:
             continue
         rule = dict(old)
+        upgrade = upgrades.get(rule.get("intent"))
+        if (upgrade and not rule.get("pause")
+                and member_model(old["use"]) == upgrade[0]
+                and upgrade[1] in targets):
+            target = targets[upgrade[1]]
+            if target not in result["members"]:
+                # Keep API-first ordering and the legacy subscription fallback.
+                position = result["members"].index(old["use"])
+                result["members"].insert(position, target)
         if target != old["use"]:
             rule["use"] = target
             rule.pop("useEffort", None)

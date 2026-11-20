@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "receipt_id": "model-activation-20261121-magpie",
+  "scope": "workflow-release",
+  "status": "passed",
+  "runtime_profile": "magpie",
+  "contract_version": "1.5",
+  "bundle_digest": "sha256:c936c2357f47113da65c8027ca70df7f21f9606c0789bc0d0266320480c4fcce",
+  "evidence_refs": [
+    "docs/model-activation-20261121.md",
+    "tests/routing-evidence-20261121.json"
+  ],
+  "coverage": {
+    "unit_full_run": 330,
+    "passed": 326,
+    "skipped": 4,
+    "full_suite_log_sha256": "dbe0ab9a9b1ed3fe7df3cfeac9e090507dc1a2cb28c739c099744a3aae3e574a",
+    "command": "python -X utf8 -B -m unittest discover -s tests",
+    "structural_skill_count": 18,
+    "temporary_install_files_matched": 91,
+    "real_calls_for_this_profile": 2,
+    "real_calls_across_both_profiles": 4,
+    "caller_inference_retries": 0,
+    "independent_review": {
+      "model": "gpt-6-astra",
+      "context": "fresh",
+      "actionable_findings": 0,
+      "scope": "activation implementation and instructions; no independent live transport audit",
+      "later_catalog_repair": "covered by regression tests, not a second full agent review"
+    },
+    "native_subagent_spawn": "not-tested-by-these-probes",
+    "native_subagent_concurrency": "not-tested-by-these-probes",
+    "native_tool_execution": "not-tested-by-these-probes",
+    "host_goal_autocontinuation": "not-tested-by-this-release",
+    "hard_output_cap": "not-verified",
+    "fresh_benchmark_recalibration": false
+  },
+  "limits": [
+    "Skipped tests retain their environment/optional-fixture reasons in test sources.",
+    "Native identity is official host-reported, without a raw upstream wire capture.",
+    "Gateway tool evidence covers a synthetic function schema, not an external tool loop.",
+    "Gateway accounting amounts are not invoices or new PAYG authorization.",
+    "Routing availability is a dated observation; every dispatch rechecks its host.",
+    "Project upgrade metadata does not resume paused or blocked Goals."
+  ]
+}

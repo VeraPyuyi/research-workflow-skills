@@ -37,7 +37,7 @@ def packet():
 def blind_packet():
     plan = packet()
     plan.update(
-        stage="research-review", model="opencode-zen/longcat-2.5-preview-free",
+        stage="research-review", model="opencode-zen/mimo-v2.6-flash-free",
         author_model="opencode-zen/deepseek-v4.1-flash-free",
         author_evidence="runtime author identity",
         review_mode="venue_blind", review_round=1, new_agent=True,
@@ -151,7 +151,7 @@ class DispatchGuardTests(unittest.TestCase):
 
     def test_unknown_pool_permits_only_one(self):
         plan = packet()
-        plan["active"] = [{"id": "a", "model": "opencode-zen/longcat-2.5-preview-free",
+        plan["active"] = [{"id": "a", "model": "opencode-zen/mimo-v2.6-flash-free",
                            "status": "running"}]
         self.assertEqual(self.check(plan)["status"], "blocked")
 
@@ -195,7 +195,7 @@ class DispatchGuardTests(unittest.TestCase):
 
     def test_unverified_author_identity_cannot_satisfy_independence(self):
         plan = packet()
-        plan.update(model="opencode-zen/longcat-2.5-preview-free",
+        plan.update(model="opencode-zen/mimo-v2.6-flash-free",
                     author_model="opencode-zen/deepseek-v4.1-flash-free",
                     author_evidence="")
         self.assertEqual(self.check(plan)["status"], "blocked")
@@ -203,7 +203,7 @@ class DispatchGuardTests(unittest.TestCase):
     def test_review_requires_explicit_author_provenance(self):
         plan = packet()
         plan.update(stage="research-review",
-                    model="opencode-zen/longcat-2.5-preview-free",
+                    model="opencode-zen/mimo-v2.6-flash-free",
                     author_model="opencode-zen/deepseek-v4.1-flash-free")
         self.assertEqual(self.check(plan)["status"], "blocked")
         plan["author_evidence"] = "runtime log records the served identity"

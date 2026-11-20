@@ -150,3 +150,7 @@ active until the host actually exposes the new IDs and resources are verified.
 Benchmark preferences do not grant access or certify mathematics. See
 `docs/model-routing-20261118.md`. Updates stay within the project's runtime
 profile; no paper is marked delivered merely because a suite was installed.
+
+## 6.2 routing update (2026-11-21)
+
+6.2 Astra and 6.2 Sol are activated for covered subscription work. See [the dated access and validation report](docs/model-activation-20261121.md). Existing projects adopt this compatible update at recovery or handoff; running tasks remain pinned. A successful inference does not prove a fresh subagent spawn or host Goal auto-continuation.

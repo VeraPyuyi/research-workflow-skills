@@ -432,3 +432,7 @@ Module-only offline verification:
 ```powershell
 python -B -m unittest discover -s tests -p test_jev_decide.py -v
 ```
+
+## Current 6.2 access
+
+Read [model-activation.md](model-activation.md) when selecting the newly activated 6.2 models. Use the current registry, current host allowlist and actual allowance; retain qualified legacy fallbacks.

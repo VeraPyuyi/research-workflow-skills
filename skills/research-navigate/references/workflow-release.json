@@ -2,7 +2,7 @@
   "schema_version": 1,
   "contract_version": "1.5",
   "runtime_profile": "magpie",
-  "release_id": "research-20261118-math-rsi-magpie-v2",
+  "release_id": "research-20261121-62-magpie",
   "status": "candidate",
   "files": {
     "research-analyze/agents/openai.yaml": "05eed143f7f4a4e9c6be90973ab1c606d7c085ca10535f87a0583b058947720d",
@@ -31,7 +31,7 @@
     "research-implement/scripts/render_evidence.py": "c50a185db880d15c0835527964598796f4a2df17f339f4c2ccbec0102191fad7",
     "research-implement/SKILL.md": "d614a4ab131789ee894ad979c88919cc6d11b53e1de0982dadc2ef50e8fb04b0",
     "research-navigate/agents/openai.yaml": "d7ba654f9f0778a6411a210ea8551a0afc6f86abb36be16383c1d6bca0766f6e",
-    "research-navigate/references/decision-support.md": "7f0e7a092ed8d9d7544a80fc714c4bafbb186218a236d2f8e1a7704029531673",
+    "research-navigate/references/decision-support.md": "201d203d3864dd21fff5a2b610ef5be1466f7199674ac8187321e641a40c905b",
     "research-navigate/references/domains/agent.md": "f429610c87f433e296672a5889c62e5edb0c472f11d09ef0a4ea092fd77bc1d7",
     "research-navigate/references/domains/causality.md": "18f444039d499eff6c5885a66562f6bf7a2ff50373eee5d387fabbcd236c5ff9",
     "research-navigate/references/domains/dl.md": "c039b470e7e1bf4b0392e797e457ea761b11432376fab55cb2bfe81231cde2d2",
@@ -44,8 +44,9 @@
     "research-navigate/references/implementation-comparison.md": "a9a6d957bb6fd37ea87382b63df5bdd34a8e60804f4e41552c97d0b5b40e1f90",
     "research-navigate/references/live-validation.md": "8faaa49f3b484b8aaa1f518dd965eae4df244c9effea0406bafd30c1a85a92ea",
     "research-navigate/references/mathematical-work.md": "6178c119cdc9be80b2fdfc01555abc76b29592a05793e0395248ee079857083e",
-    "research-navigate/references/model-routing.json": "6f8fded3b0c7bde8f4920ee6721753af336eb7b5a5a9e760e47f83acc8a8e5f6",
-    "research-navigate/references/model-routing.md": "bdb258893f615054c93c07114b4f29926a78431b21e49165ddf3acf12c9f9eb9",
+    "research-navigate/references/model-activation.md": "446870df403a2e894ae826e85bb4cf797b1d2be1fc6a2baa447ec8c791f167ea",
+    "research-navigate/references/model-routing.json": "864bee83f87242bbe660f99d98349e719a035ed297cee85f22c6512629eb37b6",
+    "research-navigate/references/model-routing.md": "5cfaa41c0dc649efce5e04126a562b260b89fac2043e0e395e8786a9364f13a0",
     "research-navigate/references/reuse-and-simplification.md": "2f1d66459a1a36e5805bc8911ceb2926e1a56e16d02cc0eab44e34ae84808ba8",
     "research-navigate/references/stage-map.md": "0d0d5c440e4bc1353f9c1abf6c569abf2503a0aea574b957edf2def1345984cc",
     "research-navigate/references/vertex-credit-policy.md": "9c1f1d5576114960faae3a065498e42f81a1eb64dc7e15e6564de7ffc79d05b0",
@@ -57,7 +58,7 @@
     "research-navigate/scripts/math_work.py": "a84fd20b172e802e1f1cf175cddbf77d84e08ec210926530d9b27c13cf079d3c",
     "research-navigate/scripts/model_identity.py": "4f2ee5298e09d3ca748fb85d8229c6f2d2fd4e9c170d24b6ea66abce48fe6d5f",
     "research-navigate/scripts/workflow_release.py": "4e0879b6fecb5c35ec515269b6441194b85d128a49760be4a34dce0836adf560",
-    "research-navigate/SKILL.md": "3ad43569c1458268c9d7141b7573c43cac9af342575410bace34077e7c58caaa",
+    "research-navigate/SKILL.md": "43e627b009c0c462de8fc1a88e34abe60f56a2a1a69716bc151a7fe2d0b7645c",
     "research-optimize/agents/openai.yaml": "0554615813b673c2b5d58df21c71590c05a26a60a4e9bd1f246ffe3985d93dfd",
     "research-optimize/references/optimization-protocol.md": "57e3173a4c417a912dc6b0de8533e3462954a6b49dd4544bc9d23359b37efaa9",
     "research-optimize/scripts/optimize_workflow.py": "e3d084cfd6f91146ae9868a75dfad60c530ad6737b90fb4c83b4d4f647522034",
@@ -96,7 +97,7 @@
     "research-write/SKILL.md": "132f1e29a0068eb9078ded88180898f0c1864beec979e37cf46d2a164c9a80c9"
   },
   "validation_receipts": [
-    "validation:math-rsi-20261118-magpie"
+    "docs/releases/model-activation-20261121-magpie.json"
   ],
-  "bundle_digest": "sha256:ffc35a26d14a6bdc880e7b162f5c0b6c552093f58f75ede45d6971ad3d22d771"
+  "bundle_digest": "sha256:c936c2357f47113da65c8027ca70df7f21f9606c0789bc0d0266320480c4fcce"
 }

@@ -75,8 +75,8 @@ quality ranking.
 
 | Role | Exact model | Default effort | Use | Main limitation |
 | --- | --- | --- | --- | --- |
-| Difficult scientific integration | `codex/gpt-6-astra` | `max` for difficult, `xhigh` for revision | original research, contribution judgement, difficult diagnosis | paid shared Codex pool |
-| Formal derivation and reliable implementation | `codex/gpt-6.1-sol` | `max` for formal/engineering, `high` for coordination | mathematical subproblems, implementation, reproducibility | paid shared Codex pool; not the legacy `gpt-6-sol` |
+| Difficult scientific integration | `codex/gpt-6.2-astra` | `high` normally; higher only when supported and justified | original research, contribution judgement, difficult diagnosis | existing shared Codex subscription; old Astra fallback |
+| Formal derivation and reliable implementation | `codex/gpt-6.2-sol` | `high` normally; higher only when supported and justified | mathematical subproblems, implementation, reproducibility | existing shared Codex subscription; 6.1 Sol fallback |
 | Covered Cursor branch | `cursor/grok-4.6` | `medium`, Fast off | competing explanations, bounded engineering, protocol alternatives and milestone critique | shared Cursor subscription pool; refresh coverage; no verified hard output cap |
 | Vertex catalogue (held) | `google-vertex/*` | not admitted | no executable default assignment | App Builder promotional credit scope unverified; provider off; see [credit policy](vertex-credit-policy.md) |
 | Free scientific reasoning and code | `opencode-zen/deepseek-v4.1-flash-free` | `max` | derivations, statistics, code, independent review | exact served checkpoint may be opaque; channel-specific |
@@ -334,10 +334,11 @@ receive only the submitted bundle and criteria.
 
 ## November 18 model update
 
-The exact new IDs are `gpt-6.2-astra` and `gpt-6.2-sol`. Both are registered
-but blocked pending current host exposure and covered resources. Public release
-alone does not establish local availability. Continue the existing admissible
-Astra/Sol assignments. Once verified, prefer 6.2 Astra for difficult science,
+On November 18 the exact IDs `gpt-6.2-astra` and `gpt-6.2-sol` were registered
+but blocked. The November 21 checks in [model-activation.md](model-activation.md)
+verified covered subscription inference and supersede that pending state.
+Public release alone still does not establish local availability.
+Prefer 6.2 Astra for difficult science,
 actual-input connections and hardest branches; prefer 6.2 Sol for engineering,
 experiment control and drafting. Retain old Astra and 6.1 Sol for scientific
 second opinions; Luna remains bounded extraction. Benchmark evidence and limits
@@ -350,3 +351,7 @@ supported; difficulty does not authorize an unsupported effort or API billing.
 New endpoints stay blocked until the registry and live capability evidence are
 updated together. Preserve six workers, confirmed-two/unknown-one shared pools,
 Jev abstention and M1-M5 review cadence.
+
+## Current 6.2 access
+
+Read [model-activation.md](model-activation.md) when selecting the newly activated 6.2 models. Use the current registry, current host allowlist and actual allowance; retain qualified legacy fallbacks.

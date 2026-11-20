@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "captured_at": "2026-11-18",
+  "captured_at": "2026-11-21",
   "policy": {
     "selection_basis": [
       "public primary evidence",
@@ -57,7 +57,39 @@
       "drafting": "codex/gpt-6.2-sol"
     },
     "new_model_activation": "Registry entry alone is insufficient; explicit live host capability, covered resources and actual served identity required",
-    "family_independence": "Astra versions share gpt-astra; Sol versions share gpt-sol across providers"
+    "family_independence": "Astra versions share gpt-astra; Sol versions share gpt-sol across providers",
+    "fallback_models": [
+      "codex/gpt-6-astra",
+      "codex/gpt-6.1-sol"
+    ],
+    "capability_observations": {
+      "codex/gpt-6.2-astra": {
+        "checked_at": "2026-11-21",
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "ultra"
+        ],
+        "context_catalog": 272000,
+        "context_turn_effective": null
+      },
+      "codex/gpt-6.2-sol": {
+        "checked_at": "2026-11-21",
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "ultra"
+        ],
+        "context_catalog": 500000,
+        "context_turn_effective": null
+      }
+    }
   },
   "models": [
     {
@@ -240,7 +272,10 @@
       ],
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
-      "model_family": "glm-5.3-flash"
+      "model_family": "glm-5.3-flash",
+      "availability": "absent-current-catalog",
+      "group_eligible": false,
+      "dispatch_block_reason": "Not exposed by this provider on 2026-11-21; reverify before dispatch"
     },
     {
       "id": "opencode-zen/mimo-v2.6-flash-free",
@@ -319,7 +354,10 @@
       ],
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
-      "model_family": "longcat-2.5-preview"
+      "model_family": "longcat-2.5-preview",
+      "availability": "absent-current-catalog",
+      "group_eligible": false,
+      "dispatch_block_reason": "Not exposed by this provider on 2026-11-21; reverify before dispatch"
     },
     {
       "id": "opencode-zen/nemotron-3-ultra-free",
@@ -356,7 +394,10 @@
       ],
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
-      "model_family": "space-bunny"
+      "model_family": "space-bunny",
+      "availability": "absent-current-catalog",
+      "group_eligible": false,
+      "dispatch_block_reason": "Not exposed by this provider on 2026-11-21; reverify before dispatch"
     },
     {
       "id": "opencode-zen/nemotron-3.5-lightning-free",
@@ -728,9 +769,9 @@
     },
     {
       "id": "codex/gpt-6.2-astra",
-      "role": "Preferred difficult theory, actual-input connection, hardest branch and scientific review once locally verified",
+      "role": "Preferred difficult theory, actual-input connection, hardest branch and scientific review",
       "effort": "high",
-      "access": "Pending local host/provider exposure; no new PAYG authority",
+      "access": "Existing Codex subscription; refresh allowance and current tool/model exposure. See references/model-activation.md.",
       "free": false,
       "quota_pool": "codex",
       "evidence": [
@@ -738,23 +779,23 @@
       ],
       "limitations": [
         "Scientific benchmark point estimates are not theorem correctness probabilities",
-        "Same family across versions is not independent review",
-        "Local context/effort limits unknown until endpoint verification"
+        "Same Astra or Sol family across versions is not independent review",
+        "Dated inference success does not validate every tool, host or future account state"
       ],
-      "effort_status": "preference only; verify exact endpoint levels",
+      "effort_status": "high verified; endpoint advertises low/medium/high/xhigh/max/ultra",
       "kind": "generative",
       "model_family": "gpt-astra",
-      "availability": "pending-local-access",
-      "dispatch_block_reason": "Published model absent from current host/provider allowlist; access and covered allowance require re-verification",
+      "availability": "available-with-current-host-check",
+      "dispatch_block_reason": "",
       "public_release_date": "2026-11-17",
-      "live_call_status": "not-run",
-      "group_eligible": false
+      "live_call_status": "passed-20261121",
+      "group_eligible": true
     },
     {
       "id": "codex/gpt-6.2-sol",
-      "role": "Preferred routine engineering, tool execution, experiment control and drafting once locally verified",
+      "role": "Preferred routine engineering, tool execution, experiment control and drafting",
       "effort": "high",
-      "access": "Pending local host/provider exposure; no new PAYG authority",
+      "access": "Existing Codex subscription; refresh allowance and current tool/model exposure. See references/model-activation.md.",
       "free": false,
       "quota_pool": "codex",
       "evidence": [
@@ -762,358 +803,459 @@
       ],
       "limitations": [
         "Scientific benchmark point estimates are not theorem correctness probabilities",
-        "Same family across versions is not independent review",
-        "Local context/effort limits unknown until endpoint verification"
+        "Same Astra or Sol family across versions is not independent review",
+        "Dated inference success does not validate every tool, host or future account state"
       ],
-      "effort_status": "preference only; verify exact endpoint levels",
+      "effort_status": "high verified; endpoint advertises low/medium/high/xhigh/max/ultra",
       "kind": "generative",
       "model_family": "gpt-sol",
-      "availability": "pending-local-access",
-      "dispatch_block_reason": "Published model absent from current host/provider allowlist; access and covered allowance require re-verification",
+      "availability": "available-with-current-host-check",
+      "dispatch_block_reason": "",
       "public_release_date": "2026-11-17",
-      "live_call_status": "not-run",
-      "group_eligible": false
+      "live_call_status": "passed-20261121",
+      "group_eligible": true
     }
   ],
   "review_roles": {
     "scientific_math": [
       "opencode-zen/deepseek-v4.1-flash-free",
-      "codex/gpt-6.1-sol",
-      "codex/gpt-6-astra"
+      "codex/gpt-6.2-sol",
+      "codex/gpt-6.2-astra",
+      "codex/gpt-6-astra",
+      "codex/gpt-6.1-sol"
     ],
     "math_check": [
       "opencode-zen/beam-free",
+      "codex/gpt-6.2-sol",
+      "codex/gpt-6-astra",
       "codex/gpt-6.1-sol"
     ],
     "contribution_reuse": [
-      "opencode-zen/longcat-2.5-preview-free",
-      "codex/gpt-6-astra"
+      "opencode-zen/deepseek-v4.1-flash-free",
+      "codex/gpt-6.2-astra",
+      "codex/gpt-6-astra",
+      "codex/gpt-6.1-sol"
     ],
     "long_evidence": [
-      "opencode-zen/longcat-2.5-preview-free",
-      "codex/gpt-6-astra"
+      "opencode-zen/deepseek-v4.1-flash-free",
+      "codex/gpt-6.2-astra",
+      "codex/gpt-6-astra",
+      "codex/gpt-6.1-sol"
     ],
     "engineering": [
-      "opencode-zen/glm-5.3-flash-free",
       "opencode-zen/mimo-v2.6-flash-free",
+      "codex/gpt-6.2-sol",
+      "codex/gpt-6-astra",
       "codex/gpt-6.1-sol"
     ],
     "escalation": [
+      "codex/gpt-6.2-astra",
+      "codex/gpt-6.2-sol",
       "codex/gpt-6-astra",
       "codex/gpt-6.1-sol"
     ],
     "venue_blind": [
-      "codex/gpt-6.1-sol",
+      "codex/gpt-6.2-sol",
       "opencode-zen/deepseek-v4.1-flash-free",
-      "codex/gpt-6-astra"
+      "codex/gpt-6.2-astra",
+      "codex/gpt-6-astra",
+      "codex/gpt-6.1-sol"
     ]
   },
   "stages": {
     "research-navigate": {
       "free_executors": [
-        "opencode-zen/longcat-2.5-preview-free",
+        "opencode-zen/deepseek-v4.1-flash-free",
         "opencode-zen/nemotron-3.5-lightning-free"
       ],
       "reviewers": [
-        "codex/gpt-6.1-sol",
-        "codex/gpt-6-astra"
+        "codex/gpt-6.2-sol",
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6.1-sol",
+      "integrator": "codex/gpt-6.2-sol",
       "decision_services": [
         "typesafe/jev-latest"
       ],
-      "covered_account_executors": []
+      "covered_account_executors": [],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
+      ]
     },
     "research-scope": {
       "free_executors": [
         "opencode-zen/nemotron-3.5-lightning-free",
-        "opencode-zen/longcat-2.5-preview-free",
         "opencode-zen/deepseek-v4.1-flash-free"
       ],
       "reviewers": [
+        "codex/gpt-6.2-astra",
+        "opencode-zen/deepseek-v4.1-flash-free",
         "codex/gpt-6-astra",
-        "opencode-zen/longcat-2.5-preview-free"
+        "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6.1-sol",
+      "integrator": "codex/gpt-6.2-sol",
       "covered_account_executors": [
         "cursor/grok-4.6",
         "cursor/grok-4.5"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     },
     "research-survey": {
       "free_executors": [
         "opencode-zen/nemotron-3.5-lightning-free",
-        "opencode-zen/longcat-2.5-preview-free",
         "opencode-zen/deepseek-v4.1-flash-free",
         "opencode-zen/nemotron-3.5-super-vl-free"
       ],
       "reviewers": [
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6.2-sol",
+        "opencode-zen/deepseek-v4.1-flash-free",
         "codex/gpt-6-astra",
-        "codex/gpt-6.1-sol",
-        "opencode-zen/deepseek-v4.1-flash-free"
+        "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6-astra",
+      "integrator": "codex/gpt-6.2-astra",
       "decision_services": [
         "typesafe/jev-latest"
       ],
-      "covered_account_executors": []
+      "covered_account_executors": [],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
+      ]
     },
     "research-ideate": {
       "free_executors": [
         "opencode-zen/deepseek-v4.1-flash-free",
-        "opencode-zen/longcat-2.5-preview-free",
-        "opencode-zen/beam-free",
-        "opencode-zen/space-bunny-free"
+        "opencode-zen/beam-free"
       ],
       "reviewers": [
-        "codex/gpt-6.1-sol",
+        "codex/gpt-6.2-sol",
+        "codex/gpt-6.2-astra",
+        "opencode-zen/deepseek-v4.1-flash-free",
         "codex/gpt-6-astra",
-        "opencode-zen/longcat-2.5-preview-free"
+        "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6-astra",
+      "integrator": "codex/gpt-6.2-astra",
       "decision_services": [
         "typesafe/jev-latest"
       ],
       "covered_account_executors": [
         "cursor/grok-4.6",
         "cursor/grok-4.7@256k"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     },
     "research-design": {
       "free_executors": [
         "opencode-zen/deepseek-v4.1-flash-free",
-        "opencode-zen/longcat-2.5-preview-free",
-        "opencode-zen/glm-5.3-flash-free"
+        "opencode-zen/mimo-v2.6-flash-free"
       ],
       "reviewers": [
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6.2-sol",
         "codex/gpt-6-astra",
         "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6-astra",
+      "integrator": "codex/gpt-6.2-astra",
       "decision_services": [
         "typesafe/jev-latest"
       ],
       "covered_account_executors": [
         "cursor/grok-4.6"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     },
     "research-baseline": {
       "free_executors": [
-        "opencode-zen/glm-5.3-flash-free",
         "opencode-zen/mimo-v2.6-flash-free",
-        "opencode-zen/deepseek-v4.1-flash-free",
-        "opencode-zen/longcat-2.5-preview-free"
+        "opencode-zen/deepseek-v4.1-flash-free"
       ],
       "reviewers": [
-        "codex/gpt-6.1-sol",
-        "codex/gpt-6-astra"
+        "codex/gpt-6.2-sol",
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6.1-sol",
+      "integrator": "codex/gpt-6.2-sol",
       "covered_account_executors": [
         "cursor/grok-4.6",
         "cursor/composer-2.5"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     },
     "research-implement": {
       "free_executors": [
-        "opencode-zen/glm-5.3-flash-free",
         "opencode-zen/mimo-v2.6-flash-free",
         "opencode-zen/deepseek-v4.1-flash-free",
         "opencode-zen/nemotron-3.5-lightning-free"
       ],
       "reviewers": [
-        "codex/gpt-6.1-sol",
-        "codex/gpt-6-astra"
+        "codex/gpt-6.2-sol",
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6.1-sol",
+      "integrator": "codex/gpt-6.2-sol",
       "covered_account_executors": [
         "cursor/grok-4.6",
         "cursor/composer-2.5"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     },
     "research-experiment": {
       "free_executors": [
-        "opencode-zen/glm-5.3-flash-free",
-        "opencode-zen/longcat-2.5-preview-free",
+        "opencode-zen/mimo-v2.6-flash-free",
         "opencode-zen/deepseek-v4.1-flash-free",
         "opencode-zen/nemotron-3.5-lightning-free"
       ],
       "reviewers": [
-        "codex/gpt-6.1-sol",
-        "codex/gpt-6-astra"
+        "codex/gpt-6.2-sol",
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6.1-sol",
+      "integrator": "codex/gpt-6.2-sol",
       "covered_account_executors": [
         "cursor/grok-4.6",
         "cursor/composer-2.5"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     },
     "research-analyze": {
       "free_executors": [
         "opencode-zen/deepseek-v4.1-flash-free",
-        "opencode-zen/longcat-2.5-preview-free",
-        "opencode-zen/glm-5.3-flash-free",
+        "opencode-zen/mimo-v2.6-flash-free",
         "opencode-zen/nemotron-3.5-super-vl-free"
       ],
       "reviewers": [
-        "codex/gpt-6.1-sol",
-        "codex/gpt-6-astra"
+        "codex/gpt-6.2-sol",
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6-astra",
+      "integrator": "codex/gpt-6.2-astra",
       "decision_services": [
         "typesafe/jev-latest"
       ],
       "covered_account_executors": [
         "cursor/grok-4.6",
         "cursor/grok-4.7@256k"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     },
     "research-write": {
       "free_executors": [
-        "opencode-zen/longcat-2.5-preview-free",
         "opencode-zen/deepseek-v4.1-flash-free",
         "opencode-zen/nemotron-3.5-lightning-free",
-        "opencode-zen/glm-5.3-flash-free"
+        "opencode-zen/mimo-v2.6-flash-free"
       ],
       "reviewers": [
+        "codex/gpt-6.2-sol",
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
+      ],
+      "integrator": "codex/gpt-6.2-astra",
+      "covered_account_executors": [],
+      "fallback_integrators": [
         "codex/gpt-6.1-sol",
         "codex/gpt-6-astra"
-      ],
-      "integrator": "codex/gpt-6-astra",
-      "covered_account_executors": []
+      ]
     },
     "research-review": {
       "free_executors": [
         "opencode-zen/deepseek-v4.1-flash-free",
         "opencode-zen/beam-free",
-        "opencode-zen/longcat-2.5-preview-free",
-        "opencode-zen/glm-5.3-flash-free",
         "opencode-zen/mimo-v2.6-flash-free"
       ],
       "reviewers": [
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6.2-sol",
         "codex/gpt-6-astra",
         "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6.1-sol",
+      "integrator": "codex/gpt-6.2-sol",
       "decision_services": [
         "typesafe/jev-latest"
       ],
       "covered_account_executors": [
         "cursor/grok-4.6"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     },
     "research-submit": {
       "free_executors": [
         "opencode-zen/nemotron-3.5-lightning-free",
-        "opencode-zen/longcat-2.5-preview-free",
         "opencode-zen/deepseek-v4.1-flash-free",
-        "opencode-zen/glm-5.3-flash-free"
+        "opencode-zen/mimo-v2.6-flash-free"
       ],
       "reviewers": [
+        "codex/gpt-6.2-sol",
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
+      ],
+      "integrator": "codex/gpt-6.2-sol",
+      "covered_account_executors": [],
+      "fallback_integrators": [
         "codex/gpt-6.1-sol",
         "codex/gpt-6-astra"
-      ],
-      "integrator": "codex/gpt-6.1-sol",
-      "covered_account_executors": []
+      ]
     },
     "research-product-discover": {
       "free_executors": [
         "opencode-zen/nemotron-3.5-lightning-free",
-        "opencode-zen/longcat-2.5-preview-free",
         "opencode-zen/deepseek-v4.1-flash-free"
       ],
       "reviewers": [
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6.2-sol",
         "codex/gpt-6-astra",
         "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6-astra",
+      "integrator": "codex/gpt-6.2-astra",
       "covered_account_executors": [
         "cursor/grok-4.6",
         "cursor/grok-4.7@256k"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     },
     "research-product-build": {
       "free_executors": [
-        "opencode-zen/glm-5.3-flash-free",
         "opencode-zen/mimo-v2.6-flash-free",
         "opencode-zen/deepseek-v4.1-flash-free",
-        "opencode-zen/longcat-2.5-preview-free",
         "opencode-zen/nemotron-3.5-lightning-free"
       ],
       "reviewers": [
-        "codex/gpt-6.1-sol",
-        "codex/gpt-6-astra"
+        "codex/gpt-6.2-sol",
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6.1-sol",
+      "integrator": "codex/gpt-6.2-sol",
       "covered_account_executors": [
         "cursor/grok-4.6",
         "cursor/composer-2.5"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     },
     "research-product-release": {
       "free_executors": [
-        "opencode-zen/glm-5.3-flash-free",
-        "opencode-zen/longcat-2.5-preview-free",
-        "opencode-zen/nemotron-3.5-lightning-free",
-        "opencode-zen/mimo-v2.6-flash-free"
+        "opencode-zen/mimo-v2.6-flash-free",
+        "opencode-zen/deepseek-v4.1-flash-free",
+        "opencode-zen/nemotron-3.5-lightning-free"
       ],
       "reviewers": [
+        "codex/gpt-6.2-sol",
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
+      ],
+      "integrator": "codex/gpt-6.2-sol",
+      "covered_account_executors": [],
+      "fallback_integrators": [
         "codex/gpt-6.1-sol",
         "codex/gpt-6-astra"
-      ],
-      "integrator": "codex/gpt-6.1-sol",
-      "covered_account_executors": []
+      ]
     },
     "research-product-maintain": {
       "free_executors": [
         "opencode-zen/nemotron-3.5-lightning-free",
         "opencode-zen/mimo-v2.6-flash-free",
-        "opencode-zen/glm-5.3-flash-free",
         "opencode-zen/deepseek-v4.1-flash-free"
       ],
       "reviewers": [
-        "codex/gpt-6.1-sol",
-        "codex/gpt-6-astra"
+        "codex/gpt-6.2-sol",
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6.1-sol",
+      "integrator": "codex/gpt-6.2-sol",
       "covered_account_executors": [
         "cursor/grok-4.6",
         "cursor/composer-2.5",
         "cursor/grok-4.5"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     },
     "research-optimize": {
       "free_executors": [
-        "opencode-zen/longcat-2.5-preview-free",
-        "opencode-zen/glm-5.3-flash-free"
+        "opencode-zen/deepseek-v4.1-flash-free",
+        "opencode-zen/mimo-v2.6-flash-free"
       ],
       "reviewers": [
-        "codex/gpt-6.1-sol",
-        "codex/gpt-6-astra"
+        "codex/gpt-6.2-sol",
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6.1-sol",
+      "integrator": "codex/gpt-6.2-sol",
       "decision_services": [
         "typesafe/jev-latest"
       ],
       "covered_account_executors": [
         "cursor/grok-4.6",
         "cursor/composer-2.5"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     },
     "research-focus": {
       "free_executors": [
-        "opencode-zen/longcat-2.5-preview-free",
         "opencode-zen/deepseek-v4.1-flash-free"
       ],
       "reviewers": [
-        "codex/gpt-6-astra"
+        "codex/gpt-6.2-astra",
+        "codex/gpt-6-astra",
+        "codex/gpt-6.1-sol"
       ],
-      "integrator": "codex/gpt-6.1-sol",
+      "integrator": "codex/gpt-6.2-sol",
       "covered_account_executors": [
         "cursor/grok-4.6"
       ],
       "decision_services": [
         "typesafe/jev-latest"
+      ],
+      "fallback_integrators": [
+        "codex/gpt-6.1-sol",
+        "codex/gpt-6-astra"
       ]
     }
   },

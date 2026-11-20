@@ -161,11 +161,8 @@ class MagpieRoutingHelperTests(unittest.TestCase):
         free_prefixes = {
             "opencode-zen/beam-free",
             "opencode-zen/deepseek-v4.1-flash-free",
-            "opencode-zen/glm-5.3-flash-free",
             "opencode-zen/mimo-v2.6-flash-free",
             "opencode-zen/nemotron-3.5-super-vl-free",
-            "opencode-zen/longcat-2.5-preview-free",
-            "opencode-zen/space-bunny-free",
             "opencode-zen/nemotron-3.5-lightning-free",
         }
         self.assertTrue(free_prefixes.issubset({m.rsplit(":", 1)[0] if m.rsplit(":", 1)[-1] in {"low", "medium", "high", "xhigh", "max"} else m for m in members}))
@@ -202,7 +199,7 @@ class MagpieRoutingHelperTests(unittest.TestCase):
         group = build_target_group(ROUTING, load_effort_evidence(self.catalog_path))
         routes = [rule for rule in group["rules"] if "topic drift" in rule["intent"].lower()]
         self.assertEqual(len(routes), 1)
-        self.assertTrue(routes[0]["use"].startswith("opencode-zen/longcat-2.5-preview-free"))
+        self.assertTrue(routes[0]["use"].startswith("opencode-zen/deepseek-v4.1-flash-free"))
         self.assertNotIn("tokens", routes[0])
         self.assertNotIn("images", routes[0])
 
@@ -236,7 +233,7 @@ class MagpieRoutingHelperTests(unittest.TestCase):
         self.assertFalse(any(m.startswith("google-vertex/") for m in group["members"]))
         self.assertFalse(any(r["use"].startswith("google-vertex/") for r in group["rules"]))
         consistency = next(r for r in group["rules"] if "Long-evidence consistency" in r["intent"])
-        self.assertTrue(consistency["use"].startswith("opencode-zen/longcat-2.5-preview-free"))
+        self.assertTrue(consistency["use"].startswith("opencode-zen/deepseek-v4.1-flash-free"))
         self.assertIn("cursor/grok-4.6:medium", group["members"])
 
     def test_unverified_account_candidates_do_not_join_automatic_group(self):
@@ -324,7 +321,8 @@ class MagpieRoutingHelperTests(unittest.TestCase):
         self.assertEqual(after["id"], before["id"])
         self.assertEqual(after["members"][:2], before["members"][:2])
         self.assertEqual(after["rules"][0], before["rules"][0])
-        self.assertEqual(after["rules"][1]["use"], "opencode-zen/longcat-2.5-preview-free:max")
+        self.assertEqual(after["rules"][1]["use"], "opencode-zen/deepseek-v4.1-flash-free:max")
+        self.assertEqual(after["rules"][1]["intent"], "custom prose")
         self.assertFalse(any("workbuddy-ai/" in m or "6.2" in m for m in after["members"]))
 
     @mock.patch("scripts.magpie_routing._is_reparse_point")
