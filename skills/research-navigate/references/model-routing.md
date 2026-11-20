@@ -14,8 +14,8 @@ modality, tools and canonical write scopes. Then choose an explicit model:
 
 | Work | Requested model |
 | --- | --- |
-| Default integration, engineering, experiment control, writing | `gpt-6.1-sol` |
-| Hard mathematics, causality, scientific and contribution review | `gpt-6-astra` |
+| Default integration, engineering, experiment control, writing | `gpt-6.2-sol`; 6.1 Sol fallback |
+| Hard mathematics, causality, scientific and contribution review | `gpt-6.2-astra`; old Astra fallback |
 | Bounded source extraction, structured records, log extraction | `gpt-6-luna` |
 
 The stage defaults are starting assignments. Route hard mathematical or causal
@@ -116,7 +116,7 @@ counted as scientific success. Keep unsuccessful and unknown attempts in history
 ## Shared worker limits and output ownership
 
 Use at most six active/reserved workers globally, at most two in a confirmed
-Codex shared pool, and at most one if its pool status is unknown. All three native
+Codex shared pool, and at most one if its pool status is unknown. All five native
 models share `codex`; changing model does not create capacity. The effective
 parallelism of this edition is therefore two when the pool is confirmed and one
 otherwise, further bounded by live host capacity and approved resources. Include
@@ -222,10 +222,11 @@ optimizer-publication approval.
 
 ## November 18 model update
 
-The exact new IDs are `gpt-6.2-astra` and `gpt-6.2-sol`. Both are registered
-but blocked pending current host exposure and covered resources. Public release
-alone does not establish local availability. Continue the existing admissible
-Astra/Sol assignments. Once verified, prefer 6.2 Astra for difficult science,
+On November 18 the exact IDs `gpt-6.2-astra` and `gpt-6.2-sol` were registered
+but blocked. The November 21 checks in [model-activation.md](model-activation.md)
+verified covered subscription inference and supersede that pending state.
+Current subagent tool exposure is still required independently.
+Prefer 6.2 Astra for difficult science,
 actual-input connections and hardest branches; prefer 6.2 Sol for engineering,
 experiment control and drafting. Retain old Astra and 6.1 Sol for scientific
 second opinions; Luna remains bounded extraction. Benchmark evidence and limits
@@ -238,3 +239,7 @@ supported; difficulty does not authorize an unsupported effort or API billing.
 New endpoints stay blocked until the registry and live capability evidence are
 updated together. Preserve six workers, confirmed-two/unknown-one shared pools,
 Jev abstention and M1-M5 review cadence.
+
+## Current 6.2 access
+
+Read [model-activation.md](model-activation.md) when selecting the newly activated 6.2 models. Use the current registry, current host allowlist and actual allowance; retain qualified legacy fallbacks.

@@ -8,9 +8,11 @@
   "authorized_models": [
     "gpt-6.1-sol",
     "gpt-6-astra",
-    "gpt-6-luna"
+    "gpt-6-luna",
+    "gpt-6.2-astra",
+    "gpt-6.2-sol"
   ],
-  "requested_model": "gpt-6.1-sol",
+  "requested_model": "gpt-6.2-sol",
   "actual_model": "unknown",
   "reasoning_effort": "high",
   "supported_efforts": [
@@ -35,5 +37,6 @@
   ],
   "active": [],
   "confirmed_pools": [],
-  "decision_active": []
+  "decision_active": [],
+  "host_available_models": []
 }

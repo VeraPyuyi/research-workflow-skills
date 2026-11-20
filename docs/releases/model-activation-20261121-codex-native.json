@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "receipt_id": "model-activation-20261121-codex-native",
+  "scope": "workflow-release",
+  "status": "passed",
+  "runtime_profile": "codex-native",
+  "contract_version": "1.5",
+  "bundle_digest": "sha256:d727ee9da9d991c1422594702d75de198730242a08c7a93c7d8bf0729a60c8ea",
+  "evidence_refs": [
+    "docs/model-activation-20261121.md",
+    "tests/routing-evidence-20261121.json"
+  ],
+  "coverage": {
+    "unit_full_run": 329,
+    "passed": 324,
+    "skipped": 5,
+    "full_suite_log_sha256": "7b478532c3f4d61f301e56b02693e6ca2532716f55f6e6367b2448aa65e2a1fa",
+    "command": "python -X utf8 -B -m unittest discover -s tests",
+    "structural_skill_count": 18,
+    "temporary_install_files_matched": 89,
+    "real_calls_for_this_profile": 2,
+    "real_calls_across_both_profiles": 4,
+    "caller_inference_retries": 0,
+    "independent_review": {
+      "model": "gpt-6-astra",
+      "context": "fresh",
+      "actionable_findings": 0,
+      "scope": "activation implementation and instructions; no independent live transport audit",
+      "later_catalog_repair": "covered by regression tests, not a second full agent review"
+    },
+    "native_subagent_spawn": "not-tested-by-these-probes",
+    "native_subagent_concurrency": "not-tested-by-these-probes",
+    "native_tool_execution": "not-tested-by-these-probes",
+    "host_goal_autocontinuation": "not-tested-by-this-release",
+    "hard_output_cap": "not-verified",
+    "fresh_benchmark_recalibration": false
+  },
+  "limits": [
+    "Skipped tests retain their environment/optional-fixture reasons in test sources.",
+    "Native identity is official host-reported, without a raw upstream wire capture.",
+    "Gateway tool evidence covers a synthetic function schema, not an external tool loop.",
+    "Gateway accounting amounts are not invoices or new PAYG authorization.",
+    "Routing availability is a dated observation; every dispatch rechecks its host.",
+    "Project upgrade metadata does not resume paused or blocked Goals."
+  ]
+}

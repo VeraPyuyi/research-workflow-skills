@@ -133,3 +133,7 @@ before ending a turn; do not finish the Goal merely because this stage ended.
 
 For delegated proof work, carry the parent obligation, return point and sole continuation owner. Consume a returned result once, simplify pending work, and actually advance the next authorized dependency; children do not dispatch their own successors.
 Read [mathematical work](references/mathematical-work.md) for the optional record and return contract.
+
+## Current 6.2 access
+
+Read [references/model-activation.md](references/model-activation.md) when selecting the newly activated 6.2 models. Use the current registry, current host allowlist and actual allowance; retain qualified legacy fallbacks.

@@ -110,9 +110,10 @@ The helper requires the files and matching bytes, a reviewer differing from the
 author, a different context and
 settled candidate costs. Independent review must inspect actual changes and
 artifacts, not only the author summary. Unknown model identity cannot certify
-independence. Only the three exact native identities in the shared routing registry are
-eligible as known identities. Independent publication reviewers are specifically
-`gpt-6.1-sol` or `gpt-6-astra`, different from the actual author model and context.
+independence. Only the five exact native identities in the shared routing registry are
+eligible as known identities. Independent publication reviewers use an admitted
+6.2 or legacy Astra/Sol model from a different family than the actual author,
+with a fresh context. A version change within Astra or Sol is not independence.
 Luna extraction and optional Jev comparison are supporting evidence only and
 cannot satisfy the publication review. A new agent using the same model still
 shares model bias.

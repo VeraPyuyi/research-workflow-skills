@@ -33,8 +33,8 @@ Routine focus reminders are record updates and require no decision-service call.
    experiment. Avoid unexplained numeric scores and invented probabilities.
 4. When comparison would add value within existing resources, ask an explicitly
    selected native worker for a bounded comparison through the routing contract.
-   Use `gpt-6-astra` for hard mathematics, causality and scientific contribution
-   comparisons; `gpt-6.1-sol` for engineering, integration and experiment control;
+   Use `gpt-6.2-astra` for hard mathematics, causality and scientific contribution
+   comparisons; `gpt-6.2-sol` for engineering, integration and experiment control;
    `gpt-6-luna` only for bounded source extraction, checked against originals.
    Independent comparison uses a new agent with `fork_context: false`; it does
    not inherit an author's preferred verdict. Give branches disjoint outputs.
@@ -195,3 +195,7 @@ remote idempotency key, tamper-proof attestation or proof of scientific correctn
 Keep service receipts, comparisons and optimizer records out of both blind venue
 review bundles. Optional Jev assistance never delays a paper that already meets
 its completion contract, and it creates no submission/release authority.
+
+## Current 6.2 access
+
+Read [model-activation.md](model-activation.md) when selecting the newly activated 6.2 models. Use the current registry, current host allowlist and actual allowance; retain qualified legacy fallbacks.

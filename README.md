@@ -4,7 +4,7 @@ Eighteen portable research workflows for LLM, Agent, DL, RL, causality and usefu
 research products. The runtime profile is `codex-native`. Install the whole suite:
 stage skills share sibling-relative scientific contracts and references.
 
-This edition uses exactly `gpt-6.1-sol`, `gpt-6-astra` and `gpt-6-luna` through the
+This edition uses `gpt-6.2-sol`, `gpt-6.2-astra`, `gpt-6.1-sol`, `gpt-6-astra` and `gpt-6-luna` through the
 host's native multi-agent tools. It reads no other-runtime model-routing
 configuration. It offers optional standalone Jev structured decision assistance as the sole external
 inference service. Jev is separate from generative workers and all scientific reviews.
@@ -119,8 +119,8 @@ pins. Reorganize an already completed manuscript at its writing/review node.
 
 | Work | Exact requested model |
 | --- | --- |
-| Default integration, engineering, experiment control and writing | `gpt-6.1-sol` |
-| Hard mathematics, causality, scientific and contribution review | `gpt-6-astra` |
+| Default integration, engineering, experiment control and writing | `gpt-6.2-sol`; 6.1 Sol fallback |
+| Hard mathematics, causality, scientific and contribution review | `gpt-6.2-astra`; old Astra fallback |
 | Bounded extraction from inspected source material | `gpt-6-luna` |
 
 The host tools are `multi_agent_v1.spawn_agent(model, reasoning_effort, message,
@@ -133,7 +133,7 @@ substitute another model service. Model roles are task assignments, not benchmar
 claims or guarantees.
 
 Use disjoint output scopes and one integrator for shared artifacts. Global active
-workers are limited to six; all three native models share one Codex pool with two
+workers are limited to six; all five native models share one Codex pool with two
 workers when confirmed and one when unknown. Effective parallelism here is at most
 two, further bounded by live capacity. The coordinator owns the global inventory,
 atomic reservations and dispatch. A timed-out or cancellation-requested job keeps
@@ -332,3 +332,7 @@ active until the host actually exposes the new IDs and resources are verified.
 Benchmark preferences do not grant access or certify mathematics. See
 `docs/model-routing-20261118.md`. Updates stay within the project's runtime
 profile; no paper is marked delivered merely because a suite was installed.
+
+## 6.2 routing update (2026-11-21)
+
+6.2 Astra and 6.2 Sol are activated for covered subscription work. See [the dated access and validation report](docs/model-activation-20261121.md). Existing projects adopt this compatible update at recovery or handoff; running tasks remain pinned. A successful inference does not prove a fresh subagent spawn or host Goal auto-continuation.

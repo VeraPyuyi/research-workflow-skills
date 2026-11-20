@@ -24,6 +24,7 @@ def packet():
                 available_tools=['multi_agent_v1.spawn_agent', 'multi_agent_v1.wait_agent',
                                  'multi_agent_v1.send_input'],
                 capability_record='host tools and effort inspected',
+                host_available_models=list(guard.MODELS),
                 resource_authorization='approved research envelope', budget_state='within',
                 data_allowed=True, tools_allowed=True, contains_images=False,
                 message='Implement the approved evaluator.', fork_context=False,
@@ -100,7 +101,11 @@ class NativeDispatchTests(unittest.TestCase):
             with self.subTest(model=model):
                 p = packet(); p['authorized_models'].append(model)
                 p.update(requested_model=model, capability_record='claimed exact model/effort capability')
-                r = self.blocked(p, 're-verification')
+                registry = self.simulated_verified_registry()
+                next(m for m in registry['models'] if m['id'] == model)['dispatch_block_reason'] = 'Unavailable in this hypothetical account'
+                r = guard.check(p, registry)
+                self.assertEqual(r['status'], 'blocked')
+                self.assertIn('re-verification', ' '.join(r['errors']))
                 self.assertIsNone(r['spawn_request'])
                 self.assertIsNone(r['request_digest'])
                 self.assertFalse(r['executed']); self.assertFalse(r['reserved'])

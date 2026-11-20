@@ -307,6 +307,10 @@ def check(plan, registry=None):
         errors.append('Endpoint needs re-verification: ' + selected['dispatch_block_reason'])
     if not selected or model not in MODELS:
         errors.append('Use an exact authorized native model ID')
+    if model in ('gpt-6.2-astra', 'gpt-6.2-sol'):
+        available_models = plan.get('host_available_models')
+        if not strings(available_models, nonempty=True) or model not in available_models:
+            errors.append('6.2 requires the current subagent tool model allowlist; a catalog alone is insufficient')
     if plan.get('runtime_profile') != PROFILE:
         errors.append('Runtime profile must be codex-native')
     if not strings(plan.get('authorized_profiles')) or PROFILE not in plan.get('authorized_profiles', []):

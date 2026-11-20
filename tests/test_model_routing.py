@@ -14,21 +14,23 @@ class NativeRoutingTests(unittest.TestCase):
         manifest = json.loads((ROOT / 'skills-manifest.json').read_text())
         self.assertEqual(set(registry['stages']), set(manifest['skills']))
         for stage, allocation in registry['stages'].items():
-            p = packet(); p.update(stage=stage, requested_model=allocation['default_executor'])
+            p = packet(); p.update(stage=stage, requested_model=allocation['default_executor'],
+                                  authorized_models=list(guard.MODELS), host_available_models=list(guard.MODELS))
             if stage == 'research-review':
                 p.update(author_models=['gpt-6.1-sol'], author_evidence='actual author record',
                          new_agent=True, prior_agent_ids=[], prior_review_agent_ids=[])
             self.assertEqual(guard.check(p)['status'], 'ready-for-dispatch', stage)
-            self.assertEqual(allocation['integrator'], 'gpt-6.1-sol')
+            self.assertEqual(allocation['integrator'], 'gpt-6.2-sol')
     def test_task_roles_select_exact_requested_models(self):
         registry = json.loads(ROUTING.read_text())
-        expectations = {'integration':'gpt-6.1-sol', 'engineering':'gpt-6.1-sol',
-                        'experiment_control':'gpt-6.1-sol', 'writing':'gpt-6.1-sol',
-                        'hard_math':'gpt-6-astra', 'causality':'gpt-6-astra',
-                        'scientific_review':'gpt-6-astra', 'contribution_review':'gpt-6-astra',
+        expectations = {'integration':'gpt-6.2-sol', 'engineering':'gpt-6.2-sol',
+                        'experiment_control':'gpt-6.2-sol', 'writing':'gpt-6.2-sol',
+                        'hard_math':'gpt-6.2-astra', 'causality':'gpt-6.2-astra',
+                        'scientific_review':'gpt-6.2-astra', 'contribution_review':'gpt-6.2-astra',
                         'bounded_extraction':'gpt-6-luna'}
         for role, expected in expectations.items():
-            p = packet(); p['requested_model'] = registry['task_roles'][role]
+            p = packet(); p.update(requested_model=registry['task_roles'][role],
+                                   authorized_models=list(guard.MODELS), host_available_models=list(guard.MODELS))
             self.assertEqual(guard.check(p)['spawn_request']['arguments']['model'], expected)
     def test_relabelled_external_registry_is_not_native_authority(self):
         registry = json.loads(ROUTING.read_text())

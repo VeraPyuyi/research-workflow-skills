@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "receipt_id": "math-rsi-20261118-codex-native-v2",
+  "scope": "workflow-release",
+  "status": "passed",
+  "bundle_digest": "sha256:785258efdce958294dedb6364f913c55f0950604e465d78ae729ff9a65e91fbf",
+  "evidence_refs": [
+    "docs/math-rsi-validation-20261118.md",
+    "docs/model-routing-20261118.md"
+  ],
+  "coverage": {
+    "unit_full_run": 326,
+    "skipped": 5,
+    "post_review_math_cases_passed": 4,
+    "temporary_install_files_matched": 88,
+    "new_model_calls": 0,
+    "host_goal_autocontinuation": "not-yet-observed"
+  },
+  "contract_version": "1.5"
+}

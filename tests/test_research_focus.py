@@ -49,8 +49,8 @@ class ResearchFocusTests(unittest.TestCase):
             self.assertIn("research-focus", models["cursor/grok-4.6"]["stage_roles"])
             self.assertIn("typesafe/jev-latest", stage["decision_services"])
         else:
-            self.assertEqual(stage["integrator"], "gpt-6.1-sol")
-            self.assertIn(stage["default_executor"], ("gpt-6.1-sol", "gpt-6-astra"))
+            self.assertEqual(stage["integrator"], "gpt-6.2-sol")
+            self.assertIn(stage["default_executor"], ("gpt-6.2-sol", "gpt-6.2-astra"))
             self.assertEqual(stage["bounded_extractor"], "gpt-6-luna")
             self.assertNotIn("free_executors", stage)
 
