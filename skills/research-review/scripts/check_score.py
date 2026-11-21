@@ -8,7 +8,7 @@ def qualifying_score(raw):
         score = Decimal(raw)
     except (InvalidOperation, TypeError, ValueError):
         return False
-    return score.is_finite() and Decimal(7) <= score <= Decimal(10)
+    return score.is_finite() and Decimal(8) <= score <= Decimal(10)
 
 
 if __name__ == '__main__':
