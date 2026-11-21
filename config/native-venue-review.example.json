@@ -1,6 +1,8 @@
 {
   "review_mode": "venue_blind",
   "review_round": 2,
+  "reserved_review_models": [],
+  "reviewer_history": [{"review_round": 1, "agent_id": "<round-one-reviewer>", "manuscript_revision": "paper-v1", "actual_model": "<observed model>", "served_model_evidence": "<host receipt>"}],
   "new_agent": true,
   "fork_context": false,
   "submission_root": "<canonical-absolute-submission-bundle-directory>",

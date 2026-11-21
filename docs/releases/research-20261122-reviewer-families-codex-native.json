@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "scope": "workflow-release",
+  "receipt_id": "research-20261122-reviewer-families-codex-native",
+  "status": "passed",
+  "bundle_digest": "sha256:593b7070685bd4fafed931f02e7425a459fe7bf6c5ba03a8417d0c2d2d5d2122",
+  "evidence_refs": [
+    "tests/test_reviewer_panel.py",
+    "tests/test_dispatch_guard.py",
+    "skills/research-review/scripts/check_score.py",
+    "skills/research-review/references/venue-review.md"
+  ],
+  "coverage": {
+    "panel_tests": "three offline reviewer history and reservation tests passed",
+    "dispatch_tests_run": 40,
+    "dispatch_skipped": 2,
+    "score_cli_cases": [
+      {
+        "scores": [],
+        "exit_code": 2
+      },
+      {
+        "scores": [
+          "7.0"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "8.0"
+        ],
+        "exit_code": 0
+      },
+      {
+        "scores": [
+          "8",
+          "10"
+        ],
+        "exit_code": 0
+      },
+      {
+        "scores": [
+          "9",
+          "7.999999999999999999999"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "missing"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "NaN"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "Infinity"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "11"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "0"
+        ],
+        "exit_code": 1
+      }
+    ],
+    "temporary_install_files": 91,
+    "live_paper_reviews": 0
+  }
+}

@@ -11,6 +11,7 @@ from pathlib import Path, PurePosixPath, PureWindowsPath
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from math_work import validate_math_work
+from reviewer_panel import reviewer_errors
 from model_identity import model_family, NATIVE_MODELS, LEGACY_NATIVE_MODELS
 
 REGISTRY = Path(__file__).resolve().parents[1] / 'references/model-routing.json'
@@ -171,6 +172,9 @@ def review_errors(plan):
         return errors, reviewing, independent
     if plan.get('stage') != 'research-review':
         errors.append('Venue review belongs to research-review')
+    errors.extend(reviewer_errors(plan, plan.get('requested_model', '')))
+    if not independent:
+        errors.append('Same-model blind review is blocked')
     if 'message' in plan:
         errors.append('Venue review prompt is generated only from the allowlisted submission manifest')
     number = plan.get('review_round')

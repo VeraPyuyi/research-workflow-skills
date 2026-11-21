@@ -41,14 +41,17 @@ DEFAULT_SUBMISSION_ROOT = None
 def blind(number=1, submission_root=None):
     p = packet(); p.pop('message')
     p.update(stage='research-review', requested_model='gpt-6-astra', review_mode='venue_blind',
-             review_round=number, new_agent=True, fork_context=False,
+             review_round=number, reviewer_history=[], reserved_review_models=[], new_agent=True, fork_context=False,
              submission_root=str(submission_root or DEFAULT_SUBMISSION_ROOT),
              author_models=['gpt-6.1-sol'], author_evidence='observed author model record',
              manuscript_revision='paper-v' + str(number), venue_profile='criteria-v1',
              prior_agent_ids=['author-agent'], prior_review_agent_ids=[],
              allowed_inputs=[dict(kind='manuscript', ref='review-bundle/paper.pdf', revision='paper-v' + str(number)),
                              dict(kind='venue_criteria', ref='review-bundle/criteria.txt', revision='criteria-v1')])
-    if number == 2: p.update(prior_review_agent_ids=['reviewer-round-1'], previous_round_completed=True)
+    if number == 2:
+        p.update(prior_review_agent_ids=['reviewer-round-1'], previous_round_completed=True,
+                 author_models=['gpt-6-luna'], reviewer_history=[dict(agent_id='reviewer-round-1',
+                 actual_model='gpt-6.1-sol', served_model_evidence='fixture', manuscript_revision='paper-v1', review_round=1)])
     return p
 
 
@@ -137,20 +140,7 @@ class NativeDispatchTests(unittest.TestCase):
                 self.assertEqual(r['status'], 'blocked', r)
                 self.assertTrue(any('Same-model' in error for error in r['errors']), r)
                 p.update(allow_same_model_review=True, same_model_bias_record='Synthetic shared-family bias')
-                admission = guard.check(p, registry)
-                self.assertEqual(admission['status'], 'ready-for-dispatch', admission)
-                self.assertFalse(admission['model_independent'])
-                self.assertFalse(admission['review_gate_potential'])
-                dispatch = guard.record_dispatch(admission, {'agent_id': 'synthetic-reviewer'},
-                                                 spawn_evidence='synthetic spawn fixture; no live call')
-                self.assertEqual(dispatch['status'], 'dispatched', dispatch)
-                receipt = self.receipt(dispatch, actual_model=reviewer, fork_context=False,
-                                       input_manifest=p['allowed_inputs'], isolation_record='synthetic bundle',
-                                       input_audit_record='synthetic input audit')
-                completed = guard.check_completion(p, receipt, dispatch)
-                self.assertTrue(completed['completed'], completed)
-                self.assertTrue(completed['release_capacity'])
-                self.assertFalse(completed['independent_gate_eligible'])
+                self.assertEqual(guard.check(p, registry)['status'], 'blocked')
     def test_simulated_cross_family_review_receipt_needs_exact_served_identity(self):
         registry = self.simulated_verified_registry()
         for author, reviewer in (('gpt-6.1-sol', 'gpt-6.2-astra'),
@@ -248,7 +238,7 @@ class NativeDispatchTests(unittest.TestCase):
     def test_same_model_bias_is_never_an_independent_gate(self):
         p = blind(); p['author_models'] = ['gpt-6-astra']; self.blocked(p, 'same-model')
         p.update(allow_same_model_review=True, same_model_bias_record='Shared model bias; provisional only')
-        r = self.ready(p); self.assertFalse(r['model_independent']); self.assertFalse(r['independent_gate_eligible'])
+        self.blocked(p, 'same-model')
     def test_blind_prompt_excludes_coordinator_history(self):
         for number in (1, 2):
             p = blind(number)

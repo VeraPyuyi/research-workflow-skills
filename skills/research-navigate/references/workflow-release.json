@@ -2,7 +2,7 @@
   "schema_version": 1,
   "contract_version": "1.5",
   "runtime_profile": "codex-native",
-  "release_id": "research-20261122-score8-codex-native",
+  "release_id": "research-20261122-reviewer-families-codex-native",
   "status": "candidate",
   "files": {
     "research-analyze/agents/openai.yaml": "76208be0f9db3b8e795e0e25614659de21e26f465e9a8e59bb5132afc252c0fe",
@@ -39,22 +39,23 @@
     "research-navigate/references/domains/llm.md": "ab879f05f917218a41a240b8056fb510dd4882087ccad6cfd9bf469e7bb614ec",
     "research-navigate/references/domains/rl.md": "9bed15e93d77914c3a610b2338ea656564ab551ff1585c684ddea9da00850d2f",
     "research-navigate/references/evidence-ledger.md": "b2cd8bbd2f3e2ce8cc950522aa14f8f62fb3b26bd3328b05d8935feaced418d7",
-    "research-navigate/references/goal-execution.md": "ef94c455fe66f20739dcce3732d525daa1810a2978dfdd1ca40539db4e5cd18d",
+    "research-navigate/references/goal-execution.md": "6442a6e853e5b5adadd284227c1274dfde67e7eff508f0d6e48d5709ed4426f9",
     "research-navigate/references/handoff-example.md": "fa17bbee8c39be79e2eb03ada8ce197f7190ffb5a021602aeecb8fd167b2cbb8",
     "research-navigate/references/implementation-comparison.md": "a9a6d957bb6fd37ea87382b63df5bdd34a8e60804f4e41552c97d0b5b40e1f90",
     "research-navigate/references/mathematical-work.md": "6178c119cdc9be80b2fdfc01555abc76b29592a05793e0395248ee079857083e",
     "research-navigate/references/model-activation.md": "1cb8e84c47e98e92e95af4be3e489033119821f1d339b343255fff6d9fd01765",
     "research-navigate/references/model-routing.json": "7a1ccbb0d5ab063ea4fd76af1179c25195dd642b14f9a7b70fd1cfd275b814ea",
-    "research-navigate/references/model-routing.md": "34ea529914a6358f57e69f5f276725f4d7df5a9d0757ebf42a715e10bcb94d5d",
+    "research-navigate/references/model-routing.md": "356eab0ddf80e974a73431ccf3945aa5b5604e738a8c36e8a767b6cde18231c4",
     "research-navigate/references/reuse-and-simplification.md": "2f1d66459a1a36e5805bc8911ceb2926e1a56e16d02cc0eab44e34ae84808ba8",
     "research-navigate/references/stage-map.md": "0dc46929749607b8485ac01e6b3321fcea3a6da5b6dd69bd357fef1f058d97ad",
     "research-navigate/references/workflow-contract.md": "74df45a99e2aba6f4058a928cceb21c1c960953bdb80ce5d8028bb001d538d0d",
     "research-navigate/references/workflow-updates.md": "d82cf687d7652cb63fa5520f7f39cb7c39d29e6686caf74e1627ad749f3b6f97",
-    "research-navigate/scripts/check_dispatch.py": "538e70f58f9250e0b42fb5b0731282daceba64ac5ff147cfd4ba8a1ed177861a",
+    "research-navigate/scripts/check_dispatch.py": "843177677df0815c965e78b2a4615a0647d8abca87a7b632cecf831015f65a44",
     "research-navigate/scripts/goal_recovery.py": "95915ecf6665251cc1283584102f54408c02d7487c70ce2db1e6b08855ece489",
     "research-navigate/scripts/jev_decide.py": "8d7036ebe2fbac2ba5a1511f947f8e210f8df50fbabc51dc9a4be70a3dc46553",
     "research-navigate/scripts/math_work.py": "a84fd20b172e802e1f1cf175cddbf77d84e08ec210926530d9b27c13cf079d3c",
     "research-navigate/scripts/model_identity.py": "4f2ee5298e09d3ca748fb85d8229c6f2d2fd4e9c170d24b6ea66abce48fe6d5f",
+    "research-navigate/scripts/reviewer_panel.py": "998e5fb7e846f9fcb8e8923305be8775ee62390b5aebad09d01578f2ae518d2d",
     "research-navigate/scripts/workflow_release.py": "4e0879b6fecb5c35ec515269b6441194b85d128a49760be4a34dce0836adf560",
     "research-navigate/SKILL.md": "cfee9e76502a28b442a97ad52bed462c4e2fc9e28fd0085a4f8fc843930f34fe",
     "research-optimize/agents/openai.yaml": "0554615813b673c2b5d58df21c71590c05a26a60a4e9bd1f246ffe3985d93dfd",
@@ -72,10 +73,10 @@
     "research-review/agents/openai.yaml": "d5fa2449066d72f6467de64a8a43af0a317e8b5a77f654df16dfe7b35a38f58b",
     "research-review/references/independent-review.md": "1aff90eb80a08e31699a1843c246b123e2a4b2f2083eb3163d72bf6467848af0",
     "research-review/references/submission-leakage.md": "9250cafc42bf8e19064766b5634d13b77b18e058bbec12c8dbe9ccdafa3844cc",
-    "research-review/references/venue-review.md": "e64217773fb586dea50f82cb5eec09ba8898cbb2ae1291a3546b99e4c8ac64b7",
+    "research-review/references/venue-review.md": "f6cc233c2ff09f3d495dc056bfe569f1ae119c93f27cac330fbb25b8975f4b3d",
     "research-review/scripts/check_score.py": "c1b24761cee6faed3674e6df97c33350cb7410a46bc130af054a069188e57f07",
     "research-review/scripts/check_submission.py": "f8b7ef449070a6c9009333ee1e00df40432a28ba69dd34593c0182c85ebe962c",
-    "research-review/SKILL.md": "18276947528b2d959eae32df071f965114da76647c7140f9e1717a8413ef95d9",
+    "research-review/SKILL.md": "f1a9ef7306ef7ff2856c1801310a70da8473a5eca20ba9db334b07a0bf842e80",
     "research-scope/agents/openai.yaml": "5057355cd14b0fc035dc609893085cc260fc03836bdb45221687404ab8be2ab0",
     "research-scope/SKILL.md": "c86f304a3a0f8899d0b50adc7ec2cccbead343bb5591a0da3467af5d472bbe68",
     "research-submit/agents/openai.yaml": "374376e8b32678dee51837fea0264a0d73989cdd08b57c8b273d88037b4c01fd",
@@ -96,7 +97,7 @@
     "research-write/SKILL.md": "26349b8f899594db1ef66d134e1005fa2d676680e0868dc2981dc68e33638053"
   },
   "validation_receipts": [
-    "docs/releases/research-20261122-score8-codex-native.json"
+    "docs/releases/research-20261122-reviewer-families-codex-native.json"
   ],
-  "bundle_digest": "sha256:f43359fbc83ae06efd6d0ca73e3ae8439fc9b1c584110fcc96b29a4a271d3ea9"
+  "bundle_digest": "sha256:593b7070685bd4fafed931f02e7425a459fe7bf6c5ba03a8417d0c2d2d5d2122"
 }

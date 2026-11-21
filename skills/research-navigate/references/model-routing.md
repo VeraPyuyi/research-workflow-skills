@@ -160,7 +160,7 @@ public release. See [reuse and simplification](reuse-and-simplification.md).
 Prefer Astra scientific/contribution review of Sol-produced work. If Astra authored
 a central proof, assign a capable different model such as Sol to its independent
 review, recording limitations. Distinct agents of the same model provide context
-independence but can share model bias. Normally block same-model independent
+independence but can share model bias. Blind reviews always require unused reviewer families. For internal diagnostics only, block same-model independent
 review. An expressly declared `allow_same_model_review: true` plus
 `same_model_bias_record` permits a provisional context-only check; it never
 satisfies a required model-independent gate. Unknown producer or reviewer identity

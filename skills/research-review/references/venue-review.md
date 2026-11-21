@@ -59,7 +59,7 @@ reads in the prompt and record this as instruction-only isolation, not an OS san
 Do not request internal project access to help the reviewer understand the paper:
 missing manuscript information is itself a review finding.
 
-Prefer a model different from the main producer(s), respecting the existing exact
+Require a reviewer from a different family than the main producer(s), respecting the existing exact
 native model, data-policy and resource rules. Context independence and
 model independence are separate records. Record requested and actually served
 identities or `unknown`; unknown identity cannot certify a model-independent gate.
@@ -85,8 +85,9 @@ or this project's internal audit conclusions in that instruction.
    Fix scientific problems through the responsible stage within approved scope.
 3. M5 / round 2: another newly spawned agent reviews the revised submission and
    current venue criteria, without round-1 comments, replies or reviewer context.
-   Reusing the same model is not reusing the same agent; prefer different models
-   when compatible, but record each dimension of independence separately.
+   Use a distinct model family for every reviewer of this paper, including parallel
+   panel members and every revision attempt. Versions, channels and efforts of
+   the same family count once. Each assignment also needs its own fresh agent.
 4. Resolve round-2 findings and do scoped internal rechecks against changed content.
    Preserve each actual review's coverage; do not call a later revision blindly
    reviewed if it was only checked by the integrator.
@@ -130,6 +131,25 @@ Confirm a defect and the proposed remedy before editing, using
 [independent-review.md](independent-review.md). A proposed new experiment must earn
 its cost; a prior theorem does not justify deleting unrelated empirical evidence.
 Do not reveal author-side adjudication to the second blind reviewer.
+
+## Reviewer identity check
+
+The coordinator serializes reviewer assignments for a paper. Before each dispatch,
+reconcile the complete history across M4, M5 and retries, and reserve a distinct
+family for each concurrent slot. Keep `reviewer_history` (completed reviews) and
+`reserved_review_models` (all other in-flight reviewers) outside the blind prompt.
+For the first assignment both lists are empty. On return reconcile each reservation
+with the host or gateway receipt. Record `agent_id`, `actual_model` (registered
+endpoint bound to the observed service identity), `served_model_evidence`,
+`manuscript_revision` and `review_round`. Compare observed families against authors,
+prior reviewers and other panel members. Request labels and agent names alone
+leave identity unverified. Reconcile unknown or conflicting receipts before credit.
+If eligible families run out, keep the milestone open and record the missing slot.
+
+Before paper completion run the navigator's `scripts/reviewer_panel.py LEDGER.json`
+on these complete lists and match each final score to the verified review and
+revision. Retain superseded reviews across revisions. Historical reports with
+missing identity retain their scientific feedback and provisional status.
 
 ## Dispatch and execution records
 
