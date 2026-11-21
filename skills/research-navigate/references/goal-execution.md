@@ -248,10 +248,12 @@ Before completion, establish all of the following:
   private infrastructure and internal agent content are removed, legitimate AI
   science/disclosures preserved, and required uninspected surfaces resolved.
 
-After the second review, make scoped repairs and recheck affected material. A
-third full review is not automatic; if a core change makes another full review
-necessary, explain the scope, reason and resource need and resolve any additional
-authority before running it. Do not iterate until reviewers agree or give a score.
+Before marking the Goal complete, verify every assigned final blind reviewer gave
+at least 7/10 on the final submission or a version with documented equivalent
+scientific coverage. Apply the [M5 score check](../../research-review/references/venue-review.md).
+Keep M5 open for missing, stale or subthreshold scores. Address the findings and
+obtain a fresh independent assessment after substantive repairs. Record raw scores,
+covered versions and remaining budget at handoff. Preserve all other delivery gates.
 
 If credible paper completion is not achievable within the allowance, preserve the
 best truthful draft, evidence, failures and exact recovery needs. Report partial

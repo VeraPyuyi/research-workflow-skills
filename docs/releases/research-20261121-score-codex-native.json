@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "scope": "workflow-release",
+  "receipt_id": "research-20261121-score-codex-native",
+  "status": "passed",
+  "bundle_digest": "sha256:2864a8273e89857ef36747ee91e1debf4a86c2b73beee53f13341808daa9c662",
+  "evidence_refs": [
+    "skills/research-review/scripts/check_score.py",
+    "skills/research-review/references/venue-review.md"
+  ],
+  "coverage": {
+    "score_cli_cases": [
+      {
+        "scores": [],
+        "exit_code": 2
+      },
+      {
+        "scores": [
+          "7.0"
+        ],
+        "exit_code": 0
+      },
+      {
+        "scores": [
+          "7",
+          "10"
+        ],
+        "exit_code": 0
+      },
+      {
+        "scores": [
+          "9",
+          "6.999999999999999999999"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "missing"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "NaN"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "Infinity"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "11"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "0"
+        ],
+        "exit_code": 1
+      }
+    ],
+    "temporary_install_files": 90,
+    "live_paper_reviews": 0
+  }
+}

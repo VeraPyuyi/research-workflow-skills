@@ -77,7 +77,7 @@ A neutral instruction can be:
 Do not include a desired outcome, author interpretation, first-round objections
 or this project's internal audit conclusions in that instruction.
 
-## Exactly two default complete rounds
+## M4 and M5 blind reviews
 
 1. M4 / round 1: a fresh reviewer reads the complete first submission version.
 2. The author/integrator adjudicates the actual findings using internal evidence.
@@ -91,10 +91,17 @@ or this project's internal audit conclusions in that instruction.
    Preserve each actual review's coverage; do not call a later revision blindly
    reviewed if it was only checked by the integrator.
 
-No automatic third full round or consensus loop. If core changes invalidate the
-second review, route to the affected milestone, explain the need/cost for another
-full review and resolve authority. Do not certify completion while that required
-review or a central validity repair remains outstanding.
+At M4 record the independent score and address the findings. At M5 collect the
+original score from every assigned final reviewer on the frozen submission. The
+coordinator checks each unrounded score against the inclusive minimum of 7/10.
+Keep all reports. A missing score, a score below 7, or a substantive revision
+leaves M5 open. Record actionable issues, revise within budget, freeze the new
+version, and commission a fresh blind M5 assessment. Track each attempt separately
+under review_round 2. Never resample an unchanged low-scoring draft, average away
+a failing score, or infer a score from an earlier qualitative report. For an
+otherwise valid unscored review, request a score from its original reviewer for
+those same bytes if possible. Cosmetic corrections may reuse documented coverage.
+An exhausted allowance leaves the Goal incomplete with a recovery record.
 
 For a single explicitly requested venue review, run only that requested round.
 Two rounds are the full-paper completion contract, not a prerequisite for every
@@ -108,10 +115,15 @@ correction. Separate submission-blocking defects from optional future work.
 Include questions for authors, missing necessary experiments/assumptions, reuse
 or duplication opportunities, competing explanations and inspected/uninspected scope.
 
-Use the venue's actual rating scale only if supplied and verified. Label any score,
-recommendation and confidence as simulated and explain its basis; no invented
-numerical scale, acceptance probability or guarantee. Lack of an observed defect
-does not prove universal correctness or novelty.
+Ask each blind reviewer for an overall project review score from 0 to 10 with
+reasons tied to the manuscript and venue criteria. Assess contribution, validity,
+evidence and clarity. The coordinator keeps the completion threshold private.
+Record reviewer identity, submission digest, raw score and rationale together.
+Preserve any official venue rating separately on its verified scale. The project
+score represents a simulated assessment. Before closing M5 run
+`python check_score.py SCORE [SCORE ...]` from this skill's scripts directory,
+using one entry per assigned final reviewer. Use `missing` for an absent rating.
+A passing score still requires resolution of submission-blocking findings.
 
 The integrator retains raw reports, author-side dispositions and repair evidence.
 Confirm a defect and the proposed remedy before editing, using
