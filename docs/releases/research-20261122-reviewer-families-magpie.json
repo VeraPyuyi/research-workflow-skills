@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "scope": "workflow-release",
+  "receipt_id": "research-20261122-reviewer-families-magpie",
+  "status": "passed",
+  "bundle_digest": "sha256:5215c3462859bf5fd62474ede50017f4ba5b5916fb61e66e68601ecfc2e0aa1a",
+  "evidence_refs": [
+    "tests/test_reviewer_panel.py",
+    "tests/test_dispatch_guard.py",
+    "skills/research-review/scripts/check_score.py",
+    "skills/research-review/references/venue-review.md"
+  ],
+  "coverage": {
+    "panel_tests": "three offline reviewer history and reservation tests passed",
+    "dispatch_tests_run": 29,
+    "dispatch_skipped": 0,
+    "score_cli_cases": [
+      {
+        "scores": [],
+        "exit_code": 2
+      },
+      {
+        "scores": [
+          "7.0"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "8.0"
+        ],
+        "exit_code": 0
+      },
+      {
+        "scores": [
+          "8",
+          "10"
+        ],
+        "exit_code": 0
+      },
+      {
+        "scores": [
+          "9",
+          "7.999999999999999999999"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "missing"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "NaN"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "Infinity"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "11"
+        ],
+        "exit_code": 1
+      },
+      {
+        "scores": [
+          "0"
+        ],
+        "exit_code": 1
+      }
+    ],
+    "temporary_install_files": 93,
+    "live_paper_reviews": 0
+  }
+}

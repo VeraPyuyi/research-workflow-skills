@@ -40,7 +40,7 @@ def blind_packet():
         stage="research-review", model="opencode-zen/mimo-v2.6-flash-free",
         author_model="opencode-zen/deepseek-v4.1-flash-free",
         author_evidence="runtime author identity",
-        review_mode="venue_blind", review_round=1, new_agent=True,
+        review_mode="venue_blind", reviewer_history=[], reserved_review_models=[], review_round=1, new_agent=True,
         fork_context=False, manuscript_revision="M4", venue_profile="V1",
         allowed_inputs=[
             {"kind": "manuscript", "ref": "bundle/paper.pdf", "revision": "M4"},
@@ -243,6 +243,9 @@ class DispatchGuardTests(unittest.TestCase):
         for round_number in (1, 2):
             plan = blind_packet()
             plan["review_round"] = round_number
+            if round_number == 2:
+                plan['reviewer_history'] = [dict(review_round=1, agent_id='first', manuscript_revision='v1',
+                                                actual_model='codex/gpt-6-astra', served_model_evidence='fixture')]
             self.assertEqual(self.check(plan)["status"], "ready-for-dispatch")
         for key, value in (("fork_context", True), ("fork_context", None),
                            ("new_agent", False), ("review_round", 3),

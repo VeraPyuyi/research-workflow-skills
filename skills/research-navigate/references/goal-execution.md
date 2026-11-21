@@ -248,7 +248,9 @@ Before completion, establish all of the following:
   private infrastructure and internal agent content are removed, legitimate AI
   science/disclosures preserved, and required uninspected surfaces resolved.
 
-Before marking the Goal complete, verify every assigned final blind reviewer gave
+Before marking the Goal complete, verify the complete reviewer history with
+`scripts/reviewer_panel.py` and link each score to its verified reviewer and revision.
+Verify every assigned final blind reviewer gave
 at least 8/10 on the final submission or a version with documented equivalent
 scientific coverage. Apply the [M5 score check](../../research-review/references/venue-review.md).
 Keep M5 open for missing, stale or subthreshold scores. Address the findings and

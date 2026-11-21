@@ -2,7 +2,7 @@
   "schema_version": 1,
   "contract_version": "1.5",
   "runtime_profile": "magpie",
-  "release_id": "research-20261122-score8-magpie",
+  "release_id": "research-20261122-reviewer-families-magpie",
   "status": "candidate",
   "files": {
     "research-analyze/agents/openai.yaml": "05eed143f7f4a4e9c6be90973ab1c606d7c085ca10535f87a0583b058947720d",
@@ -39,7 +39,7 @@
     "research-navigate/references/domains/llm.md": "ab879f05f917218a41a240b8056fb510dd4882087ccad6cfd9bf469e7bb614ec",
     "research-navigate/references/domains/rl.md": "9bed15e93d77914c3a610b2338ea656564ab551ff1585c684ddea9da00850d2f",
     "research-navigate/references/evidence-ledger.md": "b2cd8bbd2f3e2ce8cc950522aa14f8f62fb3b26bd3328b05d8935feaced418d7",
-    "research-navigate/references/goal-execution.md": "ad4a4d87d415fc6c04e33b98614a4849783a04e30bc00edaa6973469449e8a37",
+    "research-navigate/references/goal-execution.md": "941ba4309971fd3554f920ed08668c43795e0440b65280bbe67eac0d66f196fe",
     "research-navigate/references/handoff-example.md": "c0130b1e165191e4c801a5649b0e70d0c0d9625723c3d532e2b2b3bcdfa9ba42",
     "research-navigate/references/implementation-comparison.md": "a9a6d957bb6fd37ea87382b63df5bdd34a8e60804f4e41552c97d0b5b40e1f90",
     "research-navigate/references/live-validation.md": "8faaa49f3b484b8aaa1f518dd965eae4df244c9effea0406bafd30c1a85a92ea",
@@ -52,11 +52,12 @@
     "research-navigate/references/vertex-credit-policy.md": "9c1f1d5576114960faae3a065498e42f81a1eb64dc7e15e6564de7ffc79d05b0",
     "research-navigate/references/workflow-contract.md": "b1c7f76ebdf477f36cf16d7fd226e47b23659993c1231f535f787d38b52e3233",
     "research-navigate/references/workflow-updates.md": "daa31b4a8e0469a315e76c9ca3ee71468cadde4c44f34488f54d0a358858ab96",
-    "research-navigate/scripts/check_dispatch.py": "df2a252327759fb111408b1a47d61e6fc3ec8d420c47dd0dbaa394191e3a37ec",
+    "research-navigate/scripts/check_dispatch.py": "7a34645f67441b110dffd8a3a633016c45de66f1868d0305ae4388b62a5176bb",
     "research-navigate/scripts/goal_recovery.py": "95915ecf6665251cc1283584102f54408c02d7487c70ce2db1e6b08855ece489",
     "research-navigate/scripts/jev_decide.py": "5ab1a41b750f3c107e3e9e6de940bf9636612aa74e024d4842943f795807695c",
     "research-navigate/scripts/math_work.py": "a84fd20b172e802e1f1cf175cddbf77d84e08ec210926530d9b27c13cf079d3c",
     "research-navigate/scripts/model_identity.py": "4f2ee5298e09d3ca748fb85d8229c6f2d2fd4e9c170d24b6ea66abce48fe6d5f",
+    "research-navigate/scripts/reviewer_panel.py": "998e5fb7e846f9fcb8e8923305be8775ee62390b5aebad09d01578f2ae518d2d",
     "research-navigate/scripts/workflow_release.py": "4e0879b6fecb5c35ec515269b6441194b85d128a49760be4a34dce0836adf560",
     "research-navigate/SKILL.md": "43e627b009c0c462de8fc1a88e34abe60f56a2a1a69716bc151a7fe2d0b7645c",
     "research-optimize/agents/openai.yaml": "0554615813b673c2b5d58df21c71590c05a26a60a4e9bd1f246ffe3985d93dfd",
@@ -74,10 +75,10 @@
     "research-review/agents/openai.yaml": "d5fa2449066d72f6467de64a8a43af0a317e8b5a77f654df16dfe7b35a38f58b",
     "research-review/references/independent-review.md": "1aff90eb80a08e31699a1843c246b123e2a4b2f2083eb3163d72bf6467848af0",
     "research-review/references/submission-leakage.md": "9250cafc42bf8e19064766b5634d13b77b18e058bbec12c8dbe9ccdafa3844cc",
-    "research-review/references/venue-review.md": "47efffe9ca6e203f754756c05ff37b86c25804ff0522b4be563f6dd7eb040373",
+    "research-review/references/venue-review.md": "b0a9b7b4ed9a3931d9c94896d06a0bfdb0bc56f5aab37d53aa7049732f3d7b52",
     "research-review/scripts/check_score.py": "c1b24761cee6faed3674e6df97c33350cb7410a46bc130af054a069188e57f07",
     "research-review/scripts/check_submission.py": "f8b7ef449070a6c9009333ee1e00df40432a28ba69dd34593c0182c85ebe962c",
-    "research-review/SKILL.md": "785d9b8b97b3d0a0208d1d130b8efba7b1c6f459e1c877ad8a8e63f5edc07554",
+    "research-review/SKILL.md": "0b510283aaa87ff8e1a06034830a1fb0636cce72a28a5bfa0c0f69e2d12cd482",
     "research-scope/agents/openai.yaml": "5057355cd14b0fc035dc609893085cc260fc03836bdb45221687404ab8be2ab0",
     "research-scope/SKILL.md": "bdb2373c0fb2c50c4aa0ba30ed8137beeb05f4e8fa2690b0d957e82c6914c75b",
     "research-submit/agents/openai.yaml": "374376e8b32678dee51837fea0264a0d73989cdd08b57c8b273d88037b4c01fd",
@@ -98,7 +99,7 @@
     "research-write/SKILL.md": "132f1e29a0068eb9078ded88180898f0c1864beec979e37cf46d2a164c9a80c9"
   },
   "validation_receipts": [
-    "docs/releases/research-20261122-score8-magpie.json"
+    "docs/releases/research-20261122-reviewer-families-magpie.json"
   ],
-  "bundle_digest": "sha256:7f243eaddc38009013ad0b468d38f7d1aa843d7e29e733fdb591186f911a3160"
+  "bundle_digest": "sha256:5215c3462859bf5fd62474ede50017f4ba5b5916fb61e66e68601ecfc2e0aa1a"
 }

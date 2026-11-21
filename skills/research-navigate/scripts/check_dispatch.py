@@ -9,6 +9,7 @@ from pathlib import Path, PurePosixPath, PureWindowsPath
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from math_work import validate_math_work
+from reviewer_panel import reviewer_errors
 from model_identity import model_family, NATIVE_MODELS, LEGACY_NATIVE_MODELS
 
 REGISTRY = Path(__file__).resolve().parents[1] / "references/model-routing.json"
@@ -25,6 +26,7 @@ def review_errors(plan):
         errors.append("Venue review belongs to research-review")
     if plan.get("fork_context") is not False or plan.get("new_agent") is not True:
         errors.append("Venue review requires a new agent with fork_context false")
+    errors.extend(reviewer_errors(plan, plan.get("model", "")))
     number = plan.get("review_round")
     if type(number) is not int or number not in (1, 2):
         errors.append("The default venue review contract has rounds 1 and 2")
