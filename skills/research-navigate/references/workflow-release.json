@@ -2,7 +2,7 @@
   "schema_version": 1,
   "contract_version": "1.5",
   "runtime_profile": "codex-native",
-  "release_id": "research-20261121-score-codex-native",
+  "release_id": "research-20261122-score8-codex-native",
   "status": "candidate",
   "files": {
     "research-analyze/agents/openai.yaml": "76208be0f9db3b8e795e0e25614659de21e26f465e9a8e59bb5132afc252c0fe",
@@ -39,7 +39,7 @@
     "research-navigate/references/domains/llm.md": "ab879f05f917218a41a240b8056fb510dd4882087ccad6cfd9bf469e7bb614ec",
     "research-navigate/references/domains/rl.md": "9bed15e93d77914c3a610b2338ea656564ab551ff1585c684ddea9da00850d2f",
     "research-navigate/references/evidence-ledger.md": "b2cd8bbd2f3e2ce8cc950522aa14f8f62fb3b26bd3328b05d8935feaced418d7",
-    "research-navigate/references/goal-execution.md": "e4bc9a3d50d3b0cdb4afd29b52e06217ba76db1cee6afc5a450d9a32c3884db6",
+    "research-navigate/references/goal-execution.md": "ef94c455fe66f20739dcce3732d525daa1810a2978dfdd1ca40539db4e5cd18d",
     "research-navigate/references/handoff-example.md": "fa17bbee8c39be79e2eb03ada8ce197f7190ffb5a021602aeecb8fd167b2cbb8",
     "research-navigate/references/implementation-comparison.md": "a9a6d957bb6fd37ea87382b63df5bdd34a8e60804f4e41552c97d0b5b40e1f90",
     "research-navigate/references/mathematical-work.md": "6178c119cdc9be80b2fdfc01555abc76b29592a05793e0395248ee079857083e",
@@ -72,14 +72,14 @@
     "research-review/agents/openai.yaml": "d5fa2449066d72f6467de64a8a43af0a317e8b5a77f654df16dfe7b35a38f58b",
     "research-review/references/independent-review.md": "1aff90eb80a08e31699a1843c246b123e2a4b2f2083eb3163d72bf6467848af0",
     "research-review/references/submission-leakage.md": "9250cafc42bf8e19064766b5634d13b77b18e058bbec12c8dbe9ccdafa3844cc",
-    "research-review/references/venue-review.md": "337afe10b6a1572dbeed3e8aa8e4bedcf097d21dcd9283536541fe8ca27d3988",
-    "research-review/scripts/check_score.py": "15415f343b00e27be304ef9fd669084b0180b7ad95ed6f2fad787fce1050802e",
+    "research-review/references/venue-review.md": "e64217773fb586dea50f82cb5eec09ba8898cbb2ae1291a3546b99e4c8ac64b7",
+    "research-review/scripts/check_score.py": "c1b24761cee6faed3674e6df97c33350cb7410a46bc130af054a069188e57f07",
     "research-review/scripts/check_submission.py": "f8b7ef449070a6c9009333ee1e00df40432a28ba69dd34593c0182c85ebe962c",
-    "research-review/SKILL.md": "4b8f99899b98fa5a1cdd7d4ada6e9cb66ede764b484ec505432061d817d1d331",
+    "research-review/SKILL.md": "18276947528b2d959eae32df071f965114da76647c7140f9e1717a8413ef95d9",
     "research-scope/agents/openai.yaml": "5057355cd14b0fc035dc609893085cc260fc03836bdb45221687404ab8be2ab0",
     "research-scope/SKILL.md": "c86f304a3a0f8899d0b50adc7ec2cccbead343bb5591a0da3467af5d472bbe68",
     "research-submit/agents/openai.yaml": "374376e8b32678dee51837fea0264a0d73989cdd08b57c8b273d88037b4c01fd",
-    "research-submit/SKILL.md": "f55378fc4e2893999cb2952b4f2c130810212f54b3d1fdbe8bcfeaf73151141e",
+    "research-submit/SKILL.md": "6f2ebcc7f1e7ad10ae605d864f411b804e80b4b2adb71368e8167708da6df804",
     "research-survey/agents/openai.yaml": "67d91c44aa95aee1ef66da39a0c909c8b77dfa2ee30276e8e2e33194d3aa28ad",
     "research-survey/references/cross-domain-survey.md": "4886b4f3c3ce1efb45af54eee929f1b354ecd275da6602bd695dd3e7503c5285",
     "research-survey/SKILL.md": "ea24d49b527e9b85a520e5b62f0e744642a55e18303828ab8b15d348b81b8550",
@@ -96,7 +96,7 @@
     "research-write/SKILL.md": "26349b8f899594db1ef66d134e1005fa2d676680e0868dc2981dc68e33638053"
   },
   "validation_receipts": [
-    "docs/releases/research-20261121-score-codex-native.json"
+    "docs/releases/research-20261122-score8-codex-native.json"
   ],
-  "bundle_digest": "sha256:2864a8273e89857ef36747ee91e1debf4a86c2b73beee53f13341808daa9c662"
+  "bundle_digest": "sha256:f43359fbc83ae06efd6d0ca73e3ae8439fc9b1c584110fcc96b29a4a271d3ea9"
 }

@@ -33,7 +33,7 @@ For a target-venue simulation, read [venue review](references/venue-review.md):
 launch a new agent with `fork_context: false` and only the frozen submitted paper,
 permitted attachments and verified venue criteria. Do not give it this project's
 history, author self-assessment or previous reviews. Full-paper work uses two
-scored rounds at M4 and M5 (every final reviewer must give at least 7/10 for paper completion), with different fresh agents; an explicitly bounded
+scored rounds at M4 and M5 (every final reviewer must give at least 8/10 for paper completion), with different fresh agents; an explicitly bounded
 review remains one review. Context independence, model independence and filesystem
 isolation are different facts and must be reported separately.
 Private focus anchors, user-intent history and alignment verdicts remain with the

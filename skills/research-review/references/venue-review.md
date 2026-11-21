@@ -93,8 +93,8 @@ or this project's internal audit conclusions in that instruction.
 
 At M4 record the independent score and address the findings. At M5 collect the
 original score from every assigned final reviewer on the frozen submission. The
-coordinator checks each unrounded score against the inclusive minimum of 7/10.
-Keep all reports. A missing score, a score below 7, or a substantive revision
+coordinator checks each unrounded score against the inclusive minimum of 8/10.
+Keep all reports. A missing score, a score below 8, or a substantive revision
 leaves M5 open. Record actionable issues, revise within budget, freeze the new
 version, and commission a fresh blind M5 assessment. Track each attempt separately
 under review_round 2. Never resample an unchanged low-scoring draft, average away

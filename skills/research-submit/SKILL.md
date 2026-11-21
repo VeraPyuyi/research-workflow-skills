@@ -47,7 +47,7 @@ reruns just because a venue recommends code availability.
    unresolved blockers. A materially changed claim, author list, destination or
    attachment requires the affected decision; routine edits within authority do not.
    For a full paper, complete M5 with the second fresh-context venue review and
-   at least 7/10 from every assigned final reviewer plus final build/reproduction acceptance; reuse valid earlier scientific coverage
+   at least 8/10 from every assigned final reviewer plus final build/reproduction acceptance; reuse valid earlier scientific coverage
    instead of launching an automatic third full review at packaging.
    Complete the submission/release review gate on the actual package before any
    external submission. Record reviewers, checked scope and unresolved findings;
