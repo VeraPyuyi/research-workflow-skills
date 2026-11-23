@@ -81,7 +81,8 @@ class PrepareTests(unittest.TestCase):
                 tasks = [json.loads(l) for l in (out / side / "tasks.jsonl").read_text().splitlines()]
                 self.assertEqual(len(tasks), result[side]["tasks"])
                 self.assertTrue(all(t["condition"] == "with_skill" for t in tasks))
-                self.assertTrue(all(str(out / side / "skills") in t["skills"][0] for t in tasks))
+                root = (out / side / "skills").resolve()
+                self.assertTrue(all(Path(t["skills"][0]).resolve().is_relative_to(root) for t in tasks))
             with self.assertRaises(ValueError):
                 lab.prepare("L1", "HEAD", "WORKTREE", out)
 
