@@ -3,7 +3,8 @@
 ## 2026-11-23 — review fixes
 
 See [the review-fix notes](review-fixes-20261123.md). The repository is licensed
-under Apache-2.0 ([LICENSE](../LICENSE)).
+under Apache-2.0 ([LICENSE](../LICENSE)). The paper-presentation study data moved
+to the `paper-presentation-study-data` branch ([details](paper-presentation-study/DATA.md)).
 
 ## Earlier README sections (moved here unchanged)
 

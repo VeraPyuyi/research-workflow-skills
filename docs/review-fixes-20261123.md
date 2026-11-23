@@ -41,11 +41,11 @@
 | 优化器证据过弱 | 每个用例至少跑 3 次、按通过率比较；诚信场景为受保护强项；在有真实端到端运行记录之前，发布需作者批准 | 已改 |
 | 诚信陷阱回归集 | 新增 `tests/integrity-scenarios.json` 与 rubric（8 个场景） | 已改 |
 | 真实端到端试跑 | — | **未改**：需要真实项目、预算与作者参与 |
+| 约 1.4MB 研究数据在代码分支里 | 作者决定移出。会话权限不允许创建 Release，改放到同仓库的数据分支 `paper-presentation-study-data`（固定提交 `81261dd`，含两条代码分支各自的版本）；代码分支只留 `report.md` 与 `DATA.md`；新增 `scripts/fetch_study_data.py`（按提交获取、校验内容清单）；校验脚本、测试与 CI 改为使用获取的副本。历史提交中仍有这些文件 | 已改 |
 
 ## 未处理（需要作者决定）
 
 - 是否把 `magpie` 与 `codex-native` 合并为单分支加配置（两分支有 79 个文件不同，本次只改了 `magpie`）。
-- 是否把 `docs/paper-presentation-study/` 的研究数据（约 1.4MB）移到 release 附件或单独仓库。
 - 是否把共享契约抽成独立的 `research-core` skill，减少 `../` 跨 skill 引用。
 
 ## 行为变化提示

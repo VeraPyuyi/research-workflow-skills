@@ -97,13 +97,13 @@ M4 一位全新上下文的盲审；M5 在派发前预登记至少两个（默�
 ```bash
 python -B -m unittest discover -s tests -p "test_*.py"
 python scripts/validate_skills.py
-python scripts/validate_presentation_study.py
+python scripts/fetch_study_data.py && python scripts/validate_presentation_study.py
 python scripts/check_links.py
 ```
 
 以上检查在 CI 中对 Linux 与 Windows 运行（`.github/workflows/ci.yml`）。它们验证脚本与控制逻辑，不证明这套流程能产出好论文。行为效果用 `scripts/behavior_eval.py` 评测：把 `tests/` 下的场景在"加载 skill / 不加载"两种条件下各跑至少三次，由另一谱系的模型按 rubric 评分并汇总通过率；其中 `tests/integrity-scenarios.json` 是诚信陷阱场景（缺数据、可利用的评测、要求改结果、错误前提、注入评审等）。
 
-[论证与图表记录](skills/research-write/references/argument-and-figure-contract.md) 与 [表达模式库](skills/research-write/references/paper-style-study/index.md)（90 篇论文的描述性研究，见 [研究报告](docs/paper-presentation-study/report.md)）用于写作阶段；模式库不预测录用概率。
+[论证与图表记录](skills/research-write/references/argument-and-figure-contract.md) 与 [表达模式库](skills/research-write/references/paper-style-study/index.md)（90 篇论文的描述性研究，见 [研究报告](docs/paper-presentation-study/report.md)）用于写作阶段；模式库不预测录用概率。研究的原始数据（约 1.4MB）放在独立的数据分支 `paper-presentation-study-data`，不随 skill 安装，见 [数据位置](docs/paper-presentation-study/DATA.md)；`python scripts/fetch_study_data.py` 会按固定提交获取并校验。
 
 本仓库不包含 API key、原始账户响应、真实服务器配置或开发缓存；历史验证文档中引用的本地 `tests/results/` 记录因含私有路径未公开。
 
