@@ -116,7 +116,7 @@ def prepare(round_id, baseline_ref, candidate_ref, out, runs=3, suites=None):
     for side, ref in (("baseline", baseline_ref), ("candidate", candidate_ref)):
         export_skills(ref, out / side)
         tasks = behavior_eval.plan(out / side, runs, suites, seed=int(hashlib.sha256(round_id.encode()).hexdigest()[:8], 16),
-                                   skills_root=str((out / side / "skills").resolve()),
+                                   skills_root=(out / side / "skills").resolve().as_posix(),
                                    conditions=("with_skill",))
         summary[side] = {"tasks": len(tasks), "tasks_file": str(out / side / "tasks.jsonl")}
     (out / "round.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
