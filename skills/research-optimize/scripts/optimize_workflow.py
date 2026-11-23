@@ -7,6 +7,8 @@ import hashlib
 import json
 import math
 import os
+import re
+
 from pathlib import Path
 import stat
 import sys
@@ -202,6 +204,19 @@ def frozen(root, state):
     return contract
 
 
+def is_round(value):
+    """Workflow-lab rounds L1, L2, ...; M1-M5 remain accepted for older records."""
+    return value in MILESTONES or (isinstance(value, str) and re.fullmatch(r"L[1-9][0-9]*", value) is not None)
+
+
+def budget_share(contract):
+    """Fraction of the approved allowance the optimizer may use (default 0.2 of a project)."""
+    share = number(contract["budget_share"]) if "budget_share" in contract else Fraction(1, 5)
+    if not 0 < share <= 1:
+        raise ValueError("budget_share must be in (0, 1]")
+    return share
+
+
 def reserve(state, contract, root, requested):
     requested = cost(requested)
     usage = read(contained(root, contract["project_usage"]))
@@ -216,7 +231,7 @@ def reserve(state, contract, root, requested):
                        if c["settled"] is False), Fraction(0))
         committed = spent + pending + requested[unit]
         other = number(usage[unit]["spent"]) + number(usage[unit]["reserved"])
-        if committed > limit / 5 or other + committed > limit:
+        if committed > limit * budget_share(contract) or other + committed > limit:
             raise ValueError("Optimizer share or whole-project allowance exhausted")
 
 
@@ -325,8 +340,8 @@ def transition(root, state_path, state, action, packet):
         state["events"][key] = packet
         return "event-recorded"
     milestone_id = packet.get("milestone")
-    if milestone_id not in MILESTONES:
-        raise ValueError("Optimization validation/publication belongs to M1-M5")
+    if not is_round(milestone_id):
+        raise ValueError("Optimization rounds are workflow-lab rounds L<n> (or legacy M1-M5)")
     cid = text(packet.get("id"))
     milestone = state["milestones"].setdefault(milestone_id, {"candidates": {}, "publication": None})
     candidates = milestone["candidates"]

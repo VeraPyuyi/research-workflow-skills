@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-11-23 — workflow lab
+
+The optimizer is split into project retrospective events and repository-level
+workflow-lab rounds (`scripts/workflow_lab.py`, `skills/research-optimize/references/workflow-lab.md`).
+Projects no longer develop, validate or publish workflow changes or spend their
+budget on them. Lab round `lab/L1` measures the review fixes; prepared, not run.
+
+## 2026-11-23 — workflow lab
+
+The optimizer is split into project retrospective events and repository-level
+workflow-lab rounds (`scripts/workflow_lab.py`, `skills/research-optimize/references/workflow-lab.md`).
+Projects no longer develop, validate or publish workflow changes or spend their
+budget on them. Lab round `lab/L1` measures the review fixes; prepared, not run.
+
 ## 2026-11-23 — review fixes
 
 See [the review-fix notes](review-fixes-20261123.md). The repository is licensed

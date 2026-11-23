@@ -22,7 +22,7 @@ chat or an obligatory stage number. Inspect existing artifacts first.
 | Usable product and acceptance evidence | research-product-build | Functional/research/user checks have actual outcomes |
 | Installable, distributable release candidate | research-product-release | Candidate readiness and publishing authority are explicit |
 | Requested issue or compatibility/effect regression | research-product-maintain | Fix and affected outputs are checked, remaining work is stated |
-| Bounded workflow improvement of a completed, delivered stage | research-optimize | Candidate set, revision and single publication are recorded inside its own bounds |
+| Retrospective event, or a repository-level workflow-lab round | research-optimize | Event appended; for a lab round, frozen controls, evaluated candidates and the owner's decision are recorded |
 | Original theme, cumulative alignment or auxiliary-branch boundaries | research-focus | Provenance, theme/thesis versions, alignment and next scientific dependency are explicit |
 
 ## Dependencies by study type
@@ -105,14 +105,13 @@ program constraints decide first, then a bounded native comparison and the
 integrator decision. No invented probabilities or model scores establish truth.
 The evidence-linked comparison record is the deliverable.
 
-## Optimizer event queue
+## Retrospective events
 
-Each substantial scientific stage completion queues one stable event for the sibling
-`research-optimize` skill: stage identity, strengths, weaknesses, artifact and
-evidence references, and the actual cost. The event does not trigger a full test
-suite or a scientific review, does not authorize new scientific claims, and does
-not delay a completed paper. Duplicate delivery of the same event is idempotent.
-Read `research-optimize` for its authoritative bounds; this map records only the
-routing edge and no new stage skill.
+At a meaningful handoff the coordinator appends one retrospective line to the project's event
+log (default `research/optimizer/events.jsonl`) as described in
+[research-optimize](../../research-optimize/SKILL.md). It records strengths, tagged weaknesses, traces and
+cost; it triggers nothing and never delays the paper. Projects do not develop or
+publish workflow changes; those happen in repository-level workflow-lab rounds.
+This map records only that edge; it adds no stage.
 Focus and optimizer bookkeeping never generate new support events. Carry the
 focus reminder into each scientific branch and keep it out of blind venue inputs.

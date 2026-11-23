@@ -1,6 +1,6 @@
 interface:
   display_name: "Research Workflow Optimizer"
-  short_description: "Preserve strengths and improve research workflows"
-  default_prompt: "Use $research-optimize to record this stage's strengths and weaknesses and prepare bounded improvements for the applicable milestone."
+  short_description: "Log retrospectives; run tested workflow-lab rounds"
+  default_prompt: "Use $research-optimize to append this handoff's retrospective event to the project log. Run a workflow-lab round only when I ask for one in the skills repository."
 policy:
   allow_implicit_invocation: true

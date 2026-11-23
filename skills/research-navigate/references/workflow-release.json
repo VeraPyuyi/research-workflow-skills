@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "contract_version": "1.6",
+  "contract_version": "1.7",
   "runtime_profile": "codex-native",
-  "release_id": "research-20261123-review-fixes-codex-native",
+  "release_id": "research-20261123-workflow-lab-codex-native",
   "status": "candidate",
   "files": {
     "research-analyze/SKILL.md": "5064aa66654359306483482a6cd87445eba3d6c1b0979d9763d9d1b9e98f6d51",
@@ -30,7 +30,7 @@
     "research-implement/assets/evidence-example/figure.json": "74082425cae785053eec7b02146c5bdf646f045926a3244962a3e633a57e6697",
     "research-implement/assets/evidence-example/results.csv": "b035cc0ebdcdf54da8f02bbbb0091714aa1ca91ac78c6ed0a57cca7fb12899da",
     "research-implement/scripts/render_evidence.py": "c50a185db880d15c0835527964598796f4a2df17f339f4c2ccbec0102191fad7",
-    "research-navigate/SKILL.md": "dc832bd6a30fd68174d387570725f0191b98a73564a43de6073879a0ef34a4bc",
+    "research-navigate/SKILL.md": "3bb1142e04fb993c7ce6a6b6d2065973c9dbe942da781082f5fa2652d583b928",
     "research-navigate/agents/openai.yaml": "d7ba654f9f0778a6411a210ea8551a0afc6f86abb36be16383c1d6bca0766f6e",
     "research-navigate/references/decision-support.md": "b517b20f2422735e2e4fd2a2bce74c18cc9358b7338a50033559f79ca9b13aaa",
     "research-navigate/references/domains/agent.md": "f429610c87f433e296672a5889c62e5edb0c472f11d09ef0a4ea092fd77bc1d7",
@@ -41,17 +41,17 @@
     "research-navigate/references/domains/rl.md": "9bed15e93d77914c3a610b2338ea656564ab551ff1585c684ddea9da00850d2f",
     "research-navigate/references/evidence-ledger.md": "b2cd8bbd2f3e2ce8cc950522aa14f8f62fb3b26bd3328b05d8935feaced418d7",
     "research-navigate/references/goal-execution.md": "c8824d6950806f699f90aaa7a5eda5b6deee4be2ab527485bae9d6b053c95c6b",
-    "research-navigate/references/handoff-example.md": "fa17bbee8c39be79e2eb03ada8ce197f7190ffb5a021602aeecb8fd167b2cbb8",
+    "research-navigate/references/handoff-example.md": "893472cd500fcccfa3cf5be3650f8a9468534a9388a7ff251397209f4f339181",
     "research-navigate/references/hosts/codex-goal.md": "8be03a51b36d6e46a10dd84403dd277b0e12dbaa23a656815fa74792af14b51b",
     "research-navigate/references/implementation-comparison.md": "a9a6d957bb6fd37ea87382b63df5bdd34a8e60804f4e41552c97d0b5b40e1f90",
     "research-navigate/references/mathematical-work.md": "6178c119cdc9be80b2fdfc01555abc76b29592a05793e0395248ee079857083e",
     "research-navigate/references/model-activation.md": "1cb8e84c47e98e92e95af4be3e489033119821f1d339b343255fff6d9fd01765",
     "research-navigate/references/model-routing.json": "0bd79ae8df79b6872f5e565655e8f02969f02eec1fdec4ade77a279b4c1da541",
     "research-navigate/references/model-routing.md": "356eab0ddf80e974a73431ccf3945aa5b5604e738a8c36e8a767b6cde18231c4",
-    "research-navigate/references/records.md": "4427d22d2352da64d52f83b4ee5cdf3195433e397c3e5f0594e8f2b2104895ba",
+    "research-navigate/references/records.md": "ed025981c70e8b060868b2325174bddfd350127d3210cdce6f0a99d1e3fca62d",
     "research-navigate/references/reuse-and-simplification.md": "2f1d66459a1a36e5805bc8911ceb2926e1a56e16d02cc0eab44e34ae84808ba8",
-    "research-navigate/references/stage-map.md": "0dc46929749607b8485ac01e6b3321fcea3a6da5b6dd69bd357fef1f058d97ad",
-    "research-navigate/references/workflow-contract.md": "b1b4963c5940536752ff3c8844e09b4284db3944555f5d49d4cee7c986127474",
+    "research-navigate/references/stage-map.md": "08002e4a497e7f3650dadfbd11705e74c657ae9a27cdccd9e0160e59e1a54e0c",
+    "research-navigate/references/workflow-contract.md": "59d403aa6affb1e16e06e72c14eb19eabfa9f22d3d56be1611674a62114cb202",
     "research-navigate/references/workflow-extensions.md": "98d4a9df506107bd5ad6e5322943307e000dc1da7c1c33f6ac65d32ad2147443",
     "research-navigate/references/workflow-updates.md": "d82cf687d7652cb63fa5520f7f39cb7c39d29e6686caf74e1627ad749f3b6f97",
     "research-navigate/scripts/check_dispatch.py": "843177677df0815c965e78b2a4615a0647d8abca87a7b632cecf831015f65a44",
@@ -62,10 +62,11 @@
     "research-navigate/scripts/model_identity.py": "dc47155d9fdaf65922f267ee071e43e4952802cb4a22eb6a8c78be4473402ac5",
     "research-navigate/scripts/reviewer_panel.py": "26c59e077aba95845bdb5f7ac195d9ded48b4ac17d2e496857badfb024df08a4",
     "research-navigate/scripts/workflow_release.py": "bf23b740a263525fcad437af0072571123f72bdd24e6d523d7237a4202ebcf10",
-    "research-optimize/SKILL.md": "145eca15176aecf4a3b5eda87f70a32055484df763435ab920806d992f6d44d1",
-    "research-optimize/agents/openai.yaml": "0554615813b673c2b5d58df21c71590c05a26a60a4e9bd1f246ffe3985d93dfd",
-    "research-optimize/references/optimization-protocol.md": "896db296b6dcacc8bc50692761df1f21dde0644144616d1ef616605f23325ee3",
-    "research-optimize/scripts/optimize_workflow.py": "e6955741c84b961c4e89e55f3811a1f89064c7fd3b6bf0482e0ab3fdc4813ba4",
+    "research-optimize/SKILL.md": "444a88e12bfc92f37aa79c201079758a24a21c1d480adbd82c8662b53849ce41",
+    "research-optimize/agents/openai.yaml": "f7df0e72341d29f4d110912000b3112af8bb28f042448fdf013d41acd109dfe6",
+    "research-optimize/references/optimization-protocol.md": "49c3fff8be9abe079abe019d9c49d18b6dae5c94e9b289de9610437f24d536b4",
+    "research-optimize/references/workflow-lab.md": "d1cc212abe83820a089a12866ffa4cff30231fed0cabaef021644d9acf25092c",
+    "research-optimize/scripts/optimize_workflow.py": "58c5b275cfa24692756885247cbfb843298f279f0804b6136cab4e6c50555c58",
     "research-product-build/SKILL.md": "40673d76184d64e0a7a31384f8a70aba610b1d029983f49d8d64ae12d5840919",
     "research-product-build/agents/openai.yaml": "a6f80aeb8c644b02b6e155acceb1dc861fe34b2e14430f96379ebd2f3dbda4d9",
     "research-product-discover/SKILL.md": "6d330c2ddb7289f4dd66997880b67e88e50dc6363af9235f5ae6daee54c68d83",
@@ -103,7 +104,7 @@
     "research-write/scripts/claim_audit.py": "a0b1be6b97c43d2837b97c6bb26505efabe9c5be43a8576058fc042693190c45"
   },
   "validation_receipts": [
-    "docs/releases/research-20261123-review-fixes-codex-native.json"
+    "docs/releases/research-20261123-workflow-lab-codex-native.json"
   ],
-  "bundle_digest": "sha256:805b17f448023e9858622396715ff779544f27796a429e88be5c13c6b6c98441"
+  "bundle_digest": "sha256:8f3930df8d160842d44a1090d5f079bdb6dcbdd4da06354b8005e5377ae1c815"
 }

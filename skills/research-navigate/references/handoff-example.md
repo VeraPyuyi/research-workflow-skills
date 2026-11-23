@@ -79,7 +79,7 @@ compact line instead of a new section:
 - Candidate release `research-<id>` and digest inspected; adoption is held because
   one customized local copy conflicts. Running jobs J7 and R12 keep their pinned
   protocol/code versions. Independent authorized research continues.
-- Stage `research-survey` R2/S3 queued one optimizer event; actual cost and
-  artifact references recorded. Duplicate delivery of the same event is idempotent.
+- Stage `research-survey` R2/S3 appended one retrospective event (tag
+  `literature-citation`, trace `research/literature.jsonl`); nothing else was triggered.
 - Jev decision D1 was advisory only; evidence decided the choice. Unknown billing
   coverage meant no call, so the Jev comparison is recorded as unexecuted.

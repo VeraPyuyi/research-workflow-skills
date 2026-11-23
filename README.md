@@ -338,6 +338,24 @@ valid outcome); evaluation code and data are read-only to method workers and
 rechecked before principal conclusions; a citation enters a paper only after its
 identity resolves.
 
+## Workflow improvement (optimizer)
+
+Inside a project the coordinator appends one retrospective line to
+`research/optimizer/events.jsonl` at meaningful handoffs: strengths, tagged
+weaknesses, replayable traces and cost. Writing it triggers nothing, spends no
+research budget and never delays the paper.
+
+Shared skills change only in repository-level
+[workflow-lab rounds](skills/research-optimize/references/workflow-lab.md), with
+their own budget and the owner's approval: aggregate weaknesses that recur in at
+least two projects or have a replayable trace (`scripts/workflow_lab.py
+aggregate`); freeze suites and criteria (integrity and replay suites are
+protected); at most three candidates per round; run baseline and candidate
+suites on the same scenarios at least three times each with blind grading by a
+different model, decided by `workflow_lab.py compare`; independent review,
+owner approval, release with rollback. The first round, [`lab/L1`](lab/L1/README.md),
+measures the 2026-11-23 review fixes; its controls are frozen and it has not run.
+
 ## Blind review panel and completion
 
 M4 uses one fresh blind reviewer. Before any M5 dispatch the coordinator registers
