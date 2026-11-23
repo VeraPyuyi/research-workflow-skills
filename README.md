@@ -107,6 +107,6 @@ python scripts/check_links.py
 
 本仓库不包含 API key、原始账户响应、真实服务器配置或开发缓存；历史验证文档中引用的本地 `tests/results/` 记录因含私有路径未公开。
 
-**许可证**：仓库已公开，但尚未附加开源许可证。在作者选定许可证之前，按默认规则保留所有权利，他人不能据此复制或再分发。
+**许可证**：[Apache License 2.0](LICENSE)，Copyright 2026 VeraPyuyi。该许可证覆盖本仓库中作者自己的代码、skill 与文档；论文表达研究只收录了作者对公开论文的描述、元数据与页码定位，不包含、也不重新授权论文原文或图表。
 
 变更历史见 [docs/CHANGELOG.md](docs/CHANGELOG.md)。

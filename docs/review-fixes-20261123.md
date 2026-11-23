@@ -14,7 +14,7 @@
 | 分数门：量表无锚点、未校准、只看稿件、脚本校验自报数字、逐次换家族、家族判定与文档不一致 | 见下节 | 已改 |
 | 没有 CI | 新增 `.github/workflows/ci.yml`（Linux 与 Windows：skill 校验、模式库校验、链接检查、单元测试） | 已改 |
 | 场景与 rubric 没有运行器 | 新增 `scripts/behavior_eval.py`（plan / grade / summarize，有无 skill 的 A/B，每场景默认 3 次） | 已改；模型调用由宿主执行，尚无评测结果 |
-| 没有 LICENSE | README 写明尚未选择许可证及其含义 | **未改**：许可证需要作者选择 |
+| 没有 LICENSE | 作者选定 Apache-2.0：新增 `LICENSE`（Apache 官方原文），README 写明适用范围 | 已改 |
 
 ## 分数门
 
@@ -44,7 +44,6 @@
 
 ## 未处理（需要作者决定）
 
-- 选择开源许可证。
 - 是否把 `magpie` 与 `codex-native` 合并为单分支加配置（两分支有 79 个文件不同，本次只改了 `magpie`）。
 - 是否把 `docs/paper-presentation-study/` 的研究数据（约 1.4MB）移到 release 附件或单独仓库。
 - 是否把共享契约抽成独立的 `research-core` skill，减少 `../` 跨 skill 引用。

@@ -2,7 +2,8 @@
 
 ## 2026-11-23 — review fixes
 
-See [the review-fix notes](review-fixes-20261123.md).
+See [the review-fix notes](review-fixes-20261123.md). The repository is licensed
+under Apache-2.0 ([LICENSE](../LICENSE)).
 
 ## Earlier README sections (moved here unchanged)
 
