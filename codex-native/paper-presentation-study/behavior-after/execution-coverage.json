@@ -1,0 +1,843 @@
+{
+  "schema_version": 1,
+  "record_kind": "execution receipt, not a rubric score",
+  "status": "complete",
+  "recorded_at_utc": "2026-10-26T13:53:36.585185+00:00",
+  "output_root": "<validation-workspace>\\behavior-after",
+  "authority": "User-requested four bounded synthetic tasks; no full-paper Goal or venue submission",
+  "execution_environment": {
+    "shell": "powershell.exe",
+    "login": false,
+    "working_directory": "C:\\",
+    "python": "<validation-workspace>\\.venv\\Scripts\\python.exe",
+    "python_flags": [
+      "-X",
+      "utf8",
+      "-B"
+    ],
+    "dependencies": {
+      "matplotlib": "3.11.2",
+      "pypdf": "6.21.2",
+      "numpy": "2.5.4",
+      "pillow": "13.0.0",
+      "fonttools": "4.67.0",
+      "contourpy": "1.4.0",
+      "cycler": "0.12.1",
+      "kiwisolver": "1.5.1",
+      "packaging": "26.3",
+      "pyparsing": "3.3.3",
+      "python-dateutil": "3.0.0",
+      "six": "1.17.0"
+    }
+  },
+  "task_input": {
+    "path": "stage/tests/paper-presentation-cases.json",
+    "sha256": "e8c4bac687cb28a94f7b2ba217846b43cab2ac933e9ac7c06984f590f2c94147",
+    "version": 1,
+    "data_kind": "synthetic acceptance fixtures, never research results",
+    "extent": "all four requests and their evidence read; no other task evidence files read"
+  },
+  "skill_and_reference_files_used": [
+    {
+      "path": "stage/skills/research-analyze/SKILL.md",
+      "sha256": "bcb4b02629675f5a5adb4d08e67c6dbb65126d6e954514924a12feb01115e9e8",
+      "cases": [
+        "method",
+        "mixed"
+      ],
+      "use": "bounded aggregation, claim-evidence maps and evidence presentation",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-write/SKILL.md",
+      "sha256": "132f1e29a0068eb9078ded88180898f0c1864beec979e37cf46d2a164c9a80c9",
+      "cases": [
+        "method",
+        "theory",
+        "mixed",
+        "benchmark"
+      ],
+      "use": "bounded prose/captions, theorem status, source and display fidelity",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-implement/SKILL.md",
+      "sha256": "7406100c82b105cd55de08c15a370b18d8511b834e32544c4b967e85641f3a4c",
+      "cases": [
+        "benchmark"
+      ],
+      "use": "execute minimal renderer and verify scientific interfaces and artifacts",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-navigate/references/workflow-contract.md",
+      "sha256": "f7384c892b6fc5df2216919a6e747b4ca4d3ec024c26395a6b18f12d15547d7e",
+      "cases": [
+        "method",
+        "theory",
+        "mixed",
+        "benchmark"
+      ],
+      "use": "scope, evidence state, bounded handoff, no full-paper escalation",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-navigate/references/domains/index.md",
+      "sha256": "5d96dd8966c3c8674744507e2fd60e97901bc23ada66883b222bc9d05600001f",
+      "cases": [
+        "method",
+        "benchmark"
+      ],
+      "use": "select only clearly relevant domain guidance",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-navigate/references/model-routing.md",
+      "sha256": "ca0a3eb880f0fe6f2650d635a4d59300a26d0515fe5381906246e9c8b3a1679d",
+      "cases": [
+        "method",
+        "theory",
+        "mixed",
+        "benchmark"
+      ],
+      "use": "record that all delegation routes are skipped under the explicit no-agents/no-external-calls restriction",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-navigate/references/reuse-and-simplification.md",
+      "sha256": "2f1d66459a1a36e5805bc8911ceb2926e1a56e16d02cc0eab44e34ae84808ba8",
+      "cases": [
+        "method",
+        "theory",
+        "benchmark"
+      ],
+      "use": "established caching; known descent result; unchanged supplied renderer",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-navigate/references/evidence-ledger.md",
+      "sha256": "b2cd8bbd2f3e2ce8cc950522aa14f8f62fb3b26bd3328b05d8935feaced418d7",
+      "cases": [
+        "method",
+        "theory",
+        "mixed",
+        "benchmark"
+      ],
+      "use": "claim locators, conditions, evidence/proof status and gaps",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-analyze/references/evidence-presentation.md",
+      "sha256": "5d0422dbfdec6cde0d5a9bfb784338f350b085a4bd412c32081b8c8e2c4d10da",
+      "cases": [
+        "method",
+        "mixed",
+        "benchmark"
+      ],
+      "use": "question-to-display plan, denominators, mixed outcomes and conditional populations",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-write/references/paper-presentation.md",
+      "sha256": "678be03858fdb14f859dd99ea29407cf0b45ca7287eba5617170ba47f47f554e",
+      "cases": [
+        "method",
+        "theory",
+        "mixed",
+        "benchmark"
+      ],
+      "use": "applicable argument spines and bounded prose/display guidance; no corpus records opened",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-navigate/references/stage-map.md",
+      "sha256": "0d0d5c440e4bc1353f9c1abf6c569abf2503a0aea574b957edf2def1345984cc",
+      "cases": [
+        "benchmark"
+      ],
+      "use": "keep implementation scoped to runnable evidence generation",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-write/references/argument-and-figure-contract.md",
+      "sha256": "684e114b733898ddd0a57298df90feb3b2c3ffd1a9748ec6336dffae2c745d37",
+      "cases": [
+        "method",
+        "theory",
+        "mixed",
+        "benchmark"
+      ],
+      "use": "stable claim/display IDs and distinction of schematic, specification and rendered plot",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-implement/scripts/render_evidence.py",
+      "sha256": "c50a185db880d15c0835527964598796f4a2df17f339f4c2ccbec0102191fad7",
+      "cases": [
+        "benchmark"
+      ],
+      "use": "read, copy unchanged, and actually execute",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-navigate/references/domains/agent.md",
+      "sha256": "f429610c87f433e296672a5889c62e5edb0c472f11d09ef0a4ea092fd77bc1d7",
+      "cases": [
+        "benchmark"
+      ],
+      "use": "all-attempt counts, conditional latency, no inferred trajectories or failure causes",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-navigate/references/domains/llm.md",
+      "sha256": "ab879f05f917218a41a240b8056fb510dd4882087ccad6cfd9bf469e7bb614ec",
+      "cases": [
+        "method"
+      ],
+      "use": "matched inference conditions, fixed-set and seed dependence; missing model details remain missing",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    },
+    {
+      "path": "stage/skills/research-review/references/submission-leakage.md",
+      "sha256": "9250cafc42bf8e19064766b5634d13b77b18e058bbec12c8dbe9ccdafa3844cc",
+      "cases": [
+        "benchmark"
+      ],
+      "use": "bounded inspection of exact output text, metadata, and visible figure/table surfaces",
+      "extent": "complete file content inspected; batched display truncation recovered where needed"
+    }
+  ],
+  "case_coverage": {
+    "method": {
+      "skills": [
+        "research-analyze",
+        "research-write"
+      ],
+      "status": "completed",
+      "artifact": "method.md",
+      "deliverables": [
+        "concise evidence presentation plan",
+        "120-word abstract",
+        "one main figure specification and caption"
+      ],
+      "actual_calculation": "internal/calculations.json",
+      "figure": "specified, not rendered",
+      "limits": [
+        "no equivalence margin",
+        "one fixed set and three paired seeds",
+        "no external sources or invented mechanism"
+      ]
+    },
+    "theory": {
+      "skills": [
+        "research-write"
+      ],
+      "status": "completed",
+      "artifact": "theory.md",
+      "deliverables": [
+        "theorem-focused paragraph with substitution",
+        "explicit proof-status note",
+        "explanatory symbolic figure specification and caption"
+      ],
+      "proof_status": "Textual substitution inspected in this drafting pass; no independent reviewer or formal proof checker",
+      "figure": "conceptual specification, not rendered",
+      "limits": [
+        "known consequence per fixture; bibliographic source unspecified",
+        "controller validation absent",
+        "three quadratic examples mentioned but their functions/results not provided or rerun"
+      ]
+    },
+    "mixed": {
+      "skills": [
+        "research-analyze",
+        "research-write"
+      ],
+      "status": "completed",
+      "artifact": "mixed.md",
+      "deliverables": [
+        "computed all-task explanation and claim map",
+        "focused results subsection",
+        "figure/caption specification",
+        "focused additional-work criteria"
+      ],
+      "actual_calculation": "internal/calculations.json",
+      "figure": "specified, not rendered",
+      "limits": [
+        "eight tasks evaluated once, not seeds",
+        "posthoc subgroup retains its selection history",
+        "extra exploratory crash retained, not imputed",
+        "additional work proposed only"
+      ]
+    },
+    "benchmark": {
+      "skills": [
+        "research-implement",
+        "research-write"
+      ],
+      "status": "completed",
+      "artifact": "benchmark.md",
+      "bundle": "benchmark-assets",
+      "actual_run": "internal/run-record.json",
+      "validation": "internal/validation.json",
+      "visual_inspection": "internal/visual-inspection.json",
+      "primary_renders": 1,
+      "reproduction_renders": 1,
+      "live_agent_runs": 0,
+      "output_hash_reproduction": "all eight renderer outputs match",
+      "limits": [
+        "Target-width previews are downsampled PNGs, not physical print checks; actual display DPI is not independently measured",
+        "PDF pages were inspected as structure/text/metadata, not rasterized or visually opened",
+        "SVG was inspected as XML/text, not separately displayed",
+        "table.tex was generated but not compiled",
+        "Method, theory and mixed figures are specifications only"
+      ]
+    }
+  },
+  "operations": [
+    {
+      "id": "read-inputs-and-skills",
+      "status": "completed",
+      "operation": "Read only the one allowed task input and the named skill files/directly linked applicable guidance and renderer",
+      "sources": [
+        "stage/tests/paper-presentation-cases.json",
+        "stage/skills/research-analyze/SKILL.md",
+        "stage/skills/research-write/SKILL.md",
+        "stage/skills/research-implement/SKILL.md",
+        "stage/skills/research-navigate/references/workflow-contract.md",
+        "stage/skills/research-navigate/references/domains/index.md",
+        "stage/skills/research-navigate/references/model-routing.md",
+        "stage/skills/research-navigate/references/reuse-and-simplification.md",
+        "stage/skills/research-navigate/references/evidence-ledger.md",
+        "stage/skills/research-analyze/references/evidence-presentation.md",
+        "stage/skills/research-write/references/paper-presentation.md",
+        "stage/skills/research-navigate/references/stage-map.md",
+        "stage/skills/research-write/references/argument-and-figure-contract.md",
+        "stage/skills/research-implement/scripts/render_evidence.py",
+        "stage/skills/research-navigate/references/domains/agent.md",
+        "stage/skills/research-navigate/references/domains/llm.md",
+        "stage/skills/research-review/references/submission-leakage.md"
+      ],
+      "tool_issue": "internal/reference-read-issue.json"
+    },
+    {
+      "id": "record-environment",
+      "status": "completed",
+      "operation": "Inspect installed Python and dependency versions without installing packages",
+      "output": "internal/environment.json"
+    },
+    {
+      "id": "compute-and-write-cases",
+      "status": "completed",
+      "command": [
+        "<validation-workspace>\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "<validation-workspace>\\behavior-after\\internal\\build_cases.py"
+      ],
+      "exit_code": 0,
+      "outputs": [
+        "method.md",
+        "theory.md",
+        "mixed.md",
+        "internal/calculations.json",
+        "internal/build-record.json"
+      ],
+      "checks": "120-word abstract and exact paired/suite arithmetic; theory is a textual substitution, not an independently checked proof"
+    },
+    {
+      "id": "prepare-benchmark",
+      "status": "completed",
+      "operation": "Copy supplied renderer, write narrow validation wrapper, whitelist public fixture fields, and record explicit dependencies",
+      "source_renderer_unchanged": true
+    },
+    {
+      "id": "execute-benchmark-renderer",
+      "status": "completed",
+      "command": [
+        "<validation-workspace>\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "<validation-workspace>\\behavior-after\\benchmark-assets\\run_benchmark.py",
+        "--output",
+        "<validation-workspace>\\behavior-after\\benchmark-assets\\outputs",
+        "--reproduce-to",
+        "<validation-workspace>\\behavior-after\\internal\\benchmark-reproduction"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.9819734000011522,
+      "record": "internal/run-record.json",
+      "stdout": "internal/benchmark.stdout.json",
+      "stderr": "internal/benchmark.stderr.txt",
+      "primary_renders": 1,
+      "reproduction_renders": 1,
+      "research_experiments": 0,
+      "checks": {
+        "fixture_csv_agreement": true,
+        "attempt_accounting": true,
+        "table_known_answers": true,
+        "missing_zero_success_latency_stays_missing": true,
+        "latency_with_zero_successes_rejected": true,
+        "negative_attempt_count_rejected": true
+      },
+      "reproduction": {
+        "performed": true,
+        "kind": "rendering only; no research experiment",
+        "render_status": "rendered",
+        "scientific_rows_identical": true,
+        "output_hash_matches": {
+          "figure.pdf": true,
+          "figure.svg": true,
+          "figure.png": true,
+          "table.csv": true,
+          "table.tex": true,
+          "table.pdf": true,
+          "table.png": true,
+          "provenance.json": true
+        }
+      }
+    },
+    {
+      "id": "inspect-benchmark-images",
+      "status": "completed",
+      "operation": "View four actual local PNG surfaces, including target-width previews",
+      "record": "internal/visual-inspection.json"
+    },
+    {
+      "id": "bounded-export-check-first-attempt",
+      "status": "failed-then-resolved",
+      "exit_code": 1,
+      "record": "internal/validation-tool-issue.json",
+      "preserved_stderr": "internal/validation-attempt-1.stderr.txt",
+      "partial_outputs_preserved": true
+    },
+    {
+      "id": "bounded-export-check-after-scoped-repair",
+      "status": "completed",
+      "command": [
+        "<validation-workspace>\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "<validation-workspace>\\behavior-after\\internal\\verify_outputs.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.3101146000008157,
+      "record": "internal/validation.json",
+      "run_record": "internal/validation-run-record.json",
+      "scope": "same delivered artifacts after a documented detector false positive; no experiment or figure rerun",
+      "checked_surfaces": 23
+    },
+    {
+      "id": "finish-delivery-receipt",
+      "status": "completed",
+      "operation": "Write benchmark.md, inspection records and this hash inventory; verify inventory after serialization",
+      "command": [
+        "<validation-workspace>\\.venv\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "<validation-workspace>\\behavior-after\\internal\\finish_receipt.py"
+      ]
+    }
+  ],
+  "restrictions_observed": {
+    "network_calls": 0,
+    "other_agents": 0,
+    "external_model_calls": 0,
+    "package_installs": 0,
+    "live_research_experiments": 0,
+    "source_skill_modifications": 0,
+    "full_paper_goals_created": 0,
+    "venue_submissions": 0,
+    "rubric_reads": 0,
+    "baseline_or_behavior_before_reads": 0,
+    "corpus_reading_record_reads": 0,
+    "evaluation_report_reads": 0,
+    "other_agents_output_reads": 0,
+    "new_task_or_per_seed_observations_invented": 0,
+    "write_boundary": "All task-controlled outputs, runtime cache and temporary directories are under behavior-after"
+  },
+  "delegation": {
+    "status": "not performed",
+    "reason": "Explicit user prohibition on other agents and external model calls; no free/paid endpoint route used",
+    "requested_external_model": null,
+    "actual_external_model": null,
+    "independent_review": "not performed or claimed"
+  },
+  "unopened_optional_or_out_of_scope_references": [
+    {
+      "reference": "paper-style-study/index.md and corpus reading records",
+      "reason": "User forbids corpus records; presentation guidance used without opening study records"
+    },
+    {
+      "reference": "model-routing.json, live-validation.md, account/evaluation snapshots",
+      "reason": "No model dispatch or network permitted; no account coverage or authority inferred"
+    },
+    {
+      "reference": "contribution-audit.md, research-focus/SKILL.md, goal-execution.md and venue-review materials",
+      "reason": "Four bounded tasks; no paper-wide improvement, ongoing-project pivot, full-paper Goal or venue review"
+    },
+    {
+      "reference": "research-review/scripts/check_submission.py",
+      "reason": "No full submission milestone; scoped local text/metadata/image checks recorded instead"
+    }
+  ],
+  "tool_issues": [
+    {
+      "issue": "Reference read display truncation",
+      "status": "resolved by bounded rereads",
+      "record": "internal/reference-read-issue.json"
+    },
+    {
+      "issue": "Path-detector false positive on mathematical notation",
+      "status": "resolved with a narrow exception and one affected check rerun",
+      "record": "internal/validation-tool-issue.json",
+      "failed_output_preserved": true
+    }
+  ],
+  "export_boundary": {
+    "portable_assets": "benchmark-assets/ only",
+    "private_records": "internal/ and execution-coverage.json; do not include with the public example",
+    "known_private_note_exported": false,
+    "provenance_paths": "relative within the portable package",
+    "scientific_use_of_agents_preserved": true,
+    "inspection_scope": "23 bounded text/metadata surfaces plus four directly viewed PNG surfaces; no universal submission-readiness claim"
+  },
+  "limits": [
+    "All evidence is supplied synthetic material, never a new research result",
+    "No missing observations, source identities, author details or authority inferred",
+    "No independent proof or scientific review",
+    "Method, theory and mixed graphics are unrendered specifications",
+    "PDF structure/text/metadata inspected but pages not rasterized; SVG not independently visually rendered; LaTeX not compiled",
+    "Target-width PNG previews do not establish physical print quality",
+    "One detector failure and one reference truncation are preserved rather than hidden",
+    "Dependency documentation/provenance corrected after rendering without scientific changes",
+    "Runtime cache and transient renderer directories are excluded from the scientific-output hash manifest",
+    "This receipt excludes its own hash to avoid self-reference; execution-coverage.sha256 seals its final bytes"
+  ],
+  "output_hash_algorithm": "SHA-256",
+  "output_files": [
+    {
+      "path": "method.md",
+      "bytes": 6409,
+      "sha256": "7f6a1009550a54ec11bc2c252eda28622d6b5d14e935c06303efe931f4dc1bd5",
+      "role": "requested-case-artifact"
+    },
+    {
+      "path": "theory.md",
+      "bytes": 4820,
+      "sha256": "a7f4052502c5b7cb22f629fa67ddb9b4de0e7ef9365afa605e4c11ddc8eab5be",
+      "role": "requested-case-artifact"
+    },
+    {
+      "path": "mixed.md",
+      "bytes": 7254,
+      "sha256": "25a0c640d7ebed8c9be3ea0dc361946ee3d1f0fa936cd5d38cb32610e10b3001",
+      "role": "requested-case-artifact"
+    },
+    {
+      "path": "benchmark.md",
+      "bytes": 6024,
+      "sha256": "7a3bf2a335285ca4ac81338fb2ed74c3a6da9b217c10b3f9e532696cf4950ba2",
+      "role": "requested-case-artifact"
+    },
+    {
+      "path": "benchmark-assets/fixture.json",
+      "bytes": 617,
+      "sha256": "d725237792b85ff5124399bdc671678cfd60a07ba23aed946c8a85b32ee0f152",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/aggregate.csv",
+      "bytes": 102,
+      "sha256": "08547fe9ec6d7095ffc854d52ccea1dd2634a8e0f99ee33a1d9832a162e03e73",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/evidence-spec.json",
+      "bytes": 225,
+      "sha256": "f941db70de8057ec4b5140ce1e43ae0e73f3b713db3cb6601c422bbbb649b2ca",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/render_evidence.py",
+      "bytes": 18151,
+      "sha256": "c50a185db880d15c0835527964598796f4a2df17f339f4c2ccbec0102191fad7",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/run_benchmark.py",
+      "bytes": 8081,
+      "sha256": "ac002d20f4b82b60da9d394ed7694564474d61774dd939ef6dbc1aac625633c3",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/requirements.txt",
+      "bytes": 33,
+      "sha256": "1ae953faa1bdad5e85cd5d34ffe6288a4aeae9911f920643fee13a380be22d75",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/validation-requirements.txt",
+      "bytes": 14,
+      "sha256": "f4af0bec6e0e60e9e0beabf0892914a1babe5daeca0cbb23f3cec778da8cb4c5",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/README.md",
+      "bytes": 3511,
+      "sha256": "2c5792d91db29b48912001deb1a8c7ee5e43906933dc85a1170b676086808b3c",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/caption.md",
+      "bytes": 632,
+      "sha256": "ad0eb4c1b54768943abb321cbbe8dac7808e3f735311a44d61ee830a278b7cd0",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/outputs/figure.pdf",
+      "bytes": 12776,
+      "sha256": "fbdeebfe57a80682f3bf8210d81dd769be8ead06d8fb385bce2ff9615e8a13bf",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/outputs/figure.svg",
+      "bytes": 16960,
+      "sha256": "7e3fa236a29b837e42278a5b38aad94e0684b9e481777487d5215f2ce6c4cdd4",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/outputs/figure.png",
+      "bytes": 61448,
+      "sha256": "4e1e4f0f14e139205a91e70b9b282e35d165be154e437658165479555ed11cca",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/outputs/table.csv",
+      "bytes": 134,
+      "sha256": "64cf55fc47e0f027a8f49bad6f45124aa6e1eadeaa8dd8369ab5d68be9b4a1ea",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/outputs/table.tex",
+      "bytes": 278,
+      "sha256": "0d11f78be2730ae946811b871e0a35249dd9d9bdca742d1a38d7f2ac625bbad3",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/outputs/table.pdf",
+      "bytes": 13000,
+      "sha256": "871d765958049db0f66f99a1a52a673f411a7d838c9e3aa2304a9c1a961cc2a9",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/outputs/table.png",
+      "bytes": 32615,
+      "sha256": "c84dccea4e7704f5c1bd21a4212f19522b94ab7359ee3b10de48c8cece18e3ad",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/outputs/provenance.json",
+      "bytes": 2381,
+      "sha256": "a259a56b8d9cae8028c54a411f5b969e8c4457b88d39712b4cfb49831e545fe8",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "benchmark-assets/outputs/bundle-provenance.json",
+      "bytes": 4878,
+      "sha256": "8dafac196c182573ee917b1fe097a2d3616ca358fe5ec29fcaa84ea1d13fac38",
+      "role": "portable-benchmark-package"
+    },
+    {
+      "path": "internal/environment.json",
+      "bytes": 677,
+      "sha256": "a11fc4490cf01c8724c0576075d3fe2f6ff90f3d2fb8a74dee021ed2f3b923e1",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/build_cases.py",
+      "bytes": 24229,
+      "sha256": "ddf8595fa783a88a5e3e27e536ed5d9218fb20072726a2fd099e79c340d1b62c",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/calculations.json",
+      "bytes": 2020,
+      "sha256": "d0ddbe67e1496cbdc0746e9fceae3164428391068ca4298d2b74d6ff300c21ce",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/build-record.json",
+      "bytes": 425,
+      "sha256": "a733766e10f3b5c0937e9e257fede7fc57b2263730e5ff65094026f9a14cfcf9",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/execute_benchmark.py",
+      "bytes": 2765,
+      "sha256": "cf9ebae8983edba78661c15f8faa213a2d86d17004fd3e705868693fbfa6d4dc",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/benchmark.stdout.json",
+      "bytes": 1279,
+      "sha256": "1bce5d63c1a204d716146cc0523817bdf047ff435130074dce7ec42ecd19ef7a",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/benchmark.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/run-record.json",
+      "bytes": 1814,
+      "sha256": "6583f89a6749e01d8b789b82777279e4afb6276d4f4a4ed2d65301b327f93863",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/verify_outputs.py",
+      "bytes": 10465,
+      "sha256": "61927526f65102075c04709ffdd2fcab4f1258cd125cad91ba11b7d13435b723",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/verify_outputs-at-first-failure.py",
+      "bytes": 10102,
+      "sha256": "25ba26f26678e1386dd15bb9f6af17d24859cc7f68f3740d9d2547921a0f47f4",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/validation-attempt-1.stderr.txt",
+      "bytes": 507,
+      "sha256": "b6f1dbf80f325cd252d4c6101c008fbf74aadfb0586a4fc2f22e3054d9cff86e",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/validation-attempt-1.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/validation-tool-issue.json",
+      "bytes": 1328,
+      "sha256": "9086528cd3ed975893ae02c75f14b231adacb0a0863332a57738775d33606dd5",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/validation-attempt-2.stdout.json",
+      "bytes": 609,
+      "sha256": "baeca2711b55ce45831830454ef8a75d7811b5737c0caa95a4dabe8caa68c6a2",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/validation-attempt-2.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/validation-run-record.json",
+      "bytes": 689,
+      "sha256": "abc33ea0008134f382c15cf4de744b7fc8cad5aaf1c54ddee14389d878576ee2",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/validation.json",
+      "bytes": 8723,
+      "sha256": "ab157ba0d0f0633ee677dcdbd13add7753334cd02351c3af0d069460680c531d",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/figure-target-96dpi.png",
+      "bytes": 24398,
+      "sha256": "10e5ae90c3483701e27413e433edae5403d6fd791ee553bc25a96e1bbf5f5898",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/table-target-96dpi.png",
+      "bytes": 14232,
+      "sha256": "676f6fa9c4fbeef32b8bad556598697b1c4d175ddf337b56f5207d0610d0b4c3",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/visual-inspection.json",
+      "bytes": 2130,
+      "sha256": "7715d739685d0180b7ed7e490d212dd452ece9e57d25f94fe15fc5af08f654bb",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/reference-read-issue.json",
+      "bytes": 511,
+      "sha256": "a8ef1941cae2024e60a81ebfb9cbf5d553f5581273ea79d5cc9c971d8b070e0e",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/finish_receipt.py",
+      "bytes": 24119,
+      "sha256": "90549970be4698c08e33190749bc7661ff0e8530d7a286aca7f789be38a9f64a",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/benchmark-reproduction/figure.pdf",
+      "bytes": 12776,
+      "sha256": "fbdeebfe57a80682f3bf8210d81dd769be8ead06d8fb385bce2ff9615e8a13bf",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/benchmark-reproduction/figure.svg",
+      "bytes": 16960,
+      "sha256": "7e3fa236a29b837e42278a5b38aad94e0684b9e481777487d5215f2ce6c4cdd4",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/benchmark-reproduction/figure.png",
+      "bytes": 61448,
+      "sha256": "4e1e4f0f14e139205a91e70b9b282e35d165be154e437658165479555ed11cca",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/benchmark-reproduction/table.csv",
+      "bytes": 134,
+      "sha256": "64cf55fc47e0f027a8f49bad6f45124aa6e1eadeaa8dd8369ab5d68be9b4a1ea",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/benchmark-reproduction/table.tex",
+      "bytes": 278,
+      "sha256": "0d11f78be2730ae946811b871e0a35249dd9d9bdca742d1a38d7f2ac625bbad3",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/benchmark-reproduction/table.pdf",
+      "bytes": 13000,
+      "sha256": "871d765958049db0f66f99a1a52a673f411a7d838c9e3aa2304a9c1a961cc2a9",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/benchmark-reproduction/table.png",
+      "bytes": 32615,
+      "sha256": "c84dccea4e7704f5c1bd21a4212f19522b94ab7359ee3b10de48c8cece18e3ad",
+      "role": "private-execution-record"
+    },
+    {
+      "path": "internal/benchmark-reproduction/provenance.json",
+      "bytes": 2381,
+      "sha256": "a259a56b8d9cae8028c54a411f5b969e8c4457b88d39712b4cfb49831e545fe8",
+      "role": "private-execution-record"
+    }
+  ],
+  "stopping_condition": "All four requested artifacts and actual runnable benchmark outputs delivered; stop without additional reviews or experiments",
+  "public_export": {
+    "source_receipt_sha256": "8d1280ec3dc8e1c131930db67a2f8c1c27acece7b7bae1e0c9fef0bb3e04820b",
+    "operation": "Replace local machine prefixes only; original kept privately.",
+    "later_parent_coverage": "parent-inspection.json",
+    "hash_scope": "Executor hashes describe original files, not sanitized copies.",
+    "private_records": "internal/ paths refer to private retained execution records."
+  }
+}

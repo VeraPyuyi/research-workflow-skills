@@ -1,0 +1,3626 @@
+[
+  {
+    "id": "cvpr-2026-4",
+    "title": "AVGGT: Rethinking Global Attention for Accelerating VGGT",
+    "role": "selected",
+    "identity": {
+      "title_verified": "First-page text and viewed overview agree with manifest and registry.",
+      "pdf_sha256": "717a2956e9119b953cab4caa17f66e4ee7e5b4732773eda85bb128882e58dd8b",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: conclusion ends p8; acknowledgments continue p9 before references. Entire main-text.txt pp1-9 read."
+    },
+    "main_question": "Which global-attention layers establish multi-view correspondence, and can their cost be reduced while retaining reconstruction quality?",
+    "argument_sequence": [
+      "pp1-2: efficiency problem becomes two explicit mechanism/design questions.",
+      "pp3-4, Fig2: early/middle/late attention diagnostics motivate alignment interpretation.",
+      "pp5-6: frame conversion and sparse K/V implement that interpretation.",
+      "pp6-8, Tables1-6: sparse/dense comparisons, runtime and layer/subsampling ablations return to both questions."
+    ],
+    "language_moves": "Question-led introduction, stage-specific subheads, and hypothesis-to-ablation transitions aid navigation. 'Partially supports' on p4 is more calibrated than later 'confirms' and broad no-loss wording.",
+    "visuals": [
+      {
+        "locator": "PDF p4 Fig2",
+        "purpose": "Compare attention regimes by layer.",
+        "encoding": "Aligned photograph rows, query-key arrows, heatmaps and zooms; separate numeric scales.",
+        "caption_body_roles": "Caption defines top-50 selection and head averaging; body interprets alignment.",
+        "readability_weakness": "Layer labels are clear; crowded arrows and differing heatmap scales require care."
+      },
+      {
+        "locator": "PDF p8 Tables4-6",
+        "purpose": "Expose density-dependent efficiency and ablations.",
+        "encoding": "Backbone blocks, metric arrows, seconds/FLOPs, explicit OOM cells.",
+        "caption_body_roles": "Captions specify 333/800-frame conditions; body explains redundancy.",
+        "readability_weakness": "Table4 is exceptionally dense; Table6 is readable and visibly retains losses."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer the diagnostic-to-design chain and paired cost tables when regimes are comparable. Sparse AVGGT(9) AUC@5 falls from 63.176 to 53.257 (Table6); do not transfer unconditional accuracy preservation or treat an ablation as mechanism identification.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "detail_image_pages_viewed": [
+        4,
+        8
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Body pp1-8; p9 is acknowledgments/references boundary included in prepared main file.",
+        "Referenced supplement analyses were not needed for these presentation observations and were not inspected.",
+        "Visual claims limited to overview and detail pp4,8; no proof or experimental reproduction."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp2-4; pp7-8 Sec5.4",
+        "reason": "Two questions motivate layer conversion/subsampling and recur in targeted ablations; causal identification remains limited."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "pp4-6 Sec3.2-4.3",
+        "reason": "Alignment intuition and complexity expressions are not a formal guarantee or identification theorem."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "not-applicable",
+        "locator": "p6 Sec5.1",
+        "reason": "Uses established pose/map benchmarks; does not develop or validate a capability construct."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "pp7-8 Tables1-5",
+        "reason": "Frame counts, baseline blocks, metric directions, time/FLOPs and OOM expose important conditions; no variability supplied."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "p4 Fig2 and Sec3.1",
+        "reason": "Graphic shows layer contrasts, caption decodes selections, body advances a bounded interpretation."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "pp6-8 Sec5.2-5.4; Table6",
+        "reason": "Sparse degradation and competing dense winners are retained, but blanket no-loss/near-original language understates some losses."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "fits",
+        "locator": "p6 setup; p8 Tables4-5",
+        "reason": "Performance and measured seconds/FLOPs share rows across frame-density regimes, including OOM outcomes."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "qualified",
+        "locator": "p4 Fig2; p8 Tables4,6",
+        "reason": "Scales and directions are visible, but tiny dense cells and broad text versus sparse losses remain presentation weaknesses."
+      }
+    ],
+    "source_pdf_sha256": "717a2956e9119b953cab4caa17f66e4ee7e5b4732773eda85bb128882e58dd8b",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (Highlight)",
+    "split": "holdout"
+  },
+  {
+    "id": "cvpr-2026-6",
+    "title": "EE-RL: Vision Language Guided Reinforcement Learning with Explorer and Expert model for End-to-End Autonomous Driving",
+    "role": "control",
+    "identity": {
+      "title_verified": "First-page main text and overview match manifest/registry.",
+      "pdf_sha256": "7b6b4339b462379e00fb18e44d0f335f8bea51deab69bd2e4381a2c0365f3869",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: conclusion p8; acknowledgments/references p9. Complete main-text.txt pp1-9 read."
+    },
+    "main_question": "Can VLM expert experience improve RL driving in infrequent critical situations without making expert inference the bottleneck?",
+    "argument_sequence": [
+      "pp1-2: sparse-critical failures motivate explorer/expert contributions.",
+      "pp3-5: attention, StateHash, fine-tuning and dual-buffer training implement the proposed response.",
+      "pp5-7: town/route/event comparisons separate generalization from specialized driving outcomes.",
+      "pp7-8: buffer-ratio curves, experience throughput and component removals probe design choices; conclusion retains sim-to-real caveat."
+    ],
+    "language_moves": "Component-oriented headings and task-specific result paragraphs make the chain traceable. Explanations often move directly from aggregate gains to optimal-policy or reliability claims; the final simulation caveat is narrower and more defensible.",
+    "visuals": [
+      {
+        "locator": "PDF p3 Figs2-3",
+        "purpose": "Explain expert/explorer data flow and attention architecture.",
+        "encoding": "Colored regions and blue/red directional arrows distinguish responsibilities.",
+        "caption_body_roles": "Fig2 caption merely names the overview; legend and body do most decoding. Fig3 caption assigns feature-processing roles.",
+        "readability_weakness": "Overview flow is legible; small tensor/layer labels in Fig3 are crowded."
+      },
+      {
+        "locator": "PDF p7 Fig6 and Table5",
+        "purpose": "Show sampling-ratio tradeoff and event failures.",
+        "encoding": "Duration curves, timeout region and annotated minima; event-by-model cells.",
+        "caption_body_roles": "Subcaptions identify optima; body defines stopping criteria and 50-route evaluation.",
+        "readability_weakness": "Shaded bands lack a local definition; conclusion's zero-red-light wording omits DDPG's 0.01 cell."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer explicit event criteria and failure regions to simulator studies. Do not read zero observed events as universal safety or experience counts per training step as measured end-to-end speedup.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "detail_image_pages_viewed": [
+        3,
+        7
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Body ends p8; p9 boundary acknowledgments/references read.",
+        "No supplements or experimental reproduction; visual inspection restricted to stated pages and overview.",
+        "Safety language assessed as presentation, not real-world validation."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp2-5; pp7-8 Sec4.3-4.5",
+        "reason": "Sparse-event learning and inference delay motivate mechanisms and return as ratio/throughput/component probes."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "pp3-5 Eqs1-14",
+        "reason": "Implementation equations supply no formal guarantee to interpret."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "pp5-7 Sec4.1-4.3",
+        "reason": "Event definitions and stopping rules operationalize tasks, but arrive after rankings and do not validate broad safety/generalization constructs."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "pp5-7 Tables1-5",
+        "reason": "Sensors, towns and backbones are explicit; heterogeneous inputs and incomplete event cells still limit comparison."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "qualified",
+        "locator": "p3 Figs2-3; p7 Fig6",
+        "reason": "Flows/curves contribute useful relationships, but some captions name outcomes without decoding uncertainty or all conditions."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "p6 Sec4.2; p8 conclusion; p7 Table5",
+        "reason": "Higher collisions, Interfuser short-route wins and sim-to-real limits are acknowledged; generalized zero-event wording exceeds all variants."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "pp7-8 Figs6-7",
+        "reason": "Ratio versus duration exposes a cost tradeoff; experience throughput is not paired wall-clock performance under each acceleration variant."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "counterexample",
+        "locator": "p7 Fig6/Table5; p8 conclusion",
+        "reason": "Unspecified uncertainty shading and zero-red-light language inconsistent with a nonzero variant are concrete local defects."
+      }
+    ],
+    "source_pdf_sha256": "7b6b4339b462379e00fb18e44d0f335f8bea51deab69bd2e4381a2c0365f3869",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (Poster)",
+    "split": "holdout"
+  },
+  {
+    "id": "cvpr-2025-4",
+    "title": "Rethinking Vision-Language Model in Face Forensics: Multi-Modal Interpretable Forged Face Detector",
+    "role": "selected",
+    "identity": {
+      "title_verified": "Main-text first page and overview match registry/manifest.",
+      "pdf_sha256": "3b66436cdc7bf28c3c392edbacc4d5107da82b2549fa2d22dd66790106ae0180",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json confirms conclusion p8 and references p9; complete prepared main text pp1-9 read."
+    },
+    "main_question": "How can one detector supply both accurate forgery scores and useful natural-language explanations?",
+    "argument_sequence": [
+      "pp1-2: three shortcomings motivate prompt learning and a bridge adapter.",
+      "pp3-5: architecture, notation and staged training connect detection representations to language.",
+      "pp6-7: detection and explanation evaluations are separated.",
+      "p8: component ablations and prompt comparisons return to design rationale."
+    ],
+    "language_moves": "Repeated problem/component names and detection-versus-explanation subheads organize a complex pipeline. 'We believe' flags some interpretation, while trustworthy/convincing explanation language exceeds the measured text-similarity construct.",
+    "visuals": [
+      {
+        "locator": "PDF p3 Fig3",
+        "purpose": "Trace shared representations to classification and language outputs.",
+        "encoding": "Directed branches, token symbols and frozen/trainable icons.",
+        "caption_body_roles": "Caption maps symbols to sections; body defines representation/training equations.",
+        "readability_weakness": "Branch separation and icon legend are useful; small notation and crossing connectors demand attention."
+      },
+      {
+        "locator": "PDF p7 Figs5-6",
+        "purpose": "Contrast judgments, wording metrics and concrete explanations.",
+        "encoding": "Fine-tuning table, radar axes, attention thumbnails and aligned example-response boxes.",
+        "caption_body_roles": "Captions identify task/panels; body interprets token ablation and selected examples.",
+        "readability_weakness": "Radar ticks/legend are tiny and axes use different ranges; attention maps have no quantitative color scale."
+      }
+    ],
+    "transfer_conditions_counterexample": "Reuse separated evaluation axes and shared examples when a system has multiple outputs. Lexical agreement and visually plausible attention do not establish faithful explanations; the DFD loss to AUNet remains a useful exception.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "detail_image_pages_viewed": [
+        3,
+        7
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Main body pp1-8; references boundary p9 also read.",
+        "Supplementary evaluation/implementation details not inspected; no explanation-faithfulness or experiment certification.",
+        "Some extracted formula glyphs are malformed; viewed architecture resolves roles, not every equation."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp1-2; p7 Fig5; p8 Table4",
+        "reason": "Stated weaknesses motivate modules tested by targeted removals and prompt comparisons."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "pp3-5 Sec3",
+        "reason": "Model equations, not formal results or guarantees."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "p5 metrics; p7 Figs5-6",
+        "reason": "Judgment and explanation metrics are defined separately before results; textual similarity is not validated as faithfulness."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "p6 Tables2-3; p7 Fig5a",
+        "reason": "Dataset regimes, real/fake training access and fine-tuning indicators reveal conditions; borrowed results remain imperfectly matched."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "p3 Fig3",
+        "reason": "Branches encode relationships, caption decodes symbols, body details mechanisms and training."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "p6 inter-dataset discussion; p7 Sec4.3",
+        "reason": "DFD loss is explicit, but selected favorable examples do not delimit broad trustworthy-explanation wording."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "not-applicable",
+        "locator": "pp5-8",
+        "reason": "Efficiency adjectives occur, but no principal measured efficiency tradeoff is developed."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "qualified",
+        "locator": "p7 Figs5-6",
+        "reason": "Readable example alignment coexists with tiny radar text, heterogeneous scales and uncalibrated heatmaps."
+      }
+    ],
+    "source_pdf_sha256": "3b66436cdc7bf28c3c392edbacc4d5107da82b2549fa2d22dd66790106ae0180",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Oral (matched official oral event)",
+    "split": "holdout"
+  },
+  {
+    "id": "cvpr-2025-6",
+    "title": "ChatGarment: Garment Estimation, Generation and Editing via Large Language Models",
+    "role": "control",
+    "identity": {
+      "title_verified": "First-page text and overview match manifest/registry.",
+      "pdf_sha256": "533c914b4a53756dbdd5403fbbf8339e77477735433e796dc3694d0ecd1301ef",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: conclusion and final experiment p8; acknowledgments/references p9. Entire main-text.txt pp1-9 read."
+    },
+    "main_question": "Can multimodal dialogue produce editable, simulatable sewing patterns from images and language?",
+    "argument_sequence": [
+      "pp1-2: an everyday editing scenario motivates a unified representation.",
+      "pp3-5: richer/cleaner JSON, numeric projection and data construction establish the workflow.",
+      "pp5-8: reconstruction, editing and generation each receive benchmarks, baselines and results.",
+      "p8 conclusion: unintended edits bound precise control; further ablations are deferred."
+    ],
+    "language_moves": "Concrete user requests precede technical representation details. Task-specific benchmark/implementation/baseline/result units support navigation. Conclusion candidly identifies collateral edits despite confident qualitative captions.",
+    "visuals": [
+      {
+        "locator": "PDF p6 Fig5; Tables1-2",
+        "purpose": "Demonstrate dialogue modes and compare reconstruction.",
+        "encoding": "Three example workflows with input/output colors; pose-specific metric columns and failure rates.",
+        "caption_body_roles": "Caption explains JSON delimiters; body explains numeric projection and re-posing protocol.",
+        "readability_weakness": "Examples and tables are legible; distance units and handling of failed cases are not locally explicit."
+      },
+      {
+        "locator": "PDF p8 Figs7-8; Tables3-4",
+        "purpose": "Show requested edits and sketch transfer beside aggregate metrics.",
+        "encoding": "Matched source/prompt/model columns and sketch-pattern-garment triplets.",
+        "caption_body_roles": "Captions identify tasks; body interprets prompt following and states limits.",
+        "readability_weakness": "Prompt text is small and green; silhouettes permit comparisons but hide fine fit details."
+      }
+    ],
+    "transfer_conditions_counterexample": "Reuse user-example-to-representation exposition and task-separated evaluation. Manual editing-pair selection, only four loose Dress4D outfits, and CLIP-score proxies limit generalization. CloSe CD favors GarmentRecovery (2.39 versus 2.94), while F-score favors ChatGarment.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "detail_image_pages_viewed": [
+        6,
+        8
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Body pp1-8 and p9 boundary matter read.",
+        "Supplementary backbone/data ablations not inspected or claimed; main-text numeric-head comparisons suffice for bounded observations.",
+        "No manufacturing, simulation or dialogue-capability certification."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "qualified",
+        "locator": "pp3-5; p6 Tables1-2; p8 Sec4.4",
+        "reason": "Numerical prediction problem motivates projection and LLaVA* comparison; broader data/backbone evidence is deferred and uninspected."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "pp3-5 Sec3",
+        "reason": "Representation and loss definitions contain no formal guarantee."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "pp5-8 Sec4.1-4.3",
+        "reason": "Tasks and metrics are separated; manually selected editing data and CLIP proxy do not validate unrestricted dialogue capability."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "p6 Tables1-2; pp5,7 baseline descriptions",
+        "reason": "Pose blocks and failure rates clarify conditions; unequal preprocessing and missing local units/denominators remain."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "p6 Fig5; p8 Fig7",
+        "reason": "Graphics show input/output relationships, captions explain encoding, body links them to tasks and representations."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "fits",
+        "locator": "p6 CloSe discussion; p8 conclusion",
+        "reason": "Competitive tight-garment baseline and unintended collateral edits explicitly delimit the contribution."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "p3 GarmentCodeRC; p6 Tables1-2",
+        "reason": "Token reduction and stitching failures are reported, but no matched total time/quality comparison substantiates workflow efficiency."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "qualified",
+        "locator": "p6 Tables1-2; p8 Fig7",
+        "reason": "Directional labels and visible ties/losses help, while fine prompt text and missing distance units limit readability/interpretability."
+      }
+    ],
+    "source_pdf_sha256": "533c914b4a53756dbdd5403fbbf8339e77477735433e796dc3694d0ecd1301ef",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Poster",
+    "split": "holdout"
+  },
+  {
+    "id": "cvpr-2024-4",
+    "title": "Exploring the Transferability of Visual Prompting for Multimodal Large Language Models",
+    "role": "selected",
+    "identity": {
+      "title_verified": "First-page text and overview agree with registry/manifest.",
+      "pdf_sha256": "e2968afc8c913dc54eb57d45ebe2bf067075ea78c1072cfcf6f1c73eab234a6f",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: conclusion/acknowledgment p8; references p9. Full main-text.txt pp1-9 read."
+    },
+    "main_question": "Can one task-specific visual prompt improve unseen MLLMs without retraining each model?",
+    "argument_sequence": [
+      "pp1-2: model-specific adaptation cost motivates shared pixel-space parameters.",
+      "pp3-5: transfer failure and feature corruption motivate consistency and semantic losses.",
+      "pp6-7: task/source/target matrix, ensembling and component ablations test transfer.",
+      "p8: data scale, cross-dataset transfer and corruptions bound deployment claims; cost discussion is deferred."
+    ],
+    "language_moves": "A named failure mode ties diagnosis to two memorable mechanisms. Explicit model-transfer versus data-transfer distinctions help; categorical causal phrasing about feature corruption is stronger than the t-SNE diagnostic alone.",
+    "visuals": [
+      {
+        "locator": "PDF p3 Fig2",
+        "purpose": "Locate the two added objectives around standard prompting.",
+        "encoding": "Dashed stage boxes, frozen/trainable icons, reused example and colored task abbreviations.",
+        "caption_body_roles": "Caption states transfer purpose; legend decodes marks; body defines losses.",
+        "readability_weakness": "Stable symbols support tracing, though closely packed arrows/labels require full-page view."
+      },
+      {
+        "locator": "PDF p6 Table1",
+        "purpose": "Expose trained versus transferred model results across tasks.",
+        "encoding": "Six matched table panels, source blocks, starred training cells, average-delta column.",
+        "caption_body_roles": "Caption defines stars and AUC/accuracy distinction; body interprets aggregate improvements.",
+        "readability_weakness": "Dense vertical headers; average combines training and unseen models, so it is not a pure transfer statistic."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer source/target condition marking and explicit negative rows. Positive average gains do not mean every model improves: POPE VPGTrans with MiniGPT-trained TVP is 64.47 versus 58.60 baseline, but BLIVA is 72.67 versus 78.07. Retain architecture and prompt-width sensitivity.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "detail_image_pages_viewed": [
+        3,
+        6
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Body pp1-8; p9 references boundary read.",
+        "Appendix A/B/C referenced by main text is outside inspected main PDF content; no efficiency appendix claims adopted.",
+        "t-SNE/GradCAM interpretation not causally certified; no experiments reproduced."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp4-5 Sec3.2-3.3; p7 Table2",
+        "reason": "Feature corruption motivates losses and separate ablations return to both mechanisms."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "pp4-5 Eqs2-7",
+        "reason": "Optimization definitions supply no formal guarantee."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "p5 Sec4.1; p6 Table1",
+        "reason": "Task and metric distinctions are explicit, but broad reasoning/hallucination capabilities use narrow inherited benchmarks without construct validation."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "p6 Table1",
+        "reason": "Source blocks, training stars and metric-specific caption make key comparison conditions visible; uncertainty absent."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "p3 Fig2",
+        "reason": "Diagram encodes objective relations, legend decodes status, body explains failure-to-design linkage."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "p7 Sec4.2-4.4; p8 Table4",
+        "reason": "Weaker architecture transfer, excessive-width losses and dataset exceptions appear, but universal-improvement language overlooks individual losses."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "p7 Sec4.3; p8 Sec4.6",
+        "reason": "Ensemble overhead is acknowledged; detailed efficiency comparison is deferred and was not inspected."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "qualified",
+        "locator": "p6 Table1",
+        "reason": "Caption clarifies mixed metrics and stars, but compact cells and aggregate versus individual wording need care."
+      }
+    ],
+    "source_pdf_sha256": "e2968afc8c913dc54eb57d45ebe2bf067075ea78c1072cfcf6f1c73eab234a6f",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept: Poster (Highlight)",
+    "split": "holdout"
+  },
+  {
+    "id": "cvpr-2024-6",
+    "title": "Resource-Efficient Transformer Pruning for Finetuning of Large Models",
+    "role": "control",
+    "identity": {
+      "title_verified": "First-page extracted title matches registry/manifest; overview starts p3 and does not display title.",
+      "pdf_sha256": "515d9077a963266f0ec172153be6128c36796fc826a2aac16aa91cb04d5d819e",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: conclusion/acknowledgment p8; references p9. Entire main-text.txt pp1-9 read."
+    },
+    "main_question": "Can pruning during finetuning reduce peak GPU memory while retaining useful task performance?",
+    "argument_sequence": [
+      "pp1-2: pre/post-finetuning alternatives expose accuracy/resource tension.",
+      "pp3-5: CPU/GPU cycle, Taylor importance and Fisher-based masks implement selective updates.",
+      "pp6-7: accuracy-memory and pruning-ratio comparisons span vision and language tasks.",
+      "pp7-8: mask sweep and component/time breakdown explain resource behavior."
+    ],
+    "language_moves": "Problem/scope headings and numbered process steps orient the reader. Approximation language distinguishes importance estimates from exact loss changes. 'Competitive' performance is more accurate than treating the reported accuracy losses as equivalence.",
+    "visuals": [
+      {
+        "locator": "PDF p3 Fig1",
+        "purpose": "Contrast workflow bottlenecks and place operations on hardware.",
+        "encoding": "Parallel pre/post-pruning flows, enlarged cyclic RECAP block, blue CPU/green GPU.",
+        "caption_body_roles": "Caption decodes colors; body walks through numbered steps and motivations.",
+        "readability_weakness": "Readable stage grouping; small rotated labels and return arrows add tracing effort."
+      },
+      {
+        "locator": "PDF p8 Figs8-9",
+        "purpose": "Show mask sensitivity and memory/time composition.",
+        "encoding": "Pruning-ratio curves with chosen-mask lines; paired stacked MB/seconds bars.",
+        "caption_body_roles": "Captions explain bars/selection marks; body specifies batch one and ten epochs.",
+        "readability_weakness": "Two axes are labelled, but legends are tiny; body mistakenly assigns both 33% and 87.5% to r_f."
+      }
+    ],
+    "transfer_conditions_counterexample": "Reuse hardware-separated diagrams and cost decomposition for systems work. Memory savings need not imply faster execution: displayed RECAP total process time exceeds pre-finetuning pruning. High pruning loses accuracy, and segmentation activations make adapters more memory efficient.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "detail_image_pages_viewed": [
+        3,
+        8
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Body pp1-8 and reference boundary p9 read.",
+        "Appendix protocol/convergence analyses not inspected; conditions recorded only as stated in main text.",
+        "No mathematical approximation or measured-resource certification."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp2-5; pp7-8 Sec4.2/Fig8",
+        "reason": "Early saturation motivates masked updates and recurs in the masking sweep."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "pp4-5 Eqs1-4",
+        "reason": "Taylor/Fisher approximations motivate heuristics; no theorem or guarantee is claimed for practical convergence."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "not-applicable",
+        "locator": "pp5-7 Sec4",
+        "reason": "Inherited task benchmarks support method comparison, not new capability construct validation."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "pp6-7 Tables1-5; p8 Sec4.3",
+        "reason": "Backbone sizes, pruning ratios, units and metric exceptions are supplied; variability remains unreported."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "p3 Fig1; p8 Fig9",
+        "reason": "Hardware/workflow relationships, caption keys and mechanistic prose perform distinct jobs."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "fits",
+        "locator": "p6 activation discussion; p7 pruning/masking analysis",
+        "reason": "Adapter memory advantage and degradation at aggressive pruning/masking explicitly limit benefits."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "fits",
+        "locator": "p6 Fig3/Tables1-2; p8 Fig9",
+        "reason": "Accuracy-memory comparisons plus CPU/GPU time breakdown expose multiple costs, including unfavorable runtime."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "counterexample",
+        "locator": "p8 Sec4.3/Figs8-9",
+        "reason": "Visible duplicate r_f notation assigns different settings to one variable; compact plot labels further constrain reading."
+      }
+    ],
+    "source_pdf_sha256": "515d9077a963266f0ec172153be6128c36796fc826a2aac16aa91cb04d5d819e",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept: Poster",
+    "split": "holdout"
+  },
+  {
+    "id": "iclr-2026-4",
+    "title": "Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention",
+    "role": "selected",
+    "identity": {
+      "title_verified": "First-page extracted title (spaced small capitals normalized) matches registry/manifest.",
+      "pdf_sha256": "757975a6fd2acb96d0a9e1403a14154b018ee5031ab066abe7a5b7c177cfae12",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: discussion, limitations, future work end p10; acknowledgment/references p11. Entire main-text.txt pp1-11 read."
+    },
+    "main_question": "Which numerical operations turn a reproducible BF16 FlashAttention failure into unstable training, and can a targeted change remove it?",
+    "argument_sequence": [
+      "pp1-4: narrow failure case and fixed data order precede successive source-isolation interventions.",
+      "pp5-7: gradient decomposition connects similar low-rank terms with biased coefficient accumulation.",
+      "pp8-9: bit-level worked addition gives a concrete rounding pathway.",
+      "pp9-10: dynamic normalization and validation-loss curves return to the diagnosis; limitations restrict scale/format transfer."
+    ],
+    "language_moves": "Reverse causal roadmap, numbered claims and explanatory equations create a coherent investigation. Definitive causal wording is strong, but explicit fixed-run and GPT-2 scope plus concluding limitations prevent an unrestricted theorem reading.",
+    "visuals": [
+      {
+        "locator": "PDF p3 Figs1-2",
+        "purpose": "Map investigation order and establish the observed failure.",
+        "encoding": "Section-labelled boxes and causal arrows; paired validation-loss curves.",
+        "caption_body_roles": "Caption explains reverse tracing; body details interventions and reproduction setup.",
+        "readability_weakness": "Roadmap is legible; small loss-chart labels and conspicuous citation boxes compete for attention."
+      },
+      {
+        "locator": "PDF p9 Fig7 and worked-number boxes",
+        "purpose": "Show mitigation across configurations and decode rounding.",
+        "encoding": "Three log-axis red/blue curve panels; color-coded binary fields.",
+        "caption_body_roles": "Caption identifies optimizer/model panels; body states training horizons, exact-arithmetic equivalence and beta risks.",
+        "readability_weakness": "Axes announce logarithms but legends/ticks are small; GPT-2M endpoint is not labelled clearly."
+      }
+    ],
+    "transfer_conditions_counterexample": "Reuse isolation-to-derivation-to-minimal-intervention structure for debugging research. Worked arithmetic and selected stabilization runs are not guarantees across architectures; beta too small/large risks rounding back/underflow, and other instability sources remain.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "detail_image_pages_viewed": [
+        3,
+        9
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Main body pp1-10; p11 acknowledgment/references boundary read.",
+        "Appendix algorithms and fixed-shift experiments not inspected; notes concern their main-text explanation only.",
+        "No certification of bit arithmetic, proofs, kernel implementations or training runs."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp4-5 Sec3.2; pp9-10 Sec4",
+        "reason": "A sequence of isolating modifications identifies a numerical target and motivates a directly tested mitigation."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "qualified",
+        "locator": "pp5-9 Eqs1-5/Claims2-3; p10",
+        "reason": "Equations, low-rank approximation and worked binary case are interpreted; these are bounded mechanistic claims, not a general proof of stable training."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "not-applicable",
+        "locator": "pp3-4 Sec3.1",
+        "reason": "A reproducible numerical failure investigation, not a capability-ranking benchmark."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "p4 setup; p9 Fig7; p10 Sec4",
+        "reason": "Matched data order, optimizer/model labels, horizons and precision identify comparisons; curves give no multi-seed variability."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "p3 Fig1; p9 Fig7",
+        "reason": "Roadmap, captions and body have complementary argument/condition/explanation roles."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "fits",
+        "locator": "p10 Sec4 and limitations",
+        "reason": "Parameter risks, specific GPT-2 case, untested FP8/scales and other numerical failures explicitly restrict inference."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "pp1-2 efficiency motivation; pp9-10 Sec4",
+        "reason": "Stability is measured, but overhead of the numerical fix is not paired with throughput/memory results in inspected text."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "qualified",
+        "locator": "p3 Fig2; p9 Fig7",
+        "reason": "Log scales and configuration labels are explicit, while small ticks/legends and unclear final horizon in panel c impede exact reading."
+      }
+    ],
+    "source_pdf_sha256": "757975a6fd2acb96d0a9e1403a14154b018ee5031ab066abe7a5b7c177cfae12",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (Oral)",
+    "split": "holdout"
+  },
+  {
+    "id": "iclr-2026-6",
+    "title": "Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model",
+    "role": "control",
+    "identity": {
+      "title_verified": "First-page extracted title matches manifest/registry after small-cap spacing normalization.",
+      "pdf_sha256": "7039b7c0f3a96eadfd7f60cbd2ed914591d0a36f30702c31bd7cf7285365e9f3",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: related-work continuation, conclusion, acknowledgment and references share p10. Entire main-text.txt pp1-10 read."
+    },
+    "main_question": "Can supervision from a 3D foundation model improve VLA spatial behavior without depth-sensor inputs at inference?",
+    "argument_sequence": [
+      "pp1-4: depth-probe gap motivates intermediate representation alignment.",
+      "pp4-5: alignment loss and unchanged inference define the method.",
+      "pp5-8: simulation, teacher/layer ablations, iteration/data curves and feature views support claims.",
+      "pp8-10: small real-robot task suite, related work and conclusion extend the narrative."
+    ],
+    "language_moves": "Challenge/Observation/Method progression links a diagnostic to a remedy. Repeated 'proves' converts probes and successful trials into stronger spatial-comprehension conclusions than these displays alone warrant.",
+    "visuals": [
+      {
+        "locator": "PDF p4 Figs2-3",
+        "purpose": "Contrast spatial-input paradigms and demonstrate depth probing.",
+        "encoding": "Three parallel workflow columns; matched input/unaligned/aligned/GT images.",
+        "caption_body_roles": "Captions name paradigms and qualitative inference; body specifies frozen VLA and trained DPT head.",
+        "readability_weakness": "Aligned rows clarify differences, but depth images lack units or a common intensity scale."
+      },
+      {
+        "locator": "PDF p7 Table2/Fig5",
+        "purpose": "Expose component settings and efficiency claims.",
+        "encoding": "Colored condition columns; success versus iterations/data and t-SNE clusters.",
+        "caption_body_roles": "Caption specifies one H100 and panel axes; body interprets layer choice and savings.",
+        "readability_weakness": "Unequally spaced numerical budgets appear as equally spaced ticks; Fig5a's approximately 94% at 5K conflicts with Table2's 87.5%."
+      }
+    ],
+    "transfer_conditions_counterexample": "Reuse condition columns and aligned diagnostic examples. Iteration reduction is not elapsed-time speedup when a teacher adds training work. Teacher/layer gains are task-dependent, and broad spatial-comprehension claims exceed limited trials and qualitative probes.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        4,
+        7
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Body extends onto p10 before references; full prepared main file read.",
+        "Appendix D explanations and further protocols not inspected; no claim that full paper lacks additional limits.",
+        "Visual/claim assessment only; no robot safety, mechanism or compute certification."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp2-4 depth probe; pp6-7 Table2",
+        "reason": "Spatial-representation gap motivates alignment, then teacher/layer/PE comparisons test design choices."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "pp3-5 Eqs1-4",
+        "reason": "Loss definitions and empirical probes provide no formal guarantee."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "p5 setup; pp8-9 real tasks",
+        "reason": "Task suites and variation/trial counts operationalize behavior, but probe validity for general spatial reasoning is not established."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "p5 Table1; p7 Table2",
+        "reason": "Extra-sensor rows, hardware and teacher/layer/iteration/data columns expose differing conditions; no uncertainty supplied."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "qualified",
+        "locator": "p4 Figs2-3; p7 Fig5",
+        "reason": "Parallel diagrams and matched probes aid comprehension; captions sometimes assert the conclusion instead of defining scales."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "p7 Table2; pp6,9-10 result prose",
+        "reason": "Task-specific losses are visible in ablations, but causal/general wording does little to delimit those exceptions in the main text."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "pp7-8 Fig5/Sec3.3",
+        "reason": "Performance is paired with iterations/data, not measured elapsed compute; 3.8x training-speed wording needs that distinction."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "counterexample",
+        "locator": "p7 Table2 and Fig5a",
+        "reason": "The 5K aligned success rate differs between adjacent table and curve; irregular budgets are plotted with equal tick spacing."
+      }
+    ],
+    "source_pdf_sha256": "7039b7c0f3a96eadfd7f60cbd2ed914591d0a36f30702c31bd7cf7285365e9f3",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (Poster)",
+    "split": "holdout"
+  },
+  {
+    "id": "iclr-2025-4",
+    "title": "Large-scale and Fine-grained Vision-language Pre-training for Enhanced CT Image Understanding",
+    "role": "selected",
+    "identity": {
+      "title_verified": "First-page extracted title matches registry/manifest after layout normalization.",
+      "pdf_sha256": "fcf3508472c0fe0b9eb7ef3551fc2c0848881c4bd8da3fc731c713dffc8048d3",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: conclusion/limitations p10; acknowledgments/references p11. Entire main-text.txt pp1-11 read."
+    },
+    "main_question": "Does explicit anatomy-report alignment, with false-negative correction, improve CT representation learning over whole-image/report contrast?",
+    "argument_sequence": [
+      "pp1-4: global misalignment motivates anatomy parsing and matching.",
+      "pp5-7: local contrastive objectives introduce normal-pair correction and co-teaching for ambiguous pairs.",
+      "pp8-9: patient split, internal/external detection and frozen/finetuned report generation structure evaluation.",
+      "p10: module/data-size analyses return to design and acknowledge preprocessing cost/granularity limits."
+    ],
+    "language_moves": "The exposition moves from a representative diagnostic image to named failure modes and operational modules. Clinical potential language is ambitious; explicit preprocessing assumptions and final resource caveat retain useful constraints.",
+    "visuals": [
+      {
+        "locator": "PDF p5 Fig3",
+        "purpose": "Explain anatomy-wise representation construction and contrast.",
+        "encoding": "Organ-colored token groups, query tokens and per-organ image/text matrices.",
+        "caption_body_roles": "Caption walks through panels and symbols; body explains parsing defaults and losses.",
+        "readability_weakness": "Overall grouping is clear; caption says text decoder while graphic/body identify an encoder."
+      },
+      {
+        "locator": "PDF p9 Tables2-3",
+        "purpose": "Separate external validation and representation-transfer protocols.",
+        "encoding": "Internal/external row blocks, supervised/zero-shot columns, frozen/finetuning blocks.",
+        "caption_body_roles": "Captions explain model names and initialization; body interprets gains and refers evaluator/reader details outward.",
+        "readability_weakness": "Mostly readable despite dense metrics; missing cells remain visible and competing best values are retained."
+      }
+    ],
+    "transfer_conditions_counterexample": "Reuse explicit anatomical units and protocol blocks. Missing report mentions treated as normal are an assumption, not established truth. Table3 retains frozen ImageNet BLEU-3/4 wins and a finetuned Merlin CIDEr win; aggregate diagnostic gains cannot certify clinical utility.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "detail_image_pages_viewed": [
+        5,
+        9
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Main body pp1-10; p11 acknowledgment/reference boundary read.",
+        "Referred reader study, evaluator validation and per-disease appendix results not inspected; no assessment of those results or clinical efficacy.",
+        "Some mathematical glyphs are extraction substitutions; observations do not certify equations."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp4-7 Sec3; p10 Table4",
+        "reason": "Misalignment and two kinds of false negatives motivate modules that recur in ablation."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "pp6-7 Eqs1-3",
+        "reason": "Contrastive objectives and empirical label rules, without formal guarantees."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "p8 Sec4.1; p9 Sec4.2-4.3",
+        "reason": "Patient splits, tasks and scoring are defined, but evaluator validation/reader evidence is deferred and uninspected."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "p9 Tables2-3",
+        "reason": "Validation populations, supervision and encoder-update regimes are directly visible; absent metrics are marked."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "p5 Fig3",
+        "reason": "Diagram distinguishes anatomy tokens/contrasts, caption defines panels, body supplies decomposition assumptions."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "p9 Table3; p10 discussion/limitations",
+        "reason": "Granularity mismatch and preprocessing cost are explicit; metric-specific losses remain mainly in the table."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "p10 Fig5/limitations",
+        "reason": "Data-size/performance curves and added preprocessing burden are acknowledged, without a complete time/resource accounting."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "counterexample",
+        "locator": "p5 Fig3 caption/body; p8 metrics paragraph",
+        "reason": "Encoder/decoder terminology differs and sensitivity is assigned the specificity abbreviation in prose; labels require synchronization."
+      }
+    ],
+    "source_pdf_sha256": "fcf3508472c0fe0b9eb7ef3551fc2c0848881c4bd8da3fc731c713dffc8048d3",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (Spotlight)",
+    "split": "holdout"
+  },
+  {
+    "id": "iclr-2025-6",
+    "title": "A Generalist Hanabi Agent",
+    "role": "control",
+    "identity": {
+      "title_verified": "First-page title matches manifest and registry after layout normalization.",
+      "pdf_sha256": "93f90f63bc65a931f9d7a5dd6aa9d85053a787ac9892c6a54a7592694a6f22d3",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: conclusion/future work ends p10; acknowledgments/references start p11. Entire main-text.txt pp1-11 read."
+    },
+    "main_question": "Can self-play coordination transfer to unfamiliar partners and different numbers of Hanabi players?",
+    "argument_sequence": [
+      "pp1-4: coordination and changing action spaces motivate a generalist; rules and learning preliminaries define the setting.",
+      "pp5-6: textual state/action representations feed recurrent value estimation and shared training across player counts.",
+      "pp7-9: separate setting transfer, self-play and within/across-algorithm partner tests; compare a text-only intermediate baseline.",
+      "pp9-10: language-model failures, specialization tradeoffs and environment limits bound the claim."
+    ],
+    "language_moves": "Concrete card-game examples introduce representation obligations. Distinct evaluation names prevent one generality score from carrying every claim. The unexpected OP result is given a speculative explanation, and failed language-model baselines remain visible.",
+    "visuals": [
+      {
+        "locator": "PDF p6 Figs1-2",
+        "purpose": "Connect a sample observation to the agent architecture.",
+        "encoding": "Text template beside cards; separate observation/action branches merge into value estimation.",
+        "caption_body_roles": "Captions decode branch operations; body explains history, inference burden and variable-length replay.",
+        "readability_weakness": "Branch labels are small, but the paired example makes the abstract flow interpretable."
+      },
+      {
+        "locator": "PDF p8 Figs3-5",
+        "purpose": "Separate transfer settings and expose individual partner compatibility.",
+        "encoding": "Player-count panels, grouped play-mode bars and an upper-triangular score heatmap with red algorithm blocks.",
+        "caption_body_roles": "Captions define mixing and three seeds; body interprets diagonal and off-block relationships.",
+        "readability_weakness": "Heatmap values are tiny and colored for magnitude; displayed whiskers lack a statistic definition in these captions."
+      }
+    ],
+    "transfer_conditions_counterexample": "Reuse task-specific transfer definitions and pairwise displays. Hanabi scores and mixtures containing target-setting agents do not establish human compatibility or general multi-agent competence. The joint model sacrifices some specialized performance; extra players remain harder.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "detail_image_pages_viewed": [
+        6,
+        8
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Body pp1-10 and acknowledgment/reference boundary p11 read.",
+        "Appendix cross-play comparisons and language-model update ablations not inspected.",
+        "No human study or measured compute parity established by the inspected material; theoretical preliminaries were read descriptively."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp5-8 Sec4 and Sec5.2",
+        "reason": "Representation bottlenecks motivate text plus dynamic action encoding, tested against the text-only intermediate model."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "pp3-5 preliminaries and value objective",
+        "reason": "Formal notation defines the agent setting; no new formal guarantee is presented."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "pp7-9 Sec5.1-5.3",
+        "reason": "Settings, partner mixtures and play modes are operationalized, while human/general-agent implications exceed those measurements."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "p7 Sec5.1; p8 Figs3-5",
+        "reason": "Training updates, seeds, games and checkpoint availability are stated; equal update budget is not measured equal compute and caption whiskers are unspecified."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "p6 Figs1-2; p8 Fig5",
+        "reason": "Examples ground the architecture, and the pairing matrix reveals relationships that aggregate bars conceal."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "fits",
+        "locator": "pp9-10 Sec5.4/conclusion",
+        "reason": "Weak language-model baselines, specialized-score tradeoffs and limits of zero-shot coordination are retained."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "p6 encoder choice; p7 training budget",
+        "reason": "Inference burden and fixed update budgets are discussed without a complete measured runtime/performance comparison."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "qualified",
+        "locator": "p8 Figs3-5",
+        "reason": "Shared score axes and red compatibility blocks aid reading; tiny cells and undefined caption whiskers limit precision."
+      }
+    ],
+    "source_pdf_sha256": "93f90f63bc65a931f9d7a5dd6aa9d85053a787ac9892c6a54a7592694a6f22d3",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (Poster)",
+    "split": "holdout"
+  },
+  {
+    "id": "iclr-2024-4",
+    "title": "Overthinking the Truth: Understanding how Language Models Process False Demonstrations",
+    "role": "selected",
+    "identity": {
+      "title_verified": "First-page title matches registry/manifest with small-cap spacing and line-break normalization.",
+      "pdf_sha256": "a90185ba41c58a712cabd7881e4d315b886ae052cba5d60a2f65046a5051be72",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: discussion/limitations end p9; acknowledgments/references begin p10. Entire main-text.txt pp1-10 read."
+    },
+    "main_question": "Where does imitation of false demonstrations emerge during language-model processing, and which attention heads contribute?",
+    "argument_sequence": [
+      "pp1-4: contrast correct and permuted demonstrations; define calibrated accuracy and sampled prompts.",
+      "pp5-6: early-exit profiles locate divergence and separate attention from MLP ablations.",
+      "pp6-8: define three head properties, select on a toy task, then test interventions and label promotion.",
+      "pp8-9: consider unrelated labels, realism, true-prefix behavior and off-distribution intervention alternatives."
+    ],
+    "language_moves": "The diagnostic sequence narrows from behavior to layers to heads. Correlation is explicitly distinguished from intervention evidence. A final alternative explanation usefully tempers the stronger mechanistic language.",
+    "visuals": [
+      {
+        "locator": "PDF p4 Fig3",
+        "purpose": "Expose when and where false-context accuracy diverges.",
+        "encoding": "Eight task panels share layer axes and colored correct/permuted/zero-shot trajectories plus chance baselines.",
+        "caption_body_roles": "Caption groups task types; body defines calibration and sampling.",
+        "readability_weakness": "Readable local trajectories, but varying vertical ranges and color-dependent lines complicate across-task comparison."
+      },
+      {
+        "locator": "PDF p9 Table1",
+        "purpose": "Compare targeted and random head removal, including collateral loss.",
+        "encoding": "Three label regimes pair absolute correct-prompt change with relative gap reduction; subscripts denote one standard error.",
+        "caption_body_roles": "Caption decodes metrics and bolding; discussion addresses incomplete recovery.",
+        "readability_weakness": "Compact uncertainty is legible on enlargement; the no-harm caption conflicts with negative correct-prompt changes."
+      }
+    ],
+    "transfer_conditions_counterexample": "Reuse progressive localization and explicit competing explanations. Classification with many corrupted examples is a bounded proxy for harmful behavior. Table1 retains Ethos -6.00 and SICK -9.43 correct-prompt changes, contradicting blanket no-loss phrasing.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        4,
+        9
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Body pp1-9 and acknowledgment/reference boundary p10 read.",
+        "Appendix calibration details, additional models/tasks and prompt-injection analysis not inspected.",
+        "Interventions were assessed as presentation evidence, not a certified causal mechanism or safety intervention."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp4-8 Sec3-5",
+        "reason": "False-context diagnostic leads to layer localization, head properties, targeted ablation and random-head control."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "pp5-7 logit-lens and head-score definitions",
+        "reason": "Equations operationalize diagnostics without a formal guarantee or theorem."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "pp3-5 Sec3; pp8-9 realism discussion",
+        "reason": "Task, calibration and permutations are specified, but harmful behavior beyond classification remains a transfer hypothesis."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "p4 sampling; p9 Table1",
+        "reason": "Prompt counts and model context limits accompany setup; table separates absolute and relative changes, controls, directions and standard errors."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "p4 Fig3; p9 Table1",
+        "reason": "Layer curves expose a diagnostic relationship and the table exposes intervention tradeoffs; captions decode distinct measurements."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "pp8-9 discussion; p9 Table1",
+        "reason": "Off-distribution ablation and restricted realism are explicit, but subgroup losses remain inconsistent with the no-harm caption."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "p9 final paragraph; pp5-6 early exiting",
+        "reason": "Compute/time efficiency is asserted and fewer layers are operationally clear, without a measured cost-performance frontier."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "counterexample",
+        "locator": "p9 Table1 caption and correct-prompt columns",
+        "reason": "The caption promises no performance harm while multiple cells and the mean show negative correct-prompt changes."
+      }
+    ],
+    "source_pdf_sha256": "a90185ba41c58a712cabd7881e4d315b886ae052cba5d60a2f65046a5051be72",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (spotlight)",
+    "split": "holdout"
+  },
+  {
+    "id": "iclr-2024-6",
+    "title": "Finite-Time Analysis of On-Policy Heterogeneous Federated Reinforcement Learning",
+    "role": "control",
+    "identity": {
+      "title_verified": "First-page title matches manifest/registry after small-cap and line-wrap normalization.",
+      "pdf_sha256": "ea73ca0c5f639398d2cf434ddf9ea0f25092f140e925a09887dde401a81ead15",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: simulations/conclusion end p9; acknowledgments/references start p10. Entire main-text.txt pp1-10 read."
+    },
+    "main_question": "Under which heterogeneity and policy-smoothness conditions can federated on-policy SARSA reduce each agent's sample requirement?",
+    "argument_sequence": [
+      "pp1-3: four analytical obstacles frame the question and prior-work matrix.",
+      "pp4-6: define heterogeneity, projected Bellman objects, ergodicity and smooth policy improvement before the algorithm.",
+      "pp7-8: perturbation and one-step bounds yield step-size corollaries and convergence-region interpretations.",
+      "pp8-9: named error terms organize the proof sketch; simulations vary agents and heterogeneity."
+    ],
+    "language_moves": "Challenge lists recur as proof obligations. Term-by-term interpretation translates the recurrence before discussing rates. Near-optimality language must be read relative to the specified approximation and policy operator.",
+    "visuals": [
+      {
+        "locator": "PDF p3 Table1",
+        "purpose": "Position the analytical scope.",
+        "encoding": "Check/cross matrix for assumptions and guarantees; green proposed-method row.",
+        "caption_body_roles": "Caption expands abbreviations; body explains exceptions and contribution locators.",
+        "readability_weakness": "Clear at page scale; the LSP exception footnote is on the preceding page, and binary marks compress assumptions."
+      },
+      {
+        "locator": "PDF p9 Fig1",
+        "purpose": "Illustrate agent-count and heterogeneity effects on convergence.",
+        "encoding": "Three heterogeneity panels with colored agent-count curves, logarithmic MSE and shaded bands.",
+        "caption_body_roles": "Body gives ten runs and numerical setup; caption only names algorithm/sampling.",
+        "readability_weakness": "Tiny legends and unspecified band meaning; vertical scales differ and high-heterogeneity curves lose monotonic agent-count ordering."
+      }
+    ],
+    "transfer_conditions_counterexample": "Reuse explicit theorem-to-interpretation and proof-term navigation. Uniform mixing, sufficiently smooth improvement and restricted approximations constrain transfer. High heterogeneity can make some multi-agent curves worse than one agent; sample speedup is not measured wall-clock acceleration.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        3,
+        9
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Body pp1-9 and acknowledgment/reference boundary p10 read.",
+        "Appendix constant definitions, full proofs and extended simulations not inspected; theorem correctness is not certified.",
+        "Some extracted mathematical symbols are malformed; analysis concerns exposition and scope, not equation verification."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "not-applicable",
+        "locator": "pp2,7-9 analysis and simulations",
+        "reason": "The central evidence is a finite-time argument with illustrative simulations, not a diagnostic-component-ablation sequence."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "qualified",
+        "locator": "pp4-8 Assumptions1-2, Theorems1-2, Corollaries2.1-2.2",
+        "reason": "Objects and assumptions precede results and interpretations; some constants are deferred, and near-optimality refers to the restricted fixed-point setting."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "not-applicable",
+        "locator": "p9 Sec6",
+        "reason": "Synthetic MSE simulations illustrate theoretical bounds; there is no new capability benchmark or construct-ranking claim to validate."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "p9 Sec6 and Fig1",
+        "reason": "Dimensions, discount, step size, synchronization and run count are adjacent; band statistic and full generation details are not explained there."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "qualified",
+        "locator": "p3 Table1; p9 Fig1",
+        "reason": "Matrix and curves encode analytical coverage and convergence relationships, but the figure caption supplies little decoding."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "pp4,6,8 heterogeneity/smoothness; p9 Fig1c",
+        "reason": "Counterproductive heterogeneity and greedy-policy failure are acknowledged; nonmonotonic simulation ordering is visible but not discussed."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "pp6,8 communication/sample-complexity discussion",
+        "reason": "Rate improvement is conditioned on agent count and residual error, while communication and elapsed-time costs remain unmeasured."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "qualified",
+        "locator": "p9 Fig1",
+        "reason": "Legends, ticks and bands are crowded; log scales are visible but band semantics and cross-panel scale differences need attention."
+      }
+    ],
+    "source_pdf_sha256": "ea73ca0c5f639398d2cf434ddf9ea0f25092f140e925a09887dde401a81ead15",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (poster)",
+    "split": "holdout"
+  },
+  {
+    "id": "icml-2026-4",
+    "title": "A Constrained Optimization Perspective of Unrolled Transformers",
+    "role": "selected",
+    "identity": {
+      "title_verified": "First-page title matches registry and manifest.",
+      "pdf_sha256": "869dfba75b840f444db379b565bdb457c50bf144eeb51f2ab04470d2434f975c",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: results/conclusion end p9; impact statement, acknowledgments and references begin p10. Entire main-text.txt pp1-10 read."
+    },
+    "main_question": "Does enforcing expected loss descent across transformer layers improve robustness to input perturbations?",
+    "argument_sequence": [
+      "pp1-3: distinguish descent-inspired training from conventional unrolling.",
+      "pp4-5: constrained objective and dual algorithm lead to near-feasibility, depth-asymptotic and shifted-distribution statements.",
+      "pp5-8: relax strict feasibility, define perturbation regimes and test classification/LLM robustness with constraint ablations.",
+      "pp8-9: denoising panels preserve architecture-specific losses and depth effects."
+    ],
+    "language_moves": "Numbered contributions provide a roadmap. The prose separates near-feasibility from convergence and names feasibility as a practical obstacle; later finite-model success language is stronger than the conditional asymptotic statements.",
+    "visuals": [
+      {
+        "locator": "PDF p7 Figs2-3",
+        "purpose": "Compare robustness and relate constraint strength to layer behavior.",
+        "encoding": "Dataset-by-architecture accuracy panels; paired layer-loss and perturbation ablation curves.",
+        "caption_body_roles": "Captions decode line styles, metric direction and training noise; body interprets weaker MNLI effects.",
+        "readability_weakness": "Main panels are clear; the central ablation is markedly smaller with crowded legends and no visible uncertainty."
+      },
+      {
+        "locator": "PDF p9 Figs7-8",
+        "purpose": "Expose denoising tradeoffs and the role of depth.",
+        "encoding": "Architecture-by-dataset RMSE panels and side-by-side depth curves.",
+        "caption_body_roles": "Captions specify training noise and styles; body names an ID/OOD crossover and degraded case.",
+        "readability_weakness": "Consistent RMSE scales help comparison, but near-zero panels compress differences and depth labels are tiny."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer the condition-first theorem discussion and explicit crossover interpretation. Bounds concern expectations, approximation errors and asymptotic best-layer loss; they do not establish every finite sample's monotonicity. UT-Avenue loses OOD performance, and UT-ShanghaiTech trades ID error for robustness.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        7,
+        9
+      ],
+      "overview_viewed": true,
+      "appendices_read": [
+        "PDF p15 Appendix A.1: theorem restatement, Assumptions1-5 and explanatory discussion.",
+        "PDF p16 Appendix A.2: setup, Assumption6 and theorem restatement before Proof; proof not read.",
+        "PDF p18 Appendix A.3: Assumption7 distribution-distance condition only."
+      ],
+      "limitations": [
+        "Body pp1-9 and impact/acknowledgment/reference boundary p10 read.",
+        "Only specified appendix assumptions inspected; full proofs, judge examples, additional training regimes and implementation appendices not inspected.",
+        "No proof certification, differential-privacy guarantee validation or experimental reproduction."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp1-2 motivation; p7 Fig3",
+        "reason": "Nonmonotonic intermediate behavior motivates descent constraints, with a targeted constraint-strength diagnostic."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "qualified",
+        "locator": "pp4-5 Theorems1-4; appendix pp15-16,18 assumptions",
+        "reason": "Error terms, probabilistic feasibility and depth asymptotics are distinguished; assumptions are deferred and finite relaxed training is not automatically the exact theoretical setting."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "pp6-8 Sec4-6",
+        "reason": "Noise levels, accuracy and RMSE define operational robustness; privacy usefulness and general downstream competence remain broader than these proxies."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "pp6,8 training; pp7,9 Figs2,7",
+        "reason": "Training noise and architecture conditions are visible, and best-run selection is stated; run variability and uncertainty are absent from these curves."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "p7 Figs2-3; p9 Figs7-8",
+        "reason": "Panel organization separates architectures/tasks; captions decode conditions and body explains important exceptions and crossovers."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "pp6,8-9 performance discussion",
+        "reason": "Weak effects and denoising losses are named, but a 50% judge win rate is described as preserved ID performance without an equivalence analysis."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "p4 overhead discussion; p9 Fig8",
+        "reason": "Layer count and claimed small training overhead are discussed, but depth/performance plots lack measured time or memory cost."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "counterexample",
+        "locator": "p6 evaluation-range paragraph; p7 Fig2",
+        "reason": "The text describes test perturbations in [0,1], while the displayed accuracy curves run to 2; small ablation typography further limits local readability."
+      }
+    ],
+    "source_pdf_sha256": "869dfba75b840f444db379b565bdb457c50bf144eeb51f2ab04470d2434f975c",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (spotlight)",
+    "split": "holdout"
+  },
+  {
+    "id": "icml-2026-6",
+    "title": "EnsembleVLA: Ensemble Learning for Vision-Language Action Models",
+    "role": "control",
+    "identity": {
+      "title_verified": "First-page title matches manifest and registry.",
+      "pdf_sha256": "cf66c1b46386b080945da23b54810a818092996d6d00024d38a5a2c2694781a4",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: real-world results and conclusion end p8; acknowledgment/impact/reference material begins p9. Entire main-text.txt pp1-9 read."
+    },
+    "main_question": "How can heterogeneous generative robot policies be combined without the failures of direct action averaging?",
+    "argument_sequence": [
+      "pp1-3: motivate distribution-level composition and introduce diffusion, flow and energy objects.",
+      "pp4-5: derive composition, acknowledge a residual in the flow interpretation, then define learned weights.",
+      "pp5-6: bounded corrections and confidence gates receive explicit training objectives.",
+      "pp7-8: compare policy families, remove components, add a third policy and test six real tasks."
+    ],
+    "language_moves": "A familiar ensemble analogy leads into generative-policy obstacles. Repeated unification and stability claims give coherence, but the acknowledged approximate flow interpretation and modest cross-family gains deserve equal prominence.",
+    "visuals": [
+      {
+        "locator": "PDF p4 Fig2",
+        "purpose": "Link frozen policies, composition, refinement and supervision.",
+        "encoding": "Parallel model branches, schematic energy surfaces, weighted arrows and colored gate/delta/loss boxes.",
+        "caption_body_roles": "Caption names major stages; body defines residual bounds and objectives.",
+        "readability_weakness": "Frozen/learnable icons help; dense tiny formulas and success-labeled conceptual surfaces can be mistaken for empirical evidence."
+      },
+      {
+        "locator": "PDF p7 Tables1-2",
+        "purpose": "Separate policy-family combinations and cumulative component removals.",
+        "encoding": "Grouped base/ensemble columns, highlighted averages and a check/cross ablation ladder.",
+        "caption_body_roles": "Captions state success direction, three seeds and sample standard deviation; body interprets removals.",
+        "readability_weakness": "Readable structure despite dense cells; pale uncertainty values and percent wording obscure that gains are percentage points."
+      }
+    ],
+    "transfer_conditions_counterexample": "Reuse family-specific baselines and explicit ablation components. Same demonstration data does not equalize pretraining or sensor modalities. Residual-flow approximation and finite robot trials limit general stability claims; adding policies needs a cost account.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "detail_image_pages_viewed": [
+        4,
+        7
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Body pp1-8 and acknowledgment/impact/reference boundary p9 read.",
+        "No supplement, source proof, rollout video or implementation inspection.",
+        "Figure formulas with extraction substitutions were visually checked only on p4; mathematical unification and robot safety were not certified."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp2,5-7 Sec3.5-4.2",
+        "reason": "Action-averaging and residual-error problems motivate composition/gating, followed by a cumulative component ablation."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "qualified",
+        "locator": "pp4-5 Eqs6-18",
+        "reason": "Formal objects precede composition, and a nonzero flow residual is acknowledged; broader equivalence/stability language exceeds the explicitly approximate practical interpretation."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "p6 Sec4.1; p8 Sec4.4",
+        "reason": "Tasks and success-trial denominators are stated, but detailed real-task success criteria and confidence calibration are not supplied in the main text."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "pp6-8 setup and Tables1-3",
+        "reason": "Policy families, seeds and pretraining differences are visible; the initial 100-demonstration statement is not clearly separated from the later 50-per-real-task setup."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "p4 Fig2; p7 Tables1-2",
+        "reason": "Architecture and tables encode complementary structural and comparative relationships, with captions and equations assigning distinct roles."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "p5 flow residual; p7 cross-paradigm result; p8 real results",
+        "reason": "Approximation and modest cross-family gain are acknowledged; displayed failures concern base policies, while ensemble failure regimes receive little analysis."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "p8 Sec4.3/Fig4; p9 impact statement",
+        "reason": "Success versus policy count is shown, but inference latency, memory and training savings are not measured alongside it."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "qualified",
+        "locator": "p4 Fig2; p7 Tables1-2 and results prose",
+        "reason": "Grouping and explicit uncertainty statistics help; small pale variability text and percent versus percentage-point wording weaken precision."
+      }
+    ],
+    "source_pdf_sha256": "cf66c1b46386b080945da23b54810a818092996d6d00024d38a5a2c2694781a4",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (regular)",
+    "split": "holdout"
+  },
+  {
+    "id": "icml-2025-4",
+    "title": "Soft Reasoning: Navigating Solution Spaces in Large Language Models through Controlled Embedding Exploration",
+    "role": "selected",
+    "identity": {
+      "title_verified": "First-page title matches manifest/registry after line-wrap normalization.",
+      "pdf_sha256": "6aa384b443deb3c38a375f03997bc4901476103ba1e7ed1345049b4dbfcaa83b",
+      "digest_verified": true,
+      "registry_match": true,
+      "body_boundary": "pages.json: ablations/conclusion end p9; impact statement, acknowledgments and references start p10. Entire main-text.txt pp1-10 read."
+    },
+    "main_question": "Can first-token embedding search improve answer coverage and final accuracy while reducing inference cost?",
+    "argument_sequence": [
+      "pp1-3: contrast temperature diversity with controlled embedding perturbation and deterministic continuation.",
+      "pp4-5: define verifier/coherence reward, Bayesian acquisition, noisy feedback and dimension reduction.",
+      "pp6-7: compare accuracy and coverage, inspect activation/correlation diagnostics, and pair scores with token/time costs.",
+      "pp8-9: vary objectives, acquisition, token scope, placement and verifier; acknowledge unreliable feedback."
+    ],
+    "language_moves": "Question-led subsections connect design choices to diagnostics. Verifier reliability is explicitly limited, but neuron correlations become stronger mechanism language and several universal performance sentences exceed their own tables.",
+    "visuals": [
+      {
+        "locator": "PDF p6 Table1",
+        "purpose": "Compare methods and reward ablations across models, tasks and shot settings.",
+        "encoding": "Model blocks, paired shot columns, mean/standard-deviation cells and bold winners.",
+        "caption_body_roles": "Caption names accuracy; adjacent setup states five seeds and results text identifies eight-shot columns.",
+        "readability_weakness": "Dense but traceable; Qwen GSM-Hard few-shot 58.7 is bold although the coherence-removed row has 60.0."
+      },
+      {
+        "locator": "PDF p7 Figs3-5 and Table3",
+        "purpose": "Relate search diagnostics to performance and resource use.",
+        "encoding": "Layer activation curves, correlation heatmap with accuracy strip, and paired score/token/minute rows.",
+        "caption_body_roles": "Captions identify comparisons; body interprets correlations and termination.",
+        "readability_weakness": "Heatmap scales are explicit but its caption omits detailed sample identity; the cost table is small and its green values are faint."
+      }
+    ],
+    "transfer_conditions_counterexample": "Reuse separate coverage, verification and final-accuracy measures. Agreement with a generated verifier answer is not ground truth; activation correlation does not identify a necessary reasoning mechanism. Table1 preserves a beneficial ablation, contradicting the all-settings degradation claim.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        6,
+        7
+      ],
+      "overview_viewed": true,
+      "appendices_read": [
+        "PDF p16 Appendix B.5: computational-efficiency prose, Tables10-11 and associated time/memory interpretation (text only).",
+        "PDF p16: incidental B.4 random-projection stability description and Figure7 caption, plus portions of B.6 verifier descriptions encountered through interleaved two-column extraction; no appendix image viewed.",
+        "PDF p17: Multi-Generate continuation, B.7 sample-count discussion/Figure8 caption, and B.8 introductory paragraph encountered while locating B.5 continuation; no additional result tables or images inspected."
+      ],
+      "limitations": [
+        "Body pp1-9 and impact/acknowledgment/reference boundary p10 read.",
+        "Theoretical appendices, full additional results, prompt templates and neuron-procedure details not inspected.",
+        "Cost appendix was read as extracted text only; model weights are excluded from its variable-memory accounting and hardware conditions were not established in the inspected passages.",
+        "Appendix extraction interleaved adjacent sections; incidental portions are recorded explicitly rather than claimed as a full supplement reading."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "pp3-5 method; pp8-9 ablations",
+        "reason": "Exploration and feedback problems motivate perturbation, reward components and acquisition choices, followed by targeted comparisons; neuronal diagnostics remain correlational."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "qualified",
+        "locator": "p5 noisy-verifier and dimension-reduction discussion",
+        "reason": "Ideal feedback, practical noise and effective-dimension assumptions are distinguished, but convergence foundations are deferred to uninspected appendices."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "p4 verifier reward; p6 coverage; p9 Tables7-8",
+        "reason": "Coverage, verifier classification and final correctness are separated and compared; a verifier-agreement reward remains an imperfect proxy."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "p6 setup/Table1; p7 Table3; p16 B.5",
+        "reason": "Shot settings, seeds, variability and resource units are explicit; hardware and full runtime conditions were not established in inspected cost passages."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "qualified",
+        "locator": "p7 Figs3-5/Table3",
+        "reason": "Curves, heatmap and cost table expose distinct relationships, but the heatmap caption gives limited sample context and correlations cannot establish mechanism."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "counterexample",
+        "locator": "p6 Table1; p8 objective-ablation paragraph; p9 Table8",
+        "reason": "Blanket ablation-loss and verifier-dominance wording overlooks Qwen coherence-removal improvement (60.0 versus 58.7) and a Multi-Judge few-shot GSM-Hard win (36.1 versus 35.7)."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "p7 Table3; p16 B.5/Tables10-11",
+        "reason": "Accuracy, token counts, elapsed minutes and scoped variable-memory use are paired; setup detail and inconsistent summary time ratios limit direct transfer."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "counterexample",
+        "locator": "p6 Table1 bolding; p8 efficiency text; p16 B.5 text",
+        "reason": "Winner emphasis misses the 60.0 ablation cell, and main/appendix time summaries give 14.3% versus 12.30% of RAP for the same listed runs."
+      }
+    ],
+    "source_pdf_sha256": "6aa384b443deb3c38a375f03997bc4901476103ba1e7ed1345049b4dbfcaa83b",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (spotlight poster)",
+    "split": "holdout"
+  },
+  {
+    "id": "icml-2025-6",
+    "main_question": "How can preference-based reward learning reduce queries while tolerating incorrect labels?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-3, Sections 1-3",
+        "move": "Separate query efficiency Q1 from robustness Q2 after contrasting prior noise handling."
+      },
+      {
+        "locator": "PDF pp.3-6, Sections 4-6",
+        "move": "Introduce cuts, voting and conditional results, then conservative cuts and approximate sampling."
+      },
+      {
+        "locator": "PDF pp.7-10, Sections 7-8 and impact",
+        "move": "Compare noise regimes, ablate design choices, then retain difficult teacher and small human-study cases."
+      }
+    ],
+    "language_moves": "Explicit Q1/Q2 labels supply continuity; theorem-to-intuition paragraphs and a geometric worked case translate symbols. 'Regardless' language needs the local bound on batch corruption; Section 6.2 acknowledges approximate samples can leave the set.",
+    "visuals": [
+      {
+        "locator": "PDF p.5, Figure 3",
+        "purpose": "Explain why conservative cuts retain the target.",
+        "encoding": "Matched blue feasible regions, red constraint arrows and a green target point.",
+        "caption_body_division": "Caption identifies the false preference; body works through N=3 and gamma=1/3.",
+        "readability_weakness": "The paired geometry is legible; it illustrates rather than measures robustness."
+      },
+      {
+        "locator": "PDF p.7, Figures 5-6",
+        "purpose": "Expose query/noise behavior and component sensitivity.",
+        "encoding": "Task rows by error-rate columns, blue/orange curves, dashed oracle, shaded variability.",
+        "caption_body_division": "Caption gives matched corruption/conservatism and five runs; p.8 defines mean and standard deviation.",
+        "readability_weakness": "Twenty-four small panels and tiny ablation legends compress reading; Figure 6 caption calls ensemble size N although panel/body use M."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer the question-to-rule-to-ablation sequence when components address distinct failure modes. Preserve the stochastic-teacher weakness, excluded ties and limited human sample; a robustness story is not universal human alignment.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        5,
+        7
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Overview shows cached selected pages, not every PDF page.",
+        "Proofs and supplementary experiments not audited; no reproducibility or significance certification."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "PDF p.3 Q1/Q2; pp.5,7-8 Sections 5 and 7.2",
+        "reason": "Noise and query questions motivate conservatism/disagreement and recur in ablations."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "qualified",
+        "locator": "PDF pp.4-6 Theorem 4.2, Lemma 5.2, Sections 5.1 and 6.2",
+        "reason": "Interpretations and a worked case exist; corruption bound and approximation caveat qualify broad robustness phrasing."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.7-9 Section 7",
+        "reason": "Control-method comparison, not a new capability taxonomy or evaluator-validation benchmark."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "PDF pp.7-9 Figure 5 and Tables 1-4",
+        "reason": "Noise levels, task blocks, oracle and five-run summaries expose major comparison regimes."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF p.5 Figure 3 and Section 5.2",
+        "reason": "Graphic shows retained regions; caption decodes constraints; body explains the voting threshold."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "PDF p.9 Sections 7.5-7.6; p.8 Table 1",
+        "reason": "Stochastic-teacher failure is explicit, but the conclusion's broad clean-data parity still needs task-specific reading."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "fits",
+        "locator": "PDF p.7 Figures 5-6; p.8 Section 7.2",
+        "reason": "Reward is plotted against query count with differing corruption levels; compute time remains unmeasured."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "fits",
+        "locator": "PDF p.7 Figure 6 caption versus panel (d) and p.8 ensemble paragraph",
+        "reason": "Visible N/M inconsistency and compressed legends illustrate the card's failure modes."
+      }
+    ],
+    "title": "Robust Reward Alignment via Hypothesis Space Batch Cutting",
+    "role": "control",
+    "identity": {
+      "pdf_sha256": "5c4cd353f3231193bb2969e0aa08f7eae9cf8d963f2ebf26aa277a22583aaad6",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json places References on PDF p.10; p.9 concludes and p.10 contains Impact Statement before references. Entire prepared main-text file read."
+    },
+    "source_pdf_sha256": "5c4cd353f3231193bb2969e0aa08f7eae9cf8d963f2ebf26aa277a22583aaad6",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (poster)",
+    "split": "holdout"
+  },
+  {
+    "id": "icml-2024-4",
+    "main_question": "Why can equal pretraining/test likelihood leave useful language-model behavior undetermined?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-2, Table 1 and Sections 1-2",
+        "move": "Propose saturation as a research regime distinct from interpolation."
+      },
+      {
+        "locator": "PDF pp.3-6, Section 3",
+        "move": "Develop functional, approximate and parameter non-identifiability through three case studies."
+      },
+      {
+        "locator": "PDF pp.6-10, Sections 4-6 and impact",
+        "move": "Convert cases into a research agenda and explicit open questions, with a sociotechnical scope concession."
+      }
+    ],
+    "language_moves": "Boxed takeaways separate case implications from technical definitions; 'we advocate' and numbered research questions mark a position rather than an evaluated system. The full-support exception and informal-definition label preserve useful qualifications.",
+    "visuals": [
+      {
+        "locator": "PDF p.3, Figure 1",
+        "purpose": "Operationalize rule extrapolation.",
+        "encoding": "Intersecting rule sets plus matched prompt/completion rows and green/red checks.",
+        "caption_body_division": "Caption decodes both rules and hypothetical models; body explains zero-probability prompts.",
+        "readability_weakness": "Clear cross-panel correspondence; small colored model labels need detail view."
+      },
+      {
+        "locator": "PDF p.4, Figures 2-3",
+        "purpose": "Separate a toy empirical illustration from a conceptual non-identifiability diagram.",
+        "encoding": "Loss/accuracy trajectories with start/end marks; nested KL regions intersect an ICL region.",
+        "caption_body_division": "Figure 2 names training conditions and 20-seed average; Figure 3 points to the proposition; body states the support distinction.",
+        "readability_weakness": "Compact but decipherable; the averaged illustration supplies no displayed dispersion."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer case-study-to-agenda organization to position papers. Do not require a new leaderboard or ablation suite, or turn hypothetical distributions and toy grammar evidence into a measured prevalence claim about deployed LLMs.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        3,
+        4
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Full prepared main text read; appendix proof and toy-training details not audited.",
+        "Position argument assessed as presentation, not certified theory or general empirical evidence."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "qualified",
+        "locator": "PDF pp.3-6 case studies; pp.7-9 research questions",
+        "reason": "Diagnostic cases motivate research obligations, but this position paper does not implement and ablate each proposed remedy."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "fits",
+        "locator": "PDF pp.4-5 Definition 3.1 and Proposition 3.1",
+        "reason": "Support assumptions, informal definition, quantifiers, proof sketch and interpretation distinguish exact from approximate non-identifiability."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.6-9 Sections 4-5",
+        "reason": "Agenda for future capability measures, not a benchmark claiming validated rankings."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "PDF p.4 Figure 2",
+        "reason": "Toy conditions and mean over 20 seeds are local, but dispersion and training details are elsewhere."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF pp.3-4 Figures 1 and 3",
+        "reason": "Rules and set relationships are drawn, decoded in captions and interpreted in the argument."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "fits",
+        "locator": "PDF p.4 Section 3.2; p.10 impact",
+        "reason": "Full-support identifiability and omitted sociotechnical recommendations explicitly limit the position."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.6,10 transferability and impact",
+        "reason": "Future efficiency benefits are motivations, not an efficiency result needing a performance/cost plot."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "qualified",
+        "locator": "PDF p.4 Figure 2 caption and plot",
+        "reason": "Axes and endpoint symbols are readable, but a 20-seed average lacks visible variability; do not infer zero variance."
+      }
+    ],
+    "title": "Position: Understanding LLMs Requires More Than Statistical Generalization",
+    "role": "selected",
+    "identity": {
+      "pdf_sha256": "bd69225c1a7f6c071d2c3d07aadd385e2261ab7d04c8468789cc96678b86d800",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json places References on PDF p.10; conclusion is p.9, acknowledgements and impact continue on p.10. Entire prepared main-text file read."
+    },
+    "source_pdf_sha256": "bd69225c1a7f6c071d2c3d07aadd385e2261ab7d04c8468789cc96678b86d800",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (Spotlight)",
+    "split": "holdout"
+  },
+  {
+    "id": "icml-2024-6",
+    "main_question": "How can a current observation initialize a generative process for a conditional distribution of future states?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-3, Sections 1-3.1",
+        "move": "Contrast deterministic forecasts with conditional ensembles and specify three observation settings."
+      },
+      {
+        "locator": "PDF pp.3-5, Theorems 3.1-3.3 and algorithms",
+        "move": "Derive learnable drift, post-training diffusion adjustment and a conditional Follmer interpretation, then approximate implementation."
+      },
+      {
+        "locator": "PDF pp.6-10, Sections 4-5",
+        "move": "Move from multimodal toy dynamics to fluid statistics and video forecasts; delimit tested choices and future extensions."
+      }
+    ],
+    "language_moves": "Result-followed-by-interpretation paragraphs explain what each theorem enables. Distinct physical lag and artificial time prevent conflation. The experiments explicitly favor learning the drift over the theoretically motivated diffusion choice.",
+    "visuals": [
+      {
+        "locator": "PDF p.8, Figures 3-4 and Table 1",
+        "purpose": "Connect diverse samples to physical statistics and controlled video comparison.",
+        "encoding": "Field samples, mean/std pairs, log spectra; dataset and training-step table blocks.",
+        "caption_body_division": "Captions decode statistics, ranges and encoded-data reference; body explains why a mean alone is uninformative.",
+        "readability_weakness": "Spectral legends and compact table remain readable; field ranges are stated without a visible numeric colorbar."
+      },
+      {
+        "locator": "PDF p.9, Figures 5-6",
+        "purpose": "Illustrate alternative temporal continuations.",
+        "encoding": "Real/generated image strips arranged by time.",
+        "caption_body_division": "Captions identify rows, new objects and drift; body interprets stochastic continuation.",
+        "readability_weakness": "Small frames support qualitative motion reading, not a physics-consistency measurement."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer the theory-to-statistic-to-example progression when distributional forecasting is the object. Preserve the positive conditional-density assumptions, learned/discretized approximation and autoencoder reference; attractive video examples do not establish physical validity.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        8,
+        9
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Supplementary proofs, Follmer comparisons and referenced speed experiment not inspected.",
+        "Visual examples assessed as presentation; no simulation or empirical reproduction."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "qualified",
+        "locator": "PDF pp.1,3-5,6 Section 4 opening",
+        "reason": "Forecasting inadequacy motivates the construction; main experiments do not isolate every theoretical design choice."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "fits",
+        "locator": "PDF pp.3-5 Theorems 3.1-3.3 and Section 3.5",
+        "reason": "Assumptions, proof locations, implications and learned numerical approximation are separated."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.6-8 Section 4",
+        "reason": "Established forecasting tasks illustrate a method rather than introduce a capability taxonomy or validated evaluator."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "PDF p.8 Table 1 and caption; p.7 FVD paragraph",
+        "reason": "Training-step blocks, datasets, sample counts and encoded-data reference are explicit."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF pp.7-8 Figures 3-4",
+        "reason": "Samples show diversity, captions decode statistics, and prose explains the inadequacy of a conditional mean."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "fits",
+        "locator": "PDF p.6 experiment opening; p.9 Figure 6 and conclusion",
+        "reason": "Authors retain diffusion-choice qualification, generated drift and future physical-structure work."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "PDF p.8 Table 1; p.7 final Section 4.2 paragraph",
+        "reason": "Quality is paired with training steps; the separate 100x simulation-speed claim points to an uninspected appendix."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "qualified",
+        "locator": "PDF p.8 Figures 3-4 and Table 1",
+        "reason": "Comparison labels are readable; shared field ranges are textual rather than visible color scales, and table variability is not supplied."
+      }
+    ],
+    "title": "Probabilistic Forecasting with Stochastic Interpolants and Föllmer Processes",
+    "role": "control",
+    "identity": {
+      "pdf_sha256": "f392177762b6fbfd3b54e2a133bcf362e8dd5c8e36ad8e23c8e2695d4d326ec4",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json places References on PDF p.10; conclusion and impact start p.9, impact and acknowledgements continue p.10. Entire prepared main-text file read."
+    },
+    "source_pdf_sha256": "f392177762b6fbfd3b54e2a133bcf362e8dd5c8e36ad8e23c8e2695d4d326ec4",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (Poster)",
+    "split": "holdout"
+  },
+  {
+    "id": "acl-2026-2",
+    "main_question": "Can coordinated presentation of individually truthful fragments induce false conclusions in simulated language-model agents?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-3, Figure 1 and Section 3",
+        "move": "Distinguish public-evidence steering from covert channels and define local truth/global deception."
+      },
+      {
+        "locator": "PDF pp.4-6, Section 4 and Figure 2",
+        "move": "Assign narrative roles and follow evidence through victims to downstream decisions."
+      },
+      {
+        "locator": "PDF pp.6-10, Sections 5-7 and limitations",
+        "move": "Define a rumor-derived simulation, compare models, ablate roles, then discuss untested defenses and ecological limits."
+      }
+    ],
+    "language_moves": "Role names make a complicated process memorable. However, 'universal', 'deterministically converges' and 'cannot address' exceed the visibly bounded simulation narrative; the final limitations narrow deployment scope.",
+    "visuals": [
+      {
+        "locator": "PDF p.5, Figure 2",
+        "purpose": "Separate intentional production from unwitting propagation.",
+        "encoding": "Four boxed stages with braces, role icons, arrows and an illustrative feed.",
+        "caption_body_division": "Caption names four stages; body defines the optimization abstractions and role responsibilities.",
+        "readability_weakness": "Stage grouping is clear; miniature feed and icon detail compete with the conceptual chain. Illustrative 92% is not a measured result."
+      },
+      {
+        "locator": "PDF p.8, Figures 3-4 and Table 3",
+        "purpose": "Show event heterogeneity, sequence-length sensitivity and role removals.",
+        "encoding": "Numeric heatmaps with 0-100 scales, grouped bars, dual-axis lines and compact ablation rows.",
+        "caption_body_division": "Captions identify panels; body interprets downstream failure and component importance.",
+        "readability_weakness": "Figure 3 visibly includes Putin-event values below 50%, contrary to the adjacent all-events-above-50% statement."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer explicit role/stage mapping and event-level displays, while preserving simulation-only scope and differing model trends. A mechanism metaphor or posterior equation does not certify a measured psychological process; Figure 3 defeats blanket downstream-rate wording.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        5,
+        8
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Dataset labels, prompts and supplementary simulation details not independently validated.",
+        "No deployment or causal-mechanism certification; visual inconsistency assessed locally."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "PDF pp.4-5 role definitions; p.8 Table 3",
+        "reason": "Distinct proposed functions recur as removed-role comparisons; ablation alone does not establish the named cognitive mechanism."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "qualified",
+        "locator": "PDF pp.3,6 Equations 1-4 and 11",
+        "reason": "Definitions aid interpretation, but the deterministic-convergence rhetoric lacks a local assumptions/result/proof-status bridge."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "PDF pp.6-7 Sections 5.1-5.3",
+        "reason": "Evidence pools and metrics precede rankings; inclusion of unverified rumors among target fabrications limits the truth construct."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "PDF p.7 Table 1; p.8 Table 3",
+        "reason": "Events, model families, units and ablation population are visible; uncertainty is not locally displayed despite repeated victims."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF p.5 Figure 2 and Section 4",
+        "reason": "Stage structure, caption decoding and role-level prose have distinct jobs."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "counterexample",
+        "locator": "PDF p.8 Figure 3 and first paragraph of Section 5.4",
+        "reason": "All-events-above-50% wording suppresses visible below-50% Putin-event cells, despite broader limitations later."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "not-applicable",
+        "locator": "PDF p.8 Figure 4",
+        "reason": "Sequence-length sensitivity is presented as threat characterization, not an efficiency or resource-saving result."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "fits",
+        "locator": "PDF p.8 Figure 3 versus adjoining text",
+        "reason": "Numeric heatmap cells contradict adjacent scope wording, an observed failure mode supporting the card warning, not a quality rating."
+      }
+    ],
+    "title": "Lying with Truths: Open-Channel Multi-Agent Collusion for Belief Manipulation via Generative Montage",
+    "role": "selected",
+    "identity": {
+      "pdf_sha256": "f617ebbac8e88a1a66c577277d7c3a77063a882e90aa56085fca352c5c8acc72",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json places Limitations on PDF p.9 and References on p.10; ethics and acknowledgements continue p.10. Entire prepared main-text file read."
+    },
+    "source_pdf_sha256": "f617ebbac8e88a1a66c577277d7c3a77063a882e90aa56085fca352c5c8acc72",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Outstanding Paper",
+    "split": "holdout"
+  },
+  {
+    "id": "acl-2026-6",
+    "main_question": "How can low-rank compression preserve visual information that a text-calibrated basis discards?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-4, Section 3 and Figures 2-3",
+        "move": "Turn cross-modal reconstruction mismatch into a layer/module diagnostic."
+      },
+      {
+        "locator": "PDF pp.4-7, Section 4 and Algorithm 1",
+        "move": "Introduce joint whitening, energy balancing and global rank allocation as responses."
+      },
+      {
+        "locator": "PDF pp.7-9, Section 5 and limitations",
+        "move": "Compare capability retention, text perplexity, latency and component removals, then compound quantization and scope limits."
+      }
+    ],
+    "language_moves": "Scenario labels and an 'Implication for Compression' paragraph connect equations to design. Donor language makes budget transfer intuitive. Repeated 'confirms' and 'without compromising' need metric-specific qualification.",
+    "visuals": [
+      {
+        "locator": "PDF p.5, Figure 4",
+        "purpose": "Connect two calibration streams to joint geometry and low-rank factors.",
+        "encoding": "Blue/orange modality paths, covariance/whitening blocks, shared spectral pool and A/B outputs.",
+        "caption_body_division": "Caption enumerates stages; body supplies objective, balancing factor and reconstruction algebra.",
+        "readability_weakness": "Main flow is clear; miniature text sample and red operation labels are small."
+      },
+      {
+        "locator": "PDF p.9, Figure 6 and Table 4",
+        "purpose": "Expose quality/latency and memory/quality tradeoffs.",
+        "encoding": "Labeled retention points on latency-score curves; configuration and effective-memory columns.",
+        "caption_body_division": "Caption identifies axes and reference; body states hardware earlier and interprets budget movement.",
+        "readability_weakness": "Plot and table are decipherable, but Table 4 caption says 33.8 while its compound row and body say 42.8."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer the diagnostic-to-objective-to-budget-display chain for compression work. Retain calibration and architecture limits, specify retained rather than removed fraction, and preserve losses on either modality instead of treating a sampled frontier as universal.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        5,
+        9
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "No compression implementation, spectral proof or hardware benchmark reproduced.",
+        "Only main-body presentation and selected cached renders inspected."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "PDF pp.3-6 Sections 3-4; p.8 Table 3",
+        "reason": "Modality mismatch and heterogeneous redundancy motivate separately ablated whitening and allocation choices."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "qualified",
+        "locator": "PDF p.3 Equation 5 scenarios; pp.5-6 Equations 6-13",
+        "reason": "Equations receive direct interpretations, but approximation and broad optimality wording should remain distinct from a certified guarantee."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "not-applicable",
+        "locator": "PDF p.7 Section 5.1",
+        "reason": "Uses established capability benchmarks to evaluate compression rather than introduces a new measured construct."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "PDF p.8 Tables 1-3; p.9 Table 4",
+        "reason": "Ratios, modality blocks and memory conditions are visible; main capability table does not locally identify which of the two named backbones it reports."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF p.5 Figure 4 and Section 4.1",
+        "reason": "Graphic traces modality streams, caption enumerates steps and body defines the joint objective."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "PDF p.9 alpha sensitivity and limitations; p.8 Table 2",
+        "reason": "Modality tradeoffs and distribution limits are explicit, while blanket no-compromise wording understates nonzero perplexity differences."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "fits",
+        "locator": "PDF p.7 Section 5.3; p.9 Figure 6 and Table 4",
+        "reason": "A100 latency units and retention settings accompany quality; separate configurations pair effective memory with two capability scores."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "fits",
+        "locator": "PDF p.9 Table 4 caption, row and analysis",
+        "reason": "Caption 33.8 versus row/body 42.8 is a direct text-display failure mode supporting the card warning, not a quality rating."
+      }
+    ],
+    "title": "JW-SVD: Bridging the Cross-Modal Mismatch in Post-Training MLLM Compression",
+    "role": "control",
+    "identity": {
+      "pdf_sha256": "2da1068333fede35cc25cdf0b43382be4d1e691dea9e97081c87793b4f2e7327",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json places Limitations on PDF p.9 and References on p.10. Section 5.5 is main text despite an earlier 'Appendix 5.5' cross-reference. Entire prepared main-text file read."
+    },
+    "source_pdf_sha256": "2da1068333fede35cc25cdf0b43382be4d1e691dea9e97081c87793b4f2e7327",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Main conference long paper; not in inspected award list",
+    "split": "holdout"
+  },
+  {
+    "id": "acl-2025-4",
+    "main_question": "Which prompt conditions alter repeated-token preference, and can a sparse set of attention heads attenuate it?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-3, Figure 1, Table 1 and glossary",
+        "move": "Refine an overly broad distraction concept into four controlled prompt settings."
+      },
+      {
+        "locator": "PDF pp.4-6, Findings 1-3",
+        "move": "Distinguish repeated-token increases, beneficial related context and stronger counterfactual effects."
+      },
+      {
+        "locator": "PDF pp.7-10, Section 4 and limitations",
+        "move": "Discover task-specific masked heads, show intervention examples and collateral-task checks, then delimit model and dataset coverage."
+      }
+    ],
+    "language_moves": "Numbered findings alternate observations with interpretation. Explicitly denying a human-cognition analogy bounds the entrainment label. 'May' and relation-specific qualifications restrain mechanism claims, although random-token effects alone do not identify a unique mechanism.",
+    "visuals": [
+      {
+        "locator": "PDF pp.3-4, Table 1, Figure 2 and Figure 3",
+        "purpose": "Define token roles before aggregate logit/probability contrasts.",
+        "encoding": "Worked prompt rows, emoji glossary, consistent blue/orange token colors and context shading.",
+        "caption_body_division": "Glossary decodes symbols; subcaptions define differences; body explains semantic conditions.",
+        "readability_weakness": "Emojis restore distinctions lost in extracted text but impose lookup cost; the probability panel uses a signed logarithmic scale."
+      },
+      {
+        "locator": "PDF p.8, Figure 7 and Tables 2-3",
+        "purpose": "Link a concrete head-removal example to relation-level summaries.",
+        "encoding": "Matched top-token bars, original/modified braces, head-count/density and logit-gap columns.",
+        "caption_body_division": "Caption identifies interventions; body separates case example from test-set results.",
+        "readability_weakness": "Small token labels need detail view; Table 3 caption's 3.2% minimum omits its visible 2.9% row."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer the worked-prompt-to-finding-to-intervention sequence for explanatory studies. Keep beneficial context and task-specific heads visible; a controlled LRE token assay is not an implemented general RAG defense.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        3,
+        4,
+        8
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Supplementary head stability, overlap and collateral-capability details not audited.",
+        "Statistical tests reported by authors, not independently recalculated."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "PDF pp.1-3 distraction setup; pp.7-9 head intervention",
+        "reason": "An imprecise distraction question becomes prompt contrasts, a sparse intervention and collateral-capability checks."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "PDF p.7 Equations 1-2",
+        "reason": "Optimization definitions support an empirical intervention, not a formal guarantee requiring theorem-to-practice transfer."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "PDF pp.3-4 Table 1 and Section 3.1; p.10 limitations",
+        "reason": "Prompt roles and token measures are explicit before model comparisons; measurement remains confined to controlled relations."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "PDF p.8 Tables 2-3; p.9 Table 4",
+        "reason": "Context state, modified model, relation density, and top-3/top-10 definitions expose what is compared."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF pp.3-4 Table 1, Figures 2-3; p.8 Figure 7",
+        "reason": "Examples and symbol keys decode the plots; prose explains why prompt conditions and removals matter."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "fits",
+        "locator": "PDF p.5 Finding 2; pp.8-10 task specificity and limitations",
+        "reason": "Beneficial context, instruction-model exception, task-specific heads and lack of a deployed mitigation remain explicit."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "PDF p.8 Table 3; p.9 Table 4",
+        "reason": "Head sparsity and collateral capability are reported on separate axes/tables; this is bounded intervention cost, not demonstrated runtime savings."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "fits",
+        "locator": "PDF p.8 Table 3 row and caption",
+        "reason": "The 2.9% row versus 3.2% caption minimum exemplifies the need for local text-display consistency checks, not a quality score."
+      }
+    ],
+    "title": "Llama See, Llama Do: A Mechanistic Perspective on Contextual Entrainment and Distraction in LLMs",
+    "role": "selected",
+    "identity": {
+      "pdf_sha256": "a0d7440e70f8a27c023b916e27ff0a26ea882e1bc992d8ca1c8a41c021768847",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json places Limitations and References on PDF p.10; conclusion is p.9. Entire prepared main-text file read; title typography normalizes to Llama See, Llama Do on p.1."
+    },
+    "source_pdf_sha256": "a0d7440e70f8a27c023b916e27ff0a26ea882e1bc992d8ca1c8a41c021768847",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Outstanding Paper",
+    "split": "holdout"
+  },
+  {
+    "id": "acl-2025-6",
+    "main_question": "Can speech-quality assessment provide interpretable aspect descriptions as well as numerical ratings?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-5, Sections 1-3 and Figures 1-4",
+        "move": "Motivate descriptions, define eleven annotated aspects, disclose the human/GPT/human pipeline and specify metrics."
+      },
+      {
+        "locator": "PDF pp.6-7, Sections 4.1-4.2.1",
+        "move": "Show weak pretrained baselines, then compare balanced and joint aspect training."
+      },
+      {
+        "locator": "PDF pp.8-9, Section 4.2.2 and limitations",
+        "move": "Test description formats, retain lack of reasoning gains, and acknowledge single-listener labels and evaluator limits."
+      }
+    ],
+    "language_moves": "Aspect-specific vocabulary makes a broad quality construct inspectable. The reasoning failure is stated plainly before a stronger text-model comparison. 'Always' interpreting average IoU is too categorical, and correlation should not become rating accuracy.",
+    "visuals": [
+      {
+        "locator": "PDF p.4, Figure 3",
+        "purpose": "Expose how annotations become prose and where humans revise it.",
+        "encoding": "Three colored stages with arrows, seven-score/four-description lists and edited words in red.",
+        "caption_body_division": "Caption gives procedural roles; body describes noise synthesis, scoring and correction responsibilities.",
+        "readability_weakness": "The changed timing and rating are legible at detail size; long example paragraphs make the diagram dense."
+      },
+      {
+        "locator": "PDF p.7, Table 2",
+        "purpose": "Separate scalar ratings from detection, description and timing performance.",
+        "encoding": "Two stacked tables with aspect groups and precision/recall/correlation/IoU columns.",
+        "caption_body_division": "Caption expands metric names; p.6 body supplies the successful-detection condition.",
+        "readability_weakness": "Compact but readable; the conditional population for correlation/IoU is not repeated beside the numbers."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer aspect definitions and visible annotation provenance to dataset papers. Keep conditional localization scores separate from detection recall and acknowledge one listener per clip; generated explanations do not establish improved reasoning or human-equivalent judgment.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "detail_image_pages_viewed": [
+        4,
+        7
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Audio was not listened to; annotation correctness and evaluator agreement not independently validated.",
+        "Appendix instruction screens, format examples and cross-domain experiments not audited."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "qualified",
+        "locator": "PDF pp.1-2 motivation; pp.6-8 training and format contrasts",
+        "reason": "Description deficit motivates design and comparisons; reasoning gains are not achieved by the fine-tuned model."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.3-8 dataset and evaluation",
+        "reason": "Empirical dataset/model study without a formal guarantee."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "PDF pp.3-6 Section 3; p.9 limitations",
+        "reason": "Eleven aspects and scoring rules precede rankings; one listener per clip and unvalidated-in-this-reading GPT scores constrain measurement validity."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "PDF pp.6-7 metric condition and Table 2",
+        "reason": "Training rows and metric groups are clear, but correlation/IoU apply only after successful detection and that condition sits away from the table."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF p.4 Figure 3 and pp.4-5 annotation process",
+        "reason": "Stage graphic, procedural caption and explanatory text expose distinct provenance responsibilities."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "fits",
+        "locator": "PDF pp.7-9 weak aspects, reasoning failure and limitations",
+        "reason": "Poor pause/age/tone results, detection limitations and absent reasoning improvement delimit the positive description claim."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.1,6-8 motivation and results",
+        "reason": "Human time savings motivate automation, but the study makes no measured efficiency contribution."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "fits",
+        "locator": "PDF p.7 Table 2 and adjoining IoU interpretation",
+        "reason": "Readable grouped metrics allow checking that conditional mean IoU near 0.8 does not warrant an 'always correct' description."
+      }
+    ],
+    "title": "QualiSpeech: A Speech Quality Assessment Dataset with Natural Language Reasoning and Descriptions",
+    "role": "control",
+    "identity": {
+      "pdf_sha256": "358af58b5448ae59ba01c79f4afbc7adb4dba17d4bad0a21ba023f2e539ca3bb",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json places conclusion continuation, Limitations, Ethics and References on PDF p.9. Entire nine-page prepared main-text file read; QualiSpeech typography confirmed on p.1."
+    },
+    "source_pdf_sha256": "358af58b5448ae59ba01c79f4afbc7adb4dba17d4bad0a21ba023f2e539ca3bb",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Main conference long paper; not in inspected award list",
+    "split": "holdout"
+  },
+  {
+    "id": "acl-2024-4",
+    "main_question": "Can models verify a causal claim relative to supplied arguments and construct the corresponding reasoning structure?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-3, Figure 1 and Section 2",
+        "move": "Contrast factoid checking with argument-relative causal verification and define structural objects."
+      },
+      {
+        "locator": "PDF pp.3-7, Sections 3-5.1",
+        "move": "Describe generated-and-edited data, human checks, four input/output tasks and distinct evaluation measures."
+      },
+      {
+        "locator": "PDF pp.7-10, Tables 3-4 and discussion",
+        "move": "Separate benefits of provided structure from difficult structure generation and world-truth limitations."
+      }
+    ],
+    "language_moves": "Explicit task input/output notation prevents supplied arguments from being mistaken for generated reasoning. Discussion compares automatic similarity with human validity rather than treating them as interchangeable. The limitations clearly distinguish label consistency from real-world truth.",
+    "visuals": [
+      {
+        "locator": "PDF p.2, Figure 1",
+        "purpose": "Make a causal claim and its intermediate argument concrete.",
+        "encoding": "Claim banner, annotated cause/effect block, directed premise boxes and a proponent boundary.",
+        "caption_body_division": "Caption states that cause/effect annotations are not task inputs; body walks through the intermediate chain.",
+        "readability_weakness": "Branch structure is understandable, though small text nodes require detail view; a plausible chain is not certified historical causality."
+      },
+      {
+        "locator": "PDF p.8, Table 4",
+        "purpose": "Compare supplied-node linking with harder full-structure generation.",
+        "encoding": "Task/model blocks and separate automatic, human and verification column groups with direction arrows.",
+        "caption_body_division": "Caption expands structural metrics; preceding definitions specify human criteria and sample; body explains disagreement.",
+        "readability_weakness": "Clear grouping supports cross-metric comparison; human sample size and variation are not local to the table."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer explicit information-access tasks and paired automatic/human evaluation to reasoning benchmarks. Keep synthetic argument-relative labels distinct from open-world fact verification; good edge similarity need not imply valid or preferred arguments.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        2,
+        8
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Annotation prompts and validation records not audited; no causal truth certification.",
+        "Human assessment is reported by authors on a small subset, not replicated here."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "PDF pp.1-2 argument motivation; p.6 Tasks 1-4; p.8 discussion",
+        "reason": "The structural-reasoning question becomes explicit information-access tasks and returns in structure-provided versus generated comparisons."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.3,6 task definitions",
+        "reason": "Argument and task notation define a benchmark rather than establish a formal mathematical guarantee."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "PDF pp.5-7 annotation and metrics; p.10 limitations",
+        "reason": "Objects, tasks, human criteria and agreement are explicit; validity remains argument-relative with a 50-instance generation assessment."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "PDF pp.7-8 Tables 3-4; p.6 task definitions",
+        "reason": "Task labels, FT/CoT rows, metric groups and direction indicators make different access and training conditions visible."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF p.2 Figure 1 and accompanying walk-through",
+        "reason": "Graph shows relationships; caption limits annotation/input scope; prose explains the intermediate reasoning."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "fits",
+        "locator": "PDF pp.8-10 discussion and limitations",
+        "reason": "Generation weakness, metric disagreement, NEI differences and non-world-truth labels are retained."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.6-9 experiments",
+        "reason": "A reasoning benchmark without an efficiency claim or resource frontier."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "qualified",
+        "locator": "PDF p.2 Figure 1; p.8 Table 4",
+        "reason": "Graph labels need full-page detail; metric grouping is clear, but human sample and variability context are not displayed locally."
+      }
+    ],
+    "title": "CHECKWHY: Causal Fact Verification via Argument Structure",
+    "role": "selected",
+    "identity": {
+      "pdf_sha256": "0485c21ccfbee8da22f4252a00cfc2b8e2d6736b01e2fb2bf4658852955bd778",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json places Limitations and References on PDF p.10; conclusion is p.9. Entire prepared main-text file read; CHECKWHY typography confirmed on p.1."
+    },
+    "source_pdf_sha256": "0485c21ccfbee8da22f4252a00cfc2b8e2d6736b01e2fb2bf4658852955bd778",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Outstanding Paper",
+    "split": "holdout"
+  },
+  {
+    "id": "acl-2024-6",
+    "main_question": "How well do tested language models infer orthographic or auditory classification rules and solve letter-geometry questions?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-4, Sections 1-3 and Table 1",
+        "move": "Use a philosophical analogy to motivate ten balanced rule-induction tasks and a chance reference."
+      },
+      {
+        "locator": "PDF pp.4-7, Figures 2-5 and Table 3",
+        "move": "Probe scaling, demonstrations, CoT and letter geometry, retaining failed reasoning examples."
+      },
+      {
+        "locator": "PDF pp.7-10, Section 5 and limitations",
+        "move": "Report stronger proprietary-model exceptions, unsuccessful explanations and metaphor/coverage limits."
+      }
+    ],
+    "language_moves": "Numbered observations give the negative-result narrative momentum. Yet phrases implying inherent impossibility or that null changes establish non-learning exceed these finite probes. The text explicitly admits unexplained stronger-model results and changing API behavior.",
+    "visuals": [
+      {
+        "locator": "PDF p.5, Figures 3-4",
+        "purpose": "Compare demonstration count and reasoning prompts.",
+        "encoding": "Model-specific small multiples, colored task lines, black aggregate and gray adjusted accuracy.",
+        "caption_body_division": "Captions specify k and excluded uninterpretable responses; body interprets aggregate trends.",
+        "readability_weakness": "Many faint task lines and tiny shared legends impede tracing individual exceptions."
+      },
+      {
+        "locator": "PDF p.8, Table 5",
+        "purpose": "Separate model-family comparisons and failed explanations.",
+        "encoding": "Approach blocks, model rows and rotated task columns.",
+        "caption_body_division": "Blocks label hypothesized causes; body concedes unknown proprietary mechanisms.",
+        "readability_weakness": "Numbers are readable at detail size, but causal labels such as instruction-following remain interpretations rather than controlled identification."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer explicit chance levels and retained exceptions for negative benchmark studies. Appendix E shows four humans verbally identifying rules, not performing the models' item classification; do not present these as matched human/AI accuracy or infer impossibility from no detected gain.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        5,
+        8
+      ],
+      "overview_viewed": true,
+      "appendices_read": [
+        {
+          "pdf_page": 14,
+          "portion": "Appendix E human baseline, Table 7 and participants/procedure; one preceding adjusted-CoT context sentence"
+        },
+        {
+          "pdf_page": 15,
+          "portion": "Appendix E continuation through the end of human procedure, before the fine-tuning figure"
+        }
+      ],
+      "limitations": [
+        "Appendix E read as text only; no appendix image counted as viewed.",
+        "No API experiments, learning claims or philosophical conclusions independently certified."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "qualified",
+        "locator": "PDF p.2 aims; pp.4-8 scaling/prompt/data probes",
+        "reason": "Questions recur in controlled probes, but no implemented remedy closes a question-to-component-to-ablation chain."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.1-2 Mary analogy; p.10 limitation 4",
+        "reason": "Philosophical analogy and empirical probes are not a mathematical guarantee; the paper itself labels the analogy metaphorical."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "PDF pp.3-4 Table 1 and setup; Appendix E PDF pp.14-15",
+        "reason": "Tasks and chance levels are explicit; four humans verbalize rules rather than classify the same item population, weakening the human-baseline interpretation."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "PDF p.5 Figure 4; p.8 Table 5; Appendix E",
+        "reason": "Model blocks, k and adjusted exclusions are visible, but human/model tasks and some API versions differ."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF p.5 Figures 3-4; p.6 Table 3",
+        "reason": "Curves show aggregates and task variation, captions state conditions, and a concrete failed response grounds the prose interpretation."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "PDF pp.5,7-8 stronger models and API changes; p.9 conclusion",
+        "reason": "Exceptions and failed hypotheses remain visible, but null results are still used for broad inability language."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.4-9 experimental results",
+        "reason": "Scaling probes examine capability rather than demonstrate a cost-efficiency contribution."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "fits",
+        "locator": "PDF p.5 Figures 3-4; p.8 Table 5",
+        "reason": "Faint small-multiple lines, rotated headers and conditional adjusted accuracy make actual-size and population checks materially useful."
+      }
+    ],
+    "title": "Language Models Don’t Learn the Physical Manifestation of Language",
+    "role": "control",
+    "identity": {
+      "pdf_sha256": "cf01e0e3237e4f6e2af82e6d8220ba1d90b4a12355dfb05100ac92b5a96efec4",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json places Section 8 Limitations and References together on PDF p.10; conclusion is p.9. Entire prepared main-text file read."
+    },
+    "source_pdf_sha256": "cf01e0e3237e4f6e2af82e6d8220ba1d90b4a12355dfb05100ac92b5a96efec4",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Main conference long paper; not in inspected award list",
+    "split": "holdout"
+  },
+  {
+    "id": "neurips-2025-4",
+    "main_question": "Can joint reinforcement learning improve both multimodal understanding and generation before task-specific refinement?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-4, Fig.1",
+        "move": "Contrast four training paradigms in a pilot and motivate shared optimization from cross-task degradation."
+      },
+      {
+        "locator": "PDF pp.4-6, Fig.2, Eqs.3-6",
+        "move": "Define proxy rewards, joint grouping without KL, then task-specific refinement with KL restored."
+      },
+      {
+        "locator": "PDF pp.6-10, Tables1-7, Figs.3-4",
+        "move": "Benchmark both capabilities, show successes and failures, then separate paradigm, reward and scaling ablations."
+      }
+    ],
+    "language_moves": "A foundation-then-specialization narrative connects pilot, architecture and ablations. Named task formats make reward choices traceable. Claims of no supervised data require qualification: prepared QA, accuracy rewards and curated image-prompt data remain inputs, although cold SFT is omitted. Generalization language extends beyond the displayed benchmark comparisons.",
+    "visuals": [
+      {
+        "locator": "PDF p.4, Fig.2",
+        "purpose": "Explain the change between training stages.",
+        "encoding": "Left joint stream becomes two right task streams; matching reward colors, arrows and frozen/trainable icons.",
+        "caption_body_division": "Caption names the two stages; body supplies reward equations and KL choices.",
+        "readability_weakness": "Overall flow is legible; miniature tensors and reward symbols need close reading, and stage-one KL omission is explained in text rather than explicit in the panel."
+      },
+      {
+        "locator": "PDF p.8, Table3 and Fig.3",
+        "purpose": "Connect measured gains to concrete generation behavior while retaining a failure.",
+        "encoding": "Table rows identify stages and baseline-relative deltas; paired image columns repeat model order; red frame flags failure.",
+        "caption_body_division": "Caption decodes the red frame; body interprets alignment and later acknowledges failures.",
+        "readability_weakness": "Green deltas are relative to baseline, not the adjacent comparator. Long image prompts are small; examples establish illustration, not prevalence."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer the pilot-to-ablation chain and visibly marked failures to joint-task method papers. Do not transfer proxy reward labels as evaluator validity or eight-GPU hardware disclosure as an efficiency result. Table3 retains higher MathWe/LogicVT scores for cold-SFT refinement than the final method; Table7 changes tuning regime with scale.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "detail_image_pages_viewed": [
+        4,
+        8
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "No appendix training-data audit or reproduction.",
+        "Only pp.4 and 8 inspected as individual detail images; other cached pages seen only in overview.",
+        "Reward validity, benchmark leakage and experimental correctness not certified."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "PDF pp.3-4 Fig.1; pp.8-9 Table3",
+        "reason": "Pilot comparison motivates joint learning and returns in staged ablations; the chain supports diagnosis rather than causal identification."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.3-6 Eqs.1-6",
+        "reason": "Equations specify optimization, without a new theorem/proof contribution requiring the formal-result pattern."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "PDF pp.4-7 Sections3.3 and4.1",
+        "reason": "Reward and benchmark dimensions are described, but automatic proxy agreement does not independently establish semantic correctness."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "PDF pp.6-8 Tables1-3; p.10 Table7",
+        "reason": "Scale, resolution, task category and own evaluations are labeled; heterogeneous source training and full-versus-LoRA tuning limit like-for-like ranking."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF p.4 Fig.2; p.8 Fig.3",
+        "reason": "Stage layout encodes procedure and repeated model order plus red-frame legend makes qualitative comparisons decodable."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "fits",
+        "locator": "PDF pp.8-10 Figs.3-4, Table3, scaling discussion",
+        "reason": "Explicit failures, mixed ablation advantages and nonlinear reasoning gains survive the favorable overall account."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "not-applicable",
+        "locator": "PDF p.7 implementation; p.10 Table7",
+        "reason": "Hardware and memory-motivated LoRA are disclosed, but no paired performance-cost frontier or budget comparison is presented."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "fits",
+        "locator": "PDF p.8 Table3 and Fig.3",
+        "reason": "Signed deltas aid reading but denote baseline gains; small prompt typography and dense stage labels demonstrate why local decoding and actual-size inspection matter."
+      }
+    ],
+    "title": "Co-Reinforcement Learning for Unified Multimodal Understanding and Generation",
+    "role": "selected",
+    "identity": {
+      "pdf_sha256": "3141cee51c227d4a6080c3314dbe3e7c85d7b371e382158a41bbe773f40de0bf",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json confirms main exposition through PDF p.10; p.11 contains acknowledgements followed by References. Prepared pp.1-11 read in full; later reference/appendix pages excluded."
+    },
+    "source_pdf_sha256": "3141cee51c227d4a6080c3314dbe3e7c85d7b371e382158a41bbe773f40de0bf",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (spotlight)",
+    "split": "holdout"
+  },
+  {
+    "id": "neurips-2025-6",
+    "main_question": "Can repeated mappings from soft prompts to the same instruction improve black-box instruction search rather than merely waste queries?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-3, Fig.1",
+        "move": "Measure mapping redundancy, reinterpret it as useful prior information, and state deterministic model assumptions."
+      },
+      {
+        "locator": "PDF pp.4-7, Fig.2, Eqs.3-9",
+        "move": "Define sampled preimages, shared scores, greedy initialization and consistency loss; use a toy predictor illustration."
+      },
+      {
+        "locator": "PDF pp.7-10, Tables1-3, Figs.4-6",
+        "move": "Compare fixed-budget task performance, isolate components and illustrate data coverage before stating overhead limits."
+      }
+    ],
+    "language_moves": "The obstacle-to-resource reversal gives each component a common rationale. The authors explicitly limit preimages to a sampled candidate set and assume deterministic models. Fourteen-fold scored-data expansion counts propagated labels, not independent black-box observations. The strongest CoT comparison sentence exceeds the GSM8K row, although the next sentence calls that result competitive.",
+    "visuals": [
+      {
+        "locator": "PDF p.4, Fig.2",
+        "purpose": "Make three components and their reuse across stages traceable.",
+        "encoding": "Horizontal initialization, lower feedback loop, repeated numbered components and grouped color-coded prompt embeddings.",
+        "caption_body_division": "Caption maps numbered operations to sections; body defines the corresponding objective and preimage sets.",
+        "readability_weakness": "Large stage labels and arrows guide reading; embedded tensors, predictions and group notation are small."
+      },
+      {
+        "locator": "PDF p.9, Figs.4-6",
+        "purpose": "Separate label expansion, predictor error and projected coverage evidence.",
+        "encoding": "Bar heights show counts/RMSE; four shared-layout t-SNE panels contrast gray candidate clouds and red scored points.",
+        "caption_body_division": "Captions identify quantities and red-point semantics; body supplies fixed-query interpretation and task-specific settings.",
+        "readability_weakness": "Fig.5 bars begin at RMSE 0.1, magnifying apparent relative height differences, and show no uncertainty. t-SNE density illustrates this projection, not proven coverage of the original search space."
+      }
+    ],
+    "transfer_conditions_counterexample": "Useful for finite candidate searches with stable identical-output scores. Transfer explicit counting units and fixed-budget comparisons; do not call shared labels additional independent evidence. Benefits require substantial many-to-one overlap, and white-box preprocessing/regularization costs remain outside the black-box-query advantage.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        4,
+        9
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "The main table deliberately shows 20 of 30 induction tasks; the other ten appendix rows were not inspected.",
+        "No independent timing, API determinism or test-set evaluation verification.",
+        "Only pp.4 and 9 viewed as individual detail images."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "PDF p.2 Fig.1; p.8 Table3; p.9 Figs.4-6",
+        "reason": "Observed redundancy motivates all three mechanisms and returns in component and predictor diagnostics."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.3-6 Eqs.1-9",
+        "reason": "Definitions and optimization losses describe an empirical method; no new theorem or proof claim organizes the contribution."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "PDF pp.3,7-8 Sections3 and5",
+        "reason": "Validation/test separation and task accuracy are explicit, but benchmark constructs are inherited and the displayed induction subset is narrower than the full claimed evaluation."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "PDF p.7 Table1 and Section5.1",
+        "reason": "White/black-box models, 165-query budget, 40 initial prompts, three seeds and standard-error meaning accompany the comparison."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF p.4 Fig.2; p.9 Fig.6",
+        "reason": "Numbering ties mechanism to caption and sections; repeated t-SNE panels keep candidate/selected color semantics stable."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "PDF p.8 Table2 and Section5.3; p.10 limitations",
+        "reason": "GSM8K is below ZOPO and later called competitive despite an opening all-datasets overstatement; dependence on candidate size and extra overhead is retained."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "qualified",
+        "locator": "PDF pp.7,9-10 Sections5.1,6.2 and limitations",
+        "reason": "Performance is conditioned on a fixed black-box query budget, but propagated-label counts are not total cost savings and overhead is only qualitative."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "fits",
+        "locator": "PDF p.9 Fig.5",
+        "reason": "The visible 0.1 bar-axis baseline and absent error indicators support the card's warning about scale and uncertainty interpretation."
+      }
+    ],
+    "title": "PRESTO: Preimage-Informed Instruction Optimization for Prompting Black-Box LLMs",
+    "role": "control",
+    "identity": {
+      "pdf_sha256": "2ae5975131d638bf55d9735d1ad036130169b9d3009082d67d3cfbc8eb2321a2",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json places References on PDF p.10 after conclusion, limitations and acknowledgement; prepared pp.1-10 read completely."
+    },
+    "source_pdf_sha256": "2ae5975131d638bf55d9735d1ad036130169b9d3009082d67d3cfbc8eb2321a2",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (poster)",
+    "split": "holdout"
+  },
+  {
+    "id": "neurips-2024-4",
+    "main_question": "How do mean-derived positional vectors change within and beyond context windows, and can these observations guide training-free extension?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-3, Eqs.2-4, Table1",
+        "move": "Define a positional/semantic decomposition hypothesis and controlled positional-encoding/attention variants."
+      },
+      {
+        "locator": "PDF pp.4-8, Tables2-3, Figs.1-6",
+        "move": "Trace initial-token anchors with removals, compare extrapolation and interpolation, and relate changes to perplexity."
+      },
+      {
+        "locator": "PDF pp.8-10, Eqs.5-7, Table4",
+        "move": "Derive two intervention designs, evaluate length-dependent perplexity and retain model/length restrictions."
+      }
+    ],
+    "language_moves": "Question-led subsections and bold findings make a long analysis navigable. Speculation and suspicion sometimes precede stronger causal wording; the mean decomposition is an operational hypothesis, not a demonstrated separation of all semantic information. The conclusion narrows effectiveness to specific models, and limitations explicitly identify self-trained small-model dependence.",
+    "visuals": [
+      {
+        "locator": "PDF p.5, Fig.3 and Table2",
+        "purpose": "Show how component removal changes attention geometry and prediction behavior.",
+        "encoding": "Model rows and intervention columns organize triangular logarithmic heatmaps; boxes/arrows locate initial-token sinks; table separates similarity and PPL.",
+        "caption_body_division": "Brief caption identifies maps; surrounding body specifies layer/head, removals and consequences.",
+        "readability_weakness": "Panel-specific colorbar ranges vary substantially, so identical colors do not mean equal attention scores. Small titles and ticks demand close inspection."
+      },
+      {
+        "locator": "PDF p.9, Table4",
+        "purpose": "Bound extension effectiveness by model, parameters and input length.",
+        "encoding": "Nested row groups identify architecture and interpolation factors; columns repeat 2K-8K PPL and preserve failures above 1000.",
+        "caption_body_division": "Caption states dataset and original context size; body explains sliding-window evaluation and deterioration at 8K.",
+        "readability_weakness": "Readable grouping avoids decorative winners, but missing-value dashes have no local explanation and variability is not shown."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer the explanatory observation-to-intervention sequence with explicit architecture and token ranges. Preserve worsened in-window PPL and the replacement method's 8K loss. A language-model PPL gain on custom NoPE variants should not be recast as validated long-context reasoning in arbitrary pretrained LLMs.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "detail_image_pages_viewed": [
+        5,
+        9
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Appendix B derivation and larger-model appendix observations were not audited; proof validity is outside scope.",
+        "Appendix Fig.9 explanation is reported as an attribution, not independently checked.",
+        "Only pp.5 and 9 individually inspected; no numerical replication or general disentanglement certification."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "PDF pp.4-8 Sections3.2-4.2; p.9 Table4",
+        "reason": "Anchor/interpolation diagnostics motivate two design choices that are tested with length-dependent outcomes."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "qualified",
+        "locator": "PDF p.3 Eqs.2-4; p.4 Appendix B referral",
+        "reason": "Objects and estimators are explicit, but broad positional/semantic interpretation remains hypothesized; a local first-token proof referral does not prove the full explanatory account."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "PDF pp.3,5,8-9 Sections3.1,3.2.2,4.3",
+        "reason": "Similarity threshold, PPL and evaluation lengths are operationalized; they measure the chosen probes rather than general contextual competence."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "PDF p.3 Table1; p.9 Table4",
+        "reason": "Architecture, context size and tuning factors are beside values, but uncertainty and a local dash legend are absent and cross-architecture comparisons need care."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "qualified",
+        "locator": "PDF p.5 Fig.3",
+        "reason": "Panel arrangement and sink annotations convey relations, while varying color ranges weaken stable quantitative color semantics."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "fits",
+        "locator": "PDF p.9 Table4 discussion; p.10 limitations",
+        "reason": "8K replacement degradation and dependence on self-trained small models remain explicit alongside favorable extension claims."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "not-applicable",
+        "locator": "PDF p.8 Sections4.1-4.2",
+        "reason": "Training-free and recalculation considerations motivate implementation, but there is no measured performance-versus-compute analysis."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "fits",
+        "locator": "PDF p.5 Fig.3; p.9 Table4",
+        "reason": "Detail inspection exposes different heatmap scales and unexplained table dashes that overview-level shape alone would miss."
+      }
+    ],
+    "title": "Exploring Context Window of Large Language Models via Decomposed Positional Vectors",
+    "role": "selected",
+    "identity": {
+      "pdf_sha256": "1ba126617245ed20fdb34f45646416eed610d2e03f7e13fdde126e1ee0cad97f",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json confirms conclusion and limitations on PDF p.10 followed by acknowledgements and References. Prepared pp.1-10 fully read."
+    },
+    "source_pdf_sha256": "1ba126617245ed20fdb34f45646416eed610d2e03f7e13fdde126e1ee0cad97f",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (spotlight)",
+    "split": "holdout"
+  },
+  {
+    "id": "neurips-2024-6",
+    "main_question": "Can anchor-relative training-dynamics scores select useful data across heterogeneous clients without exchanging their raw examples?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-4, Definitions1.1-1.2, Figs.1-3",
+        "move": "Define model-relative quality, diagnose polluted-data degradation and separate client scoring from collaborative training."
+      },
+      {
+        "locator": "PDF pp.5-6, Eqs.1-7",
+        "move": "Approximate influence through checkpoint gradient products and LoRA layers, then set a ten-anchor global threshold."
+      },
+      {
+        "locator": "PDF pp.6-10, Tables1-3, Figs.4-5",
+        "move": "Compare QA, knowledge retention and selection metrics, vary corruption/merging/layer choices, and state common-architecture limits."
+      }
+    ],
+    "language_moves": "Definitions usefully make quality conditional on model, training and validation set. Medical/multilingual/financial cases broaden the application story, but synthetic corruption and held-out same-source anchors delimit it. The clean-data Oracle is repeatedly called a theoretical upper bound despite displayed scores exceeding it. Raw-data locality is described in privacy language without a formal guarantee in the main text.",
+    "visuals": [
+      {
+        "locator": "PDF p.8, Tables1-2",
+        "purpose": "Distinguish QA response quality, retained knowledge and collaboration regimes.",
+        "encoding": "Grouped model/metric columns, baseline rows, bold/underlined winners and parenthesized Oracle-relative percentages.",
+        "caption_body_division": "Captions name tasks and emphasis; body interprets QA gains and forgetting.",
+        "readability_weakness": "Captions say emphasis is per row although it operates by column. Percentages need an explicit local denominator; values above 100% challenge upper-bound wording. No uncertainty is displayed."
+      },
+      {
+        "locator": "PDF p.9, Figs.4-5",
+        "purpose": "Probe corruption sensitivity, threshold changes, merging and scoring-layer choice.",
+        "encoding": "Paired bars, reference lines, a dual-axis accuracy/threshold plot and three small ablation bars.",
+        "caption_body_division": "Captions identify comparisons; body explains the negative merging regime and layer rationale.",
+        "readability_weakness": "Truncated bar axes enlarge visual differences; dual axes need care. Fig.4 caption omits dataset/model and Fig.5 labels are small."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer conditional quality definitions and separate task/retention metrics to collaborative selection studies. Preserve the reported regime where selected data with linear merging underperforms low-quality data with TIES. Do not treat synthetic selection accuracy as real private-domain validity, a clean-data comparator as a mathematical bound, or adapter exchange as certified privacy.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "detail_image_pages_viewed": [
+        8,
+        9
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "No sensitive data, judge outputs or gradient implementation audited; no medical effectiveness or privacy certification.",
+        "Qualitative appendix Tables7-8 and additional supplement experiments not inspected.",
+        "Only pp.8 and 9 viewed individually; public-data simulation bounds presentation observations."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "PDF pp.3-6 Figs.1-3; pp.9-10 Fig.5 and Table3",
+        "reason": "Quality/domain heterogeneity motivates anchor scoring and returns in merging, layer and threshold diagnostics."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "qualified",
+        "locator": "PDF pp.2-6 Definitions1.1-1.2, Eqs.1-7; p.8 Table1",
+        "reason": "Objects and gradient approximations are stated, but a bi-level interpretation is not an optimization guarantee and the claimed upper bound is visibly surpassed."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "qualified",
+        "locator": "PDF pp.6-7 Section4.1",
+        "reason": "Pollution, GPT-4 judging scales and selection metrics precede results; same-source synthetic labels and absent independent judge validation restrict construct claims."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "PDF pp.7-9 Tables1-2 and Fig.4",
+        "reason": "Models, communication rounds and metrics are specified, but score scales, Oracle-relative percentages and figure-specific dataset context are not all local; uncertainty is absent."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "qualified",
+        "locator": "PDF p.9 Figs.4-5",
+        "reason": "Panels separate sensitivity and ablations, but dual axes, small labels and sparse captions shift substantial decoding to the body."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "PDF pp.8-10 Tables1-2, merging discussion and limitations",
+        "reason": "Negative merging and shared-architecture limits survive, while categorical upper-bound/privacy wording is broader than the displayed evidence."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.5-7 low-rank computation and communication settings",
+        "reason": "Sparsity and communication motivate the design, without measured performance-cost or privacy-risk curves."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "fits",
+        "locator": "PDF p.8 Tables1-2; p.9 Figs.4-5",
+        "reason": "Row/column caption mismatch, nonzero bar baselines and miniature ablation labels directly instantiate display-consistency and readability risks."
+      }
+    ],
+    "title": "CLUES: Collaborative Private-domain High-quality Data Selection for LLMs via Training Dynamics",
+    "role": "control",
+    "identity": {
+      "pdf_sha256": "3075ce73b42b9971e2f3cf4246940fc85cd88eb7bbd35fa68d6246178cdcf6f4",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json puts References at the start of PDF p.11, after discussion, limitations and acknowledgement on p.10. Prepared pp.1-11 fully read, including boundary reference page."
+    },
+    "source_pdf_sha256": "3075ce73b42b9971e2f3cf4246940fc85cd88eb7bbd35fa68d6246178cdcf6f4",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (poster)",
+    "split": "holdout"
+  },
+  {
+    "id": "neurips-2023-4",
+    "main_question": "Can reward-focused contribution models reduce long-term credit-assignment noise caused by state-specific hindsight estimates?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-4, Fig.1, Definition1, Eqs.3-4",
+        "move": "Pose an action-alternative question, define rewarding outcomes and replace temporal credit heuristics with contribution coefficients."
+      },
+      {
+        "locator": "PDF pp.5-7, Theorems1,3-4, Proposition2, Fig.2",
+        "move": "Separate unbiasedness conditions, a restricted variance ordering and a state-information failure case; bridge them to learned coefficients."
+      },
+      {
+        "locator": "PDF pp.7-10, Figs.3-5",
+        "move": "Use exact dynamic-programming references to separate estimator and learning error, then test distractors, interleaving and reward aliasing."
+      }
+    ],
+    "language_moves": "The opening counterfactual question recurs as a precise probability ratio. The authors flag Theorem3's simplified setting and learned-coefficient bias before experiments. An intuition paragraph explains why excess outcome information adds noise. Discussion distinguishes the intervention-like coefficients from a stronger fixed-external-noise counterfactual and retains sparse/continuous-reward scaling limits.",
+    "visuals": [
+      {
+        "locator": "PDF p.7, Fig.3 A-D",
+        "purpose": "Connect task structure, learning performance and estimator error.",
+        "encoding": "Environment schematic, paired exact/learned learning curves, SNR violins and normalized bias-variance scatter share method colors.",
+        "caption_body_division": "Caption specifies ground-truth versus learned conditions, 30 seeds, standard errors and shared-policy evaluation; body explains spurious distractor credit.",
+        "readability_weakness": "Dense legend and similarly colored COCOA curves need close inspection. Decibel axes and an infinity break require the caption's normalization context."
+      },
+      {
+        "locator": "PDF p.9, Figs.4-5",
+        "purpose": "Show subtask separation and a failure of scalar-reward identity.",
+        "encoding": "Context colors connect room schematic to contribution heatmaps; repeated method colors expose the reward/feature split under aliasing.",
+        "caption_body_division": "Fig.4 decodes contexts and heatmaps; Fig.5 caption explains the changed reward and resulting failure, expanded in body.",
+        "readability_weakness": "Heatmap labels are tiny and line colors crowded; Fig.4's local caption does not define its shading. The aliasing result is nonetheless visually explicit."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer the exact-versus-learned separation and theorem-to-diagnostic bridge when an exact reference is feasible. Preserve the exception: reward-only encoding minimizes variance under stated idealized conditions but feature encoding learns better with aliased rewards. Toy environments and enumerated small action spaces do not establish complex-environment scalability.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "detail_image_pages_viewed": [
+        7,
+        9
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Proof appendices, dynamic-programming implementation and all supplemental experiments not audited.",
+        "No claim of proof or causal identification certification; conclusions concern presentation of conditions and evidence.",
+        "Only pp.7 and 9 inspected as individual detail images."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "PDF pp.2-6 Fig.1, Proposition2, Fig.2; pp.7-9 Figs.3-5",
+        "reason": "Spurious state contributions motivate reward encodings and return in variance, task-separation and aliasing diagnostics."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "fits",
+        "locator": "PDF pp.4-8 Definitions1-2, Theorems1,3, Section3.4",
+        "reason": "Formal objects, fully-predictive/exact-coefficient assumptions and restricted variance result precede interpretation and explicit learned-model bias caveats; proof correctness was not certified."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "fits",
+        "locator": "PDF pp.7-8 Section4 and Fig.3",
+        "reason": "Task knobs and exact policy-gradient references define the isolated credit-assignment capability and distinguish estimator error from approximation quality."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "fits",
+        "locator": "PDF p.7 Fig.3 caption",
+        "reason": "Exact/learned conditions, common trajectories, normalization, seed count and standard-error meaning are attached to the displays."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF p.7 Fig.3; p.9 Figs.4-5",
+        "reason": "Linked task schematics, performance curves and diagnostic encodings divide explanatory labor between graphic, caption and interpretation."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "fits",
+        "locator": "PDF pp.9-10 Fig.5 and discussion",
+        "reason": "Aliased rewards disadvantage COCOA-reward; learned-model bias and sparse/unique-reward limits remain central rather than hidden."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "fits",
+        "locator": "PDF pp.7-9 Figs.1,3-5",
+        "reason": "Performance is paired with episode budget and bias/variance/SNR under stated environments, including an unfavorable aliasing regime; this supports sample efficiency rather than wall-clock claims."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "fits",
+        "locator": "PDF p.7 Fig.3 C-D; p.9 Fig.4 C",
+        "reason": "Close viewing is needed to decode decibel/infinity conventions, dense legends and small heatmap text despite informative overall structure."
+      }
+    ],
+    "title": "Would I have gotten that reward? Long-term credit assignment by counterfactual contribution analysis",
+    "role": "selected",
+    "identity": {
+      "pdf_sha256": "478518a714f27a4066026d607e814e24f6351f1466bbd8fa0a511b7d8594fd78",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json confirms discussion ends on PDF p.10; p.11 starts acknowledgements and then References. Prepared pp.1-11 read in full; extensive later appendices excluded."
+    },
+    "source_pdf_sha256": "478518a714f27a4066026d607e814e24f6351f1466bbd8fa0a511b7d8594fd78",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (spotlight)",
+    "split": "holdout"
+  },
+  {
+    "id": "neurips-2023-6",
+    "main_question": "What finite-time error bound can be presented for coupled neural Q/Whittle-index updates under Markovian observations without parameter projection?",
+    "argument_sequence": [
+      {
+        "locator": "PDF pp.1-5, Algorithm1, Table1",
+        "move": "State the unresolved two-timescale question, define the two-layer ReLU algorithm and compare theoretical settings with prior work."
+      },
+      {
+        "locator": "PDF pp.6-9, Theorems1-2, Fig.1, Assumptions1-3",
+        "move": "Introduce coupled Lyapunov errors, map three proof steps, and separate stochastic convergence from surrogate/width approximation terms."
+      },
+      {
+        "locator": "PDF pp.9-10, Figs.2-4",
+        "move": "Illustrate index convergence in one four-state system, compare baselines and vary network width for an assumption-related diagnostic."
+      }
+    ],
+    "language_moves": "An explicit boxed research question and numbered proof steps orient a theory-centered paper. Theorem1's terms receive a verbal interpretation, including a finite-width residual, whereas abstract/conclusion foreground the decaying rate alone. Numerical verification language should remain an illustration of the chosen example, not certification of assumptions or general convergence. General deep networks and real applications are deferred.",
+    "visuals": [
+      {
+        "locator": "PDF p.7, Fig.1",
+        "purpose": "Expose the proof's surrogate-to-original dependency structure.",
+        "encoding": "Three colored step regions, solid surrogate route, dashed original route and red arrows locating approximation gaps.",
+        "caption_body_division": "Caption walks the three steps and identifies dashed lines; body expands each construction in the same order.",
+        "readability_weakness": "Strong spatial structure, but blue equations and vertically rotated gap text are small; distinction between both Lyapunov functions needs caption/body support."
+      },
+      {
+        "locator": "PDF p.10, Figs.3-4",
+        "purpose": "Compare learned indices with exact values and illustrate width dependence.",
+        "encoding": "Four state panels repeat method colors and exact-value annotations; separate line plots c0 against hidden neurons.",
+        "caption_body_division": "Captions name comparisons; body gives the four-state scope, similar LFA behavior and future application limits.",
+        "readability_weakness": "Tiny legends/ticks and tightly placed panel captions impede reading at page scale. No variability is displayed despite 100 trials described on p.9; c0's computational construction is not local."
+      }
+    ],
+    "transfer_conditions_counterexample": "Transfer a proof roadmap and term-by-term bound interpretation to theory papers. Retain Markov-mixing, contraction, surrogate and width conditions when summarizing the rate. The authors acknowledge similar convergence to linear approximation and useful baseline index orderings; a four-state illustration does not establish large-scale superiority or validate assumptions universally.",
+    "coverage": {
+      "main_pdf_pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "detail_image_pages_viewed": [
+        7,
+        10
+      ],
+      "overview_viewed": true,
+      "appendices_read": [],
+      "limitations": [
+        "Complete proofs, stability conditions and numerical implementation were not certified or audited.",
+        "PDF p.10 was missing from the image cache, rendered with pdftoppm and actually viewed; p.5 appears only in the overview.",
+        "Numerical presentation is limited to the reported four-state example; no supplemental or real-world evaluation audit."
+      ]
+    },
+    "pattern_checks": [
+      {
+        "pattern_id": "P1",
+        "verdict": "fits",
+        "locator": "PDF p.2 research question; pp.6-10 Theorem1 and Figs.1-4",
+        "reason": "The missing coupled-parameter guarantee motivates a proof construction and targeted convergence/width illustrations."
+      },
+      {
+        "pattern_id": "P2",
+        "verdict": "qualified",
+        "locator": "PDF pp.6-9 Theorem1, Fig.1 and Assumptions1-3",
+        "reason": "Objects, proof sketch and approximation floor are explicit; some conditions arrive after the headline theorem and the abstract's rate omits the finite-width residual. No proof-validity judgment is made."
+      },
+      {
+        "pattern_id": "P3",
+        "verdict": "not-applicable",
+        "locator": "PDF pp.9-10 Section5",
+        "reason": "The four-state experiment illustrates a theory contribution rather than introducing a capability benchmark or evaluator."
+      },
+      {
+        "pattern_id": "P4",
+        "verdict": "qualified",
+        "locator": "PDF pp.9-10 Section5, Figs.2-4",
+        "reason": "Dynamics, step sizes, exploration, width and 100 trials are disclosed, but per-baseline conditions, uncertainty and c0 computation are not local to the comparison."
+      },
+      {
+        "pattern_id": "P5",
+        "verdict": "fits",
+        "locator": "PDF p.7 Fig.1",
+        "reason": "Graphic routes encode proof dependencies; caption decodes the three stages and body explains why each approximation gap matters."
+      },
+      {
+        "pattern_id": "P6",
+        "verdict": "qualified",
+        "locator": "PDF p.7 Theorem1 interpretation; p.10 baseline discussion and conclusion",
+        "reason": "Residual errors, similar LFA performance and useful alternative index orderings are retained, though headline rate/verification wording can obscure those boundaries."
+      },
+      {
+        "pattern_id": "P7",
+        "verdict": "not-applicable",
+        "locator": "PDF p.10 Figs.3-4",
+        "reason": "Iterations and width are reported for convergence illustrations without a measured runtime, memory or deployment-risk comparison."
+      },
+      {
+        "pattern_id": "P8",
+        "verdict": "fits",
+        "locator": "PDF p.7 Fig.1; p.10 Fig.3",
+        "reason": "Individual images reveal miniature/rotated mathematical labels and cramped legends that the overview cannot resolve; uncertainty is not visually represented."
+      }
+    ],
+    "title": "Finite-Time Analysis of Whittle Index based Q-Learning for Restless Multi-Armed Bandits with Neural Network Function Approximation",
+    "role": "control",
+    "identity": {
+      "pdf_sha256": "eba7544d19b6003e30760be2ef54b197770666b527b6eeef7a9092598e531119",
+      "manifest_digest_verified": true,
+      "registry_digest_verified": true,
+      "title_verified_on_pdf_page": 1,
+      "version": "official conference PDF retrieved 2026-10-26; digest pinned",
+      "main_boundary": "pages.json confirms conclusion on PDF p.10 and acknowledgements then References on p.11. Prepared pp.1-11 completely read; later proof supplements excluded."
+    },
+    "source_pdf_sha256": "eba7544d19b6003e30760be2ef54b197770666b527b6eeef7a9092598e531119",
+    "source_version": "official conference PDF retrieved 2026-10-26; digest pinned",
+    "category": "Accept (poster)",
+    "split": "holdout"
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "status": "published",
+  "checked_at": "2026-10-27T17:53:29.113454+00:00",
+  "repository": "VeraPyuyi/research-workflow-skills",
+  "private": true,
+  "default_branch": "magpie",
+  "branches": {
+    "magpie": "21e1927ebfdae30237f4f54ac8fbaee9cce885b0",
+    "codex-native": "b056532bb33cf20c545bfab55cb2378a5652e660"
+  },
+  "branch_count": 2,
+  "remote_matches_verified_exports": true,
+  "push": "atomic, fast-forward, two existing branches",
+  "hosted_workflows_added": false,
+  "excluded_historical_result_files": {
+    "magpie": [
+      "tests/results/cursor-routing-code-validation.json",
+      "tests/results/cursor-routing-release-receipt.json",
+      "tests/results/goal-leakage-behavior.json",
+      "tests/results/goal-leakage-code-validation.json",
+      "tests/results/goal-leakage-forward.md",
+      "tests/results/goal-leakage-integrated-review.md",
+      "tests/results/goal-leakage-release-receipt.json",
+      "tests/results/goal-leakage-review-disposition.json",
+      "tests/results/goal-leakage-runtime-status.json",
+      "tests/results/live-validation.json",
+      "tests/results/release-code-validation.json",
+      "tests/results/release-receipt.json",
+      "tests/results/research-focus-baseline.md",
+      "tests/results/research-focus-behavior.json",
+      "tests/results/research-focus-code-validation.json",
+      "tests/results/research-focus-forward.md",
+      "tests/results/research-focus-integrated-review.md",
+      "tests/results/research-focus-release-receipt.json",
+      "tests/results/research-focus-review-disposition.json",
+      "tests/results/vertex-credit-code-validation.json",
+      "tests/results/vertex-credit-forward.md",
+      "tests/results/vertex-credit-release-receipt.json"
+    ],
+    "codex-native": [
+      "tests/results/goal-leakage-behavior.json",
+      "tests/results/goal-leakage-code-validation.json",
+      "tests/results/goal-leakage-forward.md",
+      "tests/results/goal-leakage-integrated-review.md",
+      "tests/results/goal-leakage-release-receipt.json",
+      "tests/results/goal-leakage-review-disposition.json",
+      "tests/results/goal-leakage-runtime-status.json",
+      "tests/results/live-validation.json",
+      "tests/results/release-code-validation.json",
+      "tests/results/release-receipt.json",
+      "tests/results/research-focus-baseline.md",
+      "tests/results/research-focus-behavior.json",
+      "tests/results/research-focus-code-validation.json",
+      "tests/results/research-focus-forward.md",
+      "tests/results/research-focus-integrated-review.md",
+      "tests/results/research-focus-release-receipt.json",
+      "tests/results/research-focus-review-disposition.json"
+    ]
+  },
+  "bundle_digests": {
+    "magpie": "sha256:d7c78ac629423d0a342ed04d9265c5977c619c5328c7528bd764903675089ad1",
+    "codex-native": "sha256:a69ed6f36b636d74587c6257ac11c5b66cce9ee9415f68a1c4e314699a36ad9c"
+  }
+}

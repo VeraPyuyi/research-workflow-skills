@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "data_kind": "synthetic acceptance fixtures, never research results",
+  "named_skills": [
+    "research-analyze",
+    "research-write",
+    "research-implement"
+  ],
+  "skill_root": "baseline/skills",
+  "benchmark_execution": {
+    "command": "python -B benchmark-submission/benchmark.py",
+    "exit_code": 0,
+    "stdout": "{\n  \"status\": \"completed\",\n  \"data_kind\": \"synthetic fixture\",\n  \"python_version\": \"3.12.10\",\n  \"third_party_dependencies\": [],\n  \"rows\": 2,\n  \"attempted_per_agent\": [\n    20,\n    20\n  ],\n  \"success_percent\": [\n    80.0,\n    70.0\n  ],\n  \"derived_comparison\": {\n    \"success_difference_percentage_points\": -10.0,\n    \"failure_difference_percentage_points\": 10.0,\n    \"successful_mean_latency_difference_seconds\": -5.0,\n    \"successful_mean_latency_reduction_percent\": 33.333333333333336\n  },\n  \"files_written\": [\n    \"benchmark_table.csv\",\n    \"benchmark_table.md\",\n    \"benchmark_figure.svg\",\n    \"benchmark_caption.txt\",\n    \"benchmark_provenance.json\"\n  ],\n  \"figure_validation\": \"XML parsed; physical width checked; not raster rendered\"\n}"
+  },
+  "dependency_probe": {
+    "python_version": "3.12.10",
+    "matplotlib_available": false,
+    "numpy_available": true,
+    "numpy_version": "2.5.4",
+    "third_party_dependencies_used": []
+  },
+  "constraints": {
+    "web_requests": 0,
+    "external_model_calls": 0,
+    "packages_installed": 0,
+    "new_research_evaluations": 0,
+    "rubric_assessment_performed": false,
+    "source_directories_modified": false,
+    "output_root": "behavior-before"
+  },
+  "analysis_execution": {
+    "command": "python -B case_calculations.py <SUPPLIED_CASES_JSON>",
+    "exit_code": 0,
+    "output": "case_calculations.json",
+    "source_sha256": "e8c4bac687cb28a94f7b2ba217846b43cab2ac933e9ac7c06984f590f2c94147"
+  },
+  "verification_execution": {
+    "command": "python -B verify_outputs.py <SUPPLIED_CASES_JSON> <OLD_SKILL_ROOT>",
+    "results": {
+      "case_documents_present": [
+        "method",
+        "theory",
+        "mixed",
+        "benchmark"
+      ],
+      "abstract_words": 120,
+      "arithmetic_check": "supplied known answers matched",
+      "source_and_output_hashes": "matched",
+      "benchmark_success_percent": [
+        80.0,
+        70.0
+      ],
+      "invalid_input_checks": [
+        {
+          "case": "empty_rows",
+          "outcome": "rejected with ValueError"
+        },
+        {
+          "case": "missing_count",
+          "outcome": "rejected with ValueError"
+        },
+        {
+          "case": "negative_count",
+          "outcome": "rejected with ValueError"
+        },
+        {
+          "case": "inconsistent_total",
+          "outcome": "rejected with ValueError"
+        },
+        {
+          "case": "zero_attempts",
+          "outcome": "rejected with ValueError"
+        },
+        {
+          "case": "missing_success_latency",
+          "outcome": "rejected with ValueError"
+        },
+        {
+          "case": "nonfinite_success_latency",
+          "outcome": "rejected with ValueError"
+        },
+        {
+          "case": "changed_fixture",
+          "outcome": "rejected with ValueError"
+        },
+        {
+          "case": "changed_paper_width",
+          "outcome": "rejected with ValueError"
+        }
+      ],
+      "svg": {
+        "xml_parsed": true,
+        "width_inches": 3.25,
+        "height_inches": 3,
+        "active_or_linked_content": false,
+        "raster_rendered": false
+      },
+      "submission_content_inspection": {
+        "files_read_as_utf8": [
+          "benchmark.py",
+          "benchmark_caption.txt",
+          "benchmark_figure.svg",
+          "benchmark_input.json",
+          "benchmark_provenance.json",
+          "benchmark_table.csv",
+          "benchmark_table.md",
+          "README.md"
+        ],
+        "supplied_private_note_or_markers_found": false,
+        "caption_matches_case_document": true,
+        "scope": "all eight submission-facing text files, including SVG metadata",
+        "venue_specific_compliance": "not assessed; no venue supplied"
+      },
+      "rubric_assessment": "not performed"
+    },
+    "exit_code": 0
+  },
+  "case_coverage": {
+    "method": {
+      "artifact": "method.md",
+      "status": "requested deliverables produced",
+      "executed": [
+        "paired descriptive arithmetic",
+        "abstract word count"
+      ],
+      "figure": "specification only, as requested",
+      "limitations": [
+        "accuracy equivalence unresolved",
+        "fixed evaluation set and three paired seeds only"
+      ]
+    },
+    "theory": {
+      "artifact": "theory.md",
+      "status": "requested deliverables produced",
+      "executed": [
+        "written substitution derivation and proof-status note"
+      ],
+      "figure": "specification only, as requested",
+      "limitations": [
+        "no independent proof verification",
+        "no controller validation",
+        "quadratic examples not rerun"
+      ]
+    },
+    "mixed": {
+      "artifact": "mixed.md",
+      "status": "requested deliverables produced",
+      "executed": [
+        "eight-task descriptive arithmetic",
+        "written subsection and additional-work analysis"
+      ],
+      "figure": "specification and caption only, as requested",
+      "limitations": [
+        "one observation per task",
+        "post hoc category unconfirmed",
+        "extra exploratory crash not rerun"
+      ]
+    },
+    "benchmark": {
+      "artifact": "benchmark.md",
+      "status": "code executed; requested outputs produced",
+      "executed": [
+        "standard-library Python example",
+        "CSV and Markdown tables",
+        "SVG and caption",
+        "provenance"
+      ],
+      "figure": "SVG produced; XML and width checked; not raster rendered",
+      "limitations": [
+        "aggregate data only",
+        "latency conditional on different success subsets",
+        "no venue-specific compliance check"
+      ]
+    }
+  },
+  "named_skill_sources": [
+    {
+      "file": "research-analyze/SKILL.md",
+      "sha256": "c5dc33176ef4a923dc1bac3de7d7b6ae8ffc0ec31d5c482109c35574123457ca"
+    },
+    {
+      "file": "research-write/SKILL.md",
+      "sha256": "e22bfb26defdd22ccfd1565867bc47cc729eb02eab82b439c941d409e31f3372"
+    },
+    {
+      "file": "research-implement/SKILL.md",
+      "sha256": "cba54817d85e3e137db6a6db64498f63bc6c7133f9300af6fcb4ec52a3880c80"
+    }
+  ],
+  "supporting_old_skill_references_read": [
+    "research-focus/SKILL.md",
+    "research-navigate/references/workflow-contract.md",
+    "research-navigate/references/domains/index.md",
+    "research-navigate/references/domains/agent.md",
+    "research-navigate/references/domains/dl.md",
+    "research-navigate/references/domains/llm.md",
+    "research-navigate/references/domains/causality.md",
+    "research-navigate/references/model-routing.md",
+    "research-navigate/references/reuse-and-simplification.md",
+    "research-navigate/references/evidence-ledger.md",
+    "research-navigate/references/stage-map.md",
+    "research-navigate/references/decision-support.md",
+    "research-review/references/submission-leakage.md"
+  ],
+  "external_routes": {
+    "dispatched": false,
+    "reason": "User prohibited web access and external model calls",
+    "independent_review_completed": false
+  },
+  "files": [
+    {
+      "file": "benchmark-submission/benchmark.py",
+      "bytes": 12621,
+      "sha256": "b5b5a82a820c8bdcfee928f7f1d9d7a57607e281353c934823815d7f9426d844"
+    },
+    {
+      "file": "benchmark-submission/benchmark_caption.txt",
+      "bytes": 439,
+      "sha256": "03eacd8e19c669e44beb4fe418df0da8d38e514980d5b95f9286449bd3af0934"
+    },
+    {
+      "file": "benchmark-submission/benchmark_figure.svg",
+      "bytes": 4739,
+      "sha256": "955a9dfb836c560a6f3f83e082c9e2c1720ab512e5d3d633ce3767aa6e028501"
+    },
+    {
+      "file": "benchmark-submission/benchmark_input.json",
+      "bytes": 893,
+      "sha256": "20f476bc2c292b276cc034c56dacc3711103f0313b73a9fa0b871b43a9343bd4"
+    },
+    {
+      "file": "benchmark-submission/benchmark_provenance.json",
+      "bytes": 2806,
+      "sha256": "56acc5aef52fdabf3ce8b3531ac350562fc75fecdcddc5fbb39748cfb586707d"
+    },
+    {
+      "file": "benchmark-submission/benchmark_table.csv",
+      "bytes": 194,
+      "sha256": "a6c654b0119173da12c442c9c2633fc1ba8ff46c3df8ad7b360d40ef9bd64413"
+    },
+    {
+      "file": "benchmark-submission/benchmark_table.md",
+      "bytes": 738,
+      "sha256": "71363427dc64d24dde5d907dedb413f1034bfd1b6323e09e13bb91f8c1264cb1"
+    },
+    {
+      "file": "benchmark-submission/README.md",
+      "bytes": 1995,
+      "sha256": "7495b9e9efdf892f1d4f92a77e5002814fc67570a4fb1aab585484635fe639db"
+    },
+    {
+      "file": "benchmark.md",
+      "bytes": 5240,
+      "sha256": "0d85293c62c8fdabeb2281e4a3817e1cbfb8c1783e06abb54f12c97dae22150b"
+    },
+    {
+      "file": "case_calculations.json",
+      "bytes": 2195,
+      "sha256": "0ed7cac38ce62d9dbe190ec3c3329a2e8ec66f69d4285db5e29e1d351b0b6e17"
+    },
+    {
+      "file": "case_calculations.py",
+      "bytes": 4541,
+      "sha256": "d780684f2d0c3286be747fcf2fa725cd0cb3f73aa5af03969d878863bfa8b444"
+    },
+    {
+      "file": "method.md",
+      "bytes": 5639,
+      "sha256": "d969338d8e7abbaaa01ff7999c3513c420082efaff831d9632f36d46acc9008f"
+    },
+    {
+      "file": "mixed.md",
+      "bytes": 7143,
+      "sha256": "e620e0c7fa50e5e5d520af5ad343ee34c08c79eb37ba942b99b940b5c6d510a7"
+    },
+    {
+      "file": "theory.md",
+      "bytes": 4689,
+      "sha256": "254c0f2c6cf652590115fdb1d518acd1a27570703ced0512cccab87f75cf77c1"
+    },
+    {
+      "file": "verify_outputs.py",
+      "bytes": 10822,
+      "sha256": "a9e9c6bab1ed4f9c97a19ac597f55161a1370c0a222e83b2b6b77bf4eb483bfb"
+    }
+  ],
+  "manifest_note": "This coverage file is excluded from its own hash inventory.",
+  "total_artifact_files": 16,
+  "completed_case_count": 4
+}

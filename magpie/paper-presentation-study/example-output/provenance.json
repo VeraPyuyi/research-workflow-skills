@@ -1,0 +1,69 @@
+{
+  "analysis_revision": "example-v1",
+  "claim_ids": [
+    "reliability-denominator",
+    "conditional-latency"
+  ],
+  "configuration": {
+    "latency_population": "successful attempts only",
+    "success_denominator": "attempted",
+    "uncertainty": "not supplied",
+    "width_inches": 3.25
+  },
+  "data_kind": "illustrative",
+  "environment": {
+    "matplotlib": "3.11.2",
+    "python": "3.12.10"
+  },
+  "generator": "research-evidence-example-v1",
+  "generator_sha256": "c50a185db880d15c0835527964598796f4a2df17f339f4c2ccbec0102191fad7",
+  "limits": "Aggregate input only. Missing latency remains missing; no uncertainty, paired outcomes, failure latency or population inference is inferred.",
+  "output_sha256": {
+    "figure.pdf": "2f493154970372b2c222c279b33785be70fe45fc85493443dd0c8d753cd00937",
+    "figure.png": "0087220f0fde7df21384ed59f5606d2f109fe5c74422f7a90c3f85b605ee98b2",
+    "figure.svg": "0266b19ce183b2cabe9a52d085ca116ec700a36cc8b6e4843feaab8a6b0b7952",
+    "table.csv": "ac51744ce4504ced282768b5e9538e1f694f8a63d0cb82aa8fe6ab289d6fc031",
+    "table.pdf": "d32e734cc6acff6854e524646568e766b0f9190db88cb19108f01bf5162efb26",
+    "table.png": "678f5ae735b497ed9941a20cbecc2276b4dd196054f4e5ac271b7ca022c4ca6d",
+    "table.tex": "a2af26d2e7da6d7d4594f51ea3b3e34f4a267e72c8eff47624c432381559159a"
+  },
+  "outputs": [
+    "figure.pdf",
+    "figure.svg",
+    "figure.png",
+    "table.csv",
+    "table.tex",
+    "table.pdf",
+    "table.png"
+  ],
+  "rows": [
+    {
+      "attempted": 24,
+      "failed": 3,
+      "mean_success_latency_seconds": 12.5,
+      "method": "reference",
+      "success_rate": 0.875,
+      "successful": 21
+    },
+    {
+      "attempted": 24,
+      "failed": 5,
+      "mean_success_latency_seconds": 8.0,
+      "method": "candidate",
+      "success_rate": 0.7916666666666666,
+      "successful": 19
+    }
+  ],
+  "schema_version": 1,
+  "source": {
+    "file": "results.csv",
+    "sha256": "b035cc0ebdcdf54da8f02bbbb0091714aa1ca91ac78c6ed0a57cca7fb12899da"
+  },
+  "status": "rendered",
+  "transformations": [
+    "Preserve CSV row order; no rows excluded.",
+    "failed = attempted - successful; success_rate = successful / attempted.",
+    "Latency is supplied success-only mean; blank stays missing.",
+    "No intervals are inferred from aggregates; no observations are synthesized."
+  ]
+}
