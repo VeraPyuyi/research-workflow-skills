@@ -4,14 +4,24 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 
 
-def validate_study(root):
+def default_data_dir(root):
+    """Study data: $STUDY_DATA_DIR, then .build/ (scripts/fetch_study_data.py), then docs/."""
+    root = Path(root)
+    if os.environ.get("STUDY_DATA_DIR"):
+        return Path(os.environ["STUDY_DATA_DIR"])
+    fetched = root / ".build/paper-presentation-study"
+    return fetched if fetched.is_dir() else root / "docs/paper-presentation-study"
+
+
+def validate_study(root, data=None):
     root = Path(root)
     library = root / "skills/research-write/references/paper-style-study"
-    docs = root / "docs/paper-presentation-study"
+    docs = Path(data) if data else default_data_dir(root)
     errors = []
     try:
         registry = json.loads((library / "sources.json").read_text("utf-8"))
@@ -114,8 +124,14 @@ def validate_study(root):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--data", type=Path, help="Study data directory (default: fetched .build copy)")
     args = parser.parse_args()
-    problems = validate_study(args.root)
+    data = args.data or default_data_dir(args.root)
+    if not (data / "discovery-readings.json").is_file():
+        print(json.dumps({"status": "data-missing", "data": str(data),
+                          "detail": "Run python scripts/fetch_study_data.py first"}, indent=2))
+        raise SystemExit(2)
+    problems = validate_study(args.root, data)
     print(json.dumps({"status": "failed" if problems else "passed",
                       "errors": problems,
                       "limit": "Record consistency only; not proof of reading or scientific correctness."},

@@ -7,15 +7,13 @@ description: Use when research results need aggregation, uncertainty analysis, f
 
 Read the [shared contract](../research-navigate/references/workflow-contract.md)
 and applicable [domain references](../research-navigate/references/domains/index.md).
-Read [model routing](../research-navigate/references/model-routing.md) for native
+Read [model routing](../research-navigate/references/model-routing.md) only when dispatching work to more than one model;
+then use it for native
 analysis branches and independent review, and the
 [reuse and simplification audit](../research-navigate/references/reuse-and-simplification.md)
 when prior results may simplify current mathematics, code, experiments or claims.
-At a genuine candidate choice - which interpretation, reuse decision or next round
-to pursue - read
-[evidence comparison and optional Jev](../research-navigate/references/decision-support.md).
-Use inspected evidence and program constraints first, a bounded native comparison
-when useful, then the integrator decision. Comparison has no proof or gate authority.
+Optional [evidence comparison and Jev](../research-navigate/references/decision-support.md) may assist a genuine
+candidate choice; it is advisory and never decides a gate.
 
 ## Choose the requested depth
 
@@ -39,8 +37,10 @@ cumulative pivots with the stable theme. Distinguish an important narrower or
 negative conclusion from an easier substitute problem. Preserve uncertainty:
 neither on-theme relevance nor explanatory wording proves a mechanism.
 
-1. Inspect the approved protocol, raw records, versions, selection rules and run
-   manifest. Reconcile every attempt and explain missingness/exclusions before
+1. Before aggregating, run `research-navigate/scripts/check_records.py check
+   --milestone M3`: the protocol and evaluator locks must still match, and every
+   used attempt must be completed and measured. Inspect the approved protocol,
+   raw records, versions, selection rules and run manifest. Reconcile every attempt and explain missingness/exclusions before
    aggregation. Preserve original records.
 2. Match comparison conditions, units, task/split/seed identities and resource
    budgets. Flag protocol or baseline mismatches before attributing differences
@@ -53,7 +53,12 @@ neither on-theme relevance nor explanatory wording proves a mechanism.
    causal identification and scope of generalization.
 5. Build a claim-evidence map: proposed statement, supporting observations and
    calculations, contradicting evidence, uncertainty, applicable conditions and
-   status (supported, limited, contradicted or unresolved).
+   status (supported, limited, contradicted or unresolved). Without an existing
+   convention, write it as `research/analysis/claims.jsonl` (see the
+   [default record layout](../research-navigate/references/records.md)), with
+   the reported numbers in `values`, the departures from the locked protocol in
+   `deviations` (an empty list when there are none) and, in
+   `evidence_changed_decision`, which observation changed which decision.
    Carry estimand, denominator, dependence structure, uncertainty type and level.
    Apply [the evidence ledger](../research-navigate/references/evidence-ledger.md)
    when support is disputed or incomplete; do not infer what an untyped `+/-` means.

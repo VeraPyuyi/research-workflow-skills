@@ -22,8 +22,8 @@ fifteen selected papers and fifteen controls form the holdout set.
 | NeurIPS | 2025, 2024, 2023 | Official Spotlight category | 18 |
 
 Exact labels, official pages, pinned conference PDF digests, research-type
-sampling tags and the frozen split are in [sources.json](sources.json).
-The [sampling protocol](sampling-protocol.md) preceded qualitative reading.
+sampling tags and the frozen split are in [sources.json](../../skills/research-write/references/paper-style-study/sources.json).
+The [sampling protocol](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/sampling-protocol.md) preceded qualitative reading.
 The selection is purposive and metadata/title-assisted. Controls favor related
 domains and research types but are not tightly matched for length or measured
 writing quality. One ICML holdout is a position paper and is interpreted as that
@@ -32,8 +32,8 @@ genre, not relabeled as a conventional method or benchmark study.
 NeurIPS 2026's six bounded candidate PDF attempts returned access failures.
 The protocol therefore used 2025/2024/2023. This does not establish that every
 2026 paper was inaccessible or that the edition did not exist. The
-[access log](access-limitations.json) and
-[official metadata retrieval receipts](source-retrieval.json) retain that scope.
+[access log](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/access-limitations.json) and
+[official metadata retrieval receipts](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/source-retrieval.json) retain that scope.
 The prior ACL entropy pilot was exchanged out of holdout before reading. No
 paper was replaced because its writing was weak.
 
@@ -56,11 +56,11 @@ per-paper page records; they are not a claim that every appendix, every figure
 or every fine label was inspected. Necessary missing pages were rendered;
 unreadable labels and uninspected supplements remain explicit.
 
-- [Discovery readings](discovery-readings.json): 60 individual original records.
-- [Holdout readings](holdout-readings.json): 30 individual original records.
-- [Coverage](reading-coverage.json): counts and scope.
-- [Pattern freeze](pattern-freeze.json): immutable card hashes and chronology.
-- [Holdout assessment](holdout-assessment.json): all 240 P1-P8 applicability codes,
+- [Discovery readings](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/discovery-readings.json): 60 individual original records.
+- [Holdout readings](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/holdout-readings.json): 30 individual original records.
+- [Coverage](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/reading-coverage.json): counts and scope.
+- [Pattern freeze](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/pattern-freeze.json): immutable card hashes and chronology.
+- [Holdout assessment](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/holdout-assessment.json): all 240 P1-P8 applicability codes,
   qualifications and counterexamples with locators.
 
 Reading used fresh-context delegated readers and local PDF text/page tools.
@@ -76,7 +76,7 @@ jail. Requested models inherited the host default; independent actual service
 model identities were not established. Each holdout had one reader, so the
 study does not estimate inter-rater reliability.
 
-The [held-out summary](holdout-summary.md) separates fits, qualified matches,
+The [held-out summary](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/holdout-summary.md) separates fits, qualified matches,
 not-applicable cases and counterexamples. These are qualitative reader codes,
 not paper-quality ratings or population prevalence estimates. Formal exposition,
 construct validation and cost-frontier patterns have substantial genre/evidence
@@ -117,7 +117,7 @@ its Vertex credit hold.
 
 The example input deliberately differs from the behavior fixture: 24 attempts
 per method, 21/19 successes and successful-only latency 12.5/8.0 seconds. It is
-explicitly illustrative. The [generated outputs](example-output/provenance.json)
+explicitly illustrative. The [generated outputs](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/example-output/provenance.json)
 include PDF/SVG/PNG, CSV/TeX, a table PDF/PNG and provenance.
 
 Run from the repository root:
@@ -140,7 +140,7 @@ The existing submission scanner produced three candidates and retained explicit
 PDF/raster coverage gaps. Scoped inspection identified `/Root` as a PDF catalog
 keyword and `//W3C//DTD` as a public SVG identifier. The original scan was not
 relabeled as automated success. Metadata, text and actual pages were inspected;
-the [disposition](example-submission-disposition.json) records limits and narrow
+the [disposition](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/example-submission-disposition.json) records limits and narrow
 exceptions. This is not a submission approval.
 
 ## Before/after behavior
@@ -149,7 +149,7 @@ The four fixed synthetic tasks cover a method comparison, a known mathematical
 consequence with unreviewed application, mixed results with a post-outcome
 subgroup, and an aggregate agent benchmark.
 
-[Before outputs](behavior-before/execution-coverage.json) were produced before
+[Before outputs](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/behavior-before/execution-coverage.json) were produced before
 instruction edits. The baseline already preserves mathematical assumptions,
 negative results, denominators, uncertainty limits and privacy. Its SVG was also
 subsequently rendered and inspected by the parent without changing baseline
@@ -161,7 +161,7 @@ or baseline outputs. The new bundle deliberately adds Matplotlib for its helper;
 the original execution used a standard-library SVG renderer. Any implementation
 benefit therefore includes the new helper/dependency, not solely prompt wording.
 
-The [behavior assessment](behavior-assessment.md) compares actual outputs under
+The [behavior assessment](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/behavior-assessment.md) compares actual outputs under
 the frozen rubric. Both versions preserve numbers, proof status, failures and
 scope. The new analysis makes question/claim/display links and repair choices
 more explicit; the new writing makes the reader question and caption/body
@@ -173,22 +173,22 @@ table PDF/PNG and provenance. One primary render and one rendering-only rerun
 matched all eight renderer output hashes. The parent additionally rasterized
 and viewed the actual figure/table PDF pages after the executor's receipt.
 The immutable executor record says that it did not perform this extra check;
-the [parent addendum](behavior-after/parent-inspection.json) records the later
+the [parent addendum](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/behavior-after/parent-inspection.json) records the later
 coverage without changing that historical record. Method, theory and mixed
 figures remain specifications, not rendered artifacts.
 
 An independent fresh-context evidence review found no scientific blocker in the
 four cases or recomputed study records. It identified release/report gaps and a
 visual-locator validation gap, now addressed as recorded in
-[review disposition](review-disposition.md). The review is an artifact audit,
+[review disposition](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/review-disposition.md). The review is an artifact audit,
 not a simulated conference review or a scientific correctness certificate.
 
 ## Validation and deployment
 
-See [validation](validation.json) for executed checks and the profile-specific
+See [validation](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/validation.json) for executed checks and the profile-specific
 release receipt for the exact skills digest. Temporary installation, source and
 personal-install hash guards, external backup and branch publication are
-recorded in [deployment](deployment.json). Deployment is not inferred from
+recorded in [deployment](https://github.com/VeraPyuyi/research-workflow-skills/blob/81261ddcdd05fbee53a728ebdb8618f6bc5ce7bc/codex-native/paper-presentation-study/deployment.json). Deployment is not inferred from
 successful tests. Historical local `tests/results` records are excluded from
 publication because they contain machine-specific paths; the current sanitized
 study records provide the portable acceptance evidence.

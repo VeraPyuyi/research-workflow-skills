@@ -1,3 +1,0 @@
-method,attempted,successful,mean_success_latency_seconds
-reference,20,16,15.0
-candidate,20,14,10.0

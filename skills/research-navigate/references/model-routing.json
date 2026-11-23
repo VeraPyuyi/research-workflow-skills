@@ -66,7 +66,10 @@
         "context_catalog": 500000,
         "context_turn_effective": 475000
       }
-    }
+    },
+    "reviewer_independence_unit": "lineage",
+    "single_lineage_fallback": true,
+    "lineage_note": "Every model this profile can dispatch is an OpenAI GPT product, so no blind reviewer can differ in vendor lineage from the producer. Product families (Astra, Sol, Luna) stand in, and reviews are recorded as context-independent only, not model-independent. Register a reviewer of another lineage to remove this limit."
   },
   "native_tools": {
     "spawn_agent": {
@@ -98,6 +101,7 @@
     {
       "id": "gpt-6.1-sol",
       "model_family": "gpt-sol",
+      "lineage": "openai-gpt",
       "kind": "generative",
       "quota_pool": "codex",
       "role": "Default integration, engineering, experiment control and writing",
@@ -111,6 +115,7 @@
     {
       "id": "gpt-6-astra",
       "model_family": "gpt-astra",
+      "lineage": "openai-gpt",
       "kind": "generative",
       "quota_pool": "codex",
       "role": "Hard mathematics, causality, scientific and contribution review",
@@ -124,6 +129,7 @@
     {
       "id": "gpt-6-luna",
       "model_family": "gpt-luna",
+      "lineage": "openai-gpt",
       "kind": "generative",
       "quota_pool": "codex",
       "role": "Bounded extraction; no principal scientific decisions",
@@ -137,6 +143,7 @@
     {
       "id": "gpt-6.2-astra",
       "model_family": "gpt-astra",
+      "lineage": "openai-gpt",
       "kind": "generative",
       "quota_pool": "codex",
       "role": "Preferred difficult theory, actual-input connection, hardest branch and scientific review",
@@ -157,6 +164,7 @@
     {
       "id": "gpt-6.2-sol",
       "model_family": "gpt-sol",
+      "lineage": "openai-gpt",
       "kind": "generative",
       "quota_pool": "codex",
       "role": "Preferred routine engineering, tool execution, experiment control and drafting",

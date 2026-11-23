@@ -15,7 +15,7 @@ The earlier checks below are historical.
 ## 集中代码、结构与安装检查
 
 - 自动测试：254 项，250 通过，0 失败，0 错误，4 跳过。
-- 跳过项仅为 Windows 当前权限无法创建的符号链接/目录联接案例；已有替代路径检查保留。详情见 [测试记录](../tests/results/release-code-validation.json)。
+- 跳过项仅为 Windows 当前权限无法创建的符号链接/目录联接案例；已有替代路径检查保留。详情见 测试记录（本地记录 `tests/results/release-code-validation.json`，含私有路径，未随仓库公开）。
 - 17 个 skill 通过套件结构和官方 skill-creator 格式校验，临时安装逐文件一致。
 - 版本与项目采用记录绑定 runtime_profile，兼容自动升级不跨运行版本，显式切换仍检查验证凭据、定制内容和运行任务固定版本。
 - 这些是代码与工作流控制验证，不是已完成真实科研项目或论文的证明。
@@ -47,4 +47,4 @@ Jev **0 次**、Vertex **0 次**。账户官方入口要求登录，现有资料
 - 纯原生工作者继续保留理论优先、跨领域复用、负结果、20% 优化预算、M1—M5、两轮新 agent 审稿和投稿/公开发布授权。
 - 仓库只含配置模板、适用源码/测试和脱敏记录，不含账户原始响应、真实服务器地址、凭据或本机路径。
 
-完整脱敏调用记录见 [live-validation.json](../tests/results/live-validation.json)。发布验证凭据仅覆盖它声明的工作流发布范围；待验证渠道不被写成真实调用通过。
+完整脱敏调用记录见 live-validation.json（本地记录 `tests/results/live-validation.json`，含私有路径，未随仓库公开）。发布验证凭据仅覆盖它声明的工作流发布范围；待验证渠道不被写成真实调用通过。

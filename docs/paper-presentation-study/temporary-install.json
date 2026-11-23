@@ -1,9 +1,0 @@
-{
-  "status": "passed",
-  "runtime_profile": "codex-native",
-  "bundle_digest": "sha256:a69ed6f36b636d74587c6257ac11c5b66cce9ee9415f68a1c4e314699a36ad9c",
-  "skills": 18,
-  "files_compared": 85,
-  "comparison": "sha256 and exact bytes",
-  "location": "isolated temporary installation; personal install unchanged"
-}

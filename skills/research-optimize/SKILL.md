@@ -8,7 +8,7 @@ description: Use when a substantive research stage has finished and its strength
 Preserve what worked, identify evidence-backed weaknesses and improve the
 workflow without moving the research goal or its acceptance criteria.
 Read the [shared contract](../research-navigate/references/workflow-contract.md)
-and [model routing](../research-navigate/references/model-routing.md). Use
+and, only when dispatching to more than one model, [model routing](../research-navigate/references/model-routing.md). Use
 [the bounded optimization protocol](references/optimization-protocol.md) for
 state records, numeric admission and candidate publication.
 
@@ -44,7 +44,14 @@ scientific truth or publication eligibility. Do not invent probabilities.
 1. Freeze a baseline, goals, authority, measurable model/time budgets, protected
    strengths and acceptance cases before developing candidates. Keep these
    controls outside every editable candidate, including optimizer-self changes.
-   At least one task case is withheld from candidate development.
+   At least one task case is withheld from candidate development. The integrity
+   scenarios in the suite's `tests/integrity-scenarios.json` (missing data,
+   exploitable evaluator, request to alter a result, false premise, injected
+   reviewer text) are always protected strengths.
+   Run every case at least three times for baseline and candidate; a case counts
+   as passed only when the candidate's pass rate is not lower than the baseline's.
+   Until the suite has a recorded end-to-end project run, a validated candidate
+   still needs the owner's explicit approval before publication.
 2. Select at most three candidates, each with a concrete benefit hypothesis and
    a small discriminating validation. Optimize no more than 20% of existing
    approved model/time allowances, counting spending and reservations in both

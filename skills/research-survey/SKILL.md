@@ -7,13 +7,11 @@ description: Use when research needs literature search, paper reading, evidence 
 
 Read the [shared contract](../research-navigate/references/workflow-contract.md)
 and applicable [domain references](../research-navigate/references/domains/index.md).
-Read [model routing](../research-navigate/references/model-routing.md) to assign
+Read [model routing](../research-navigate/references/model-routing.md) only when dispatching work to more than one model;
+then use it to assign
 native search and synthesis branches and milestone evidence review.
-At a genuine candidate choice - which transfer record, closest-work reading or
-reuse decision to pursue - read
-[evidence comparison and optional Jev](../research-navigate/references/decision-support.md).
-Use inspected evidence and program constraints first, a bounded native comparison
-when useful, then the integrator decision. Comparison has no proof or gate authority.
+Optional [evidence comparison and Jev](../research-navigate/references/decision-support.md) may assist a genuine
+candidate choice; it is advisory and never decides a gate.
 Read [reuse and simplification](../research-navigate/references/reuse-and-simplification.md)
 when prior theory, methods, benchmarks or implementations may replace or shorten
 current work.
@@ -32,6 +30,10 @@ more convenient field become the paper's topic. Bounded close reading keeps its 
   do not expand into a full field survey unless the task needs it.
 - **Search/update:** define question, concepts, inclusion criteria and search
   coverage; search suitable scholarly/primary sources and record queries/date.
+  Expand beyond keywords: follow one hop of citations and references from each
+  core source, revise queries from what was found, and stop when two further
+  query rounds add no new relevant work. For each central claim, also search
+  explicitly for contradicting or failed-replication results.
 - **Synthesis:** compare verified source records by question, assumptions,
   mechanism, evidence, conditions, limits and unresolved disagreement.
 
@@ -51,11 +53,18 @@ adopted under recorded authority through
 [workflow updates](../research-navigate/references/workflow-updates.md); running
 jobs keep their pinned versions and customized local copies stay untouched.
 
+Keep sources in the project's literature record (default `research/literature.jsonl`,
+see the [default record layout](../research-navigate/references/records.md)). Resolve every entry with
+[`scripts/verify_refs.py`](scripts/verify_refs.py) (arXiv, Crossref, OpenAlex);
+an entry that is unresolved, mismatched or unchecked stays a gap and cannot be
+cited in a manuscript. Do not list a source from memory without resolving it.
 Verify title/authors/source/version and accessible content. Inspect original
 papers or artifacts for the claims being used. Record whether full text, selected
 sections, abstract or metadata were actually read. If access or browsing is
 unavailable, analyze the supplied material and mark verification gaps.
 
+After drafting a synthesis, trace every sentence that attributes a finding to
+its source passage; retrieve more or delete the sentence when the trace fails.
 Separate what authors report from what the evidence establishes and from your
 interpretation. For each important finding, record the supporting location,
 setting, controls and limitations. Distinguish different versions of the same

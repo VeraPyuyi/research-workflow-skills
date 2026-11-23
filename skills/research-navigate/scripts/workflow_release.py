@@ -234,12 +234,13 @@ def validate_runtime_profile(skills_dir, runtime_profile=None, *, legacy_release
             raise ValueError("Native runtime_profile requires the explicit versioned native model allowlist")
         model_fields = {"id", "model_family", "kind", "quota_pool", "role", "preferred_reasoning_effort",
                         "access", "limitations", "effort", "effort_status", "availability",
-                        "dispatch_block_reason", "public_release_date", "live_call_status"}
+                        "dispatch_block_reason", "public_release_date", "live_call_status", "lineage"}
         for model in models:
             family = {"gpt-6-astra": "gpt-astra", "gpt-6.2-astra": "gpt-astra",
                       "gpt-6.1-sol": "gpt-sol", "gpt-6.2-sol": "gpt-sol", "gpt-6-luna": "gpt-luna"}[model["id"]]
             allowed_families = {family} if routing.get("version") == 2 else {family, model["id"]}
             if (model.get("model_family") not in allowed_families or model.get("quota_pool") != "codex"
+                    or model.get("lineage", "openai-gpt") != "openai-gpt"
                     or set(model) - model_fields):
                 raise ValueError("Native runtime_profile cannot contain external model routing/configuration")
         native_tools = routing.get("native_tools")

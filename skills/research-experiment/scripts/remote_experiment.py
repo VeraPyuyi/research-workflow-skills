@@ -41,8 +41,10 @@ def validate_profile(profile, require_pin=True):
             or ".." in root.split("/") or "\\" in root):
         raise ValueError("Explicit contained server root is required")
     ref = profile.get("credential_ref")
-    if not isinstance(ref, str) or not ref.startswith("wincred:research/"):
-        raise ValueError("Expected a research Windows Credential Manager reference")
+    if not isinstance(ref, str) or not (
+            ref.startswith("wincred:research/") or ref == "ssh-agent:"
+            or (ref.startswith("keyfile:") and len(ref) > len("keyfile:") and "\0" not in ref)):
+        raise ValueError("Expected wincred:research/<name>, ssh-agent: or keyfile:<private key path>")
     if require_pin and not str(profile.get("host_key_sha256", "")).startswith("SHA256:"):
         raise ValueError("Read and pin the host key before authentication")
     return profile
@@ -116,6 +118,33 @@ def fingerprint(key):
     return "SHA256:" + base64.b64encode(hashlib.sha256(key.asbytes()).digest()).decode().rstrip("=")
 
 
+def authenticate_transport(paramiko, transport, profile):
+    """Authenticate with the referenced credential; secrets never enter the profile."""
+    reference = profile["credential_ref"]
+    if reference.startswith("wincred:"):
+        secret = read_credential(reference)
+        try:
+            transport.auth_password(profile["user"], secret, fallback=False)
+        finally:
+            secret = None
+        return
+    if reference == "ssh-agent:":
+        keys = paramiko.Agent().get_keys()
+        for key in keys:
+            try:
+                transport.auth_publickey(profile["user"], key)
+                return
+            except paramiko.AuthenticationException:
+                continue
+        raise ValueError("No key in the running SSH agent was accepted")
+    path = Path(reference.removeprefix("keyfile:")).expanduser()
+    try:
+        key = paramiko.PKey.from_path(str(path))
+    except paramiko.PasswordRequiredException:
+        raise ValueError("Encrypted key: load it into ssh-agent and use ssh-agent:") from None
+    transport.auth_publickey(profile["user"], key)
+
+
 def connect(profile, authenticate=True):
     validate_profile(profile, require_pin=authenticate)
     paramiko = paramiko_module()
@@ -127,11 +156,7 @@ def connect(profile, authenticate=True):
         if authenticate:
             if not hmac.compare_digest(observed, profile["host_key_sha256"]):
                 raise ValueError("Server host key changed; authentication was not attempted")
-            secret = read_credential(profile["credential_ref"])
-            try:
-                transport.auth_password(profile["user"], secret, fallback=False)
-            finally:
-                secret = None
+            authenticate_transport(paramiko, transport, profile)
         return transport, observed
     except BaseException:
         transport.close()
@@ -273,6 +298,8 @@ def main():
             print(json.dumps({"status": "planned", "action": args.action, "executed": False}))
             return 0
         if args.action == "store-credential":
+            if not profile["credential_ref"].startswith("wincred:"):
+                raise ValueError("store-credential applies only to wincred: references")
             secret = getpass.getpass("SSH password (stored only in Windows Credential Manager): ")
             store_credential(profile["credential_ref"], profile["user"], secret)
             secret = None

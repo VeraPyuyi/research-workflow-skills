@@ -8,8 +8,8 @@ description: Use when a study needs trustworthy reference results, reproduction 
 Read the [shared contract](../research-navigate/references/workflow-contract.md),
 applicable [domains](../research-navigate/references/domains/index.md), and
 [dependency rules](../research-navigate/references/stage-map.md). For a substantive
-baseline, read [model routing](../research-navigate/references/model-routing.md)
-and use a native implementation branch with comparison review consolidated at M2
+baseline, read [model routing](../research-navigate/references/model-routing.md) only when dispatching work to more than one model;
+then use it and use a native implementation branch with comparison review consolidated at M2
 for full-paper work. Reuse valid baseline/check records; do not re-review each run.
 For reproduction, code replacement or port parity, read
 [implementation comparison](../research-navigate/references/implementation-comparison.md).
@@ -19,8 +19,9 @@ failures; test the comparator on wrong, absent, empty and misaligned outputs.
 ## Establish a trustworthy comparison
 
 1. Identify the reference claim, actual paper/code/checkpoint, data/split,
-   preprocessing, training/tuning budget, metric and expected uncertainty or
-   replication tolerance. Distinguish verified details from inferred defaults.
+   preprocessing, training/tuning budget, metric and the replication tolerance
+   fixed in the protocol (not chosen after seeing the reproduction). Record the
+   tuning budget of baselines and the proposed method as numbers. Distinguish verified details from inferred defaults.
 2. Check data access, integrity, permitted use, leakage and evaluation validity.
    For a new benchmark, require a calibrated measurement pipeline before running
    reference methods; route missing infrastructure to research-implement.
