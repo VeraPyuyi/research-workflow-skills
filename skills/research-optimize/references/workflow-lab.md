@@ -103,7 +103,7 @@ rejected candidates and their results in the round README as well.
 
 ## First round
 
-`lab/L1/` evaluates the 2026-11-23 review fixes (candidate `magpie` after the
-merge) against the suite before them (`4a5c2d0`) on the core and integrity
-scenarios. It is a measurement of an already merged change, so its outcome
-decides whether that change stays, not whether it is installed.
+`lab/L1/` evaluates the 2026-11-23 review fixes against the suite before them on
+the core and integrity scenarios; the exact baseline and candidate refs for this
+branch are in its README. It is a measurement of an already merged change, so
+its outcome decides whether that change stays, not whether it is installed.

@@ -67,7 +67,7 @@
     "research-optimize/SKILL.md": "444a88e12bfc92f37aa79c201079758a24a21c1d480adbd82c8662b53849ce41",
     "research-optimize/agents/openai.yaml": "f7df0e72341d29f4d110912000b3112af8bb28f042448fdf013d41acd109dfe6",
     "research-optimize/references/optimization-protocol.md": "eb71f4e729932feecc563d2675396d4749187660cd01ad565ef67f5b4a953560",
-    "research-optimize/references/workflow-lab.md": "5c83b139575f735844f29e49257e0ea08f40a06dea69648937131d43d15d3217",
+    "research-optimize/references/workflow-lab.md": "d1cc212abe83820a089a12866ffa4cff30231fed0cabaef021644d9acf25092c",
     "research-optimize/scripts/optimize_workflow.py": "615d125885f18c67137dfd37c668f99390229d1ad92d857685a6c363e541447e",
     "research-product-build/SKILL.md": "0afa174a83f4cb05e0bee0d84edf1307dfa5035789eadf5873852a4242bc502e",
     "research-product-build/agents/openai.yaml": "a6f80aeb8c644b02b6e155acceb1dc861fe34b2e14430f96379ebd2f3dbda4d9",
@@ -108,5 +108,5 @@
   "validation_receipts": [
     "docs/releases/research-20261123-workflow-lab-magpie.json"
   ],
-  "bundle_digest": "sha256:6bdb4b352fbbb34e2017cce32e9367144a8d20ba66b1b994a209f7521c62e7fe"
+  "bundle_digest": "sha256:13440efe6cb06af1b264f654cec7467c8d08017946393d5cc124c6775ae4a9dd"
 }

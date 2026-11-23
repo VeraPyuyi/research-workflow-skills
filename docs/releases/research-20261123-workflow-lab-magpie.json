@@ -3,7 +3,7 @@
   "scope": "workflow-release",
   "receipt_id": "research-20261123-workflow-lab-magpie",
   "status": "passed",
-  "bundle_digest": "sha256:6bdb4b352fbbb34e2017cce32e9367144a8d20ba66b1b994a209f7521c62e7fe",
+  "bundle_digest": "sha256:13440efe6cb06af1b264f654cec7467c8d08017946393d5cc124c6775ae4a9dd",
   "evidence_refs": [
     "skills/research-optimize/SKILL.md",
     "skills/research-optimize/references/workflow-lab.md",
