@@ -22,6 +22,7 @@ research/
   paper/                  manuscript sources, figures, provenance
   reviews/panel.json      blind-review ledger (see research-review venue review)
   reviews/calibration.json reviewer calibration per venue profile
+  optimizer/events.jsonl  retrospective events (see research-optimize)
 ```
 
 ## Fields

@@ -1,8 +1,12 @@
 # Bounded optimization records
 
+Used in repository-level [workflow-lab](workflow-lab.md) rounds. Research
+projects only append retrospective events and do not use this helper.
+
 The stdlib [state helper](../scripts/optimize_workflow.py) implements stable
 events, numeric allowance admission, candidate/revision limits and a single
-milestone publication record. It does not call models, run tests, judge scientific
+publication record per round (`L1`, `L2`, ...; `M1`-`M5` remain accepted for
+older records). It does not call models, run tests, judge scientific
 truth, install skills or publish externally. Use an existing equivalent tracker
 when available; these logical invariants still apply.
 
@@ -44,9 +48,13 @@ real budget. Independent reviewers/validation calls also consume this allowance.
 For each unit, admission requires both:
 
 ```text
-optimizer spent + optimizer reserved + request <= 0.20 * approved total
+optimizer spent + optimizer reserved + request <= budget_share * approved total
 other project spent + other reserved + optimizer total <= approved total
 ```
+
+`budget_share` defaults to 0.2 for older project-embedded records. A lab round
+has its own approved budget, so its contract sets `"budget_share": 1` and its
+usage file records no other consumption.
 
 All values must be finite nonnegative JSON numbers, not strings or Booleans.
 Do not use dollar estimates as actual billing or convert token/time budgets
@@ -83,7 +91,9 @@ an independently approved new evaluation contract, never a candidate rewriting
 its own criteria to make a failure disappear.
 
 A candidate names its isolated path, author model/context and reserved model/time
-cost. At most three candidates per M1-M5, one revision each, one publication.
+cost. At most three candidates per round, one revision each, one publication.
+Lab rounds take `cases`, `strengths` and `measurements` from
+`scripts/workflow_lab.py compare` (`optimizer_fields`).
 Reserve with `candidate` before initial development, then develop and `freeze`
 the resulting bytes. Run the bounded evaluation/review, reconcile actual costs
 with `settle`, then record `validate`. For a repair, reserve with `revise` before

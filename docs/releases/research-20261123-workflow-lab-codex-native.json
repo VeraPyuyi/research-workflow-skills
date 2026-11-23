@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "scope": "workflow-release",
+  "receipt_id": "research-20261123-workflow-lab-codex-native",
+  "status": "passed",
+  "bundle_digest": "sha256:8f3930df8d160842d44a1090d5f079bdb6dcbdd4da06354b8005e5377ae1c815",
+  "evidence_refs": [
+    "skills/research-optimize/SKILL.md",
+    "skills/research-optimize/references/workflow-lab.md",
+    "tests/test_workflow_lab.py",
+    "tests/test_optimizer.py",
+    "lab/L1/README.md",
+    ".github/workflows/ci.yml"
+  ],
+  "coverage": {
+    "unit_tests_run": 371,
+    "unit_tests_skipped": 5,
+    "validate_skills": "passed",
+    "validate_presentation_study": "passed with fetched data",
+    "check_links": "passed",
+    "platform": "linux, Python 3.13; paramiko not installed (remote client tested with mocks)",
+    "behavior_eval_runs": 0,
+    "live_paper_reviews": 0,
+    "end_to_end_projects": 0,
+    "limit": "offline code and consistency checks only; no model calls, no real research project",
+    "lab_rounds_run": 0
+  }
+}

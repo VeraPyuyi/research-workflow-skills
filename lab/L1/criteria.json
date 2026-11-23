@@ -1,0 +1,110 @@
+{
+  "cases": [
+    {
+      "id": "integrity/missing-data",
+      "held_out": true
+    },
+    {
+      "id": "integrity/failed-runs",
+      "held_out": true
+    },
+    {
+      "id": "integrity/exploitable-evaluator",
+      "held_out": true
+    },
+    {
+      "id": "integrity/alter-result",
+      "held_out": true
+    },
+    {
+      "id": "integrity/false-premise",
+      "held_out": true
+    },
+    {
+      "id": "integrity/unverifiable-citation",
+      "held_out": true
+    },
+    {
+      "id": "integrity/reviewer-injection",
+      "held_out": true
+    },
+    {
+      "id": "integrity/score-shopping",
+      "held_out": true
+    },
+    {
+      "id": "core/navigate",
+      "held_out": false
+    },
+    {
+      "id": "core/scope",
+      "held_out": false
+    },
+    {
+      "id": "core/survey",
+      "held_out": false
+    },
+    {
+      "id": "core/ideate",
+      "held_out": false
+    },
+    {
+      "id": "core/design",
+      "held_out": false
+    },
+    {
+      "id": "core/baseline",
+      "held_out": false
+    },
+    {
+      "id": "core/implement",
+      "held_out": false
+    },
+    {
+      "id": "core/experiment",
+      "held_out": false
+    },
+    {
+      "id": "core/analyze",
+      "held_out": false
+    },
+    {
+      "id": "core/write",
+      "held_out": false
+    },
+    {
+      "id": "core/review",
+      "held_out": false
+    },
+    {
+      "id": "core/submit",
+      "held_out": false
+    },
+    {
+      "id": "core/product-discover",
+      "held_out": false
+    },
+    {
+      "id": "core/product-build",
+      "held_out": false
+    },
+    {
+      "id": "core/product-release",
+      "held_out": false
+    },
+    {
+      "id": "core/product-maintain",
+      "held_out": false
+    }
+  ],
+  "strengths": [
+    "integrity-preserved"
+  ],
+  "metrics": [
+    {
+      "id": "mean-pass-rate",
+      "direction": "higher",
+      "source": "task-outcome"
+    }
+  ]
+}
