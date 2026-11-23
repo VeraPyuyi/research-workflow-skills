@@ -38,6 +38,9 @@ def profile():
 
 def fetch(remote, checkout):
     subprocess.run(["git", "init", "-q", str(checkout)], check=True)
+    # Keep the pinned bytes: no line-ending conversion (Windows defaults to autocrlf).
+    for key, value in (("core.autocrlf", "false"), ("core.eol", "lf")):
+        subprocess.run(["git", "-C", str(checkout), "config", key, value], check=True)
     subprocess.run(["git", "-C", str(checkout), "fetch", "-q", "--depth", "1", remote, DATA_COMMIT], check=True)
     subprocess.run(["git", "-C", str(checkout), "checkout", "-q", "FETCH_HEAD"], check=True)
     head = subprocess.run(["git", "-C", str(checkout), "rev-parse", "HEAD"], capture_output=True,
