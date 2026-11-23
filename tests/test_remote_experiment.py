@@ -452,6 +452,35 @@ class RemoteClientTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.client.validate_profile(profile)
 
+    def test_cross_platform_credential_references(self):
+        profile = {"id": "host", "host": "127.0.0.1", "port": 22, "user": "root",
+                   "root": "/root/research-workspaces", "host_key_sha256": "SHA256:abc"}
+        for ref in ("ssh-agent:", "keyfile:~/.ssh/id_ed25519", "wincred:research/server"):
+            with self.subTest(ref=ref):
+                self.client.validate_profile(dict(profile, credential_ref=ref))
+        for ref in ("keyfile:", "agent", "wincred:other/x", "password:abc"):
+            with self.subTest(ref=ref), self.assertRaises(ValueError):
+                self.client.validate_profile(dict(profile, credential_ref=ref))
+
+    def test_agent_and_keyfile_authentication(self):
+        paramiko = MagicMock()
+        paramiko.AuthenticationException = type("AuthenticationException", (Exception,), {})
+        paramiko.PasswordRequiredException = type("PasswordRequiredException", (Exception,), {})
+        rejected, accepted = object(), object()
+        paramiko.Agent.return_value.get_keys.return_value = [rejected, accepted]
+        transport = MagicMock()
+        transport.auth_publickey.side_effect = lambda user, key: (
+            (_ for _ in ()).throw(paramiko.AuthenticationException()) if key is rejected else None)
+        self.client.authenticate_transport(paramiko, transport, {"user": "u", "credential_ref": "ssh-agent:"})
+        self.assertIs(transport.auth_publickey.call_args.args[1], accepted)
+        paramiko.Agent.return_value.get_keys.return_value = []
+        with self.assertRaises(ValueError):
+            self.client.authenticate_transport(paramiko, transport, {"user": "u", "credential_ref": "ssh-agent:"})
+        paramiko.PKey.from_path.side_effect = paramiko.PasswordRequiredException()
+        with self.assertRaises(ValueError):
+            self.client.authenticate_transport(paramiko, MagicMock(),
+                                               {"user": "u", "credential_ref": "keyfile:/k"})
+
     def test_unpinned_host_is_only_probeable(self):
         profile = {
             "id": "host", "host": "127.0.0.1", "port": 22, "user": "root",

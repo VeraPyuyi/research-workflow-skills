@@ -135,46 +135,12 @@ events. Do not fabricate a turn to make this verification pass. If Goal tools or
 host continuation are unavailable, report that precise limit and continue useful
 in-turn work; do not claim unattended execution or install an unrequested service.
 
-## Recover a blocked native Goal
+## Recover a blocked or paused Goal
 
-A delivered "continue" message can run an ordinary chat turn while the native
-Goal remains blocked. Read the actual Goal after delivery; do not infer activation
-from chat activity or local project state. The in-turn `update_goal` tool may not
-offer an active/resume status.
-
-With an explicit user instruction to resume this Goal, use the host's actual
-resume control. For compatible Codex hosts, `scripts/goal_recovery.py` provides a
-bounded app-server adapter: `--binary` selects the installed host, `--thread` the
-existing owning chat, `--output` a new private receipt; read-only is the default.
-`--resume --authority <USER_REQUEST_REF>` is an explicit mutation. Verify support
-against the installed host's generated experimental app-server schema before
-using it; never guess unsupported methods or modify the Goal database.
-
-The adapter uses `thread/goal/get`, then `thread/goal/set` with only the existing
-thread ID, `status: active` and `origin: user`, followed by a readback. It preserves
-the objective, original creation time, token budget and accumulated usage. It
-does not unpause or bypass budget/usage limits, create a Goal, start an inference
-turn, add an automation or expand scientific authority.
-
-An owning desktop session can retain its writer even after its turn is idle.
-Let current substantive work finish naturally and preserve its checkpoint.
-Prefer that same running application's native Resume Goal control: it uses
-the owning server rather than a second process. An idle chat alone does not make
-the standalone adapter eligible to write. If the writer remains, do not repeat
-the standalone mutation, unload/restart the application, interrupt valid work,
-create an empty turn or repeatedly send "continue". On uncertain transport
-completion, inspect state once without repeating the mutation. If the interface
-is unavailable, report that exact limitation and continue independent authorized
-work; do not claim the host has resumed.
-
-After status recovery, separately observe a later host-triggered Goal turn
-(`source="goal"` where exposed) with no intervening human/coordinator continuation
-message. A successful status readback is not that observation. If activation
-alone does not schedule a turn, use the host's supported resume path and distinguish
-any initiating recovery turn from a genuinely automatic following turn. Retain
-timestamps and event provenance privately. Reuse completed results and checks.
-A resumed blocked Goal starts a fresh consecutive-blocker audit under the actual
-tool rules; a scientific decision/budget blocker remains binding.
+Chat activity and native Goal status are distinct: a follow-up message does not
+reactivate a blocked Goal. Host-specific recovery belongs to the host adapter;
+on Codex read [the Codex Goal adapter](hosts/codex-goal.md). Never edit a host
+Goal database or create a second chat to bypass its state.
 
 ## Five substantial milestones
 
@@ -250,17 +216,21 @@ Before completion, establish all of the following:
 
 Before marking the Goal complete, verify the complete reviewer history with
 `scripts/reviewer_panel.py` and link each score to its verified reviewer and revision.
-Verify every assigned final blind reviewer gave
-at least 8/10 on the final submission or a version with documented equivalent
-scientific coverage. Apply the [M5 score check](../../research-review/references/venue-review.md).
-Keep M5 open for missing, stale or subthreshold scores. Address the findings and
+Run `research-write/scripts/claim_audit.py` and `research-survey/scripts/verify_refs.py`
+on the final manuscript bytes, then the [M5 score check](../../research-review/references/venue-review.md)
+(`research-review/scripts/check_score.py`), which requires every registered,
+calibrated panel member to give at least 8/10 on that same digest.
+Keep M5 open for missing, stale or subthreshold scores, failed audits or
+uncalibrated reviewers. Scores never override an unresolved critical or major finding. Address the findings and
 obtain a fresh independent assessment after substantive repairs. Record raw scores,
 covered versions and remaining budget at handoff. Preserve all other delivery gates.
 
 If credible paper completion is not achievable within the allowance, preserve the
 best truthful draft, evidence, failures and exact recovery needs. Report partial
 delivery or the applicable native status rather than declaring success or inventing
-evidence. A useful negative finding can support a paper; a preferred result cannot
+evidence. A truthful partial delivery is a legitimate end state of a paper Goal,
+equal in standing to completion; it is never a reason to weaken evidence standards,
+fill gaps with synthetic values or revise toward a reviewer's preferences. A useful negative finding can support a paper; a preferred result cannot
 be an implicit stopping condition.
 
 ## Compact resumption record
@@ -270,10 +240,3 @@ startup delegation, current M1-M5 node, artifact revisions, valid/stale check
 coverage, venue-profile revision, both review identities/versions/dispositions,
 remaining work, job IDs and committed/remaining resources. Update at meaningful
 transitions; do not build a second database or repeat the record after every edit.
-
-When the user explicitly requests resuming a paused project, the supported recovery
-helper accepts `--resume --resume-paused --authority <current-request-reference>`.
-Ordinary recovery never overrides a user pause. Preserve objective, original
-budget and consumed usage; a changed status alone is not an automatic next turn.
-An active writer rejection is respected; use the owning host rather than editing
-state databases or repeatedly sending synthetic continuation messages.

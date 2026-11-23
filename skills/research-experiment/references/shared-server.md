@@ -3,7 +3,10 @@
 Use the local host profile named by the project, not an embedded server password.
 The configured host's root contains per-project `inputs/` and `runs/<job-id>/`,
 plus a common `.jobs/` reservation ledger. The SSH adapter pins the server public
-key before authenticating and resolves a Windows Credential Manager reference.
+key before authenticating and resolves a credential reference: `ssh-agent:`
+(keys held by the running SSH agent, any platform), `keyfile:<path>` (an
+unencrypted private key file; load encrypted keys into the agent instead) or
+`wincred:research/<name>` (a password in Windows Credential Manager).
 An initial `probe-key` reads a key without credentials. Record first-use trust
 and pin that fingerprint; an unexpected later key change requires reconciliation.
 
@@ -25,7 +28,7 @@ Mutation commands default to a plan. `store-credential --apply` takes a hidden
 interactive password; never place it in shell text or job JSON. `upload` accepts
 one explicit input and a relative destination, refuses different existing bytes,
 and reports its hash. `fetch` reads a named job artifact into a new local file.
-`cancel --apply` writes a cancellation request for a confirmed protocol-2
+`store-credential` applies only to `wincred:` references. `cancel --apply` writes a cancellation request for a confirmed protocol-2
 supervisor. The supervisor reconciles its own child group; the client never
 signals an unpinned numeric PID. A request is not confirmed cancellation. Active
 legacy controllers require explicit reconciliation and keep their running version.

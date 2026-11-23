@@ -7,7 +7,8 @@ description: Use when an existing research tool or product has a requested issue
 
 Read the [shared contract](../research-navigate/references/workflow-contract.md)
 and relevant [domain references](../research-navigate/references/domains/index.md).
-Use [model routing](../research-navigate/references/model-routing.md) for a native
+Use [model routing](../research-navigate/references/model-routing.md) only when dispatching work to more than one model;
+then use it for a native
 reproduction/fix branch and independent regression review.
 
 ## Resolve the requested issue

@@ -9,7 +9,7 @@ Read the [shared contract](../research-navigate/references/workflow-contract.md)
 applicable [domains](../research-navigate/references/domains/index.md), and
 [dependency rules](../research-navigate/references/stage-map.md). For a substantive
 implementation, read [model routing](../research-navigate/references/model-routing.md)
-and the [reuse and simplification audit](../research-navigate/references/reuse-and-simplification.md).
+when dispatching to more than one model, and the [reuse and simplification audit](../research-navigate/references/reuse-and-simplification.md).
 When replacing or porting an implementation, apply
 [the comparison contract](../research-navigate/references/implementation-comparison.md)
 before accepting parity. A matching headline value does not establish equivalence.
@@ -48,6 +48,18 @@ used by analysis and writing; keep conceptual schematics distinct from data plot
    same inputs produces the same scientific content.
 5. Record exactly which checks ran and their outcomes. Route a required metric,
    data or protocol change to design instead of silently changing the comparison.
+
+## Protect the evaluator
+
+At M2, record the SHA-256 of the evaluation harness, metric code and the
+evaluation data manifest (default `research/protocol/evaluator.lock`, written by
+`research-navigate/scripts/check_records.py lock-evaluator`). The branch that
+implements a proposed method gets no write scope over these paths; a worker
+that needs an evaluator change routes it to research-design. Before M3
+aggregation, recheck the hashes. A mismatch marks every result produced after
+the change as stale until design approves the change and affected runs are
+repeated. Keep a validation or test split that method development never reads
+when the protocol defines one; report when no such split exists.
 
 ## Deliver and finish
 

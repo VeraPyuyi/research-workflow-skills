@@ -4,6 +4,10 @@ Eighteen portable research workflows for LLM, Agent, DL, RL, causality and usefu
 research products. The runtime profile is `codex-native`. Install the whole suite:
 stage skills share sibling-relative scientific contracts and references.
 
+> **Status:** the scripts and control logic have 360+ offline tests, but the
+> suite has not yet run a real paper project end to end, and the behaviour A/B
+> evaluation runner has no results yet. See "Validate and use portable configuration".
+
 This edition uses `gpt-6.2-sol`, `gpt-6.2-astra`, `gpt-6.1-sol`, `gpt-6-astra` and `gpt-6-luna` through the
 host's native multi-agent tools. It reads no other-runtime model-routing
 configuration. It offers optional standalone Jev structured decision assistance as the sole external
@@ -98,7 +102,10 @@ figures, tables and public-safe provenance.
 The [pattern library](skills/research-write/references/paper-style-study/index.md)
 retains sources, PDF locators, applicability and counterexamples. Detailed reading
 and validation records are in the
-[study report](docs/paper-presentation-study/report.md). Conference selection
+[study report](docs/paper-presentation-study/report.md); its raw data (about 1.4 MB)
+lives on the data-only branch `paper-presentation-study-data`
+([location](docs/paper-presentation-study/DATA.md)) and is fetched with
+`python scripts/fetch_study_data.py`. Conference selection
 categories remain distinct; the study does not predict acceptance.
 
 ```text
@@ -261,11 +268,19 @@ uses `requirements-ssh.txt`. From the bundle root:
 ```text
 python -m pip install -r requirements-dev.txt
 python -B scripts/validate_skills.py
-python -B -m unittest discover -s tests -p test_dispatch_guard.py -v
-python -B -m unittest discover -s tests -p test_model_routing.py -v
-python -B -m unittest discover -s tests -p test_optimizer.py -v
+python -B -m unittest discover -s tests -p "test_*.py"
+python -B scripts/check_links.py
+python -B scripts/fetch_study_data.py && python -B scripts/validate_presentation_study.py
 python -B scripts/install_skills.py --target <chosen-skills-directory>
 ```
+
+CI runs these checks on Linux and Windows (`.github/workflows/ci.yml`). Behaviour
+is evaluated separately with `scripts/behavior_eval.py`: every scenario under
+`tests/` runs at least three times with and without the skills, a model of a
+different family grades it against the rubric, and pass rates are compared.
+`tests/integrity-scenarios.json` holds integrity traps (missing data, an
+exploitable evaluator, a request to alter a result, a false premise, injected
+reviewer text, score shopping).
 
 The installer command is a dry run; an authorized installation additionally uses
 `--apply`. It checks conflicts before copying, preserves unrelated/customized
@@ -284,8 +299,9 @@ private host, password, API token or raw research result is shipped.
 
 The shared experiment adapter preserves pinned SSH host keys, credential
 references, atomic CPU/RAM/GPU reservations, stable job identities, recovery,
-required outputs and unknown-state reconciliation. Its optional credential backend
-uses Windows Credential Manager; model routing does not read that store. Host
+required outputs and unknown-state reconciliation. Credential references are
+`ssh-agent:`, `keyfile:<path>` or Windows Credential Manager `wincred:research/<name>`;
+model routing does not read them. Host
 jobs pin workflow/protocol/code versions; workflow adoption does not edit active
 runs. A reservation is conservative admission guidance, not operating-system
 resource isolation. Consult `skills/research-experiment/references/shared-server.md`.
@@ -299,6 +315,47 @@ The [review disposition](docs/review-disposition.md) records the integrated
 review findings and their verified repairs.
 
 [Research-focus release validation](docs/research-focus-validation-20261025.md) records the 18-skill checks and their limits.
+
+## Project records and checks
+
+When a project has no record convention, state and evidence go in fixed files
+under `research/` ([default layout](skills/research-navigate/references/records.md)):
+`STATE.json`, `brief.md`, `literature.jsonl`, a locked protocol, `evaluator.lock`,
+`runs/ledger.jsonl`, `analysis/claims.jsonl` and `reviews/panel.json`.
+
+| Script | Purpose |
+| --- | --- |
+| `research-navigate/scripts/check_records.py` | Lock the protocol and evaluator; check record consistency per milestone |
+| `research-survey/scripts/verify_refs.py` | Resolve every reference via arXiv, Crossref and OpenAlex; unresolved ones cannot be cited |
+| `research-write/scripts/claim_audit.py` | List manuscript numbers that do not trace to the claim ledger or generated tables |
+| `research-review/scripts/check_submission.py` | Submission leakage audit, including text aimed at LLM reviewers and invisible characters |
+| `research-review/scripts/check_score.py` | Read scores from raw review files; check digests, calibration and audits |
+| `research-navigate/scripts/reviewer_panel.py` | Check reviewer independence and the registered panel |
+
+Three hard rules are in the shared contract: never substitute synthetic,
+placeholder or remembered values for missing data or runs ("infeasible" is a
+valid outcome); evaluation code and data are read-only to method workers and
+rechecked before principal conclusions; a citation enters a paper only after its
+identity resolves.
+
+## Blind review panel and completion
+
+M4 uses one fresh blind reviewer. Before any M5 dispatch the coordinator registers
+a panel of at least two distinct independence units; every member reviews the same
+frozen bytes, a revision is reviewed again by the same registered units with new
+agents, and a low score is never a reason to swap reviewers. Each panel unit is
+first calibrated on public accepted and rejected papers from the venue. M5 needs
+every member at 8/10 or above, read from the raw report files, plus a passing claim
+audit and reference check on the same manuscript digest and no unresolved
+critical or major finding. The score is necessary, never sufficient; the user
+decides on submission, and a truthful partial delivery is a legitimate end state.
+
+**Limit of this edition:** independence is normally judged by vendor lineage, but
+every model this edition can dispatch is an OpenAI GPT product. The registry
+therefore declares `single_lineage_fallback`: Astra, Sol and Luna count as
+separate units, and every result states that the review was context-independent
+only, not model-independent. Registering a reviewer of another lineage removes
+this limit.
 
 ## Goal recovery and submission privacy
 
@@ -317,22 +374,11 @@ inspection of rendered and unsupported content remains required.
 
 [Goal/content-audit validation](docs/goal-leakage-validation-20261025.md) distinguishes offline acceptance from pending live recovery.
 
-## MathRSI integration and model readiness (2026-11-18)
 
-The 18 existing skills now share optional mathematical handoffs: exact theorem
-imports, connections to actual original inputs, a unique parent return owner,
-and bounded probes of the hardest remainder. Returns are consumed once before
-new work starts; useful in-flight work and original evidence remain pinned.
-Goal completion and M1-M5 checks are unchanged. See
-`skills/research-navigate/references/mathematical-work.md` and
-`docs/math-rsi-validation-20261118.md` for scope and measured checks.
+Dated release notes are in [docs/CHANGELOG.md](docs/CHANGELOG.md).
 
-6.2 Astra/Sol are registered as pending local access. Old admissible models remain
-active until the host actually exposes the new IDs and resources are verified.
-Benchmark preferences do not grant access or certify mathematics. See
-`docs/model-routing-20261118.md`. Updates stay within the project's runtime
-profile; no paper is marked delivered merely because a suite was installed.
+## License
 
-## 6.2 routing update (2026-11-21)
-
-6.2 Astra and 6.2 Sol are activated for covered subscription work. See [the dated access and validation report](docs/model-activation-20261121.md). Existing projects adopt this compatible update at recovery or handoff; running tasks remain pinned. A successful inference does not prove a fresh subagent spawn or host Goal auto-continuation.
+[Apache License 2.0](LICENSE), Copyright 2026 VeraPyuyi. The paper-presentation
+study records the authors' own descriptions, metadata and page locators of public
+papers; it does not contain or relicense the papers' text or figures.

@@ -8,14 +8,11 @@ description: Use when an approved research question needs mathematical derivatio
 Read the [shared contract](../research-navigate/references/workflow-contract.md),
 the applicable [domain references](../research-navigate/references/domains/index.md),
 the [dependency rules](../research-navigate/references/stage-map.md),
-[model routing](../research-navigate/references/model-routing.md), and the
+[model routing](../research-navigate/references/model-routing.md) when dispatching to more than one model, and the
 [reuse and simplification audit](../research-navigate/references/reuse-and-simplification.md)
 when prior work may replace a derivation, implementation or experiment.
-At a genuine candidate choice - which protocol, identification strategy or reuse
-route to select - read
-[evidence comparison and optional Jev](../research-navigate/references/decision-support.md).
-Use inspected evidence and program constraints first, a bounded native comparison
-when useful, then the integrator decision. Comparison has no proof or gate authority.
+Optional [evidence comparison and Jev](../research-navigate/references/decision-support.md) may assist a genuine
+candidate choice; it is advisory and never decides a gate.
 
 ## Make the claim testable
 
@@ -57,6 +54,11 @@ unfinished proof does not block informative tests already covered by approval.
 4. Define implementation checks, a minimal feasibility pilot, formal experiment
    matrix, model/config selection and independent final validation where feasible.
    Separate planned confirmatory tests from exploratory analyses.
+   State the power rationale: the smallest effect worth detecting and why the
+   planned repetitions, seeds or sample size can detect it, or that they cannot.
+   Check baseline adequacy: list the strongest published results on the same
+   task from the literature record and justify any omitted from the comparison.
+   Fix the reproduction tolerance for each baseline here, before baseline runs.
 5. Estimate all relevant resources, including tuning, evaluation and retries.
    State explicit success, futility, budget and retry stopping conditions, execution
    environment needs, and observable status/cancellation controls.
@@ -71,7 +73,11 @@ unfinished proof does not block informative tests already covered by approval.
 ## Deliver and finish
 
 Deliver a versioned protocol, claim-to-test map, execution dependencies, resource
-estimate, risks and unresolved decisions. Present the protocol/resource approval
+estimate, risks and unresolved decisions. Once approved (or covered by startup
+delegation), lock it with `research-navigate/scripts/check_records.py
+lock-protocol` (see the [default record layout](../research-navigate/references/records.md)).
+A later change is a new revision with its own lock; analysis lists every
+departure from the locked revision as a deviation. Present the protocol/resource approval
 package when needed; preserve approval already covering this revision and scope.
 Then hand off to implement, baseline or experiment as dependencies require.
 For a substantive protocol, record native execution branches, independent reviewers,

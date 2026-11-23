@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "scope": "workflow-release",
+  "receipt_id": "research-20261123-review-fixes-codex-native",
+  "status": "passed",
+  "bundle_digest": "sha256:805b17f448023e9858622396715ff779544f27796a429e88be5c13c6b6c98441",
+  "evidence_refs": [
+    "docs/review-fixes-20261123.md",
+    "tests/test_reviewer_panel.py",
+    "tests/test_record_checks.py",
+    "tests/test_behavior_eval.py",
+    "tests/test_submission_leakage.py",
+    "tests/test_remote_experiment.py",
+    ".github/workflows/ci.yml"
+  ],
+  "coverage": {
+    "unit_tests_run": 363,
+    "unit_tests_skipped": 5,
+    "validate_skills": "passed",
+    "validate_presentation_study": "passed with fetched data",
+    "check_links": "passed",
+    "platform": "linux, Python 3.13; paramiko not installed (remote client tested with mocks)",
+    "behavior_eval_runs": 0,
+    "live_paper_reviews": 0,
+    "end_to_end_projects": 0,
+    "limit": "offline code and consistency checks only; no model calls, no real research project"
+  }
+}
