@@ -47,7 +47,7 @@
     "research-navigate/references/live-validation.md": "8faaa49f3b484b8aaa1f518dd965eae4df244c9effea0406bafd30c1a85a92ea",
     "research-navigate/references/mathematical-work.md": "6178c119cdc9be80b2fdfc01555abc76b29592a05793e0395248ee079857083e",
     "research-navigate/references/model-activation.md": "446870df403a2e894ae826e85bb4cf797b1d2be1fc6a2baa447ec8c791f167ea",
-    "research-navigate/references/model-routing.json": "2fd5654027f22ca89149f2fda5fc1ec8bd0cee43cc8f809054e53d2c1d76862d",
+    "research-navigate/references/model-routing.json": "196a20c8670cdd8f5e7996ef96e7eae4752dc6cea1e96ebaa711c5b5cae541bf",
     "research-navigate/references/model-routing.md": "eaec40c1362afc2812f517b8f36f6276e2861afd609f2e9125b50e8c3903a8f4",
     "research-navigate/references/records.md": "4427d22d2352da64d52f83b4ee5cdf3195433e397c3e5f0594e8f2b2104895ba",
     "research-navigate/references/reuse-and-simplification.md": "2f1d66459a1a36e5805bc8911ceb2926e1a56e16d02cc0eab44e34ae84808ba8",
@@ -62,7 +62,7 @@
     "research-navigate/scripts/jev_decide.py": "5ab1a41b750f3c107e3e9e6de940bf9636612aa74e024d4842943f795807695c",
     "research-navigate/scripts/math_work.py": "a84fd20b172e802e1f1cf175cddbf77d84e08ec210926530d9b27c13cf079d3c",
     "research-navigate/scripts/model_identity.py": "dc47155d9fdaf65922f267ee071e43e4952802cb4a22eb6a8c78be4473402ac5",
-    "research-navigate/scripts/reviewer_panel.py": "6b252a4a0bbbea54eccdaafc5a8bc316c2bad20673ef7c791e9b7182ad38703b",
+    "research-navigate/scripts/reviewer_panel.py": "26c59e077aba95845bdb5f7ac195d9ded48b4ac17d2e496857badfb024df08a4",
     "research-navigate/scripts/workflow_release.py": "4e0879b6fecb5c35ec515269b6441194b85d128a49760be4a34dce0836adf560",
     "research-optimize/SKILL.md": "41ddea80cc6b5d5a8854c5e6b23796cdb1cf349925b3522b66f8a2c7c276e865",
     "research-optimize/agents/openai.yaml": "0554615813b673c2b5d58df21c71590c05a26a60a4e9bd1f246ffe3985d93dfd",
@@ -81,7 +81,7 @@
     "research-review/references/independent-review.md": "1aff90eb80a08e31699a1843c246b123e2a4b2f2083eb3163d72bf6467848af0",
     "research-review/references/submission-leakage.md": "72c69f910888900adf46291a40d8d41af6b8246f607d56817f6438aff8c40d43",
     "research-review/references/venue-review.md": "3c61d48bcbeb90a4c32e341730ca46904eb2577d3a611bd3cde810306653b940",
-    "research-review/scripts/check_score.py": "ec3bdd6529067c9c44757f0589600d5c21b547d440bf4c4a6a76aef47647bc03",
+    "research-review/scripts/check_score.py": "6fcb837eb323a4499e2ff6e502ccf5ccbed699216f53d485f3f49e62808ca4de",
     "research-review/scripts/check_submission.py": "5b8f7831151f627991acde2f1259a417e26950d93e39ec14ceba9033e40f6538",
     "research-scope/SKILL.md": "2da4929b60d6037efea36a5096a387ac2c3a58095d1cfd7fdaa68cd9ab38f8b2",
     "research-scope/agents/openai.yaml": "5057355cd14b0fc035dc609893085cc260fc03836bdb45221687404ab8be2ab0",
@@ -107,5 +107,5 @@
   "validation_receipts": [
     "docs/releases/research-20261123-review-fixes-magpie.json"
   ],
-  "bundle_digest": "sha256:9c11ffe2f71540f947109616678b12d301121f770e0326f36345c62639a72786"
+  "bundle_digest": "sha256:df1cca2215fde38ac866b333e54605e455b4ddfbd4ecc25aeb76b40c1373ff75"
 }

@@ -30,7 +30,7 @@ import re
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'research-navigate/scripts'))
-from reviewer_panel import _lineage, _registry  # noqa: E402
+from reviewer_panel import _lineage, _registry, independence_unit  # noqa: E402
 
 SCORE_LINE = re.compile(r'^\s*Overall score:\s*([0-9]+(?:\.[0-9]+)?)\s*/\s*10\s*$', re.M)
 DIGEST_LINE = re.compile(r'^\s*Manuscript SHA-256:\s*([0-9a-f]{64})\s*$', re.M)
@@ -128,8 +128,13 @@ def check(ledger, root, threshold=Decimal(8), calibration=None, claim_audit=None
             problems.append(f'{label} report missing')
         elif report.get('manuscript_sha256') != digest or report.get('passed') is not True:
             problems.append(f'{label} did not pass on the final manuscript digest')
+    unit = independence_unit(registry)
     return {'status': 'met' if not problems else 'outstanding', 'threshold': str(threshold),
-            'final_revision': final, 'reviews': rows, 'problems': problems}
+            'final_revision': final,
+            'independence': ('model lineage' if unit == 'lineage' else
+                             'product family only (single-lineage fallback; context-independent, '
+                             'not model-independent)'),
+            'reviews': rows, 'problems': problems}
 
 
 def _load(path):

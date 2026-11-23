@@ -91,6 +91,7 @@
       }
     },
     "reviewer_independence_unit": "lineage",
+    "single_lineage_fallback": false,
     "lineage_note": "lineage is the provider/base-model line publicly named by the vendor; versions, channels, efforts and same-vendor product names (for example Astra and Sol) share one lineage; null means the base model is not documented and the endpoint cannot certify blind-review independence"
   },
   "models": [

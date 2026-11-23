@@ -3,7 +3,7 @@
   "scope": "workflow-release",
   "receipt_id": "research-20261123-review-fixes-magpie",
   "status": "passed",
-  "bundle_digest": "sha256:9c11ffe2f71540f947109616678b12d301121f770e0326f36345c62639a72786",
+  "bundle_digest": "sha256:df1cca2215fde38ac866b333e54605e455b4ddfbd4ecc25aeb76b40c1373ff75",
   "evidence_refs": [
     "docs/review-fixes-20261123.md",
     "tests/test_reviewer_panel.py",
@@ -14,10 +14,10 @@
     ".github/workflows/ci.yml"
   ],
   "coverage": {
-    "unit_tests_run": 361,
+    "unit_tests_run": 364,
     "unit_tests_skipped": 1,
     "validate_skills": "passed",
-    "validate_presentation_study": "passed",
+    "validate_presentation_study": "passed with fetched data",
     "check_links": "passed",
     "platform": "linux, Python 3.13; paramiko not installed (remote client tested with mocks)",
     "behavior_eval_runs": 0,

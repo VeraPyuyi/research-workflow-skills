@@ -14,6 +14,12 @@ Rounds:
 Without a registered panel the legacy rule applies: every review of the paper
 uses a distinct lineage. Delivery requires a registered panel.
 
+Single-lineage fallback: when the registry policy sets ``single_lineage_fallback``
+and every documented generative model shares one lineage (for example a host
+that offers only one vendor's models), product families stand in for lineages.
+Such reviews are context-independent only; ``independence_unit()`` reports this
+so that results never claim model independence.
+
 The ledger is coordinator-supplied. This script checks consistency, not that
 the recorded calls actually happened; scores are checked by check_score.py.
 """
@@ -21,7 +27,7 @@ import argparse
 import json
 from pathlib import Path
 
-from model_identity import model_lineage
+from model_identity import model_family, model_lineage
 
 REGISTRY = Path(__file__).resolve().parents[1] / 'references/model-routing.json'
 MIN_PANEL = 2
@@ -31,10 +37,24 @@ def _registry():
     return {row['id']: row for row in json.loads(REGISTRY.read_text(encoding='utf-8'))['models']}
 
 
+def independence_unit(registered=None):
+    """'lineage', or 'family' under a declared single-lineage fallback."""
+    data = json.loads(REGISTRY.read_text(encoding='utf-8'))
+    registered = registered if registered is not None else {row['id']: row for row in data['models']}
+    lineages = {model_lineage(row) for row in registered.values()} - {None}
+    if data.get('policy', {}).get('single_lineage_fallback') is True and len(lineages) == 1:
+        return 'family'
+    return 'lineage'
+
+
 def _lineage(model, registered):
     if not isinstance(model, str) or model not in registered:
         return None
-    return model_lineage(registered[model])
+    row = registered[model]
+    lineage = model_lineage(row)
+    if lineage is not None and independence_unit(registered) == 'family':
+        return model_family(model, row.get('model_family'))
+    return lineage
 
 
 def reviewer_errors(plan, candidate=None):
