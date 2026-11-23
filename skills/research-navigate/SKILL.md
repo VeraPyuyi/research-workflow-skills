@@ -10,9 +10,12 @@ Coordinate the stages; leave their scientific work to the stage skills. For a
 full-paper request, a useful next work package is an intermediate step.
 
 Read the [workflow contract](references/workflow-contract.md) and
-[stage map](references/stage-map.md). Select relevant references through the
+[stage map](references/stage-map.md). Keep project state in the records the
+project already uses; when it has none, use the [default record layout](references/records.md)
+and start every invocation by reading `research/STATE.json`. Select relevant references through the
 [domain index](references/domains/index.md); do not load every domain by default.
-Read [model routing](references/model-routing.md) when assigning work packages,
+Read [model routing](references/model-routing.md) only when dispatching work to more than one model;
+then use it when assigning work packages,
 free-model execution branches, independent reviews or parallel workers. Read
 [reuse and simplification](references/reuse-and-simplification.md) when existing
 theory, methods, implementations or results may replace or simplify current work.
@@ -37,9 +40,12 @@ Do not turn that request into only a plan for enabling Goal later.
 
 ## Route from evidence
 
-1. Inspect the supplied brief, protocol, decisions, sources, code, runs, manuscript
+1. Read the project state (`research/STATE.json` or its mapped equivalent), then
+   inspect the supplied brief, protocol, decisions, sources, code, runs, manuscript
    or product artifacts. Distinguish existing, verified, stale and absent material.
-   A new chat is not evidence that a project must restart.
+   A new chat is not evidence that a project must restart. At a milestone, run
+   `scripts/check_records.py check --milestone <M>` and treat its problems as
+   findings for that milestone.
 2. Identify the requested outcome and study type: method, experiment, evaluation,
    empirical analysis, theory, a combination, or product. Combine relevant domain tags.
 3. Find the smallest missing dependency for the next outcome. Preserve valid
@@ -58,10 +64,9 @@ Do not turn that request into only a plan for enabling Goal later.
    `scripts/jev_decide.py`. It has no proof or gate authority: evidence and hard
    program constraints take precedence, and unknown account coverage means no call.
 6. For substantive work, assign a free executor, milestone review ownership and an
-   integrator from the model map. Also evaluate its covered-account assignments:
-   dispatch a useful Cursor branch when current coverage and capacity permit, or
-   record why it was skipped; a catalog entry alone is not participation.
-   Consolidate review at the applicable milestone;
+   integrator from the model map, applying its account-specific participation
+   rules; with a single available model, run the stage directly and record that no
+   model-independent check took place. Consolidate review at the applicable milestone;
    do not dispatch a reviewer after every branch or edit. Check model access, effort, context,
    modality and data restrictions. Split independent branches; reserve shared
    resources and non-overlapping write scopes. Route to the matching stage using
@@ -122,6 +127,9 @@ An existing benchmark with approved tasks but no evaluator goes to
 `research-implement` for measurement infrastructure, then `research-baseline`;
 it does not restart topic selection.
 
+Before ending any turn, write the current milestone, next action, coverage and
+blockers back to the project state; a handoff that exists only in chat is lost.
+
 A routing-only request is complete when the next action and prerequisites are
 unambiguous. A continued-research request also needs actual round progress or an
 explicit unmet prerequisite. Routing completion is not completed scientific work.
@@ -136,7 +144,3 @@ before ending a turn; do not finish the Goal merely because this stage ended.
 
 For delegated proof work, carry the parent obligation, return point and sole continuation owner. Consume a returned result once, simplify pending work, and actually advance the next authorized dependency; children do not dispatch their own successors.
 Read [mathematical work](references/mathematical-work.md) for the optional record and return contract.
-
-## Current 6.2 access
-
-Read [references/model-activation.md](references/model-activation.md) when selecting the newly activated 6.2 models. Use the current registry, current host allowlist and actual allowance; retain qualified legacy fallbacks.

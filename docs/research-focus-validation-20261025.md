@@ -15,13 +15,13 @@ proceed under existing resource limits. Negative findings are preserved.
   3 explicitly skipped, zero failures or errors.
 - One concentrated suite, followed by affected tests after review repairs;
   see the count basis and actual runs in
-  [code validation](../tests/results/research-focus-code-validation.json).
+  code validation (local record `tests/results/research-focus-code-validation.json`; withheld from the public repository because it contains private paths).
 - All 18 skills passed official skill-creator format validation and bundle
   reference checks; isolated full installations matched candidate bytes.
 - Six fresh-context synthetic cases met their predeclared semantic criteria.
   The executor received cases and skill instructions, not the grading rubric.
-  [Assessment](../tests/results/research-focus-behavior.json) and
-  [actual responses](../tests/results/research-focus-forward.md) are retained.
+  Assessment (local record `tests/results/research-focus-behavior.json`; withheld from the public repository because it contains private paths) and
+  actual responses (local record `tests/results/research-focus-forward.md`; withheld from the public repository because it contains private paths) are retained.
 - The baseline already rejected the easy off-theme headline. Its gaps were
   durable cumulative state and premature evidence/resource assumptions; the
   report does not claim the earlier workflow always drifted.
@@ -40,7 +40,7 @@ The stage map now includes focus choices. Magpie's covered Cursor critique uses
 direct endpoint dispatch; its mixed-group focus intent uses Step. Routine focus
 reminders make no model call. Focus and optimizer event completion is suppressed
 without mutating the scientific event ledger. See
-[review disposition](../tests/results/research-focus-review-disposition.json).
+review disposition (local record `tests/results/research-focus-review-disposition.json`; withheld from the public repository because it contains private paths).
 
 ## Runtime and scientific limits
 
@@ -63,6 +63,6 @@ Magpie deployment and project adoption receipts are local, not shipped as projec
 history in the portable suite.
 
 The content-bound release receipt is
-[research-focus-release-receipt.json](../tests/results/research-focus-release-receipt.json).
+research-focus-release-receipt.json (local record `tests/results/research-focus-release-receipt.json`; withheld from the public repository because it contains private paths).
 Earlier quota and live-call records remain dated historical evidence, not current
 account coverage.

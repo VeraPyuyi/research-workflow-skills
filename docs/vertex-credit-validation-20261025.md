@@ -48,7 +48,7 @@ Previously in-flight work and historical bills were not retroactively reconciled
   permissions passed. This was an environment issue, not hidden test success.
 - All 18 skills passed metadata/reference validation.
 - A new-context evaluation independently selected the Vertex hold and pending
-  video route; see [the evaluation and disposition](../tests/results/vertex-credit-forward.md).
+  video route; see the evaluation and disposition (local record `tests/results/vertex-credit-forward.md`; withheld from the public repository because it contains private paths).
 - Automated admission remains advisory for other providers: it does not create
   a universal spending cap or verify arbitrary audio/video packet declarations.
 

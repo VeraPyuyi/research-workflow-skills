@@ -7,7 +7,8 @@ description: Use when a paper needs a venue-specific submission package, rebutta
 
 Read the [shared contract](../research-navigate/references/workflow-contract.md)
 and relevant [domain references](../research-navigate/references/domains/index.md).
-Use [model routing](../research-navigate/references/model-routing.md) for free
+Use [model routing](../research-navigate/references/model-routing.md) only when dispatching work to more than one model;
+then use it for free
 requirements/rebuttal preparation and an independent evidence review.
 
 ## Establish the venue profile
@@ -34,7 +35,9 @@ reruns just because a venue recommends code availability.
    review items rather than assuming a draft is submission-ready.
 2. Verify current requirements from the venue's authoritative material: relevant
    deadline/timezone, format/limits, anonymity, declarations/disclosures, artifact
-   rules and submission mechanics. Record source and inspection date. If access
+   rules and submission mechanics. Record the venue's policy on LLM use by authors
+   (`llm_policy`: source, inspection date, required disclosure text) and prepare an
+   accurate statement of how AI agents took part in this work. Record source and inspection date. If access
    is unavailable, label unverified requirements and prepare only supported parts.
 3. Check consistency across manuscript, metadata, authorship, references, appendix
    and code/data statements. Verify document build/render when applicable.
@@ -47,7 +50,9 @@ reruns just because a venue recommends code availability.
    unresolved blockers. A materially changed claim, author list, destination or
    attachment requires the affected decision; routine edits within authority do not.
    For a full paper, complete M5 with the second fresh-context venue review and
-   at least 8/10 from every assigned final reviewer plus final build/reproduction acceptance; reuse valid earlier scientific coverage
+   at least 8/10 from every registered, calibrated panel member, a passing claim audit
+   and reference check on the same manuscript digest, plus final build/reproduction
+   acceptance; reuse valid earlier scientific coverage
    instead of launching an automatic third full review at packaging.
    Complete the submission/release review gate on the actual package before any
    external submission. Record reviewers, checked scope and unresolved findings;

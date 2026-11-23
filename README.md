@@ -1,12 +1,26 @@
-# Research Workflow Skills — Magpie
+# Research Workflow Skills
 
 18 个可组合的科研 skills，覆盖 LLM、Agent、DL、RL、Causality 及交叉研究，从问题、理论与实验推进到正式论文和适用的复现包，并支持研究工具产品化。
 
-本分支的 `runtime_profile` 为 **magpie**。仓库的 `codex-native` 分支使用 Codex 原生子代理执行科研，并可通过独立 API key 使用 Jev 决策辅助。两版保留相同科研要求，自动升级不会跨运行版本切换。
+> **现状**：套件的脚本与控制逻辑有 360 余项离线测试，但还没有在真实论文项目上完成端到端运行；行为效果的 A/B 评测已有运行器，尚无结果。见 [验证与范围](#验证与范围)。
+
+本分支的 `runtime_profile` 为 **magpie**（作者的多模型网关配置）。`codex-native` 分支使用 Codex 原生子代理。两版科研要求相同；没有任何多模型配置时，单个模型也能按本套件工作，交接里会注明"未做模型独立复核"。
 
 ## 开始使用
 
-需要 Python 3.12 或更新版本；科研工具和模型账户由具体项目配置。结构校验依赖 PyYAML；共享服务器适配器另需 Paramiko，当前凭据后端为 Windows Credential Manager。
+需要 Python 3.12 或更新版本。结构校验依赖 PyYAML，绘图示例依赖 Matplotlib；共享服务器适配器另需 Paramiko。
+
+macOS / Linux：
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-dev.txt
+.venv/bin/python scripts/validate_skills.py
+.venv/bin/python scripts/install_skills.py            # 预览
+.venv/bin/python scripts/install_skills.py --apply    # 安装
+```
+
+Windows（PowerShell）：
 
 ```powershell
 python -m venv .venv
@@ -16,9 +30,9 @@ python -m venv .venv
 .venv/Scripts/python scripts/install_skills.py --apply
 ```
 
-安装默认使用个人 Codex skills 目录，也可用 `--target <目录>` 指定。相同文件重复安装不改动；内容不同的已有技能会被保护。已有安装更新使用 `scripts/update_skills.py` 的快照、外部备份和差异保护流程，不能用强制覆盖绕过定制保护。
+安装默认写入个人 Codex skills 目录，可用 `--target <目录>` 指定其他宿主的 skills 目录。相同文件重复安装不改动；内容不同的已有 skill 会被保护。更新已有安装用 `scripts/update_skills.py`（快照、外部备份、差异保护）。
 
-在新的 Codex 对话中调用，例如：
+调用示例：
 
 ```text
 $research-navigate 为当前项目启用完整论文 Goal，按已批准课题、目标场所与预算自主推进，完成正式稿、适用复现包和两轮全新上下文模拟审稿。
@@ -27,130 +41,72 @@ $research-analyze 审计现有稿件和实验的贡献，区分解释与猜想�
 $research-focus 回溯原始研究主题和历次转向，判断当前论文是否偏离主线，在同一大主题与既有预算内继续有证据支持的研究。
 ```
 
-完整论文 Goal 仅在用户明确启用时创建或复用。单阶段调用保持指定范围。原生 Plan/Goal 操作遵循宿主实际工具；该套件不伪造模式切换，不安装后台服务。更改核心方向、资源承诺或执行投稿/公开发布时，沿用真实授权边界。
-
-恢复已有项目时，请在原聊天明确授权“启用完整论文 Goal，从已有进度继续”。导航会实际读取/创建该聊天的原生 Goal，并将阶段完成与论文完成分开记录；阶段交接后直接执行下一项已授权工作。更新技能文件本身不会唤醒已结束的聊天，版本采用记录也不能代替实际 Goal 激活。原生接续、真实阶段进展和最终论文交付分别记录验证证据。
+完整论文 Goal 仅在用户明确启用时创建或复用，单阶段调用保持指定范围。更改核心方向、资源承诺或执行投稿/公开发布时，沿用真实授权边界。宿主专用的 Goal 恢复流程见 [Codex Goal 适配](skills/research-navigate/references/hosts/codex-goal.md)。
 
 ## 流程
 
 | Skill | 交付 |
 | --- | --- |
-| research-navigate | 路径、依赖、Goal 恢复和交接 |
-| research-scope | 任务书、资源和停止条件 |
-| research-survey | 文献证据、跨领域迁移与复用候选 |
-| research-ideate | 形式化定义、理论原型与选题 |
-| research-design | 推导、证明义务、对照和实验协议 |
+| research-navigate | 路径、依赖、项目状态、Goal 与交接 |
+| research-scope | 任务书、资源、停止条件与人工检查点 |
+| research-survey | 已解析的文献记录、证据、跨领域迁移与复用候选 |
+| research-ideate | 形式化定义、候选比较与已执行的决定性检查 |
+| research-design | 推导、证明义务、对照、功效依据与锁定的实验协议 |
 | research-baseline | 可信基线及复现差异 |
-| research-implement | 科研实现、配置和必要正确性检查 |
-| research-experiment | 有界试运行、正式实验、状态与用量 |
-| research-analyze | 不确定性、贡献审计与迭代工作包 |
-| research-write | 有证据支撑的正式稿、图表与附录 |
-| research-review | 科学审读、复用审计、两轮独立模拟审稿 |
-| research-submit | 场所要求、投稿/返修包 |
-| research-product-discover | 用户需求、范围与验收 |
-| research-product-build | 可用工具及使用验证 |
-| research-product-release | 可审核的发布包 |
-| research-product-maintain | 有界修复与演进 |
-| research-optimize | 轻量阶段复盘、节点上的优化验证 |
+| research-implement | 科研实现、受保护的评测、必要的正确性检查 |
+| research-experiment | 有界试运行、正式实验、运行账本与用量 |
+| research-analyze | 不确定性、主张账本、贡献审计与迭代工作包 |
+| research-write | 有证据支撑的正式稿、图表与数字溯源 |
+| research-review | 科学审读、复用审计、盲审面板 |
+| research-submit | 场所要求（含 LLM 政策）、投稿/返修包 |
+| research-product-discover / build / release / maintain | 研究工具的需求、构建、发布与维护 |
+| research-optimize | 轻量阶段复盘、受保护的工作流改进 |
 | research-focus | 稳定大主题、当前论文主线、累积偏移与旁支边界 |
 
-理论优先但允许有界的小验证和反例搜索；不把数值结果当作证明。保留负结果、替代解释、来源范围和真实实验状态。完整检查集中于 M1 方案、M2 实现试运行、M3 证据结论、M4 完整稿和 M5 修订交付。局部故障只诊断与重测受影响部分。
+理论优先但允许有界的小验证和反例搜索（由任务书的 `theory_mode` 决定，明确的经验或复现研究可以关闭）；不把数值结果当作证明。完整检查集中于 M1 方案、M2 实现试运行、M3 证据结论、M4 完整稿和 M5 修订交付；局部故障只诊断与重测受影响部分。
 
-两轮模拟审稿分别创建全新 agent，`fork_context: false`；第二轮仅取得修订稿、允许附件和目标场所标准，不取得第一轮意见或作者内部历史。文件访问是否隔离按宿主实情记录。
+## 项目记录与校验
 
-优化器使用已批准模型与时间预算内最多 20%，每节点最多 3 个候选、每候选一次修正、最多发布一个版本；优化待办不阻碍已符合标准的论文交付。
+项目没有既有约定时，状态和证据写入 `research/` 下的固定文件（[默认布局](skills/research-navigate/references/records.md)）：`STATE.json`、`brief.md`、`literature.jsonl`、锁定的协议 `protocol/P<n>.md` 与 `.lock`、`protocol/evaluator.lock`、`runs/ledger.jsonl`、`analysis/claims.jsonl`、`reviews/panel.json`。对应的脚本：
 
-主线维护采用“大主题稳定、具体问题可调整”：回溯原始需求和后续明确决定，分别保存 `theme_envelope` 与 `active_thesis`。在用户已委托的同主题范围内，方法、数学工具、假设及论文叙述可以根据证据调整；超出大主题、违反明确边界或扩大资源承诺才请求相应决策。保护问题价值，保留负结果与反例，不固定预设答案，也不把辅助校准或容易完成的工程成果悄悄替代为论文主题。
+| 脚本 | 作用 |
+| --- | --- |
+| `research-navigate/scripts/check_records.py` | 锁定协议与评测文件；按里程碑检查记录是否完整、互相一致 |
+| `research-survey/scripts/verify_refs.py` | 用 arXiv、Crossref、OpenAlex 解析每条参考文献；查不到的不得进稿 |
+| `research-write/scripts/claim_audit.py` | 列出正文里无法溯源到主张账本或生成表格的数字 |
+| `research-review/scripts/check_submission.py` | 投稿包泄漏审计，含写给 LLM 评审的隐藏指令与不可见字符 |
+| `research-review/scripts/check_score.py` | 从评审原始报告读分，核对报告与稿件哈希、校准和审计 |
+| `research-navigate/scripts/reviewer_panel.py` | 按模型谱系检查盲审独立性与预登记面板 |
 
-每次阶段交接只保留简短主线提醒，累计偏移审读并入 M1—M5。私有主线与决策历史不进入两轮盲审材料。`research-focus` 和优化器的收尾不互相产生新事件。已有项目在启动、恢复或交接时采用新版；运行中的任务保留原版本，由原聊天整合新规则，避免覆盖并行写入的状态。
+三条硬规则写入了共享契约：缺数据或运行失败时不得用合成、占位或记忆中的数值顶替（"在现有条件下不可行"是合法结果）；评测代码与数据对方法实现方只读，M3 前核对哈希；参考文献必须能被书目数据库解析才可引用。
 
-## 论文论证与图表
+## 盲审与完成条件
 
-`research-write`、`research-analyze` 和 `research-implement` 共享
-[论证与图表记录](skills/research-write/references/argument-and-figure-contract.md)：
-研究问题、主张、证据版本、比较条件、分母、不确定性和图表规格沿同一份记录交接。
-写作按方法、理论、解释性研究或评测任务选择适用结构；分析区分表达、分析、证据和主张修复；
-实现生成可重跑的图、表及公开安全的追溯记录。
+M4 一位全新上下文的盲审；M5 在派发前预登记至少两个（默认三个）不同**谱系**的评审组成面板，所有成员审同一份冻结稿，修订后由同一组谱系的新 agent 再审，不允许因为低分而换评审。谱系按供应商/基础模型判断：同一厂商的不同产品或版本只算一个，谱系不明的模型不能担任计分盲审。
 
-[模式库](skills/research-write/references/paper-style-study/index.md) 保存来源、页码、
-适用条件和反例，详细阅读与验收记录见
-[研究报告](docs/paper-presentation-study/report.md)。它研究精选与普通录用论文的表达方式，
-不预测录用概率，也不把报告形式与论文奖项合并为同一种类别。
+每个面板谱系先用同一场所已知录用与拒稿的公开论文做一次校准，区分不开的不能计分。M5 要求：每位面板成员 ≥8/10（来自原始报告文件）、主张审计与参考文献检查在同一稿件哈希上通过、没有未解决的 critical/major 问题。分数是必要条件而不是充分条件，是否投稿始终由用户决定；在额度内如实交付部分结果是合法的结束状态。
 
-运行小型示例：
+## 模型与配置
 
-```powershell
-python skills/research-implement/scripts/render_evidence.py --spec skills/research-implement/assets/evidence-example/figure.json --output .build/evidence-example
-```
+阶段 skill 只在需要多模型分派时才读取 [模型分工](skills/research-navigate/references/model-routing.md)。具体端点、额度和账户状态属于作者的 Magpie 配置，见 [机器可读登记](skills/research-navigate/references/model-routing.json) 与 [变更记录](docs/CHANGELOG.md)；别的用户可以忽略它们，或复制 `config/*.example.json` 为本机私有配置后填写自己的。
 
-示例需要 Matplotlib，生成 PDF/SVG/PNG、CSV/TeX 表格及追溯记录；数据明确为示例。
-已有项目沿用合适的绘图工具。实际栏宽以目标场所模板为准，生成文件后检查真实尺寸。
-局部改写、简单分析和单图调整保持原有范围，整体检查继续并入 M2—M5。
-在研项目在下一次启动、恢复或交接时采用同运行版本内的兼容更新，沿用有效结果和检查；
-已完成稿件的整体重组安排在对应写作或审稿节点。
-
-## 模型、额度与配置
-
-[模型分工](skills/research-navigate/references/model-routing.md) 和 [机器可读登记](skills/research-navigate/references/model-routing.json) 记录免费模型、独立审读、Codex、Cursor、Vertex 及 Jev 决策服务。Jev 使用原生结构化接口，不能替代证明或授权。
-
-- 按实际端点核验身份、能力、额度和数据权限；严格派发不经过混合组猜测，不自动进入未授权付费渠道。
-- 全局最多 6 个工作者；已确认共享额度池最多 2 个并发，未知池按 1 个。共享文件由单一整合者修改。
-- 免费模型执行实质分支；集中审读按里程碑开展。不可用或政策不允许时记录原因。
-- Cursor Grok 4.6 已接入科研组的竞争解释、方案比较和有界工程审读规则，并分配到 13 个阶段（含主线维护）的适用分支；使用 `medium`、Fast 关闭和共享 Cursor 额度池。Composer 档位偏差仍待修复，其余 Grok 版本保留为条件候选。详见 [Cursor 路由修复记录](docs/cursor-routing-validation-20261024.md)。
-- 每批派发重新核对订阅额度与在途消耗。混合组不能保证订阅费用封顶；不能把 `max_tokens` 被接受等同于上游硬上限，也不能自动使用未经授权的按量付费。
-- Jev/Vertex 额度未核实则跳过真实调用，继续其他已授权任务。详见 [验收报告](docs/release-validation.md)。
-- Vertex 只允许使用 **Trial credit for GenAI App Builder** 覆盖的调用。当前未核实赠金适用服务/SKU和余额，全部 Vertex 路由暂缓，Magpie 渠道停用；长文一致性转给 Step，复杂证据整合和独立审读使用现有授权内的 Sol/Astra。普通额度确认不能解除此限制，详见 [赠金路由核验](docs/vertex-credit-validation-20261025.md)。
-
-复制 `config/*.example.json` 为本机私有配置并填写实际位置。模板不提供账户、密钥、真实服务器连接或项目授权。Magpie 凭据只在运行时从用户配置读取，不存入仓库。共享服务器的 CPU、内存和 GPU 按资源预留共享，任务固定编号并可恢复；默认不独占。
-
-[版本接续说明](skills/research-navigate/references/workflow-updates.md) 解释同版本兼容升级、定制保护、运行中任务固定版本和显式跨版本切换。保存发布验证凭据到本机运行配置，并由项目记录引用。
+共享实验服务器的凭据支持 `ssh-agent:`、`keyfile:<路径>` 和 Windows 凭据管理器 `wincred:research/<名称>`；配置模板不含账户、密钥或真实服务器。
 
 ## 验证与范围
 
-```powershell
+```bash
 python -B -m unittest discover -s tests -p "test_*.py"
 python scripts/validate_skills.py
+python scripts/validate_presentation_study.py
+python scripts/check_links.py
 ```
 
-测试覆盖安装/回滚、同运行版本升级、派发与审稿输入边界、Jev 离线接口、优化预算和共享服务器恢复。最终报告分别列出离线行为、真实调用、身份与计费观察；功能性验收不是模型排名，也不是已经完成真实科研论文的证据。
+以上检查在 CI 中对 Linux 与 Windows 运行（`.github/workflows/ci.yml`）。它们验证脚本与控制逻辑，不证明这套流程能产出好论文。行为效果用 `scripts/behavior_eval.py` 评测：把 `tests/` 下的场景在"加载 skill / 不加载"两种条件下各跑至少三次，由另一谱系的模型按 rubric 评分并汇总通过率；其中 `tests/integrity-scenarios.json` 是诚信陷阱场景（缺数据、可利用的评测、要求改结果、错误前提、注入评审等）。
 
-本仓库不包含 API key、原始账户响应、真实服务器配置、开发缓存或收费托管工作流。未附加开源许可证；私人仓库访问权不等同于额外再分发授权。
+[论证与图表记录](skills/research-write/references/argument-and-figure-contract.md) 与 [表达模式库](skills/research-write/references/paper-style-study/index.md)（90 篇论文的描述性研究，见 [研究报告](docs/paper-presentation-study/report.md)）用于写作阶段；模式库不预测录用概率。
 
-[Research-focus release validation](docs/research-focus-validation-20261025.md) records the 18-skill checks and their limits.
+本仓库不包含 API key、原始账户响应、真实服务器配置或开发缓存；历史验证文档中引用的本地 `tests/results/` 记录因含私有路径未公开。
 
-## Goal recovery and submission privacy
+**许可证**：仓库已公开，但尚未附加开源许可证。在作者选定许可证之前，按默认规则保留所有权利，他人不能据此复制或再分发。
 
-A chat follow-up does not itself reactivate a blocked native Goal. Use
-the original host's supported, explicitly authorized resume control. Its writer
-lock may persist while the chat is idle; a separate app-server cannot override
-it. Preserve the objective and budgets and separately observe an automatic Goal
-turn. See the navigator's goal-execution reference.
-
-Before M4/M5 and delivery, research-review inspects submitted sources,
-rendered pages, metadata and nested attachments for private paths,
-credentials and accidental internal agent material. Use relative paths
-or explicit placeholders while retaining scientific AI descriptions and
-required disclosures. Automated scans report coverage gaps; human/agent
-inspection of rendered and unsupported content remains required.
-
-[Goal/content-audit validation](docs/goal-leakage-validation-20261025.md) distinguishes offline acceptance from pending live recovery.
-
-## MathRSI integration and model readiness (2026-11-18)
-
-The 18 existing skills now share optional mathematical handoffs: exact theorem
-imports, connections to actual original inputs, a unique parent return owner,
-and bounded probes of the hardest remainder. Returns are consumed once before
-new work starts; useful in-flight work and original evidence remain pinned.
-Goal completion and M1-M5 checks are unchanged. See
-`skills/research-navigate/references/mathematical-work.md` and
-`docs/math-rsi-validation-20261118.md` for scope and measured checks.
-
-6.2 Astra/Sol are registered as pending local access. Old admissible models remain
-active until the host actually exposes the new IDs and resources are verified.
-Benchmark preferences do not grant access or certify mathematics. See
-`docs/model-routing-20261118.md`. Updates stay within the project's runtime
-profile; no paper is marked delivered merely because a suite was installed.
-
-## 6.2 routing update (2026-11-21)
-
-6.2 Astra and 6.2 Sol are activated for covered subscription work. See [the dated access and validation report](docs/model-activation-20261121.md). Existing projects adopt this compatible update at recovery or handoff; running tasks remain pinned. A successful inference does not prove a fresh subagent spawn or host Goal auto-continuation.
+变更历史见 [docs/CHANGELOG.md](docs/CHANGELOG.md)。

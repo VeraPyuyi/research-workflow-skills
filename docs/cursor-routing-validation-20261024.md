@@ -52,4 +52,4 @@ Magpie 科研组及阶段分工中的实际工作路由。
   都已实际调用 Cursor；具体任务仍须满足额度、数据权限、能力和资源条件。
 
 发布版本为 `research-20261024-cursor-routing-v4`，运行版本为 `magpie`。
-完整脱敏代码验收见 [cursor-routing-code-validation.json](../tests/results/cursor-routing-code-validation.json)。
+完整脱敏代码验收见 cursor-routing-code-validation.json（本地记录 `tests/results/cursor-routing-code-validation.json`，含私有路径，未随仓库公开）。

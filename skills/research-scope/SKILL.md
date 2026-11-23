@@ -8,7 +8,8 @@ description: Use when an AI research interest or problem needs a concrete questi
 Read the [shared contract](../research-navigate/references/workflow-contract.md).
 Use the [domain index](../research-navigate/references/domains/index.md) to select
 only relevant references. Paths are relative to this skill.
-For a substantive brief, use [model routing](../research-navigate/references/model-routing.md)
+For a substantive brief, use [model routing](../research-navigate/references/model-routing.md) only when dispatching work to more than one model;
+then use it
 to assign free background/question-definition branches and milestone review ownership.
 
 ## Build a decision-ready brief
@@ -38,6 +39,14 @@ project, extend its anchor instead of resetting it to the latest brief.
 
 Deliver a compact task brief with question, study type, domain tags, outcome,
 assets, constraints/resources, success/stop conditions, assumptions and decisions.
+Without an existing convention, write it as `research/brief.md` (see the
+[default record layout](../research-navigate/references/records.md)) with these fields so later gates can check
+against them: `question`, `study_type`, `success`, `stop`, `budget`, `venue`,
+`delegation` (protocol, conclusions, writing: yes/no each), `theory_mode`
+(`required`, `default` or `none`), `human_checkpoints` (default: topic, protocol,
+main conclusions, submission) and `premise_check` (what evidence shows the
+phenomenon is real, so the project does not build on a false premise).
+"Infeasible with the stated assets" is an acceptable brief outcome.
 Use the five-field shared handoff. A brief can be complete as a proposal even when
 a budget or topic still needs approval; that status does not authorize experiments.
 For a full-paper request, establish the startup completion contract, venue/resource

@@ -22,7 +22,7 @@ fifteen selected papers and fifteen controls form the holdout set.
 | NeurIPS | 2025, 2024, 2023 | Official Spotlight category | 18 |
 
 Exact labels, official pages, pinned conference PDF digests, research-type
-sampling tags and the frozen split are in [sources.json](sources.json).
+sampling tags and the frozen split are in [sources.json](../../skills/research-write/references/paper-style-study/sources.json).
 The [sampling protocol](sampling-protocol.md) preceded qualitative reading.
 The selection is purposive and metadata/title-assisted. Controls favor related
 domains and research types but are not tightly matched for length or measured

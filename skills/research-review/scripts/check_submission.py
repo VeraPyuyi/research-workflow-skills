@@ -77,6 +77,22 @@ _INTERNAL = re.compile(
 )
 _DRAFT = re.compile(r"(?i)\b(?:TODO|FIXME|TBD|XXX)\b|\b(?:insert|add) "
                     r"(?:fabricated results|results here|citation here)\b|\[INSERT [^\]\n]+\]")
+# Text addressed to reviewers or AI systems rather than readers. A paper that
+# studies prompt injection can contain such text legitimately; the finding then
+# needs a documented, passage-specific exception, as for other categories.
+_REVIEWER_INJECTION = re.compile(
+    r"(?i)\b(?:ignore|disregard|forget)\s+(?:all\s+|any\s+)?(?:the\s+)?(?:previous|prior|above|earlier|"
+    r"preceding)\s+(?:instructions|prompts|directions)\b|"
+    r"\b(?:as|if you are)\s+(?:an?\s+)?(?:LLM|AI|language model|automated)\s*(?:-based\s+)?reviewers?\b|"
+    r"\b(?:give|assign|recommend|award)\s+(?:this|the)\s+(?:paper|submission|manuscript|work)\s+"
+    r"(?:a\s+)?(?:high|higher|positive|strong|top|maximum|perfect)\s+(?:score|rating|review|evaluation)\b|"
+    r"\b(?:recommend|vote)\s+(?:for\s+)?(?:acceptance|accept)\s+(?:regardless|without)\b|"
+    r"\bdo\s+not\s+(?:mention|highlight|report)\s+(?:any\s+)?(?:weaknesses|limitations|flaws)\b"
+)
+# Zero-width, bidirectional-control and Unicode tag characters hide text from
+# human readers while remaining visible to models.
+_INVISIBLE = re.compile("[\u200b-\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff"
+                        "\U000e0000-\U000e007f]+")
 _PLACEHOLDER = re.compile(r"(?:<[^<>\r\n]+>|\$\{[^}\r\n]+\}|\{\{[^}\r\n]+\}\})\Z")
 _FIGURES = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".tiff", ".tif", ".bmp", ".svg", ".eps"}
 _ARCHIVES = {".zip", ".docx", ".pptx", ".xlsx", ".odt", ".epub", ".tar", ".gz", ".bz2", ".xz"}
@@ -234,7 +250,11 @@ class _Scanner:
             text = decoded
         for kind, pattern in (("local_path", _PATH), ("credential", _CREDENTIAL),
                               ("credential", _TOKEN), ("private_endpoint", _PRIVATE_HOST),
-                              ("internal_process", _INTERNAL), ("draft_scaffold", _DRAFT)):
+                              ("internal_process", _INTERNAL), ("draft_scaffold", _DRAFT),
+                              ("reviewer_injection", _REVIEWER_INJECTION),
+                              ("hidden_character", _INVISIBLE)):
+            if pattern is _INVISIBLE and source == "metadata":
+                continue
             for match in pattern.finditer(text):
                 if len(self.report["findings"]) >= self.max_findings:
                     self.gap("finding_limit", artifact)

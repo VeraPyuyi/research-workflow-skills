@@ -7,7 +7,8 @@ description: Use when a research protocol is ready for a pilot or formal runs, o
 
 Read the [shared contract](../research-navigate/references/workflow-contract.md)
 and applicable [domain references](../research-navigate/references/domains/index.md).
-For a substantive run, use [model routing](../research-navigate/references/model-routing.md)
+For a substantive run, use [model routing](../research-navigate/references/model-routing.md) only when dispatching work to more than one model;
+then use it
 to assign free status/log preparation and milestone execution review without
 duplicating jobs or treating free model calls as free compute.
 For the configured SSH host, read [shared-server.md](references/shared-server.md)
@@ -58,6 +59,24 @@ Keep necessary status/budget checks and diagnose actual failures locally. Bundle
 the completed evidence for M3; reopen M1/M2 only when their covered dependencies
 materially changed. Scientific repetitions in the approved matrix are research,
 not redundant process testing.
+
+## Missing data, failed runs and infeasible checks
+
+If required data, a run or a measurement is unavailable, report it as
+unavailable. Never substitute simulated, synthetic, placeholder, interpolated,
+remembered or silently sub-sampled values, and never fill a table cell from an
+expectation. "Infeasible within the current data, access or resources" is a
+valid, complete outcome of this stage; record the exact blocker and the
+smallest action that would remove it. A deliberately synthetic fixture is
+allowed only when the approved protocol names it, and every artifact derived
+from it carries `data_kind: synthetic`. Sub-sampling is allowed only when the
+protocol states the rule; record the rule and the counts before and after.
+
+Record every attempt, including failed, interrupted and cancelled ones, as one
+line in the project's run ledger (default `research/runs/ledger.jsonl`; see the
+[default record layout](../research-navigate/references/records.md)): attempt
+id, protocol revision and lock hash, code revision, configuration, seed/split,
+status, output paths, data kind and consumption. A missing line is a finding.
 
 ## Deliver and continue
 

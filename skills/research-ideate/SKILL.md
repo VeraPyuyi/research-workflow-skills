@@ -7,13 +7,12 @@ description: Use when research questions or contributions need generation, compa
 
 Read the [shared contract](../research-navigate/references/workflow-contract.md)
 and relevant [domain references](../research-navigate/references/domains/index.md).
-Read [model routing](../research-navigate/references/model-routing.md) to assign
+Read [model routing](../research-navigate/references/model-routing.md) only when dispatching work to more than one model;
+then use it to assign
 free formalization/alternative branches and mathematical review consolidated at
 M1 for full-paper work; bounded proof/counterexample work remains part of research.
-At a genuine candidate choice - which direction, definition or reuse route to
-pursue - read [Jev decision support](../research-navigate/references/decision-support.md).
-It is advisory: evidence and hard program constraints decide first, unknown
-account coverage means no call, and the service has no proof or gate authority.
+Optional [Jev decision support](../research-navigate/references/decision-support.md) may assist a genuine candidate choice;
+it is advisory and never decides a gate.
 Read [reuse and simplification](../research-navigate/references/reuse-and-simplification.md)
 before treating a mathematical prototype or candidate direction as new.
 
@@ -22,7 +21,9 @@ missing, perform or request a bounded survey rather than asserting novelty.
 
 ## Start with a mathematical prototype
 
-For open-ended new directions and method research, default to theory first with
+The brief's `theory_mode` decides this mode: `required` and `default` apply it,
+`none` skips it for explicitly empirical or replication work. With `default`,
+for open-ended new directions and method research, start theory first with
 bounded exploratory checks. Read
 [mathematical ideation](references/mathematical-ideation.md). For serious candidates,
 define the objects, assumptions and target claim, connect relevant surveyed tools,
@@ -59,13 +60,21 @@ does not justify downgrading the research question or changing the broad theme.
    or method, and the conditions under which the proposed advantage could fail.
    A complex method must earn its added complexity against a fairly tuned simple
    reference; do not add arbitrary quotas of ideas or experiments.
-3. Identify the cheapest decisive check. Separate an approved exploratory allowance
-   from authorization for a new experiment; a proposed check is not an executed one.
+3. Identify the cheapest decisive check. Within the approved exploratory
+   allowance, actually run it for the two leading candidates before asking for the
+   topic decision, and report the outcome; a proposed check is not an executed one.
+   Check the premise as well: confirm from sources or data that the phenomenon the
+   candidate relies on is real before building on it.
 4. Compare value, evidential strength, feasibility and cost. Remove exact duplicates
    of known contributions or infeasible candidates unless reframing produces a
    defensible question. Record which parts were simplified by reuse and what new
    contribution remains. State search coverage and remaining novelty uncertainty.
-5. Recommend a direction with alternatives and consequences, then present the
+5. Generate candidates in at least two independent branches (different prompts,
+   and different model lineages when available), then rank them by pairwise
+   comparison in a context that did not generate them, recording each comparison
+   and its reason. Ideas that read as novel often lose most value in execution, so
+   weight the executed checks above the written pitch.
+6. Recommend a direction with alternatives and consequences, then present the
    topic decision when it has not already been made.
 
 ## Deliver and finish
