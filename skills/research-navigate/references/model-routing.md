@@ -63,8 +63,9 @@ Use `unknown` rather than inferring accessible, free or capable from a model nam
 Do not transfer a benchmark from a base model, another provider, an older
 checkpoint or another effort level to an exact endpoint without evidence.
 
-The initial evidence is in `tests/magpie-evidence-snapshot.json` and
-`docs/model-routing-evidence.md`. Those files describe the observed environment
+The initial evidence is in `tests/magpie-evidence-snapshot.json`; later dated
+observations are in the repository's `docs/model-routing-20261118.md` and
+`docs/model-activation-20261121.md`. Those files describe the observed environment
 at their recorded date; they are not a live entitlement check.
 
 ## Default allocation

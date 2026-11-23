@@ -37,9 +37,9 @@ required use declarations remain accurate.
 
 Windows privilege skips do not establish actual symlink creation behavior; the
 other skips concern an unavailable exact legacy fixture or existing profile
-scope. See [code validation](../tests/results/goal-leakage-code-validation.json),
-[behavior](../tests/results/goal-leakage-behavior.json) and
-[review disposition](../tests/results/goal-leakage-review-disposition.json).
+scope. See code validation (local record `tests/results/goal-leakage-code-validation.json`; withheld from the public repository because it contains private paths),
+behavior (local record `tests/results/goal-leakage-behavior.json`; withheld from the public repository because it contains private paths) and
+review disposition (local record `tests/results/goal-leakage-review-disposition.json`; withheld from the public repository because it contains private paths).
 The earlier review is retained as a dated pre-repair finding record.
 
 ## Live Goal recovery remains incomplete
@@ -54,7 +54,7 @@ host-triggered turn with no intervening coordinator continuation message.
 
 This release passes the offline skill-delivery gate; it does **not** certify
 that the affected live project has resumed or reached paper completion. See the
-[runtime status](../tests/results/goal-leakage-runtime-status.json).
+runtime status (local record `tests/results/goal-leakage-runtime-status.json`; withheld from the public repository because it contains private paths).
 
 ## Submission coverage limits and cadence
 

@@ -89,7 +89,10 @@
         "context_catalog": 500000,
         "context_turn_effective": null
       }
-    }
+    },
+    "reviewer_independence_unit": "lineage",
+    "single_lineage_fallback": false,
+    "lineage_note": "lineage is the provider/base-model line publicly named by the vendor; versions, channels, efforts and same-vendor product names (for example Astra and Sol) share one lineage; null means the base model is not documented and the endpoint cannot certify blind-review independence"
   },
   "models": [
     {
@@ -109,7 +112,8 @@
       ],
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
-      "model_family": "gpt-astra"
+      "model_family": "gpt-astra",
+      "lineage": "openai-gpt"
     },
     {
       "id": "codex/gpt-6.1-sol",
@@ -127,7 +131,8 @@
       ],
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
-      "model_family": "gpt-sol"
+      "model_family": "gpt-sol",
+      "lineage": "openai-gpt"
     },
     {
       "id": "google-vertex/gemini-4-argon",
@@ -148,6 +153,7 @@
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
       "model_family": "gemini-4-argon",
+      "lineage": "google-gemini",
       "group_eligible": false,
       "allowance_state": "unverified-app-builder-credit",
       "billing_policy": "genai-app-builder-credit-only",
@@ -172,6 +178,7 @@
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
       "model_family": "deepseek-v4.1-flash",
+      "lineage": "deepseek",
       "dispatch_block_reason": "Absent from current provider model list on 2026-11-18; do not alias another channel",
       "group_eligible": false,
       "availability": "retired-local-endpoint"
@@ -193,6 +200,7 @@
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
       "model_family": "step-5-preview",
+      "lineage": "stepfun-step",
       "dispatch_block_reason": "Absent from current provider model list on 2026-11-18; do not alias another channel",
       "group_eligible": false,
       "availability": "retired-local-endpoint"
@@ -214,6 +222,7 @@
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
       "model_family": "hy3",
+      "lineage": null,
       "dispatch_block_reason": "Absent from current provider model list on 2026-11-18; do not alias another channel",
       "group_eligible": false,
       "availability": "retired-local-endpoint"
@@ -234,7 +243,8 @@
       ],
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
-      "model_family": "beam"
+      "model_family": "beam",
+      "lineage": null
     },
     {
       "id": "opencode-zen/deepseek-v4.1-flash-free",
@@ -253,7 +263,8 @@
       ],
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
-      "model_family": "deepseek-v4.1-flash"
+      "model_family": "deepseek-v4.1-flash",
+      "lineage": "deepseek"
     },
     {
       "id": "opencode-zen/glm-5.3-flash-free",
@@ -273,6 +284,7 @@
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
       "model_family": "glm-5.3-flash",
+      "lineage": "zhipu-glm",
       "availability": "absent-current-catalog",
       "group_eligible": false,
       "dispatch_block_reason": "Not exposed by this provider on 2026-11-21; reverify before dispatch"
@@ -294,7 +306,8 @@
       ],
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
-      "model_family": "mimo-v2.6-flash"
+      "model_family": "mimo-v2.6-flash",
+      "lineage": "xiaomi-mimo"
     },
     {
       "id": "opencode-zen/nemotron-3.5-super-vl-free",
@@ -313,7 +326,8 @@
       ],
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
-      "model_family": "nemotron-3.5-super-vl"
+      "model_family": "nemotron-3.5-super-vl",
+      "lineage": "nvidia-nemotron"
     },
     {
       "id": "opencode-zen/jev-1.13-free",
@@ -334,6 +348,7 @@
       "effort_status": "not applicable; channel interface unverified",
       "kind": "structured_decision",
       "model_family": "jev-1.13",
+      "lineage": null,
       "capability_status": "unverified",
       "adapter": null,
       "group_eligible": false
@@ -355,6 +370,7 @@
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
       "model_family": "longcat-2.5-preview",
+      "lineage": "meituan-longcat",
       "availability": "absent-current-catalog",
       "group_eligible": false,
       "dispatch_block_reason": "Not exposed by this provider on 2026-11-21; reverify before dispatch"
@@ -376,7 +392,8 @@
       ],
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
-      "model_family": "nemotron-3-ultra"
+      "model_family": "nemotron-3-ultra",
+      "lineage": "nvidia-nemotron"
     },
     {
       "id": "opencode-zen/space-bunny-free",
@@ -395,6 +412,7 @@
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
       "model_family": "space-bunny",
+      "lineage": null,
       "availability": "absent-current-catalog",
       "group_eligible": false,
       "dispatch_block_reason": "Not exposed by this provider on 2026-11-21; reverify before dispatch"
@@ -415,12 +433,14 @@
       ],
       "effort_status": "preferred; verify supported effort on current endpoint before use",
       "kind": "generative",
-      "model_family": "nemotron-3.5-lightning"
+      "model_family": "nemotron-3.5-lightning",
+      "lineage": "nvidia-nemotron"
     },
     {
       "id": "typesafe/jev-latest",
       "kind": "structured_decision",
       "model_family": "jev",
+      "lineage": null,
       "role": "native structured research and optimizer decisions",
       "effort": null,
       "effort_status": "not applicable",
@@ -453,6 +473,7 @@
       "id": "google-vertex/gemini-3.1-pro-preview",
       "kind": "generative",
       "model_family": "gemini-3.1-pro-preview",
+      "lineage": "google-gemini",
       "role": "long-document evidence and review",
       "effort": "high",
       "effort_status": "local endpoint catalog; verify actual adapter behavior before execution",
@@ -486,6 +507,7 @@
       "id": "google-vertex/gemini-3.1-pro-preview-customtools",
       "kind": "generative",
       "model_family": "gemini-3.1-pro-preview",
+      "lineage": "google-gemini",
       "role": "tool-oriented evidence collection and protocol work",
       "effort": "high",
       "effort_status": "local endpoint catalog; verify actual adapter behavior before execution",
@@ -519,6 +541,7 @@
       "id": "google-vertex/gemini-3-flash-preview",
       "kind": "generative",
       "model_family": "gemini-3-flash-preview",
+      "lineage": "google-gemini",
       "role": "bounded retrieval synthesis and extraction",
       "effort": "high",
       "effort_status": "local endpoint catalog; verify actual adapter behavior before execution",
@@ -553,6 +576,7 @@
       "id": "google-vertex/gemini-3.8-flash",
       "kind": "generative",
       "model_family": "gemini-3.8-flash",
+      "lineage": "google-gemini",
       "role": "bounded source extraction and structured research records",
       "effort": "high",
       "effort_status": "local endpoint catalog; verify actual adapter behavior before execution",
@@ -586,6 +610,7 @@
       "id": "google-vertex/gemini-3.7-flash",
       "kind": "generative",
       "model_family": "gemini-3.7-flash",
+      "lineage": "google-gemini",
       "role": "secondary extraction and consistency checks",
       "effort": "high",
       "effort_status": "local endpoint catalog; verify actual adapter behavior before execution",
@@ -619,6 +644,7 @@
       "id": "cursor/composer-2.5",
       "kind": "generative",
       "model_family": "composer-2.5",
+      "lineage": null,
       "role": "implementation, refactoring and bounded engineering work",
       "effort": "medium",
       "effort_status": "Observed Plus plan: medium and Fast off; reverify if subscription changes",
@@ -653,6 +679,7 @@
       "id": "cursor/grok-4.7@256k",
       "kind": "generative",
       "model_family": "grok-4.7@256k",
+      "lineage": "xai-grok",
       "role": "alternative explanations and independent technical critique",
       "effort": "medium",
       "effort_status": "Observed Plus plan: medium and Fast off; reverify if subscription changes",
@@ -685,6 +712,7 @@
       "id": "cursor/grok-4.6",
       "kind": "generative",
       "model_family": "grok-4.6",
+      "lineage": "xai-grok",
       "role": "alternative research routes and technical synthesis",
       "effort": "medium",
       "effort_status": "Observed Plus plan: medium and Fast off; reverify if subscription changes",
@@ -739,6 +767,7 @@
       "id": "cursor/grok-4.5",
       "kind": "generative",
       "model_family": "grok-4.5",
+      "lineage": "xai-grok",
       "role": "bounded alternative explanations and maintenance triage",
       "effort": "medium",
       "effort_status": "Observed Plus plan: medium and Fast off; reverify if subscription changes",
@@ -785,6 +814,7 @@
       "effort_status": "high verified; endpoint advertises low/medium/high/xhigh/max/ultra",
       "kind": "generative",
       "model_family": "gpt-astra",
+      "lineage": "openai-gpt",
       "availability": "available-with-current-host-check",
       "dispatch_block_reason": "",
       "public_release_date": "2026-11-17",
@@ -809,6 +839,7 @@
       "effort_status": "high verified; endpoint advertises low/medium/high/xhigh/max/ultra",
       "kind": "generative",
       "model_family": "gpt-sol",
+      "lineage": "openai-gpt",
       "availability": "available-with-current-host-check",
       "dispatch_block_reason": "",
       "public_release_date": "2026-11-17",

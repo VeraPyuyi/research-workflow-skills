@@ -1,8 +1,0 @@
-{
-  "frozen_at": "2026-10-26T12:24:29.177599+00:00",
-  "patterns_sha256": "f2f16721f65b8e48e7a8a47e0637e32cb7cca6d6e450948c0f8096a9c3975776",
-  "pattern_markdown_sha256": "30098949fd6d3ce8ae501cfaf451c2ce9106a64b1e450895cccc6e0ffc9b8c2e",
-  "discovery_count": 60,
-  "holdout_read_at_freeze": 0,
-  "limits": "Freeze of presentation hypotheses; not a preregistered causal experiment."
-}

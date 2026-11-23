@@ -10,7 +10,7 @@ Keep a stable broad theme and an evidence-adjustable paper thesis. This is a
 cross-stage responsibility, not a new experiment or mandatory review after edits.
 
 Read the [shared contract](../research-navigate/references/workflow-contract.md)
-and [model routing](../research-navigate/references/model-routing.md).
+and, only when dispatching to more than one model, [model routing](../research-navigate/references/model-routing.md).
 Use [the thesis anchor protocol](references/thesis-anchor.md) to establish or
 revise the project record, assess cumulative drift, or prepare a corrective handoff.
 
@@ -21,7 +21,11 @@ Record source locations, what was actually read, and gaps. A recent manuscript,
 chat title or latest handoff cannot by itself establish the original user intent.
 
 Keep `research_focus` in the existing project state, or link its designated
-artifact there. Separate:
+artifact there (default `research/focus/anchor.md`, referenced from
+`research/STATE.json`). Stage packages carry only the three-to-five-line reminder
+below, not this skill. At each milestone, record a short table mapping the
+title and headline claims to the `theme_envelope`; run the full drift review
+only when that table changes. Separate:
 
 - `theme_envelope`: the core phenomenon, scientific importance, audience/use,
   explicit boundaries and instruction provenance. Changes require an explicit

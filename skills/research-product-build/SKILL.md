@@ -7,7 +7,8 @@ description: Use when an approved research tool, library, framework, Agent syste
 
 Read the [shared contract](../research-navigate/references/workflow-contract.md)
 and relevant [domain references](../research-navigate/references/domains/index.md).
-For a substantive build, use [model routing](../research-navigate/references/model-routing.md)
+For a substantive build, use [model routing](../research-navigate/references/model-routing.md) only when dispatching work to more than one model;
+then use it
 for free independent implementation branches and separate review/integration.
 
 ## Build the approved user outcome

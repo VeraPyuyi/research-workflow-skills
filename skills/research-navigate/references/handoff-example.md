@@ -21,10 +21,10 @@ user's decision package. Route
 job reconciliation to research-experiment with J7 and the existing budget record;
 do not rerun J7 while its status is unknown.
 
-**Dispatch:** Step-5-Preview Free drafted the synthesis; DeepSeek V4.1 Flash Free
-independently checked the stated assumptions. Requested and served models are
-recorded separately. Astra review is unexecuted because this worker could not
-dispatch it, so the claim is not treated as independently verified.
+**Dispatch:** a free executor drafted the synthesis; a model of a different
+lineage independently checked the stated assumptions. Requested and served models
+are recorded separately. The milestone reviewer is unexecuted because this worker
+could not dispatch it, so the claim is not treated as independently verified.
 
 If the user asks only for a paper reading, use the same fields for the reading
 artifact and available source excerpt; a project manifest is unnecessary.

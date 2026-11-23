@@ -1,9 +1,0 @@
-{
-  "status": "passed",
-  "runtime_profile": "magpie",
-  "bundle_digest": "sha256:d7c78ac629423d0a342ed04d9265c5977c619c5328c7528bd764903675089ad1",
-  "skills": 18,
-  "files_compared": 87,
-  "comparison": "sha256 and exact bytes",
-  "location": "isolated temporary installation; personal install unchanged"
-}

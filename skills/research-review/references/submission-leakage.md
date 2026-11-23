@@ -47,6 +47,14 @@ upload private artifacts to an external detector merely to complete coverage.
   A keyword or an alleged AI-writing style cannot establish misconduct or leakage.
   If a flagged term is genuinely the object of study, inspect the exact passage
   and document the narrow exception; never apply a blanket keyword exemption.
+- Remove text addressed to reviewers or AI systems rather than readers (for
+  example "ignore previous instructions" or requests for a high score) and
+  zero-width, bidirectional-control or Unicode tag characters; the scanner
+  reports these as `reviewer_injection` and `hidden_character`. Also compare the
+  PDF text layer with the rendered pages for white, tiny or off-page text that a
+  human reader cannot see. Venues such as ICLR treat hidden instructions to LLM
+  reviewers as misconduct. A paper that studies such attacks keeps its examples
+  only with a documented, passage-specific exception.
 - Placeholders may stand for private infrastructure. They must not stand for
   missing results, citations, proofs or required declarations in a completed paper.
 

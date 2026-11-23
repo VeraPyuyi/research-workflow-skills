@@ -14,3 +14,15 @@ FAMILIES = {
 def model_family(model, declared=None):
     suffix = model.split("/", 1)[-1].removesuffix("-free")
     return FAMILIES.get(suffix, declared or suffix)
+
+
+def model_lineage(row):
+    """Provider/base-model lineage from the registry; None when undocumented.
+
+    Versions, channels, efforts and same-vendor product names share one lineage,
+    so two GPT products or two Grok versions are not independent reviewers.
+    """
+    if not isinstance(row, dict) or row.get("kind", "generative") != "generative":
+        return None
+    lineage = row.get("lineage")
+    return lineage if isinstance(lineage, str) and lineage.strip() else None

@@ -7,7 +7,8 @@ description: Use when scientific evidence, methods or reviewed conclusions need 
 
 Read the [shared contract](../research-navigate/references/workflow-contract.md)
 and applicable [domain references](../research-navigate/references/domains/index.md).
-Read [model routing](../research-navigate/references/model-routing.md) for free
+Read [model routing](../research-navigate/references/model-routing.md) only when dispatching work to more than one model;
+then use it for free
 drafting branches and independent review, and
 [reuse and simplification](../research-navigate/references/reuse-and-simplification.md)
 when presenting prior results or simplified content.
@@ -80,6 +81,11 @@ generalization, mechanism or real-task claims.
    checks; do not trigger a full citation sweep or manuscript review each time.
    Use appropriate artifact tooling when layout or compilation matters and record
    actual validation rather than claiming an unperformed render/build.
+   Before freezing a manuscript for M4/M5, run [`scripts/claim_audit.py`](scripts/claim_audit.py)
+   (every reported number traces to the claim record or a generated table) and
+   the survey skill's `verify_refs.py` on the bibliography, both bound to the
+   manuscript digest. Resolve each untraced number or unresolved reference, or
+   record why it is exempt.
    Preserve the type and level of every uncertainty estimate; an untyped `+/-`
    is not automatically a confidence interval. Keep unresolved source or result
    gaps visible with a concrete next check. A metric/source change invalidates

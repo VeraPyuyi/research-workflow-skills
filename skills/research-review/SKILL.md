@@ -7,7 +7,8 @@ description: Use when research needs scientific review of contributions, proofs,
 
 Read the [shared contract](../research-navigate/references/workflow-contract.md)
 and applicable [domain references](../research-navigate/references/domains/index.md).
-Read [model routing](../research-navigate/references/model-routing.md) to assign
+Read [model routing](../research-navigate/references/model-routing.md) only when dispatching work to more than one model;
+then use it to assign
 independent review branches, and
 [reuse and simplification](../research-navigate/references/reuse-and-simplification.md)
 when the artifact may contain duplicated theory, implementation, evidence or
@@ -16,11 +17,8 @@ For conflicting reviews or substantive council work, read
 [independent review](references/independent-review.md). Verify incoming objections
 and proposed fixes against original artifacts before applying them; after repair,
 recheck changed locations and affected dependencies, preserving valid prior checks.
-At a genuine candidate choice - which disposition, repair route or reuse decision
-to adopt - read
-[Jev decision support](../research-navigate/references/decision-support.md).
-It is advisory: evidence and hard program constraints decide first, unknown
-account coverage means no call, and the service has no proof or gate authority.
+Optional [Jev decision support](../research-navigate/references/decision-support.md) may assist a genuine candidate choice;
+it is advisory and never decides a gate.
 
 ## Choose the review mode
 
@@ -33,7 +31,10 @@ For a target-venue simulation, read [venue review](references/venue-review.md):
 launch a new agent with `fork_context: false` and only the frozen submitted paper,
 permitted attachments and verified venue criteria. Do not give it this project's
 history, author self-assessment or previous reviews. Full-paper work uses two
-scored rounds at M4 and M5 (every final reviewer must give at least 8/10 for paper completion), with distinct reviewer model families and fresh agents across all rounds, panel slots and retries; an explicitly bounded
+scored rounds at M4 and M5: M5 uses a panel of distinct reviewer lineages registered
+before dispatch, each calibrated for the venue, every member reviews the same frozen
+bytes with a fresh agent, and every member must give at least 8/10. The score is
+necessary, never sufficient (see venue review); an explicitly bounded
 review remains one review. Context independence, model independence and filesystem
 isolation are different facts and must be reported separately.
 Private focus anchors, user-intent history and alignment verdicts remain with the

@@ -9,7 +9,7 @@
       "user": "replace-with-your-user",
       "root": "/srv/research-workspaces",
       "python": "python3",
-      "credential_ref": "wincred:research/replace-with-local-reference",
+      "credential_ref": "ssh-agent:",
       "sharing": "shared",
       "host_key_sha256": "SHA256:replace-after-probe-and-verification",
       "host_key_trust": "record how the observed server key was verified"

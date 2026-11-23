@@ -7,7 +7,8 @@ description: Use when a research tool or practical product needs release packagi
 
 Read the [shared contract](../research-navigate/references/workflow-contract.md)
 and relevant [domain references](../research-navigate/references/domains/index.md).
-Use [model routing](../research-navigate/references/model-routing.md) for free
+Use [model routing](../research-navigate/references/model-routing.md) only when dispatching work to more than one model;
+then use it for free
 packaging/documentation/example checks and an independent release review.
 
 ## Verify what would actually be distributed
