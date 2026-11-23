@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "contract_version": "1.6",
+  "contract_version": "1.7",
   "runtime_profile": "magpie",
-  "release_id": "research-20261123-review-fixes-magpie",
+  "release_id": "research-20261123-workflow-lab-magpie",
   "status": "candidate",
   "files": {
     "research-analyze/SKILL.md": "67237019f3ea530ed5bee0bf2f01d0bcdd8360592a6ad0635bc02a680215dbf7",
@@ -30,7 +30,7 @@
     "research-implement/assets/evidence-example/figure.json": "74082425cae785053eec7b02146c5bdf646f045926a3244962a3e633a57e6697",
     "research-implement/assets/evidence-example/results.csv": "b035cc0ebdcdf54da8f02bbbb0091714aa1ca91ac78c6ed0a57cca7fb12899da",
     "research-implement/scripts/render_evidence.py": "c50a185db880d15c0835527964598796f4a2df17f339f4c2ccbec0102191fad7",
-    "research-navigate/SKILL.md": "031cf2038200f35c39f9b51177b9eabd4c8c555630b9e7bbb32aab66dcc35c21",
+    "research-navigate/SKILL.md": "8725d4d027d2922b6575e27d8fa2af51b292bf0c30fd9311fd350292ee013fbf",
     "research-navigate/agents/openai.yaml": "d7ba654f9f0778a6411a210ea8551a0afc6f86abb36be16383c1d6bca0766f6e",
     "research-navigate/references/decision-support.md": "201d203d3864dd21fff5a2b610ef5be1466f7199674ac8187321e641a40c905b",
     "research-navigate/references/domains/agent.md": "f429610c87f433e296672a5889c62e5edb0c472f11d09ef0a4ea092fd77bc1d7",
@@ -41,7 +41,7 @@
     "research-navigate/references/domains/rl.md": "9bed15e93d77914c3a610b2338ea656564ab551ff1585c684ddea9da00850d2f",
     "research-navigate/references/evidence-ledger.md": "b2cd8bbd2f3e2ce8cc950522aa14f8f62fb3b26bd3328b05d8935feaced418d7",
     "research-navigate/references/goal-execution.md": "9c57d1f3b11b2601738471637a0afbf0976126fed55169e53635b78ef802a765",
-    "research-navigate/references/handoff-example.md": "e7fa9b3348410ef9abf25764a89956e9cc759988cc4ae0382a306f83958ce468",
+    "research-navigate/references/handoff-example.md": "19b23740983658ff9e04cf85a393a9dda453aedeea2e001068da1402e6159640",
     "research-navigate/references/hosts/codex-goal.md": "fab2779bca29193ef07b005f97b02038f37313afba1bc1060be755a2bb1a2d19",
     "research-navigate/references/implementation-comparison.md": "a9a6d957bb6fd37ea87382b63df5bdd34a8e60804f4e41552c97d0b5b40e1f90",
     "research-navigate/references/live-validation.md": "8faaa49f3b484b8aaa1f518dd965eae4df244c9effea0406bafd30c1a85a92ea",
@@ -49,11 +49,11 @@
     "research-navigate/references/model-activation.md": "446870df403a2e894ae826e85bb4cf797b1d2be1fc6a2baa447ec8c791f167ea",
     "research-navigate/references/model-routing.json": "196a20c8670cdd8f5e7996ef96e7eae4752dc6cea1e96ebaa711c5b5cae541bf",
     "research-navigate/references/model-routing.md": "eaec40c1362afc2812f517b8f36f6276e2861afd609f2e9125b50e8c3903a8f4",
-    "research-navigate/references/records.md": "4427d22d2352da64d52f83b4ee5cdf3195433e397c3e5f0594e8f2b2104895ba",
+    "research-navigate/references/records.md": "ed025981c70e8b060868b2325174bddfd350127d3210cdce6f0a99d1e3fca62d",
     "research-navigate/references/reuse-and-simplification.md": "2f1d66459a1a36e5805bc8911ceb2926e1a56e16d02cc0eab44e34ae84808ba8",
-    "research-navigate/references/stage-map.md": "0d0d5c440e4bc1353f9c1abf6c569abf2503a0aea574b957edf2def1345984cc",
+    "research-navigate/references/stage-map.md": "5d0d9dfad74601c121982589a780f72d6fff0646b7fc5d6a6325cb64179a78f9",
     "research-navigate/references/vertex-credit-policy.md": "9c1f1d5576114960faae3a065498e42f81a1eb64dc7e15e6564de7ffc79d05b0",
-    "research-navigate/references/workflow-contract.md": "10b8afa44394448512b2badeb4ccf912ce44413f49cc19fb159c6054f8ca7819",
+    "research-navigate/references/workflow-contract.md": "18e6e6aea78e772ad8ca566d3c9523eeaa956cf38af6e6e5fb8eddea0238f15a",
     "research-navigate/references/workflow-extensions.md": "98d4a9df506107bd5ad6e5322943307e000dc1da7c1c33f6ac65d32ad2147443",
     "research-navigate/references/workflow-updates.md": "daa31b4a8e0469a315e76c9ca3ee71468cadde4c44f34488f54d0a358858ab96",
     "research-navigate/scripts/check_dispatch.py": "7a34645f67441b110dffd8a3a633016c45de66f1868d0305ae4388b62a5176bb",
@@ -64,10 +64,11 @@
     "research-navigate/scripts/model_identity.py": "dc47155d9fdaf65922f267ee071e43e4952802cb4a22eb6a8c78be4473402ac5",
     "research-navigate/scripts/reviewer_panel.py": "26c59e077aba95845bdb5f7ac195d9ded48b4ac17d2e496857badfb024df08a4",
     "research-navigate/scripts/workflow_release.py": "bf23b740a263525fcad437af0072571123f72bdd24e6d523d7237a4202ebcf10",
-    "research-optimize/SKILL.md": "41ddea80cc6b5d5a8854c5e6b23796cdb1cf349925b3522b66f8a2c7c276e865",
-    "research-optimize/agents/openai.yaml": "0554615813b673c2b5d58df21c71590c05a26a60a4e9bd1f246ffe3985d93dfd",
-    "research-optimize/references/optimization-protocol.md": "57e3173a4c417a912dc6b0de8533e3462954a6b49dd4544bc9d23359b37efaa9",
-    "research-optimize/scripts/optimize_workflow.py": "e3d084cfd6f91146ae9868a75dfad60c530ad6737b90fb4c83b4d4f647522034",
+    "research-optimize/SKILL.md": "444a88e12bfc92f37aa79c201079758a24a21c1d480adbd82c8662b53849ce41",
+    "research-optimize/agents/openai.yaml": "f7df0e72341d29f4d110912000b3112af8bb28f042448fdf013d41acd109dfe6",
+    "research-optimize/references/optimization-protocol.md": "eb71f4e729932feecc563d2675396d4749187660cd01ad565ef67f5b4a953560",
+    "research-optimize/references/workflow-lab.md": "d1cc212abe83820a089a12866ffa4cff30231fed0cabaef021644d9acf25092c",
+    "research-optimize/scripts/optimize_workflow.py": "615d125885f18c67137dfd37c668f99390229d1ad92d857685a6c363e541447e",
     "research-product-build/SKILL.md": "0afa174a83f4cb05e0bee0d84edf1307dfa5035789eadf5873852a4242bc502e",
     "research-product-build/agents/openai.yaml": "a6f80aeb8c644b02b6e155acceb1dc861fe34b2e14430f96379ebd2f3dbda4d9",
     "research-product-discover/SKILL.md": "ac97ac586ad06441520558fc8ee70f5851f0f615c9ba2fb54d411b8527830aec",
@@ -105,7 +106,7 @@
     "research-write/scripts/claim_audit.py": "a0b1be6b97c43d2837b97c6bb26505efabe9c5be43a8576058fc042693190c45"
   },
   "validation_receipts": [
-    "docs/releases/research-20261123-review-fixes-magpie.json"
+    "docs/releases/research-20261123-workflow-lab-magpie.json"
   ],
-  "bundle_digest": "sha256:ca7f17194c93cd1da91052928418a3a780d7f4f3a9e18a44ddf80b44cee534c8"
+  "bundle_digest": "sha256:13440efe6cb06af1b264f654cec7467c8d08017946393d5cc124c6775ae4a9dd"
 }

@@ -71,19 +71,21 @@ def criteria_for(item, rubric):
     return [], rubric
 
 
-def plan(out, runs, names=None, seed=0):
+def plan(out, runs, names=None, seed=0, skills_root="skills", conditions=("with_skill", "without_skill")):
+    """skills_root lets the workflow lab point with_skill tasks at a baseline or candidate suite."""
     out.mkdir(parents=True, exist_ok=True)
     tasks = []
     for suite, (items, rubric) in load_suites(names).items():
         for item in items:
-            for condition in ("with_skill", "without_skill"):
+            for condition in conditions:
                 for run in range(1, runs + 1):
                     key = f"{suite}/{item.get('id')}/{condition}/{run}"
                     tasks.append({
                         "task_id": hashlib.sha256(key.encode()).hexdigest()[:16],
                         "suite": suite, "scenario": item.get("id"), "condition": condition, "run": run,
                         "prompt": _prompt(item),
-                        "skills": [f"skills/{s}/SKILL.md" for s in _skills(item)] if condition == "with_skill" else [],
+                        "skills": ([f"{skills_root}/{s}/SKILL.md" for s in _skills(item)]
+                                   if condition == "with_skill" else []),
                         "instructions": ("Answer the request as the research agent. Use only the listed skills."
                                          if condition == "with_skill" else
                                          "Answer the request as the research agent. Do not load any research-* skill."),

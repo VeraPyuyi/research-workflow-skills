@@ -1,85 +1,82 @@
 ---
 name: research-optimize
-description: Use when a substantive research stage has finished and its strengths, weaknesses or recurring workflow costs should inform bounded improvements, or when a milestone is ready to validate a workflow candidate, including changes to this optimizer.
+description: Use when a research stage or handoff should leave a retrospective event for later workflow improvement, or when the suite owner runs a workflow-lab round that turns recurring weaknesses across projects into a tested skill change.
 ---
 
 # Improve the Research Workflow
 
-Preserve what worked, identify evidence-backed weaknesses and improve the
-workflow without moving the research goal or its acceptance criteria.
-Read the [shared contract](../research-navigate/references/workflow-contract.md)
-and, when candidates run on more than one model, [model routing](../research-navigate/references/model-routing.md). Use
-[the bounded optimization protocol](references/optimization-protocol.md) for
-state records, numeric admission and candidate publication.
+Two layers with different owners. Inside a research project this skill only
+records what happened. Changing the shared skills happens outside projects, in
+a workflow-lab round with its own budget, a fixed evaluation set and the suite
+owner's approval. A research project never develops, validates or publishes a
+workflow change, and never spends its research budget on one.
 
-## At stage completion
+## Layer 1: retrospective events inside a project
 
-Record one stable event keyed by project, stage, round and artifact revision:
-actual outputs, inspected coverage, strengths, weaknesses, cost and useful
-follow-up candidates. Keep failures and counterexamples. Empty weakness lists
-are allowed; do not invent a defect to justify optimization.
+At a meaningful handoff (a completed stage, a milestone, a failure worth
+remembering), the coordinator appends one line to the project's event log
+(default `research/optimizer/events.jsonl`; see the
+[default record layout](../research-navigate/references/records.md)):
 
-Duplicate delivery is a no-op. Completion of `research-optimize` never emits
-another optimizer event. This is a light retrospective in the existing handoff,
-not an automatic review, test suite, model call or workflow release. If a new
-state store is unnecessary, keep the same logical record in the project's tool.
+```json
+{"project": "paper-1", "stage": "research-survey", "round": "R2", "revision": "M3",
+ "date": "2026-11-23", "strengths": ["closest work compared on mechanism"],
+ "weaknesses": [{"text": "two citations entered the draft before resolution",
+                 "tag": "literature-citation", "trace_ref": "research/literature.jsonl"}],
+ "cost": {"model": "unknown", "time_minutes": 40}, "artifact_refs": ["research/literature.jsonl"]}
+```
 
-Use [research-focus](../research-focus/SKILL.md) for a proposed scientific pivot:
-the optimizer may improve execution but cannot rewrite the theme/value baseline
-or acceptance criteria. Focus bookkeeping also emits no optimizer event; attach
-its lessons to the original stage event instead. Neither support skill triggers
-the other recursively.
+- Record only observed facts. An empty weakness list is fine; do not invent a
+  defect. Keep failures, negative results and corrections.
+- Tag each weakness with one of: `scope-planning`, `literature-citation`,
+  `ideation-novelty`, `protocol-design`, `implementation`,
+  `evaluation-integrity`, `experiment-execution`, `analysis-statistics`,
+  `writing-claims`, `review`, `coordination-state`, `resource-budget`,
+  `authorization`, `other`.
+- Add `trace_ref` when a log, transcript or artifact shows the problem; such
+  traces become replay cases in the lab.
+- Writing an event triggers nothing: no model call, review, test suite or
+  workflow change, and it never delays the paper. Events from this skill and
+  from research-focus are not logged, so neither can trigger the other.
+- Keep the log out of blind venue-review bundles.
 
-Continue the scientific next step under existing authority. For a real choice
-among improvement candidates, optional [Jev support](../research-navigate/references/decision-support.md)
-may assist comparison after scientific/engineering models prepare the evidence.
-Unknown API coverage means no Jev call; the integrator can still choose from
-actual evidence. A higher Jev score is never improvement or publication evidence.
+## Layer 2: workflow-lab rounds (repository level)
 
-## At the applicable milestone
+Run by the suite owner, or by an agent the owner asked to, in the skills
+repository, not in a research project. Follow [the workflow lab](references/workflow-lab.md):
 
-1. Freeze a baseline, goals, authority, measurable model/time budgets, protected
-   strengths and acceptance cases before developing candidates. Keep these
-   controls outside every editable candidate, including optimizer-self changes.
-   At least one task case is withheld from candidate development. The integrity
-   scenarios in the suite's `tests/integrity-scenarios.json` (missing data,
-   exploitable evaluator, request to alter a result, false premise, injected
-   reviewer text) are always protected strengths.
-   Run every case at least three times for baseline and candidate; a case counts
-   as passed only when the candidate's pass rate is not lower than the baseline's.
-   Until the suite has a recorded end-to-end project run, a validated candidate
-   still needs the owner's explicit approval before publication.
-2. Select at most three candidates, each with a concrete benefit hypothesis and
-   a small discriminating validation. Optimize no more than 20% of existing
-   approved model/time allowances, counting spending and reservations in both
-   the optimizer share and the total project envelope. This is not extra money.
-   Unknown/exhausted allowance leaves a candidate pending while research proceeds.
-3. Develop isolated candidates; each can receive at most one targeted revision.
-   Self-improvement uses the frozen current controller and criteria to evaluate
-   the candidate controller. Never let a candidate judge itself or relax limits.
-4. At M1-M5, compare actual task outputs and measured costs, preserve the frozen
-   strengths, evaluate held-out work and obtain independent review of the actual
-   changed files and artifacts. Reuse valid existing checks; run only relevant
-   new coverage. Record regressions, failed candidates and uncertain benefits.
-5. Publish at most one combined eligible version per milestone through the
-   existing protected release/install process. The state helper records
-   eligibility; it does not deploy. Link the release digest and evidence.
-   Preserve the previous version and rollback conditions.
+1. **Signal.** Aggregate event logs from several projects with
+   `scripts/workflow_lab.py aggregate`. Work only on a weakness that recurs in at
+   least two projects or that has a replayable trace. One project's anecdote is
+   not a reason to change shared behaviour.
+2. **Freeze controls.** Before writing any candidate, freeze the lab contract,
+   the evaluation suites (core scenarios, integrity traps, replay cases built
+   from traces) and the criteria, outside every candidate directory. Integrity
+   and replay suites are protected: no candidate may lower their pass rate.
+3. **Candidates.** At most three per round, one revision each, developed in
+   isolation from the baseline, with costs reserved and settled through
+   [the state helper](references/optimization-protocol.md). A candidate never
+   judges itself and never edits the frozen criteria.
+4. **Evaluate.** `workflow_lab.py prepare` exports baseline and candidate suites
+   and plans the same scenarios for both, at least three runs each; the host
+   runs them in fresh agents; a grader of a different lineage grades them
+   blind to which side produced an answer; `workflow_lab.py compare` decides
+   eligibility (more passes on average, no protected regression, enough runs).
+   When these runs use more than one model, read
+   [model routing](../research-navigate/references/model-routing.md) and the
+   [shared contract](../research-navigate/references/workflow-contract.md).
+5. **Review and approve.** An independent reviewer inspects the actual diff and
+   evaluation artifacts. The state helper records eligibility; the owner
+   approves publication; the release tools install it, keeping the previous
+   version for rollback. At most one publication per round.
 
-If candidate work changes scientific assumptions, required evidence or core
-conclusions, route it to design/analyze/review under the ordinary authority rules.
-Improving a workflow cannot authorize a new research direction or publication.
-An optimizer backlog cannot delay a paper that meets its completion contract.
+If a candidate would change scientific assumptions, evidence standards or
+authorization rules, treat it as a change to the research contract and give it
+the owner's explicit review, not only a passing evaluation.
 
 ## Deliver
 
-Return the event or milestone status, retained strengths, observed weaknesses,
-actual candidate outcomes, cost including commitments, adopted or rejected
-changes and their evidence, and the next scientific step. Distinguish a proposal,
-validated candidate, eligibility record, installed release and observed adoption.
-Keep optimizer records out of both blind venue-review bundles.
-
-## Mathematical work when applicable
-
-Classify lessons as shared_behavior, domain_reference, project_only or defer, with evidence, consuming stage and protected strengths. Preserve the 20% budget and milestone publication limits; optimizing this process does not create a second dispatcher.
-Read [mathematical work](../research-navigate/references/mathematical-work.md) for the optional record and return contract.
+Inside a project: the appended event line, nothing more. In a lab round: the
+signal summary, frozen controls, candidate outcomes with evaluation results
+(including failed and rejected candidates), costs, review, the owner's decision
+and the release reference.

@@ -1,0 +1,19 @@
+{
+  "project": "workflow-lab-L1",
+  "goal": "Measure whether the 2026-11-23 review fixes improve behaviour on the core and integrity scenarios without lowering any integrity scenario",
+  "authority_ref": "owner chat 2026-11-23: restructure the optimizer and run a first comparison of the review fixes",
+  "baseline": ".build/lab/L1/baseline/skills",
+  "criteria": "lab/L1/criteria.json",
+  "project_usage": "lab/L1/usage.json",
+  "budget_share": 1,
+  "budgets": {
+    "model": {
+      "limit": null,
+      "unit": "owner-approved model calls"
+    },
+    "time": {
+      "limit": null,
+      "unit": "minutes"
+    }
+  }
+}
