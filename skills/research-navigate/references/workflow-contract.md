@@ -121,15 +121,11 @@ compatible validated release under recorded automatic-update authority through
 [workflow updates](workflow-updates.md). Running jobs keep their pinned versions;
 independently customized local copies stay untouched and report a conflict.
 
-Each substantial stage completion queues one stable completion event for the
-sibling [research-optimize](../../research-optimize/SKILL.md) skill, carrying strengths, weaknesses, artifact and
-evidence references, and the actual cost. That event triggers no full test suite
-and no scientific review; the optimizer queues no event for its own completion;
-and optional optimization never delays a completed paper. Optimization stays
-inside 20% of the measurable approved model/time allowance, counting spent and
-reserved amounts, with three candidates, one revision each and one publication per
-milestone. Read `research-optimize` for its authoritative
-bounds and record shapes rather than duplicating them here.
+At a meaningful handoff, append one retrospective line to the project's event
+log (default `research/optimizer/events.jsonl`) as described in
+[research-optimize](../../research-optimize/SKILL.md). It records strengths, tagged weaknesses, traces and
+cost; it triggers nothing and never delays the paper. Projects do not develop or
+publish workflow changes; those happen in repository-level workflow-lab rounds.
 
 ## Conditional sections
 

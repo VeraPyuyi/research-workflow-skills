@@ -105,11 +105,11 @@ independently customized local copies are never overwritten.
 After adopting a release, actually read its affected instructions. A release
 record alone neither reloads an old context nor activates a native Goal.
 
-Each substantial scientific stage completion queues one stable event for the sibling
-[research-optimize](../research-optimize/SKILL.md) skill, carrying strengths,
-weaknesses, artifact/evidence references and actual cost. Use its bounded event
-and milestone protocol; an event alone triggers no comprehensive review or tests.
-Optional optimization never delays a paper that meets its completion contract.
+At a meaningful handoff, append one retrospective line to the project's event
+log (default `research/optimizer/events.jsonl`) as described in
+[research-optimize](../research-optimize/SKILL.md). It records strengths, tagged weaknesses, traces and
+cost; it triggers nothing and never delays the paper. Projects do not develop or
+publish workflow changes; those happen in repository-level workflow-lab rounds.
 Focus/optimizer bookkeeping emits no new support event. The focus record's
 scientific task mapping is maintained by the integrator, not a recurring reviewer.
 

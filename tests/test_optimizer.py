@@ -47,6 +47,23 @@ class OptimizerTests(unittest.TestCase):
     def op(self, action, packet):
         return self.m.operate(self.root, self.state, action, packet, apply=True)
 
+    def test_lab_rounds_and_budget_share(self):
+        packet = {"id": "x", "milestone": "L1", "path": "candidate", "author_model": "author",
+                  "author_context": "ctx", "cost": {"model": 60, "time": 1}}
+        with self.assertRaises(ValueError):          # default share: 20% of 100
+            self.op("candidate", packet)
+        for bad in ("L0", "lab", "M6", 1):
+            with self.subTest(bad=bad), self.assertRaises(ValueError):
+                self.op("candidate", dict(packet, milestone=bad, cost={"model": 1, "time": 1}))
+        self.write("lab-contract.json", dict(self.contract, budget_share=1))
+        self.state = self.root / "lab-optimizer.json"
+        self.m.operate(self.root, self.state, "init", {"contract": "lab-contract.json"}, apply=True)
+        self.op("candidate", packet)                 # a dedicated lab budget may be used in full
+        self.write("bad-contract.json", dict(self.contract, budget_share=1.5))
+        with self.assertRaises(ValueError):
+            self.m.operate(self.root, self.root / "bad.json", "init", {"contract": "bad-contract.json"}, apply=True)
+            self.m.operate(self.root, self.root / "bad.json", "candidate", packet, apply=True)
+
     def reserve(self, cid="c1", cost=2, milestone="M1"):
         return self.op("candidate", {"id": cid, "milestone": milestone,
                                     "path": "candidate", "author_model": "provider/author",
