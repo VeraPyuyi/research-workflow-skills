@@ -63,7 +63,7 @@
     "research-navigate/scripts/math_work.py": "a84fd20b172e802e1f1cf175cddbf77d84e08ec210926530d9b27c13cf079d3c",
     "research-navigate/scripts/model_identity.py": "dc47155d9fdaf65922f267ee071e43e4952802cb4a22eb6a8c78be4473402ac5",
     "research-navigate/scripts/reviewer_panel.py": "26c59e077aba95845bdb5f7ac195d9ded48b4ac17d2e496857badfb024df08a4",
-    "research-navigate/scripts/workflow_release.py": "4e0879b6fecb5c35ec515269b6441194b85d128a49760be4a34dce0836adf560",
+    "research-navigate/scripts/workflow_release.py": "bf23b740a263525fcad437af0072571123f72bdd24e6d523d7237a4202ebcf10",
     "research-optimize/SKILL.md": "41ddea80cc6b5d5a8854c5e6b23796cdb1cf349925b3522b66f8a2c7c276e865",
     "research-optimize/agents/openai.yaml": "0554615813b673c2b5d58df21c71590c05a26a60a4e9bd1f246ffe3985d93dfd",
     "research-optimize/references/optimization-protocol.md": "57e3173a4c417a912dc6b0de8533e3462954a6b49dd4544bc9d23359b37efaa9",
@@ -107,5 +107,5 @@
   "validation_receipts": [
     "docs/releases/research-20261123-review-fixes-magpie.json"
   ],
-  "bundle_digest": "sha256:df1cca2215fde38ac866b333e54605e455b4ddfbd4ecc25aeb76b40c1373ff75"
+  "bundle_digest": "sha256:ca7f17194c93cd1da91052928418a3a780d7f4f3a9e18a44ddf80b44cee534c8"
 }

@@ -3,7 +3,7 @@
   "scope": "workflow-release",
   "receipt_id": "research-20261123-review-fixes-magpie",
   "status": "passed",
-  "bundle_digest": "sha256:df1cca2215fde38ac866b333e54605e455b4ddfbd4ecc25aeb76b40c1373ff75",
+  "bundle_digest": "sha256:ca7f17194c93cd1da91052928418a3a780d7f4f3a9e18a44ddf80b44cee534c8",
   "evidence_refs": [
     "docs/review-fixes-20261123.md",
     "tests/test_reviewer_panel.py",
